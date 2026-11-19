@@ -44,7 +44,7 @@ On 20 November 1989 Mexico City introduced Hoy No Circula ("Today [it] doesn't d
 - Plain fact: the dates, the plate rule, "one car in five", permanence by 1990, "no evidence the air got cleaner" (Davis), registrations up, older/dirtier mix, "some households bought another car" (Eskeland & Feyzioglu).
 - Attribute: the economist's finding (name Davis); fuel sales.
 - Avoid: "everyone bought a second car", "made the air worse", UN ranking, bird deaths, exact car counts.
-- Dramatized: the "Sounds backwards, right?" line is the viewer's doubt, not a quote.
+- Dramatized (v4): a composite driver, his wife, their two quoted lines and the backfire gag illustrate the documented behaviour (households buying an additional, often older car). Not real people; labelled in the description and on screen.
 
 ## Sources
 | # | Title | Publisher / author | Date | URL | Tier | Read in full? |
