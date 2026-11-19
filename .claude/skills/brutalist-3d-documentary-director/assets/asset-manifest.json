@@ -1,0 +1,4701 @@
+{
+ "$schema": "../templates/asset-manifest-template.json",
+ "library": "brutalist-3d-documentary-director seed library",
+ "libraryVersion": "1.0.0",
+ "assets": [
+  {
+   "id": "core.math",
+   "name": "Deterministic math",
+   "category": "core",
+   "description": "Seeded PRNG, value noise, easing, envelopes. Pure TS (runs in Node and browser).",
+   "source": "core/math.ts",
+   "exports": [
+    "clamp",
+    "lerp",
+    "smoothstep",
+    "rng",
+    "noise1",
+    "fbm1",
+    "envelope",
+    "progress",
+    "easings"
+   ],
+   "format": "ts-module",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Import for any frame-driven animation; never use Math.random.",
+   "tags": [
+    "math",
+    "noise",
+    "easing",
+    "random"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "core/math.ts"
+   ],
+   "sha256": "106148cc26a8d9dd07cd166e3eb03dff846f97f9084ead1c73ed7a6633948933"
+  },
+  {
+   "id": "core.time",
+   "name": "Asset frame time hook",
+   "category": "core",
+   "description": "Frame/fps/time hook; every animated asset is a pure function of frame.",
+   "source": "core/time.ts",
+   "exports": [
+    "useAssetTime"
+   ],
+   "format": "ts-module",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Use in new animated assets: const {frame,t}=useAssetTime(props.frame).",
+   "tags": [
+    "time",
+    "frame",
+    "remotion"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "core/time.ts"
+   ],
+   "sha256": "7e5a34a331f0ec740f4cc48b827f1422d4d529dc0db4a9747c07d9895c334413"
+  },
+  {
+   "id": "tex.procedural",
+   "name": "Procedural textures",
+   "category": "textures",
+   "description": "Deterministic DataTextures: board-formed concrete, roughness, brushed metal, tissue, paper, radial gradient.",
+   "source": "textures/proceduralTextures.ts",
+   "exports": [
+    "concreteTexture",
+    "concreteRoughness",
+    "brushedMetalTexture",
+    "tissueTexture",
+    "paperTexture",
+    "radialGradientTexture"
+   ],
+   "format": "ts-module",
+   "scale": "256px tiles, repeatable",
+   "materials": [],
+   "reuse": "Prefer these over image files; seeds give variation.",
+   "tags": [
+    "texture",
+    "concrete",
+    "tissue",
+    "paper",
+    "metal"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math"
+   ],
+   "files": [
+    "core/math.ts",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "216b03f89492a1b1db09c2097a7c8514be41fee1f43a92e545a7eacc642c49d6"
+  },
+  {
+   "id": "mat.library",
+   "name": "Material preset library",
+   "category": "materials",
+   "description": "Cached shared materials + studio palette. Individual presets are listed as mat.* entries.",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial",
+    "blendedMaterial",
+    "PALETTE",
+    "MATERIAL_PRESETS"
+   ],
+   "format": "ts-module",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "getMaterial('concrete-rough'); overrides create cached variants. blendedMaterial() for material-transformation transitions.",
+   "tags": [
+    "material",
+    "palette"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [
+    "tex.procedural"
+   ],
+   "files": [
+    "materials/materials.ts",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "11fe647400e8ed718b0c62668862c46863d3f61aa692f65262692bceeabe993e"
+  },
+  {
+   "id": "arch.slab",
+   "name": "Concrete slab",
+   "category": "architecture",
+   "description": "Axis-aligned concrete block positioned by base centre.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "ConcreteSlab"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "slab",
+    "block",
+    "floor",
+    "wall"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.pillar",
+   "name": "Monumental pillar",
+   "category": "architecture",
+   "description": "Square pillar with plinth and stepped capital.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "Pillar"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "pillar",
+    "column"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.pillar-row",
+   "name": "Pillar row",
+   "category": "architecture",
+   "description": "Row of pillars along +Z; foreground occlusion element.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "PillarRow"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "pillar",
+    "colonnade",
+    "occlusion"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.platform",
+   "name": "Platform",
+   "category": "architecture",
+   "description": "Raised platform with front steps.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "Platform"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "platform",
+    "stage",
+    "plinth"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.staircase",
+   "name": "Monumental staircase",
+   "category": "architecture",
+   "description": "Straight stair rising along -Z with side walls.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "Staircase"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "stairs",
+    "staircase",
+    "ascent"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.doorway",
+   "name": "Doorway wall",
+   "category": "architecture",
+   "description": "Wall with rectangular opening for doorway transitions.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "Doorway"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "door",
+    "doorway",
+    "portal",
+    "transition"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.monolith",
+   "name": "Monolith",
+   "category": "architecture",
+   "description": "Seeded stack of offset blocks \u2014 landmark for orbits.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "Monolith"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "monolith",
+    "sculpture",
+    "landmark"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.coffered-ceiling",
+   "name": "Coffered ceiling",
+   "category": "architecture",
+   "description": "Deep coffer grid ceiling.",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "CofferedCeiling"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "ceiling",
+    "coffer"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.slot-light",
+   "name": "Slot light",
+   "category": "architecture",
+   "description": "Emissive strip light with optional point light (practical).",
+   "source": "architecture/Structural.tsx",
+   "exports": [
+    "SlotLight"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, y=0 base",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Place in world-layout zones/objects; combine for bespoke spaces.",
+   "tags": [
+    "light",
+    "strip",
+    "practical",
+    "emissive"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Structural.tsx",
+    "core/math.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+  },
+  {
+   "id": "arch.corridor",
+   "name": "Brutalist corridor",
+   "category": "architecture",
+   "description": "Colonnaded corridor, ceiling beams, floor slot lights. Entry z=0 \u2192 exit z=-length.",
+   "source": "architecture/Spaces.tsx",
+   "exports": [
+    "BrutalistCorridor"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Use as the shell of an environment zone; see anchors.json for named points.",
+   "tags": [
+    "corridor",
+    "hallway",
+    "journey",
+    "transition"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.slab",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "materials/materials.ts"
+   ],
+   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+  },
+  {
+   "id": "arch.underground-passage",
+   "name": "Underground passage",
+   "category": "architecture",
+   "description": "Low ribbed trapezoid tunnel.",
+   "source": "architecture/Spaces.tsx",
+   "exports": [
+    "UndergroundPassage"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Use as the shell of an environment zone; see anchors.json for named points.",
+   "tags": [
+    "tunnel",
+    "underground",
+    "passage"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.slab",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "materials/materials.ts"
+   ],
+   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+  },
+  {
+   "id": "arch.monumental-room",
+   "name": "Monumental room",
+   "category": "architecture",
+   "description": "Huge hall with coffered ceiling, skylight slit, colonnade, configurable doorways.",
+   "source": "architecture/Spaces.tsx",
+   "exports": [
+    "MonumentalRoom"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Use as the shell of an environment zone; see anchors.json for named points.",
+   "tags": [
+    "hall",
+    "room",
+    "monumental",
+    "atrium"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.slab",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "materials/materials.ts"
+   ],
+   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+  },
+  {
+   "id": "arch.concrete-room",
+   "name": "Concrete room shell",
+   "category": "architecture",
+   "description": "Floor + 3 walls + ceiling, open front, window slit.",
+   "source": "architecture/Spaces.tsx",
+   "exports": [
+    "ConcreteRoom"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "concrete-rough",
+    "concrete-dark"
+   ],
+   "reuse": "Use as the shell of an environment zone; see anchors.json for named points.",
+   "tags": [
+    "room",
+    "office",
+    "cell",
+    "interior"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.slab",
+    "mat.library"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "materials/materials.ts"
+   ],
+   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+  },
+  {
+   "id": "env.laboratory",
+   "name": "Industrial laboratory",
+   "category": "environments",
+   "description": "14x14 m lab: bench, microscope, glassware, shelves, lamps, dust.",
+   "source": "environments/Environments.tsx",
+   "exports": [
+    "Laboratory"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; zone-local origin",
+   "materials": [],
+   "reuse": "Place as a zone; target anchors '<zoneId>.<anchor>' from environments/anchors.json.",
+   "tags": [
+    "lab",
+    "laboratory",
+    "science",
+    "experiment",
+    "microscope"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.corridor",
+    "arch.slab",
+    "bio.spiral-bacterium",
+    "bio.stomach-lining",
+    "char.crowd",
+    "fx.dust-motes",
+    "light.hanging-lamp",
+    "obj.chair",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "biological/Anatomy.tsx",
+    "biological/Microbes.tsx",
+    "characters/Crowd.tsx",
+    "environments/Environments.tsx",
+    "lighting/Practicals.tsx",
+    "objects/Documents.tsx",
+    "objects/Furniture.tsx",
+    "objects/LabEquipment.tsx",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "84d0597d9a7aa38ca871ed7b300281fb878ec1f9677ae3ecee400d5d05937349"
+  },
+  {
+   "id": "env.conference-hall",
+   "name": "Conference hall",
+   "category": "environments",
+   "description": "Raked instanced audience, stage, lectern, screen, haze.",
+   "source": "environments/Environments.tsx",
+   "exports": [
+    "ConferenceHall"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; zone-local origin",
+   "materials": [],
+   "reuse": "Place as a zone; target anchors '<zoneId>.<anchor>' from environments/anchors.json.",
+   "tags": [
+    "conference",
+    "audience",
+    "lecture",
+    "presentation",
+    "rejection"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.corridor",
+    "arch.slab",
+    "bio.spiral-bacterium",
+    "bio.stomach-lining",
+    "char.crowd",
+    "fx.dust-motes",
+    "light.hanging-lamp",
+    "obj.chair",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "biological/Anatomy.tsx",
+    "biological/Microbes.tsx",
+    "characters/Crowd.tsx",
+    "environments/Environments.tsx",
+    "lighting/Practicals.tsx",
+    "objects/Documents.tsx",
+    "objects/Furniture.tsx",
+    "objects/LabEquipment.tsx",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "84d0597d9a7aa38ca871ed7b300281fb878ec1f9677ae3ecee400d5d05937349"
+  },
+  {
+   "id": "env.concrete-office",
+   "name": "Concrete office",
+   "category": "environments",
+   "description": "Desk, lamp, papers, cabinets, light shaft.",
+   "source": "environments/Environments.tsx",
+   "exports": [
+    "ConcreteOffice"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; zone-local origin",
+   "materials": [],
+   "reuse": "Place as a zone; target anchors '<zoneId>.<anchor>' from environments/anchors.json.",
+   "tags": [
+    "office",
+    "desk",
+    "bureaucracy",
+    "writing"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.corridor",
+    "arch.slab",
+    "bio.spiral-bacterium",
+    "bio.stomach-lining",
+    "char.crowd",
+    "fx.dust-motes",
+    "light.hanging-lamp",
+    "obj.chair",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "biological/Anatomy.tsx",
+    "biological/Microbes.tsx",
+    "characters/Crowd.tsx",
+    "environments/Environments.tsx",
+    "lighting/Practicals.tsx",
+    "objects/Documents.tsx",
+    "objects/Furniture.tsx",
+    "objects/LabEquipment.tsx",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "84d0597d9a7aa38ca871ed7b300281fb878ec1f9677ae3ecee400d5d05937349"
+  },
+  {
+   "id": "env.award-hall",
+   "name": "Award hall",
+   "category": "environments",
+   "description": "Void with platform, pillar ring, golden shaft.",
+   "source": "environments/Environments.tsx",
+   "exports": [
+    "AwardHall"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; zone-local origin",
+   "materials": [],
+   "reuse": "Place as a zone; target anchors '<zoneId>.<anchor>' from environments/anchors.json.",
+   "tags": [
+    "award",
+    "triumph",
+    "prize",
+    "ceremony"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.corridor",
+    "arch.slab",
+    "bio.spiral-bacterium",
+    "bio.stomach-lining",
+    "char.crowd",
+    "fx.dust-motes",
+    "light.hanging-lamp",
+    "obj.chair",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "biological/Anatomy.tsx",
+    "biological/Microbes.tsx",
+    "characters/Crowd.tsx",
+    "environments/Environments.tsx",
+    "lighting/Practicals.tsx",
+    "objects/Documents.tsx",
+    "objects/Furniture.tsx",
+    "objects/LabEquipment.tsx",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "84d0597d9a7aa38ca871ed7b300281fb878ec1f9677ae3ecee400d5d05937349"
+  },
+  {
+   "id": "env.microscopic-world",
+   "name": "Microscopic world",
+   "category": "environments",
+   "description": "Stomach lining, mucus, cells, spiral bacteria swarm.",
+   "source": "environments/Environments.tsx",
+   "exports": [
+    "MicroscopicWorld"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; zone-local origin",
+   "materials": [],
+   "reuse": "Place as a zone; target anchors '<zoneId>.<anchor>' from environments/anchors.json.",
+   "tags": [
+    "microscopic",
+    "stomach",
+    "bacteria",
+    "biology",
+    "cells"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.corridor",
+    "arch.slab",
+    "bio.spiral-bacterium",
+    "bio.stomach-lining",
+    "char.crowd",
+    "fx.dust-motes",
+    "light.hanging-lamp",
+    "obj.chair",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "biological/Anatomy.tsx",
+    "biological/Microbes.tsx",
+    "characters/Crowd.tsx",
+    "environments/Environments.tsx",
+    "lighting/Practicals.tsx",
+    "objects/Documents.tsx",
+    "objects/Furniture.tsx",
+    "objects/LabEquipment.tsx",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "84d0597d9a7aa38ca871ed7b300281fb878ec1f9677ae3ecee400d5d05937349"
+  },
+  {
+   "id": "env.archive-corridor",
+   "name": "Archive corridor",
+   "category": "environments",
+   "description": "40 m corridor with monoliths \u2014 passage of time.",
+   "source": "environments/Environments.tsx",
+   "exports": [
+    "ArchiveCorridor"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; zone-local origin",
+   "materials": [],
+   "reuse": "Place as a zone; target anchors '<zoneId>.<anchor>' from environments/anchors.json.",
+   "tags": [
+    "corridor",
+    "time",
+    "archive",
+    "journey"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "arch.corridor",
+    "arch.slab",
+    "bio.spiral-bacterium",
+    "bio.stomach-lining",
+    "char.crowd",
+    "fx.dust-motes",
+    "light.hanging-lamp",
+    "obj.chair",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "architecture/Spaces.tsx",
+    "architecture/Structural.tsx",
+    "biological/Anatomy.tsx",
+    "biological/Microbes.tsx",
+    "characters/Crowd.tsx",
+    "environments/Environments.tsx",
+    "lighting/Practicals.tsx",
+    "objects/Documents.tsx",
+    "objects/Furniture.tsx",
+    "objects/LabEquipment.tsx",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "84d0597d9a7aa38ca871ed7b300281fb878ec1f9677ae3ecee400d5d05937349"
+  },
+  {
+   "id": "env.anchors",
+   "name": "Component anchor catalogue",
+   "category": "environments",
+   "description": "Named anchor points per component used by camera specs.",
+   "source": "environments/anchors.json",
+   "exports": [],
+   "format": "json",
+   "scale": "meters, component-local",
+   "materials": [],
+   "reuse": "Add anchors when adding components; bump version on geometry change.",
+   "tags": [
+    "anchor",
+    "camera"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "environments/anchors.json"
+   ],
+   "sha256": "b5bab9d2cf8c83daa009120d0dfe383069942a523e270bb4878b78ff7a58bd9c"
+  },
+  {
+   "id": "obj.lab-table",
+   "name": "Lab table",
+   "category": "objects",
+   "description": "Steel/concrete bench, top at 0.92 m.",
+   "source": "objects/LabEquipment.tsx",
+   "exports": [
+    "LabTable"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place on LabTable top (y=0.92).",
+   "tags": [
+    "table",
+    "bench",
+    "lab"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/LabEquipment.tsx"
+   ],
+   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+  },
+  {
+   "id": "obj.glass-container",
+   "name": "Glass container",
+   "category": "objects",
+   "description": "Beaker/flask/jar/cylinder with optional (glowing) liquid.",
+   "source": "objects/LabEquipment.tsx",
+   "exports": [
+    "GlassContainer"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place on LabTable top (y=0.92).",
+   "tags": [
+    "glass",
+    "beaker",
+    "flask",
+    "jar",
+    "container",
+    "liquid"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/LabEquipment.tsx"
+   ],
+   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+  },
+  {
+   "id": "obj.petri-dish",
+   "name": "Petri dish",
+   "category": "objects",
+   "description": "Dish with glowing colonies.",
+   "source": "objects/LabEquipment.tsx",
+   "exports": [
+    "PetriDish"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place on LabTable top (y=0.92).",
+   "tags": [
+    "petri",
+    "culture",
+    "bacteria"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/LabEquipment.tsx"
+   ],
+   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+  },
+  {
+   "id": "obj.specimen-rack",
+   "name": "Specimen rack",
+   "category": "objects",
+   "description": "Rack of test tubes.",
+   "source": "objects/LabEquipment.tsx",
+   "exports": [
+    "SpecimenRack"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place on LabTable top (y=0.92).",
+   "tags": [
+    "test tube",
+    "rack",
+    "specimen"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/LabEquipment.tsx"
+   ],
+   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+  },
+  {
+   "id": "obj.microscope",
+   "name": "Microscope",
+   "category": "objects",
+   "description": "Stylized microscope with glowing lens (lens fly-through anchor).",
+   "source": "objects/LabEquipment.tsx",
+   "exports": [
+    "Microscope"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place on LabTable top (y=0.92).",
+   "tags": [
+    "microscope",
+    "lens",
+    "discovery"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/LabEquipment.tsx"
+   ],
+   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+  },
+  {
+   "id": "obj.chair",
+   "name": "Chair",
+   "category": "objects",
+   "description": "Angular steel chair, faces +Z.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Chair"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "chair",
+    "seat"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.desk",
+   "name": "Desk",
+   "category": "objects",
+   "description": "Concrete/steel desk, top 0.76 m.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Desk"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "desk",
+    "office"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.lectern",
+   "name": "Lectern",
+   "category": "objects",
+   "description": "Monolithic lectern with red strip.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Lectern"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "lectern",
+    "podium",
+    "speech"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.bench",
+   "name": "Bench",
+   "category": "objects",
+   "description": "Long concrete bench.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Bench"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "bench",
+    "seat"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.door",
+   "name": "Door",
+   "category": "objects",
+   "description": "Hinged steel door with frame-driven opening.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Door"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "door",
+    "entrance",
+    "transition"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.screen",
+   "name": "Screen",
+   "category": "objects",
+   "description": "Wall screen with animated bars/graph/scan.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Screen"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "screen",
+    "monitor",
+    "data",
+    "graph"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.crate",
+   "name": "Crate",
+   "category": "objects",
+   "description": "Industrial container crate.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "Crate"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "crate",
+    "container",
+    "box"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.filing-cabinet",
+   "name": "Filing cabinet",
+   "category": "objects",
+   "description": "Steel cabinet with drawers.",
+   "source": "objects/Furniture.tsx",
+   "exports": [
+    "FilingCabinet"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters, real-world size",
+   "materials": [],
+   "reuse": "Place freely; faces +Z.",
+   "tags": [
+    "cabinet",
+    "archive",
+    "files"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Furniture.tsx"
+   ],
+   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+  },
+  {
+   "id": "obj.paper",
+   "name": "Paper sheet",
+   "category": "objects",
+   "description": "Single sheet with text-line texture.",
+   "source": "objects/Documents.tsx",
+   "exports": [
+    "Paper"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Use for publication/rejection beats.",
+   "tags": [
+    "paper",
+    "document"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Documents.tsx"
+   ],
+   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+  },
+  {
+   "id": "obj.paper-stack",
+   "name": "Paper stack",
+   "category": "objects",
+   "description": "Messy seeded stack.",
+   "source": "objects/Documents.tsx",
+   "exports": [
+    "PaperStack"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Use for publication/rejection beats.",
+   "tags": [
+    "papers",
+    "documents",
+    "stack"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Documents.tsx"
+   ],
+   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+  },
+  {
+   "id": "obj.journal",
+   "name": "Scientific journal",
+   "category": "objects",
+   "description": "Closed or open bound journal.",
+   "source": "objects/Documents.tsx",
+   "exports": [
+    "Journal"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Use for publication/rejection beats.",
+   "tags": [
+    "journal",
+    "paper",
+    "publication",
+    "scientific paper"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Documents.tsx"
+   ],
+   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+  },
+  {
+   "id": "obj.floating-pages",
+   "name": "Floating pages",
+   "category": "objects",
+   "description": "Vortex of drifting pages \u2014 evidence/ideas metaphor.",
+   "source": "objects/Documents.tsx",
+   "exports": [
+    "FloatingPages"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Use for publication/rejection beats.",
+   "tags": [
+    "pages",
+    "vortex",
+    "papers",
+    "metaphor"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Documents.tsx"
+   ],
+   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+  },
+  {
+   "id": "obj.rejection-stamp",
+   "name": "Rejection stamp",
+   "category": "objects",
+   "description": "Crimson stamp bar slamming onto paper.",
+   "source": "objects/Documents.tsx",
+   "exports": [
+    "RejectionStamp"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Use for publication/rejection beats.",
+   "tags": [
+    "reject",
+    "stamp",
+    "denial"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Documents.tsx"
+   ],
+   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+  },
+  {
+   "id": "obj.award-medal",
+   "name": "Award medal",
+   "category": "objects",
+   "description": "Generic gold medal (no real insignia), spins.",
+   "source": "objects/Award.tsx",
+   "exports": [
+    "AwardMedal"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "gold-metal",
+    "emissive-gold"
+   ],
+   "reuse": "Pair with golden-award / triumph lighting.",
+   "tags": [
+    "medal",
+    "award",
+    "prize",
+    "gold"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Award.tsx"
+   ],
+   "sha256": "01db57282e5183e140311cac80d49cfe644f6925aefb8b7db8a8511f22b64919"
+  },
+  {
+   "id": "obj.trophy",
+   "name": "Trophy",
+   "category": "objects",
+   "description": "Faceted gold trophy.",
+   "source": "objects/Award.tsx",
+   "exports": [
+    "Trophy"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "gold-metal",
+    "emissive-gold"
+   ],
+   "reuse": "Pair with golden-award / triumph lighting.",
+   "tags": [
+    "trophy",
+    "award",
+    "gold"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Award.tsx"
+   ],
+   "sha256": "01db57282e5183e140311cac80d49cfe644f6925aefb8b7db8a8511f22b64919"
+  },
+  {
+   "id": "obj.award-plinth",
+   "name": "Award plinth",
+   "category": "objects",
+   "description": "Plinth with frame-ramped golden spotlight; accepts children.",
+   "source": "objects/Award.tsx",
+   "exports": [
+    "AwardPlinth"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [
+    "gold-metal",
+    "emissive-gold"
+   ],
+   "reuse": "Pair with golden-award / triumph lighting.",
+   "tags": [
+    "plinth",
+    "award",
+    "reveal",
+    "spotlight"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Award.tsx"
+   ],
+   "sha256": "01db57282e5183e140311cac80d49cfe644f6925aefb8b7db8a8511f22b64919"
+  },
+  {
+   "id": "prop.hospital-bed",
+   "name": "Hospital bed",
+   "category": "props",
+   "description": "Bed with mattress, headboard.",
+   "source": "props/Medical.tsx",
+   "exports": [
+    "HospitalBed"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Medical / clinical scenes.",
+   "tags": [
+    "bed",
+    "hospital",
+    "patient"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "props/Medical.tsx"
+   ],
+   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+  },
+  {
+   "id": "prop.iv-stand",
+   "name": "IV stand",
+   "category": "props",
+   "description": "Drip stand with bag.",
+   "source": "props/Medical.tsx",
+   "exports": [
+    "IVStand"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Medical / clinical scenes.",
+   "tags": [
+    "iv",
+    "drip",
+    "hospital"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "props/Medical.tsx"
+   ],
+   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+  },
+  {
+   "id": "prop.vitals-monitor",
+   "name": "Vitals monitor",
+   "category": "props",
+   "description": "Monitor with animated heartbeat trace.",
+   "source": "props/Medical.tsx",
+   "exports": [
+    "VitalsMonitor"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Medical / clinical scenes.",
+   "tags": [
+    "monitor",
+    "heartbeat",
+    "ecg",
+    "hospital"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "props/Medical.tsx"
+   ],
+   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+  },
+  {
+   "id": "prop.surgical-lamp",
+   "name": "Surgical lamp",
+   "category": "props",
+   "description": "Overhead lamp with strong spot.",
+   "source": "props/Medical.tsx",
+   "exports": [
+    "SurgicalLamp"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Medical / clinical scenes.",
+   "tags": [
+    "surgery",
+    "lamp",
+    "operating"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "core/time.ts",
+    "materials/materials.ts",
+    "props/Medical.tsx"
+   ],
+   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+  },
+  {
+   "id": "char.figure",
+   "name": "Figure rig",
+   "category": "characters",
+   "description": "Low-poly flat-shaded human with procedural joint rig; takes a character preset and an action timeline.",
+   "source": "characters/Figure.tsx",
+   "exports": [
+    "Figure"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters; default 1.78 m",
+   "materials": [],
+   "reuse": "World-layout actor: {component:'Figure', props:{character:'doctor'}, actions:[...]}. Age variants: 'doctor@older'.",
+   "tags": [
+    "human",
+    "character",
+    "person",
+    "rig"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "char.poses",
+    "char.presets",
+    "core.math",
+    "core.time",
+    "mat.library",
+    "obj.award-medal",
+    "obj.lab-table",
+    "obj.paper"
+   ],
+   "files": [
+    "characters/Figure.tsx",
+    "characters/poses.ts",
+    "characters/presets.ts",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "objects/Award.tsx",
+    "objects/Documents.tsx",
+    "objects/LabEquipment.tsx"
+   ],
+   "sha256": "ed6f05cb75dad2943db76155cd689b4bed386beff76d8e520c1a32390bb9889d"
+  },
+  {
+   "id": "char.poses",
+   "name": "Pose & action library",
+   "category": "characters",
+   "description": "Poses: stand, walk, sit, reach, hold, gesture, point, raise, cross, inspect, drink, slump, write. Actions: pose, walk, turn, look.",
+   "source": "characters/poses.ts",
+   "exports": [
+    "POSES",
+    "evaluateCharacter",
+    "lerpPose"
+   ],
+   "format": "ts-module",
+   "scale": "radians",
+   "materials": [],
+   "reuse": "Add poses here (bump version); never animate joints ad hoc in scenes.",
+   "tags": [
+    "pose",
+    "animation",
+    "walk",
+    "gesture"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math"
+   ],
+   "files": [
+    "characters/poses.ts",
+    "core/math.ts"
+   ],
+   "sha256": "fbc65e8f88f962ce876667e6d2801c8576107f71757f13e181a7e8beed8e8339"
+  },
+  {
+   "id": "char.presets",
+   "name": "Character identity presets",
+   "category": "characters",
+   "description": "Identity specs for consistent recurring characters; individual presets listed as char.preset.*.",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS",
+    "ageVariant",
+    "resolveCharacter"
+   ],
+   "format": "ts-module",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Create a project character by adding a spec (or a project-level spec) \u2014 keep faceSeed fixed for identity.",
+   "tags": [
+    "identity",
+    "character"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "mat.library"
+   ],
+   "files": [
+    "characters/presets.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "b21e2e70afeaddc9c81ad52961cc6e7fe7cbbb544c09f6d8540ad45047669288"
+  },
+  {
+   "id": "char.crowd",
+   "name": "Instanced crowd",
+   "category": "characters",
+   "description": "Seated or standing instanced crowd with per-person attention/motion.",
+   "source": "characters/Crowd.tsx",
+   "exports": [
+    "Crowd"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Conference audience, background characters.",
+   "tags": [
+    "crowd",
+    "audience",
+    "conference",
+    "people",
+    "background"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "characters/Crowd.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "ef2648a94e3f3e0d72193bd33462dad28b2b32a87a991bc186daf30fcdc20cd0"
+  },
+  {
+   "id": "bio.spiral-bacterium",
+   "name": "Spiral bacterium",
+   "category": "biological",
+   "description": "Helical body + flagella, corkscrew spin.",
+   "source": "biological/Microbes.tsx",
+   "exports": [
+    "SpiralBacterium"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized: ~1 m per microbe",
+   "materials": [
+    "bacteria-toxic"
+   ],
+   "reuse": "Microscopic world scale; pair with microscopic-green lighting.",
+   "tags": [
+    "bacteria",
+    "spiral",
+    "helical",
+    "h. pylori",
+    "microbe"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Microbes.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "d40c8989dac3b871ae6dadc571de293c76cee32d8d7e5066a6d9826a57030c6d"
+  },
+  {
+   "id": "bio.rod-bacterium",
+   "name": "Rod bacterium",
+   "category": "biological",
+   "description": "Bacillus capsule.",
+   "source": "biological/Microbes.tsx",
+   "exports": [
+    "RodBacterium"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized: ~1 m per microbe",
+   "materials": [
+    "bacteria-toxic"
+   ],
+   "reuse": "Microscopic world scale; pair with microscopic-green lighting.",
+   "tags": [
+    "bacteria",
+    "rod",
+    "bacillus"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Microbes.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "d40c8989dac3b871ae6dadc571de293c76cee32d8d7e5066a6d9826a57030c6d"
+  },
+  {
+   "id": "bio.microbe-swarm",
+   "name": "Microbe swarm",
+   "category": "biological",
+   "description": "Instanced spiral/rod/coccus population with drift.",
+   "source": "biological/Microbes.tsx",
+   "exports": [
+    "MicrobeSwarm"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized: ~1 m per microbe",
+   "materials": [
+    "bacteria-toxic"
+   ],
+   "reuse": "Microscopic world scale; pair with microscopic-green lighting.",
+   "tags": [
+    "bacteria",
+    "swarm",
+    "instanced",
+    "colony",
+    "infection"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Microbes.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "d40c8989dac3b871ae6dadc571de293c76cee32d8d7e5066a6d9826a57030c6d"
+  },
+  {
+   "id": "bio.stomach-lining",
+   "name": "Stomach lining",
+   "category": "biological",
+   "description": "Rugae-folded undulating tissue surface.",
+   "source": "biological/Anatomy.tsx",
+   "exports": [
+    "StomachLining"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized meters",
+   "materials": [
+    "flesh-wall",
+    "mucus",
+    "bio-translucent"
+   ],
+   "reuse": "Anatomical / scientific explanation beats.",
+   "tags": [
+    "stomach",
+    "lining",
+    "tissue",
+    "gastric",
+    "rugae"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Anatomy.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "0aafde2a5cec1c2f4903b1262520efa8a0448f2c5440a0d4be63a76ceab90dcc"
+  },
+  {
+   "id": "bio.mucus-layer",
+   "name": "Mucus layer",
+   "category": "biological",
+   "description": "Translucent double mucus blanket.",
+   "source": "biological/Anatomy.tsx",
+   "exports": [
+    "MucusLayer"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized meters",
+   "materials": [
+    "flesh-wall",
+    "mucus",
+    "bio-translucent"
+   ],
+   "reuse": "Anatomical / scientific explanation beats.",
+   "tags": [
+    "mucus",
+    "protective layer",
+    "stomach"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Anatomy.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "0aafde2a5cec1c2f4903b1262520efa8a0448f2c5440a0d4be63a76ceab90dcc"
+  },
+  {
+   "id": "bio.anatomical-tunnel",
+   "name": "Anatomical tunnel",
+   "category": "biological",
+   "description": "Pulsing organic tube with ribs; camera flies inside (use tunnelCenterline).",
+   "source": "biological/Anatomy.tsx",
+   "exports": [
+    "AnatomicalTunnel"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized meters",
+   "materials": [
+    "flesh-wall",
+    "mucus",
+    "bio-translucent"
+   ],
+   "reuse": "Anatomical / scientific explanation beats.",
+   "tags": [
+    "tunnel",
+    "esophagus",
+    "intestine",
+    "transition"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Anatomy.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "0aafde2a5cec1c2f4903b1262520efa8a0448f2c5440a0d4be63a76ceab90dcc"
+  },
+  {
+   "id": "bio.cell-cluster",
+   "name": "Cell cluster",
+   "category": "biological",
+   "description": "Instanced breathing epithelial cells.",
+   "source": "biological/Anatomy.tsx",
+   "exports": [
+    "CellCluster"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "stylized meters",
+   "materials": [
+    "flesh-wall",
+    "mucus",
+    "bio-translucent"
+   ],
+   "reuse": "Anatomical / scientific explanation beats.",
+   "tags": [
+    "cells",
+    "epithelium",
+    "tissue"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Anatomy.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "0aafde2a5cec1c2f4903b1262520efa8a0448f2c5440a0d4be63a76ceab90dcc"
+  },
+  {
+   "id": "bio.fluid-surface",
+   "name": "Fluid surface",
+   "category": "biological",
+   "description": "Rippling liquid plane (acid, broth, drink).",
+   "source": "biological/Fluid.tsx",
+   "exports": [
+    "FluidSurface"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Liquid transitions, culture vessels.",
+   "tags": [
+    "liquid",
+    "fluid",
+    "acid",
+    "surface"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "2cf3667269d2a089f4db12a0b090e8d231eeee368a05528ff4d7a354d4859354"
+  },
+  {
+   "id": "bio.bubbles",
+   "name": "Bubbles",
+   "category": "biological",
+   "description": "Instanced rising bubbles.",
+   "source": "biological/Fluid.tsx",
+   "exports": [
+    "Bubbles"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Liquid transitions, culture vessels.",
+   "tags": [
+    "bubbles",
+    "fizz",
+    "gas"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts"
+   ],
+   "sha256": "2cf3667269d2a089f4db12a0b090e8d231eeee368a05528ff4d7a354d4859354"
+  },
+  {
+   "id": "fx.dust-motes",
+   "name": "Dust motes",
+   "category": "particles",
+   "description": "Instanced additive specks catching light.",
+   "source": "particles/Particles.tsx",
+   "exports": [
+    "DustMotes"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Add to zones for depth; keep counts < 2000 per zone.",
+   "tags": [
+    "dust",
+    "particles",
+    "atmosphere"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "tex.procedural"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "particles/Particles.tsx",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "db9ffe1cd8db508a11a6d71f6f384029167cabb7c5ce87862285d71d00267c21"
+  },
+  {
+   "id": "fx.embers",
+   "name": "Embers",
+   "category": "particles",
+   "description": "Rising embers within a frame window.",
+   "source": "particles/Particles.tsx",
+   "exports": [
+    "Embers"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Add to zones for depth; keep counts < 2000 per zone.",
+   "tags": [
+    "embers",
+    "sparks",
+    "triumph"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "tex.procedural"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "particles/Particles.tsx",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "db9ffe1cd8db508a11a6d71f6f384029167cabb7c5ce87862285d71d00267c21"
+  },
+  {
+   "id": "fx.light-shaft",
+   "name": "Light shaft",
+   "category": "particles",
+   "description": "Fake volumetric cone with radial falloff.",
+   "source": "particles/Particles.tsx",
+   "exports": [
+    "LightShaft"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Add to zones for depth; keep counts < 2000 per zone.",
+   "tags": [
+    "volumetric",
+    "god rays",
+    "shaft",
+    "beam"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "tex.procedural"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "particles/Particles.tsx",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "db9ffe1cd8db508a11a6d71f6f384029167cabb7c5ce87862285d71d00267c21"
+  },
+  {
+   "id": "fx.haze-volume",
+   "name": "Haze volume",
+   "category": "particles",
+   "description": "Stacked additive haze sheets.",
+   "source": "particles/Particles.tsx",
+   "exports": [
+    "HazeVolume"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Add to zones for depth; keep counts < 2000 per zone.",
+   "tags": [
+    "haze",
+    "fog",
+    "atmosphere"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "tex.procedural"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "particles/Particles.tsx",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "db9ffe1cd8db508a11a6d71f6f384029167cabb7c5ce87862285d71d00267c21"
+  },
+  {
+   "id": "fx.particle-veil",
+   "name": "Particle veil",
+   "category": "particles",
+   "description": "Dense particle wall for particle transitions.",
+   "source": "particles/Particles.tsx",
+   "exports": [
+    "ParticleVeil"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Add to zones for depth; keep counts < 2000 per zone.",
+   "tags": [
+    "particles",
+    "veil",
+    "transition"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "tex.procedural"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "particles/Particles.tsx",
+    "textures/proceduralTextures.ts"
+   ],
+   "sha256": "db9ffe1cd8db508a11a6d71f6f384029167cabb7c5ce87862285d71d00267c21"
+  },
+  {
+   "id": "light.director",
+   "name": "Lighting director",
+   "category": "lighting",
+   "description": "Blends emotion presets across shot boundaries; drives fog/background/exposure; shadow frustum follows focus.",
+   "source": "lighting/LightingDirector.tsx",
+   "exports": [
+    "LightingDirector",
+    "lightingAt",
+    "blendPresets",
+    "LIGHTING_PRESETS"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Mounted once by Documentary.tsx; set shot.lighting in the shot plan.",
+   "tags": [
+    "lighting",
+    "mood",
+    "fog"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [
+    "core.math",
+    "core.time",
+    "light.presets-data"
+   ],
+   "files": [
+    "core/math.ts",
+    "core/time.ts",
+    "lighting/LightingDirector.tsx",
+    "lighting/lighting-presets.json"
+   ],
+   "sha256": "347873d93fa724c26f485bfa7b5b8a03fee5c471fdc65af929725100a3b584ab"
+  },
+  {
+   "id": "light.presets-data",
+   "name": "Lighting preset data",
+   "category": "lighting",
+   "description": "Emotion-driven lighting presets (listed as light.* entries).",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "json",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "Add presets here; never inline one-off global lights.",
+   "tags": [
+    "lighting",
+    "presets"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "lighting/lighting-presets.json"
+   ],
+   "sha256": "3696f000ba3f966e76a527e0d6f2d97389845ab1b2edb0007fb77b511193d34b"
+  },
+  {
+   "id": "light.hanging-lamp",
+   "name": "Hanging lamp",
+   "category": "lighting",
+   "description": "Industrial pendant with spot + shaft.",
+   "source": "lighting/Practicals.tsx",
+   "exports": [
+    "HangingLamp"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Practicals make lighting physically motivated.",
+   "tags": [
+    "lamp",
+    "pendant",
+    "practical"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "fx.dust-motes",
+    "mat.library"
+   ],
+   "files": [
+    "lighting/Practicals.tsx",
+    "materials/materials.ts",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "0b76224cb33bab8d702687d6bb7b569c0e8b798185a5ebeb422a85080be574da"
+  },
+  {
+   "id": "light.spot-pool",
+   "name": "Spot pool",
+   "category": "lighting",
+   "description": "Aimed spotlight pool to isolate a subject.",
+   "source": "lighting/Practicals.tsx",
+   "exports": [
+    "SpotPool"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Practicals make lighting physically motivated.",
+   "tags": [
+    "spotlight",
+    "isolation",
+    "practical"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "fx.dust-motes",
+    "mat.library"
+   ],
+   "files": [
+    "lighting/Practicals.tsx",
+    "materials/materials.ts",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "0b76224cb33bab8d702687d6bb7b569c0e8b798185a5ebeb422a85080be574da"
+  },
+  {
+   "id": "light.desk-lamp",
+   "name": "Desk lamp",
+   "category": "lighting",
+   "description": "Angular desk lamp with warm pool.",
+   "source": "lighting/Practicals.tsx",
+   "exports": [
+    "DeskLamp"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Practicals make lighting physically motivated.",
+   "tags": [
+    "lamp",
+    "desk",
+    "practical"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "fx.dust-motes",
+    "mat.library"
+   ],
+   "files": [
+    "lighting/Practicals.tsx",
+    "materials/materials.ts",
+    "particles/Particles.tsx"
+   ],
+   "sha256": "0b76224cb33bab8d702687d6bb7b569c0e8b798185a5ebeb422a85080be574da"
+  },
+  {
+   "id": "trans.lens-tunnel",
+   "name": "Lens tunnel",
+   "category": "transitions",
+   "description": "Optical-path ring tunnel for microscope dives.",
+   "source": "transitions/Transitions.tsx",
+   "exports": [
+    "LensTunnel"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "See transition-types.json recipes.",
+   "tags": [
+    "lens",
+    "microscope",
+    "tunnel",
+    "scale"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "bio.fluid-surface",
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "transitions/Transitions.tsx"
+   ],
+   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+  },
+  {
+   "id": "trans.scale-transform",
+   "name": "Scale transform",
+   "category": "transitions",
+   "description": "Exponential scale change of children over a frame window.",
+   "source": "transitions/Transitions.tsx",
+   "exports": [
+    "ScaleTransform"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "See transition-types.json recipes.",
+   "tags": [
+    "scale",
+    "zoom",
+    "transformation"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "bio.fluid-surface",
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "transitions/Transitions.tsx"
+   ],
+   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+  },
+  {
+   "id": "trans.assemble-blocks",
+   "name": "Assemble blocks",
+   "category": "transitions",
+   "description": "Staggered rising blocks \u2014 architectural morph.",
+   "source": "transitions/Transitions.tsx",
+   "exports": [
+    "AssembleBlocks"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "See transition-types.json recipes.",
+   "tags": [
+    "morph",
+    "assemble",
+    "architecture"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "bio.fluid-surface",
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "transitions/Transitions.tsx"
+   ],
+   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+  },
+  {
+   "id": "trans.material-morph",
+   "name": "Material morph slab",
+   "category": "transitions",
+   "description": "Slab whose material blends between presets.",
+   "source": "transitions/Transitions.tsx",
+   "exports": [
+    "MaterialMorphSlab"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "See transition-types.json recipes.",
+   "tags": [
+    "material",
+    "morph",
+    "transformation"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "bio.fluid-surface",
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "transitions/Transitions.tsx"
+   ],
+   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+  },
+  {
+   "id": "trans.liquid-portal",
+   "name": "Liquid portal",
+   "category": "transitions",
+   "description": "Fluid surface + volume to dive through.",
+   "source": "transitions/Transitions.tsx",
+   "exports": [
+    "LiquidPortal"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "See transition-types.json recipes.",
+   "tags": [
+    "liquid",
+    "dive",
+    "portal"
+   ],
+   "version": "1.0.0",
+   "required": false,
+   "dependencies": [
+    "bio.fluid-surface",
+    "core.math",
+    "core.time",
+    "mat.library"
+   ],
+   "files": [
+    "biological/Fluid.tsx",
+    "core/math.ts",
+    "core/time.ts",
+    "materials/materials.ts",
+    "transitions/Transitions.tsx"
+   ],
+   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+  },
+  {
+   "id": "trans.occlusion",
+   "name": "Occlusion overlay model",
+   "category": "transitions",
+   "description": "Camera-inside-occluder coverage for through-object transitions.",
+   "source": "transitions/occlusion.ts",
+   "exports": [
+    "occlusionAt"
+   ],
+   "format": "ts-module",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "Declare occluders in world-layout.json.",
+   "tags": [
+    "occlusion",
+    "through-object",
+    "wipe"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "transitions/occlusion.ts"
+   ],
+   "sha256": "bac408025a4c1800c90b08ce6b28af1a9b5579b18133501a720c49277c596ad4"
+  },
+  {
+   "id": "trans.catalogue",
+   "name": "Transition catalogue",
+   "category": "transitions",
+   "description": "15 spatial transition recipes.",
+   "source": "transitions/transition-types.json",
+   "exports": [],
+   "format": "json",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Shot transitionIn/Out must be a key of this file.",
+   "tags": [
+    "transition",
+    "catalogue"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "transitions/transition-types.json"
+   ],
+   "sha256": "90bbf331158c7537668f5119a4262cc906fb96054f41c5900712c6a7c1f14e8f"
+  },
+  {
+   "id": "cam.rig",
+   "name": "Camera rig",
+   "category": "camera-rigs",
+   "description": "Applies baked track to the R3F camera (sub-frame slerp).",
+   "source": "camera-rigs/CameraRig.tsx",
+   "exports": [
+    "CameraRig",
+    "sampleTrack"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Mounted once by Documentary.tsx.",
+   "tags": [
+    "camera",
+    "rig"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "camera-rigs/CameraRig.tsx"
+   ],
+   "sha256": "02856a1936323540c90331b7ab378a66e4b6b1b96c2e306754e02bf2127824a7"
+  },
+  {
+   "id": "cam.engine",
+   "name": "Continuous camera compiler",
+   "category": "camera-rigs",
+   "description": "Shot plan \u2192 one continuous baked camera track; continuity by construction.",
+   "source": "camera-rigs/engine/compile.ts",
+   "exports": [
+    "compileCameraTrack",
+    "AnchorResolver",
+    "ORBITAL_MOVES"
+   ],
+   "format": "ts-module",
+   "scale": "meters, degrees in specs",
+   "materials": [],
+   "reuse": "Run via project scripts/bake-camera.ts.",
+   "tags": [
+    "camera",
+    "spline",
+    "orbit",
+    "continuity"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [
+    "cam.vec",
+    "char.poses",
+    "core.math"
+   ],
+   "files": [
+    "camera-rigs/engine/compile.ts",
+    "camera-rigs/engine/vec.ts",
+    "characters/poses.ts",
+    "core/math.ts"
+   ],
+   "sha256": "2b81bad0d306502a9a5b5eecc845bf96873029dae20ed06ca34553fdf31b469a"
+  },
+  {
+   "id": "cam.vec",
+   "name": "Camera vector math",
+   "category": "camera-rigs",
+   "description": "Vectors, look quaternions, centripetal Catmull-Rom with arc-length parameterisation.",
+   "source": "camera-rigs/engine/vec.ts",
+   "exports": [
+    "ArcSpline",
+    "lookQuat"
+   ],
+   "format": "ts-module",
+   "scale": "n/a",
+   "materials": [],
+   "reuse": "Engine internal.",
+   "tags": [
+    "spline",
+    "catmull-rom",
+    "quaternion"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "camera-rigs/engine/vec.ts"
+   ],
+   "sha256": "10b625b620345c7a8e711957ff782642ed2428051a2013663bdb1b5c1b7c74f0"
+  },
+  {
+   "id": "cam.move-presets",
+   "name": "Camera move presets",
+   "category": "camera-rigs",
+   "description": "Named reusable camera moves (listed as cam.preset.*).",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "json",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "Reference with camera.preset in shots.",
+   "tags": [
+    "camera",
+    "presets"
+   ],
+   "version": "1.0.0",
+   "required": true,
+   "dependencies": [],
+   "files": [
+    "camera-rigs/move-presets.json"
+   ],
+   "sha256": "ee22710667606ab1abd50629360245060cf0204085fd70b5c8ae0504a6b163cc"
+  },
+  {
+   "id": "mat.concrete-rough",
+   "name": "Material: concrete-rough",
+   "category": "materials",
+   "description": "Material preset 'concrete-rough' \u2014 getMaterial('concrete-rough').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "concrete-rough"
+   ],
+   "reuse": "getMaterial('concrete-rough', overrides?)",
+   "tags": [
+    "material",
+    "concrete",
+    "rough"
+   ],
+   "version": "1.0.0",
+   "preset": "concrete-rough",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.concrete-dark",
+   "name": "Material: concrete-dark",
+   "category": "materials",
+   "description": "Material preset 'concrete-dark' \u2014 getMaterial('concrete-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "concrete-dark"
+   ],
+   "reuse": "getMaterial('concrete-dark', overrides?)",
+   "tags": [
+    "material",
+    "concrete",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "concrete-dark",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.concrete-red",
+   "name": "Material: concrete-red",
+   "category": "materials",
+   "description": "Material preset 'concrete-red' \u2014 getMaterial('concrete-red').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "concrete-red"
+   ],
+   "reuse": "getMaterial('concrete-red', overrides?)",
+   "tags": [
+    "material",
+    "concrete",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "concrete-red",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.metal-painted",
+   "name": "Material: metal-painted",
+   "category": "materials",
+   "description": "Material preset 'metal-painted' \u2014 getMaterial('metal-painted').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "metal-painted"
+   ],
+   "reuse": "getMaterial('metal-painted', overrides?)",
+   "tags": [
+    "material",
+    "metal",
+    "painted"
+   ],
+   "version": "1.0.0",
+   "preset": "metal-painted",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.metal-brushed",
+   "name": "Material: metal-brushed",
+   "category": "materials",
+   "description": "Material preset 'metal-brushed' \u2014 getMaterial('metal-brushed').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "metal-brushed"
+   ],
+   "reuse": "getMaterial('metal-brushed', overrides?)",
+   "tags": [
+    "material",
+    "metal",
+    "brushed"
+   ],
+   "version": "1.0.0",
+   "preset": "metal-brushed",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.metal-dark",
+   "name": "Material: metal-dark",
+   "category": "materials",
+   "description": "Material preset 'metal-dark' \u2014 getMaterial('metal-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "metal-dark"
+   ],
+   "reuse": "getMaterial('metal-dark', overrides?)",
+   "tags": [
+    "material",
+    "metal",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "metal-dark",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.glass",
+   "name": "Material: glass",
+   "category": "materials",
+   "description": "Material preset 'glass' \u2014 getMaterial('glass').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "glass"
+   ],
+   "reuse": "getMaterial('glass', overrides?)",
+   "tags": [
+    "material",
+    "glass"
+   ],
+   "version": "1.0.0",
+   "preset": "glass",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.glass-tinted-red",
+   "name": "Material: glass-tinted-red",
+   "category": "materials",
+   "description": "Material preset 'glass-tinted-red' \u2014 getMaterial('glass-tinted-red').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "glass-tinted-red"
+   ],
+   "reuse": "getMaterial('glass-tinted-red', overrides?)",
+   "tags": [
+    "material",
+    "glass",
+    "tinted",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "glass-tinted-red",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.bio-translucent",
+   "name": "Material: bio-translucent",
+   "category": "materials",
+   "description": "Material preset 'bio-translucent' \u2014 getMaterial('bio-translucent').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "bio-translucent"
+   ],
+   "reuse": "getMaterial('bio-translucent', overrides?)",
+   "tags": [
+    "material",
+    "bio",
+    "translucent"
+   ],
+   "version": "1.0.0",
+   "preset": "bio-translucent",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.mucus",
+   "name": "Material: mucus",
+   "category": "materials",
+   "description": "Material preset 'mucus' \u2014 getMaterial('mucus').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "mucus"
+   ],
+   "reuse": "getMaterial('mucus', overrides?)",
+   "tags": [
+    "material",
+    "mucus"
+   ],
+   "version": "1.0.0",
+   "preset": "mucus",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.flesh-wall",
+   "name": "Material: flesh-wall",
+   "category": "materials",
+   "description": "Material preset 'flesh-wall' \u2014 getMaterial('flesh-wall').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "flesh-wall"
+   ],
+   "reuse": "getMaterial('flesh-wall', overrides?)",
+   "tags": [
+    "material",
+    "flesh",
+    "wall"
+   ],
+   "version": "1.0.0",
+   "preset": "flesh-wall",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.bacteria-toxic",
+   "name": "Material: bacteria-toxic",
+   "category": "materials",
+   "description": "Material preset 'bacteria-toxic' \u2014 getMaterial('bacteria-toxic').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "bacteria-toxic"
+   ],
+   "reuse": "getMaterial('bacteria-toxic', overrides?)",
+   "tags": [
+    "material",
+    "bacteria",
+    "toxic"
+   ],
+   "version": "1.0.0",
+   "preset": "bacteria-toxic",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.matte-black",
+   "name": "Material: matte-black",
+   "category": "materials",
+   "description": "Material preset 'matte-black' \u2014 getMaterial('matte-black').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "matte-black"
+   ],
+   "reuse": "getMaterial('matte-black', overrides?)",
+   "tags": [
+    "material",
+    "matte",
+    "black"
+   ],
+   "version": "1.0.0",
+   "preset": "matte-black",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.red-dark",
+   "name": "Material: red-dark",
+   "category": "materials",
+   "description": "Material preset 'red-dark' \u2014 getMaterial('red-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "red-dark"
+   ],
+   "reuse": "getMaterial('red-dark', overrides?)",
+   "tags": [
+    "material",
+    "red",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "red-dark",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.red-lacquer",
+   "name": "Material: red-lacquer",
+   "category": "materials",
+   "description": "Material preset 'red-lacquer' \u2014 getMaterial('red-lacquer').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "red-lacquer"
+   ],
+   "reuse": "getMaterial('red-lacquer', overrides?)",
+   "tags": [
+    "material",
+    "red",
+    "lacquer"
+   ],
+   "version": "1.0.0",
+   "preset": "red-lacquer",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.emissive-red",
+   "name": "Material: emissive-red",
+   "category": "materials",
+   "description": "Material preset 'emissive-red' \u2014 getMaterial('emissive-red').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "emissive-red"
+   ],
+   "reuse": "getMaterial('emissive-red', overrides?)",
+   "tags": [
+    "material",
+    "emissive",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "emissive-red",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.emissive-toxic",
+   "name": "Material: emissive-toxic",
+   "category": "materials",
+   "description": "Material preset 'emissive-toxic' \u2014 getMaterial('emissive-toxic').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "emissive-toxic"
+   ],
+   "reuse": "getMaterial('emissive-toxic', overrides?)",
+   "tags": [
+    "material",
+    "emissive",
+    "toxic"
+   ],
+   "version": "1.0.0",
+   "preset": "emissive-toxic",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.emissive-gold",
+   "name": "Material: emissive-gold",
+   "category": "materials",
+   "description": "Material preset 'emissive-gold' \u2014 getMaterial('emissive-gold').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "emissive-gold"
+   ],
+   "reuse": "getMaterial('emissive-gold', overrides?)",
+   "tags": [
+    "material",
+    "emissive",
+    "gold"
+   ],
+   "version": "1.0.0",
+   "preset": "emissive-gold",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.emissive-white",
+   "name": "Material: emissive-white",
+   "category": "materials",
+   "description": "Material preset 'emissive-white' \u2014 getMaterial('emissive-white').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "emissive-white"
+   ],
+   "reuse": "getMaterial('emissive-white', overrides?)",
+   "tags": [
+    "material",
+    "emissive",
+    "white"
+   ],
+   "version": "1.0.0",
+   "preset": "emissive-white",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.gold-metal",
+   "name": "Material: gold-metal",
+   "category": "materials",
+   "description": "Material preset 'gold-metal' \u2014 getMaterial('gold-metal').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "gold-metal"
+   ],
+   "reuse": "getMaterial('gold-metal', overrides?)",
+   "tags": [
+    "material",
+    "gold",
+    "metal"
+   ],
+   "version": "1.0.0",
+   "preset": "gold-metal",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.fabric-labcoat",
+   "name": "Material: fabric-labcoat",
+   "category": "materials",
+   "description": "Material preset 'fabric-labcoat' \u2014 getMaterial('fabric-labcoat').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-labcoat"
+   ],
+   "reuse": "getMaterial('fabric-labcoat', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "labcoat"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-labcoat",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.fabric-suit-dark",
+   "name": "Material: fabric-suit-dark",
+   "category": "materials",
+   "description": "Material preset 'fabric-suit-dark' \u2014 getMaterial('fabric-suit-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-suit-dark"
+   ],
+   "reuse": "getMaterial('fabric-suit-dark', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "suit",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-suit-dark",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.fabric-suit-burgundy",
+   "name": "Material: fabric-suit-burgundy",
+   "category": "materials",
+   "description": "Material preset 'fabric-suit-burgundy' \u2014 getMaterial('fabric-suit-burgundy').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-suit-burgundy"
+   ],
+   "reuse": "getMaterial('fabric-suit-burgundy', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "suit",
+    "burgundy"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-suit-burgundy",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.skin-stylized",
+   "name": "Material: skin-stylized",
+   "category": "materials",
+   "description": "Material preset 'skin-stylized' \u2014 getMaterial('skin-stylized').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "skin-stylized"
+   ],
+   "reuse": "getMaterial('skin-stylized', overrides?)",
+   "tags": [
+    "material",
+    "skin",
+    "stylized"
+   ],
+   "version": "1.0.0",
+   "preset": "skin-stylized",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.skin-stylized-aged",
+   "name": "Material: skin-stylized-aged",
+   "category": "materials",
+   "description": "Material preset 'skin-stylized-aged' \u2014 getMaterial('skin-stylized-aged').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "skin-stylized-aged"
+   ],
+   "reuse": "getMaterial('skin-stylized-aged', overrides?)",
+   "tags": [
+    "material",
+    "skin",
+    "stylized",
+    "aged"
+   ],
+   "version": "1.0.0",
+   "preset": "skin-stylized-aged",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.hair-dark",
+   "name": "Material: hair-dark",
+   "category": "materials",
+   "description": "Material preset 'hair-dark' \u2014 getMaterial('hair-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "hair-dark"
+   ],
+   "reuse": "getMaterial('hair-dark', overrides?)",
+   "tags": [
+    "material",
+    "hair",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "hair-dark",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.hair-grey",
+   "name": "Material: hair-grey",
+   "category": "materials",
+   "description": "Material preset 'hair-grey' \u2014 getMaterial('hair-grey').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "hair-grey"
+   ],
+   "reuse": "getMaterial('hair-grey', overrides?)",
+   "tags": [
+    "material",
+    "hair",
+    "grey"
+   ],
+   "version": "1.0.0",
+   "preset": "hair-grey",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.paper",
+   "name": "Material: paper",
+   "category": "materials",
+   "description": "Material preset 'paper' \u2014 getMaterial('paper').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "paper"
+   ],
+   "reuse": "getMaterial('paper', overrides?)",
+   "tags": [
+    "material",
+    "paper"
+   ],
+   "version": "1.0.0",
+   "preset": "paper",
+   "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "light.mystery",
+   "name": "Lighting: mystery",
+   "category": "lighting",
+   "description": "Deep red backlight, limited visibility, heavy haze.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"mystery\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "mystery"
+   ],
+   "version": "1.0.0",
+   "preset": "mystery",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.discovery",
+   "name": "Lighting: discovery",
+   "category": "lighting",
+   "description": "Controlled toxic-green emissive focus within red darkness.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"discovery\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "discovery"
+   ],
+   "version": "1.0.0",
+   "preset": "discovery",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.rejection",
+   "name": "Lighting: rejection",
+   "category": "lighting",
+   "description": "Cold, oppressive concrete, hard top-down shadows, desaturated.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"rejection\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "rejection"
+   ],
+   "version": "1.0.0",
+   "preset": "rejection",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.experiment",
+   "name": "Lighting: experiment",
+   "category": "lighting",
+   "description": "Low-key industrial: focused highlights on work surfaces, deep falloff.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"experiment\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "experiment"
+   ],
+   "version": "1.0.0",
+   "preset": "experiment",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.explanation",
+   "name": "Lighting: explanation",
+   "category": "lighting",
+   "description": "Readable biological lighting: even key, controlled red/green contrast.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"explanation\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "explanation"
+   ],
+   "version": "1.0.0",
+   "preset": "explanation",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.triumph",
+   "name": "Lighting: triumph",
+   "category": "lighting",
+   "description": "Warm gold key, golden haze, lifted shadows.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"triumph\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "triumph"
+   ],
+   "version": "1.0.0",
+   "preset": "triumph",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.punchline",
+   "name": "Lighting: punchline",
+   "category": "lighting",
+   "description": "Dramatic return to deep crimson and black. High contrast, single rim.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"punchline\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "punchline"
+   ],
+   "version": "1.0.0",
+   "preset": "punchline",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.industrial-red",
+   "name": "Lighting: industrial-red",
+   "category": "lighting",
+   "description": "Dark red industrial base lighting for corridors and halls.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"industrial-red\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "industrial",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "industrial-red",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.crimson-rim",
+   "name": "Lighting: crimson-rim",
+   "category": "lighting",
+   "description": "Character-isolating crimson rim against black.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"crimson-rim\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "crimson",
+    "rim"
+   ],
+   "version": "1.0.0",
+   "preset": "crimson-rim",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.low-key-lab",
+   "name": "Lighting: low-key-lab",
+   "category": "lighting",
+   "description": "Low-key laboratory: pools of light on benches, black surroundings.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"low-key-lab\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "low",
+    "key",
+    "lab"
+   ],
+   "version": "1.0.0",
+   "preset": "low-key-lab",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.microscopic-green",
+   "name": "Lighting: microscopic-green",
+   "category": "lighting",
+   "description": "Microscopic world: toxic green subjects, red tissue, dense medium.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"microscopic-green\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "microscopic",
+    "green"
+   ],
+   "version": "1.0.0",
+   "preset": "microscopic-green",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.volumetric-corridor",
+   "name": "Lighting: volumetric-corridor",
+   "category": "lighting",
+   "description": "Corridor with strong side shafts through haze.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"volumetric-corridor\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "volumetric",
+    "corridor"
+   ],
+   "version": "1.0.0",
+   "preset": "volumetric-corridor",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.golden-award",
+   "name": "Lighting: golden-award",
+   "category": "lighting",
+   "description": "Golden award reveal: top spot, gold bounce, black surround.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"golden-award\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "golden",
+    "award"
+   ],
+   "version": "1.0.0",
+   "preset": "golden-award",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "light.high-contrast-character",
+   "name": "Lighting: high-contrast-character",
+   "category": "lighting",
+   "description": "Hard single-source key from 3/4 high side + red rim. Portrait / orbit shots.",
+   "source": "lighting/lighting-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "three.js physical units",
+   "materials": [],
+   "reuse": "shot.lighting = \"high-contrast-character\"",
+   "tags": [
+    "lighting",
+    "mood",
+    "high",
+    "contrast",
+    "character"
+   ],
+   "version": "1.0.0",
+   "preset": "high-contrast-character",
+   "history": [],
+   "dependencies": [
+    "light.presets-data"
+   ]
+  },
+  {
+   "id": "cam.preset.hero-orbit",
+   "name": "Camera move: hero-orbit",
+   "category": "camera-rigs",
+   "description": "Introduce a character with weight: slow 3/4 orbit at eye level.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"hero-orbit\", ...}",
+   "tags": [
+    "camera",
+    "orbit",
+    "hero",
+    "orbit"
+   ],
+   "version": "1.0.0",
+   "preset": "hero-orbit",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.portrait-revolve",
+   "name": "Camera move: portrait-revolve",
+   "category": "camera-rigs",
+   "description": "Intimate face study while a key idea lands.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"portrait-revolve\", ...}",
+   "tags": [
+    "camera",
+    "orbit",
+    "portrait",
+    "revolve"
+   ],
+   "version": "1.0.0",
+   "preset": "portrait-revolve",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.object-inspection",
+   "name": "Camera move: object-inspection",
+   "category": "camera-rigs",
+   "description": "Reveal an object's form (microscope, award, document).",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"object-inspection\", ...}",
+   "tags": [
+    "camera",
+    "orbit",
+    "object",
+    "inspection"
+   ],
+   "version": "1.0.0",
+   "preset": "object-inspection",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.monument-revolve",
+   "name": "Camera move: monument-revolve",
+   "category": "camera-rigs",
+   "description": "Establish scale of an architectural landmark.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"monument-revolve\", ...}",
+   "tags": [
+    "camera",
+    "orbit",
+    "monument",
+    "revolve"
+   ],
+   "version": "1.0.0",
+   "preset": "monument-revolve",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.rising-spiral",
+   "name": "Camera move: rising-spiral",
+   "category": "camera-rigs",
+   "description": "Escalation / reveal of a system or crowd.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"rising-spiral\", ...}",
+   "tags": [
+    "camera",
+    "spiral",
+    "rising",
+    "spiral"
+   ],
+   "version": "1.0.0",
+   "preset": "rising-spiral",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.descending-spiral",
+   "name": "Camera move: descending-spiral",
+   "category": "camera-rigs",
+   "description": "Descend into a problem; tighten focus.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"descending-spiral\", ...}",
+   "tags": [
+    "camera",
+    "spiral",
+    "descending",
+    "spiral"
+   ],
+   "version": "1.0.0",
+   "preset": "descending-spiral",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.slow-push",
+   "name": "Camera move: slow-push",
+   "category": "camera-rigs",
+   "description": "Growing tension / attention on a subject.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"slow-push\", ...}",
+   "tags": [
+    "camera",
+    "dolly",
+    "slow",
+    "push"
+   ],
+   "version": "1.0.0",
+   "preset": "slow-push",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.pull-reveal",
+   "name": "Camera move: pull-reveal",
+   "category": "camera-rigs",
+   "description": "Pull back to reveal context or isolation.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"pull-reveal\", ...}",
+   "tags": [
+    "camera",
+    "dolly",
+    "pull",
+    "reveal"
+   ],
+   "version": "1.0.0",
+   "preset": "pull-reveal",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.crane-up-reveal",
+   "name": "Camera move: crane-up-reveal",
+   "category": "camera-rigs",
+   "description": "Rise above a scene to reveal its geography.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"crane-up-reveal\", ...}",
+   "tags": [
+    "camera",
+    "crane",
+    "crane",
+    "up",
+    "reveal"
+   ],
+   "version": "1.0.0",
+   "preset": "crane-up-reveal",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.crane-down-settle",
+   "name": "Camera move: crane-down-settle",
+   "category": "camera-rigs",
+   "description": "Settle into a scene from above.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"crane-down-settle\", ...}",
+   "tags": [
+    "camera",
+    "crane",
+    "crane",
+    "down",
+    "settle"
+   ],
+   "version": "1.0.0",
+   "preset": "crane-down-settle",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.lateral-track",
+   "name": "Camera move: lateral-track",
+   "category": "camera-rigs",
+   "description": "Parallax past foreground pillars; occlusion wipes.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"lateral-track\", ...}",
+   "tags": [
+    "camera",
+    "track",
+    "lateral",
+    "track"
+   ],
+   "version": "1.0.0",
+   "preset": "lateral-track",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.corridor-glide",
+   "name": "Camera move: corridor-glide",
+   "category": "camera-rigs",
+   "description": "Journey / passage of time through architecture.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"corridor-glide\", ...}",
+   "tags": [
+    "camera",
+    "travel",
+    "corridor",
+    "glide"
+   ],
+   "version": "1.0.0",
+   "preset": "corridor-glide",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.lens-dive",
+   "name": "Camera move: lens-dive",
+   "category": "camera-rigs",
+   "description": "Microscope / through-object transition.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"lens-dive\", ...}",
+   "tags": [
+    "camera",
+    "travel",
+    "lens",
+    "dive"
+   ],
+   "version": "1.0.0",
+   "preset": "lens-dive",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.dutch-drift",
+   "name": "Camera move: dutch-drift",
+   "category": "camera-rigs",
+   "description": "Unease, instability, rejection.",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"dutch-drift\", ...}",
+   "tags": [
+    "camera",
+    "roll",
+    "dutch",
+    "drift"
+   ],
+   "version": "1.0.0",
+   "preset": "dutch-drift",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "cam.preset.focus-breath",
+   "name": "Camera move: focus-breath",
+   "category": "camera-rigs",
+   "description": "Quiet emphasis without big motion (still moves).",
+   "source": "camera-rigs/move-presets.json",
+   "exports": [],
+   "format": "preset",
+   "scale": "meters/degrees",
+   "materials": [],
+   "reuse": "camera: {\"preset\": \"focus-breath\", ...}",
+   "tags": [
+    "camera",
+    "focus-pull",
+    "focus",
+    "breath"
+   ],
+   "version": "1.0.0",
+   "preset": "focus-breath",
+   "history": [],
+   "dependencies": [
+    "cam.move-presets"
+   ]
+  },
+  {
+   "id": "char.preset.base-human",
+   "name": "Character: Base human (neutral)",
+   "category": "characters",
+   "description": "Character identity preset 'base-human' (Base human (neutral)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"base-human\" (age variant: \"base-human@older\")",
+   "tags": [
+    "character",
+    "base",
+    "human",
+    "base",
+    "human",
+    "(neutral)"
+   ],
+   "version": "1.0.0",
+   "preset": "base-human",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.male-adult",
+   "name": "Character: Male adult",
+   "category": "characters",
+   "description": "Character identity preset 'male-adult' (Male adult).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"male-adult\" (age variant: \"male-adult@older\")",
+   "tags": [
+    "character",
+    "male",
+    "adult",
+    "male",
+    "adult"
+   ],
+   "version": "1.0.0",
+   "preset": "male-adult",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.male-broad",
+   "name": "Character: Male, broad build",
+   "category": "characters",
+   "description": "Character identity preset 'male-broad' (Male, broad build).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"male-broad\" (age variant: \"male-broad@older\")",
+   "tags": [
+    "character",
+    "male",
+    "broad",
+    "male,",
+    "broad",
+    "build"
+   ],
+   "version": "1.0.0",
+   "preset": "male-broad",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.female-adult",
+   "name": "Character: Female adult",
+   "category": "characters",
+   "description": "Character identity preset 'female-adult' (Female adult).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"female-adult\" (age variant: \"female-adult@older\")",
+   "tags": [
+    "character",
+    "female",
+    "adult",
+    "female",
+    "adult"
+   ],
+   "version": "1.0.0",
+   "preset": "female-adult",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.female-bun",
+   "name": "Character: Female, hair in bun",
+   "category": "characters",
+   "description": "Character identity preset 'female-bun' (Female, hair in bun).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"female-bun\" (age variant: \"female-bun@older\")",
+   "tags": [
+    "character",
+    "female",
+    "bun",
+    "female,",
+    "hair",
+    "in",
+    "bun"
+   ],
+   "version": "1.0.0",
+   "preset": "female-bun",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.older-male",
+   "name": "Character: Older male",
+   "category": "characters",
+   "description": "Character identity preset 'older-male' (Older male).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"older-male\" (age variant: \"older-male@older\")",
+   "tags": [
+    "character",
+    "older",
+    "male",
+    "older",
+    "male"
+   ],
+   "version": "1.0.0",
+   "preset": "older-male",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.older-female",
+   "name": "Character: Older female",
+   "category": "characters",
+   "description": "Character identity preset 'older-female' (Older female).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"older-female\" (age variant: \"older-female@older\")",
+   "tags": [
+    "character",
+    "older",
+    "female",
+    "older",
+    "female"
+   ],
+   "version": "1.0.0",
+   "preset": "older-female",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.scientist",
+   "name": "Character: Scientist (lab coat, glasses)",
+   "category": "characters",
+   "description": "Character identity preset 'scientist' (Scientist (lab coat, glasses)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"scientist\" (age variant: \"scientist@older\")",
+   "tags": [
+    "character",
+    "scientist",
+    "scientist",
+    "(lab",
+    "coat,",
+    "glasses)"
+   ],
+   "version": "1.0.0",
+   "preset": "scientist",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.scientist-female",
+   "name": "Character: Scientist (female)",
+   "category": "characters",
+   "description": "Character identity preset 'scientist-female' (Scientist (female)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"scientist-female\" (age variant: \"scientist-female@older\")",
+   "tags": [
+    "character",
+    "scientist",
+    "female",
+    "scientist",
+    "(female)"
+   ],
+   "version": "1.0.0",
+   "preset": "scientist-female",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.doctor",
+   "name": "Character: Doctor (lab coat, stethoscope)",
+   "category": "characters",
+   "description": "Character identity preset 'doctor' (Doctor (lab coat, stethoscope)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"doctor\" (age variant: \"doctor@older\")",
+   "tags": [
+    "character",
+    "doctor",
+    "doctor",
+    "(lab",
+    "coat,",
+    "stethoscope)"
+   ],
+   "version": "1.0.0",
+   "preset": "doctor",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.doctor-female",
+   "name": "Character: Doctor (female)",
+   "category": "characters",
+   "description": "Character identity preset 'doctor-female' (Doctor (female)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"doctor-female\" (age variant: \"doctor-female@older\")",
+   "tags": [
+    "character",
+    "doctor",
+    "female",
+    "doctor",
+    "(female)"
+   ],
+   "version": "1.0.0",
+   "preset": "doctor-female",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.researcher",
+   "name": "Character: Researcher (sweater, badge)",
+   "category": "characters",
+   "description": "Character identity preset 'researcher' (Researcher (sweater, badge)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"researcher\" (age variant: \"researcher@older\")",
+   "tags": [
+    "character",
+    "researcher",
+    "researcher",
+    "(sweater,",
+    "badge)"
+   ],
+   "version": "1.0.0",
+   "preset": "researcher",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.surgeon",
+   "name": "Character: Surgeon (scrubs, mask)",
+   "category": "characters",
+   "description": "Character identity preset 'surgeon' (Surgeon (scrubs, mask)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"surgeon\" (age variant: \"surgeon@older\")",
+   "tags": [
+    "character",
+    "surgeon",
+    "surgeon",
+    "(scrubs,",
+    "mask)"
+   ],
+   "version": "1.0.0",
+   "preset": "surgeon",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.audience-member",
+   "name": "Character: Conference attendee",
+   "category": "characters",
+   "description": "Character identity preset 'audience-member' (Conference attendee).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"audience-member\" (age variant: \"audience-member@older\")",
+   "tags": [
+    "character",
+    "audience",
+    "member",
+    "conference",
+    "attendee"
+   ],
+   "version": "1.0.0",
+   "preset": "audience-member",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.background-figure",
+   "name": "Character: Background silhouette",
+   "category": "characters",
+   "description": "Character identity preset 'background-figure' (Background silhouette).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"background-figure\" (age variant: \"background-figure@older\")",
+   "tags": [
+    "character",
+    "background",
+    "figure",
+    "background",
+    "silhouette"
+   ],
+   "version": "1.0.0",
+   "preset": "background-figure",
+   "history": [],
+   "dependencies": [
+    "char.presets"
+   ]
+  }
+ ],
+ "indexedAt": "2026-11-19T11:55:26+00:00"
+}

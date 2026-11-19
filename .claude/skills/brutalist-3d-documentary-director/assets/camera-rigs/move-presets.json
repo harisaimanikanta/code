@@ -1,0 +1,20 @@
+{
+  "$comment": "Named, reusable camera move snippets. In a shot's camera block use {\"preset\": \"hero-orbit\", \"target\": \"doctor.head\"}; explicit keys override preset keys. Distances in meters, angles in degrees.",
+  "presets": {
+    "hero-orbit": { "move": "orbit", "radius": 2.6, "sweepDeg": 75, "height": 0.1, "fov": 32, "lead": 0.3, "purpose": "Introduce a character with weight: slow 3/4 orbit at eye level." },
+    "portrait-revolve": { "move": "orbit", "radius": 1.4, "sweepDeg": 140, "height": 0.05, "fov": 28, "lead": 0.25, "purpose": "Intimate face study while a key idea lands." },
+    "object-inspection": { "move": "orbit", "radius": 0.9, "sweepDeg": 90, "height": 0.35, "fov": 30, "lead": 0.3, "purpose": "Reveal an object's form (microscope, award, document)." },
+    "monument-revolve": { "move": "orbit", "radius": 14, "sweepDeg": 60, "height": 3, "fov": 38, "lead": 0.35, "purpose": "Establish scale of an architectural landmark." },
+    "rising-spiral": { "move": "spiral", "radius": 4, "radiusEnd": 7, "sweepDeg": 200, "height": 0.5, "heightEnd": 6, "fov": 36, "purpose": "Escalation / reveal of a system or crowd." },
+    "descending-spiral": { "move": "spiral", "radius": 7, "radiusEnd": 3, "sweepDeg": 160, "height": 6, "heightEnd": 1, "fov": 34, "purpose": "Descend into a problem; tighten focus." },
+    "slow-push": { "move": "dolly", "distance": 2.5, "fov": 35, "purpose": "Growing tension / attention on a subject." },
+    "pull-reveal": { "move": "dolly", "distance": -5, "fov": 40, "purpose": "Pull back to reveal context or isolation." },
+    "crane-up-reveal": { "move": "crane", "distance": 5, "forward": 1.5, "fov": 38, "purpose": "Rise above a scene to reveal its geography." },
+    "crane-down-settle": { "move": "crane", "distance": -3, "forward": 1, "fov": 34, "purpose": "Settle into a scene from above." },
+    "lateral-track": { "move": "track", "distance": 4, "fov": 35, "purpose": "Parallax past foreground pillars; occlusion wipes." },
+    "corridor-glide": { "move": "travel", "lookAlongPath": true, "fov": 42, "purpose": "Journey / passage of time through architecture." },
+    "lens-dive": { "move": "travel", "lookAlongPath": true, "fov": 50, "purpose": "Microscope / through-object transition." },
+    "dutch-drift": { "move": "roll", "rollDeg": 8, "drift": 0.6, "purpose": "Unease, instability, rejection." },
+    "focus-breath": { "move": "focus-pull", "fovEnd": 28, "drift": 0.4, "purpose": "Quiet emphasis without big motion (still moves)." }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$comment": "Component-local named anchors (meters, at scale 1, before entity rotation). Referenced as '<entityId>.<anchor>' in shot-plan camera specs. Keep in sync when a component's geometry changes (bump its version).",
+  "components": {
+    "Laboratory": { "center": [0, 1.2, 0], "bench": [0, 0.95, 0], "microscope": [0.4, 1.15, 0], "microscopeEyepiece": [0.4, 1.47, 0.11], "microscopeObjective": [0.4, 1.19, -0.02], "door": [0, 1.6, 7], "shelves": [-5.5, 1.5, -3], "flask": [-0.6, 1.05, 0.1] },
+    "ConferenceHall": { "stage": [0, 1.0, -6], "lectern": [0, 1.9, -5.4], "screen": [0, 4.5, -10.4], "audience": [0, 1.5, 3], "aisle": [0, 1.6, 9], "door": [0, 2, 12] },
+    "ConcreteOffice": { "desk": [0, 0.8, -1], "chair": [0, 1.2, 0], "window": [0, 2.9, -3.8], "papers": [0.3, 0.8, -1] },
+    "AwardHall": { "plinth": [0, 1.2, 0], "above": [0, 6, 0], "entrance": [0, 1.7, 14] },
+    "MicroscopicWorld": { "surface": [0, 1, 0], "swarm": [0, 2.6, 0], "entry": [0, 7, 14] },
+    "ArchiveCorridor": { "entry": [0, 1.7, 0], "mid": [0, 1.7, -20], "exit": [0, 1.7, -40] },
+    "BrutalistCorridor": { "entry": [0, 1.7, 0], "mid": [0, 1.7, -20], "exit": [0, 1.7, -40] },
+    "UndergroundPassage": { "entry": [0, 1.6, 0], "exit": [0, 1.6, -30] },
+    "MonumentalRoom": { "center": [0, 2, 0] },
+    "Microscope": { "eyepiece": [0, 0.52, 0.11], "objective": [0, 0.27, -0.02], "stage": [0, 0.22, -0.02], "center": [0, 0.3, 0] },
+    "LensTunnel": { "entry": [0, 0, 0], "mid": [0, 0, -10], "exit": [0, 0, -20] },
+    "AwardPlinth": { "top": [0, 1.25, 0] },
+    "Doorway": { "center": [0, 2, 0], "before": [0, 1.7, 3], "after": [0, 1.7, -3] },
+    "Monolith": { "center": [0, 3, 0], "top": [0, 7, 0] },
+    "Figure": { "head": [0, 1.65, 0], "face": [0, 1.63, 0.12], "chest": [0, 1.35, 0], "hands": [0, 1.0, 0.15], "feet": [0, 0.1, 0], "shoulderR": [-0.22, 1.45, 0], "shoulderL": [0.22, 1.45, 0] }
+  }
+}

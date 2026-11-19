@@ -1,0 +1,6 @@
+# Fact check — <title>
+| # | Claim in narration | Status (established / contested / uncertain / metaphor) | Basis / source | Visual treatment |
+|---|---|---|---|---|
+
+Discrepancies between script and audio (from analysis/transcript.json): …
+Claims flagged to the user (narration not changed): …
