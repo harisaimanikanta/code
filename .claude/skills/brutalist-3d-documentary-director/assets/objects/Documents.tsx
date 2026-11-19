@@ -1,6 +1,9 @@
 // Paper-based objects: single paper, stacks, scientific journal, floating/orbiting pages, stamp of rejection.
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
+import { bevelBox } from '../core/geometry';
+
+const bb = (v: [number, number, number] | number[]) => bevelBox(v[0], v[1], v[2]);
 import { getMaterial } from '../materials/materials';
 import { envelope, fbm1, rng } from '../core/math';
 import { useAssetTime } from '../core/time';
@@ -32,9 +35,9 @@ export function Journal({ open = false, position, rotation, scale = 1 }: P & { o
   if (!open) {
     return (
       <group position={position} rotation={rotation} scale={scale}>
-        <mesh geometry={box} material={getMaterial('red-dark')} position={[0, 0.012, 0]} scale={[0.22, 0.024, 0.29]} castShadow />
-        <mesh geometry={box} material={getMaterial('paper')} position={[0.004, 0.012, 0]} scale={[0.214, 0.02, 0.284]} />
-        <mesh geometry={box} material={getMaterial('emissive-gold', { emissiveIntensity: 0.4 })} position={[0, 0.0245, -0.06]} scale={[0.14, 0.001, 0.02]} />
+        <mesh geometry={bb([0.22, 0.024, 0.29])} material={getMaterial('red-dark')} position={[0, 0.012, 0]} castShadow />
+        <mesh geometry={bb([0.214, 0.02, 0.284])} material={getMaterial('paper')} position={[0.004, 0.012, 0]} />
+        <mesh geometry={bb([0.14, 0.001, 0.02])} material={getMaterial('emissive-gold', { emissiveIntensity: 0.4 })} position={[0, 0.0245, -0.06]} />
       </group>
     );
   }
@@ -42,7 +45,7 @@ export function Journal({ open = false, position, rotation, scale = 1 }: P & { o
     <group position={position} rotation={rotation} scale={scale}>
       {[-1, 1].map((s) => (
         <group key={s} rotation={[0, 0, s * -0.08]}>
-          <mesh geometry={box} material={getMaterial('red-dark')} position={[s * 0.11, 0.004, 0]} scale={[0.22, 0.006, 0.29]} castShadow />
+          <mesh geometry={bb([0.22, 0.006, 0.29])} material={getMaterial('red-dark')} position={[s * 0.11, 0.004, 0]} castShadow />
           <mesh geometry={plane} material={getMaterial('paper')} position={[s * 0.11, 0.0075, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[0.2, 0.27, 1]} />
         </group>
       ))}
@@ -77,7 +80,7 @@ export function RejectionStamp({ at = 0, position, rotation, scale = 1, frame }:
   if (f < at - 12) return null;
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('emissive-red', { emissiveIntensity: 1.4 })} position={[0, 0.003 + drop * 0.3, 0]} rotation={[0, 0.35, 0]} scale={[0.17, 0.002, 0.04]} />
+      <mesh geometry={bb([0.17, 0.002, 0.04])} material={getMaterial('emissive-red', { emissiveIntensity: 1.4 })} position={[0, 0.003 + drop * 0.3, 0]} rotation={[0, 0.35, 0]} />
     </group>
   );
 }

@@ -23,7 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _common import Report, SKILL_DIR, load_json  # noqa: E402
 
 REQUIRED = ["id", "name", "category", "description", "source", "exports", "format", "scale", "materials", "dependencies", "reuse", "version", "tags"]
-CATEGORIES = {"core", "characters", "environments", "architecture", "objects", "materials", "textures", "lighting", "particles", "biological", "props", "camera-rigs", "transitions"}
+CATEGORIES = {"core", "rendering", "characters", "environments", "architecture", "objects", "materials", "textures", "lighting", "particles", "biological", "props", "camera-rigs", "transitions"}
 IMPORT_RE = re.compile(r"""(?:import|export)\s+(?:[^'"]*?\s+from\s+)?['"](\.{1,2}/[^'"]+)['"]""")
 EXPORT_RE = re.compile(r"export\s+(?:async\s+)?(?:function|const|class|let)\s+([A-Za-z0-9_]+)")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")

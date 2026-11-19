@@ -2,6 +2,9 @@
 // The Microscope exposes its eyepiece and objective world-offsets (MICROSCOPE_ANCHORS) for lens fly-through transitions.
 import React from 'react';
 import * as THREE from 'three';
+import { bevelBox } from '../core/geometry';
+
+const bb = (v: [number, number, number] | number[]) => bevelBox(v[0], v[1], v[2]);
 import { getMaterial } from '../materials/materials';
 import { useAssetTime } from '../core/time';
 
@@ -21,10 +24,10 @@ const cyl = (rt: number, rb: number, h: number, seg = 10, open = false) => {
 export function LabTable({ length = 3, depth = 1.1, position, rotation, scale = 1 }: P & { length?: number; depth?: number }) {
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('metal-dark')} position={[0, 0.9, 0]} scale={[length, 0.06, depth]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[-length / 2 + 0.35, 0.44, 0]} scale={[0.6, 0.88, depth * 0.9]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[length / 2 - 0.35, 0.44, 0]} scale={[0.6, 0.88, depth * 0.9]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('emissive-red', { emissiveIntensity: 0.8 })} position={[0, 0.86, depth / 2 + 0.005]} scale={[length * 0.9, 0.012, 0.01]} />
+      <mesh geometry={bb([length, 0.06, depth])} material={getMaterial('metal-dark')} position={[0, 0.9, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.6, 0.88, depth * 0.9])} material={getMaterial('concrete-dark')} position={[-length / 2 + 0.35, 0.44, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.6, 0.88, depth * 0.9])} material={getMaterial('concrete-dark')} position={[length / 2 - 0.35, 0.44, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([length * 0.9, 0.012, 0.01])} material={getMaterial('emissive-red', { emissiveIntensity: 0.8 })} position={[0, 0.86, depth / 2 + 0.005]} />
     </group>
   );
 }
@@ -63,8 +66,8 @@ export function PetriDish({ colonies = 9, position, rotation, scale = 1 }: P & {
 export function SpecimenRack({ tubes = 6, position, rotation, scale = 1 }: P & { tubes?: number }) {
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('metal-painted')} position={[0, 0.06, 0]} scale={[tubes * 0.04 + 0.04, 0.02, 0.08]} />
-      <mesh geometry={box} material={getMaterial('metal-painted')} position={[0, 0.005, 0]} scale={[tubes * 0.04 + 0.04, 0.01, 0.08]} />
+      <mesh geometry={bb([tubes * 0.04 + 0.04, 0.02, 0.08])} material={getMaterial('metal-painted')} position={[0, 0.06, 0]} />
+      <mesh geometry={bb([tubes * 0.04 + 0.04, 0.01, 0.08])} material={getMaterial('metal-painted')} position={[0, 0.005, 0]} />
       {Array.from({ length: tubes }, (_, i) => (
         <GlassContainer key={i} kind="cylinder" fill={0.3 + (i % 3) * 0.2} glow={i % 3 === 1} position={[-tubes * 0.02 + 0.02 + i * 0.04, 0.0, 0]} scale={0.45} />
       ))}
@@ -86,9 +89,9 @@ export function Microscope({ position, rotation, scale = 1, focusTurn = 0, lensG
   const dark = getMaterial('metal-dark');
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={dark} position={[0, 0.025, 0]} scale={[0.22, 0.05, 0.28]} castShadow receiveShadow />
-      <mesh geometry={box} material={metal} position={[0, 0.2, 0.08]} rotation={[-0.25, 0, 0]} scale={[0.06, 0.34, 0.07]} castShadow />
-      <mesh geometry={box} material={dark} position={[0, 0.21, -0.02]} scale={[0.16, 0.015, 0.14]} castShadow />
+      <mesh geometry={bb([0.22, 0.05, 0.28])} material={dark} position={[0, 0.025, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.06, 0.34, 0.07])} material={metal} position={[0, 0.2, 0.08]} rotation={[-0.25, 0, 0]} castShadow />
+      <mesh geometry={bb([0.16, 0.015, 0.14])} material={dark} position={[0, 0.21, -0.02]} castShadow />
       <mesh geometry={cyl(0.012, 0.012, 0.025, 10)} material={getMaterial('emissive-toxic', { emissiveIntensity: lensGlow * 2 })} position={[0, 0.2, -0.02]} />
       {/* body tube angled toward the viewer */}
       <group position={[0, 0.38, 0.03]} rotation={[0.45, 0, 0]}>

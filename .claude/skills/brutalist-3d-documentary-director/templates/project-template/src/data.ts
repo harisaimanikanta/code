@@ -18,7 +18,7 @@ export interface ProductionConfig {
   lighting: { blendFrames: number };
   style: { letterbox: number; grainScale: number };
   subtitles: { enabled: boolean; wordHighlight: boolean; fontFamily: string; maxCharsPerLine: number; safeMarginPct: number };
-  render: { shadows: boolean; antialias: boolean };
+  render: { shadows: boolean; antialias: boolean; post?: 'off' | 'draft' | 'preview' | 'final' };
 }
 
 export interface WorldEntity {
@@ -47,7 +47,25 @@ export const config = configJson as unknown as ProductionConfig;
 export const layout = layoutJson as unknown as WorldLayout;
 export const track = trackJson as unknown as BakedTrack;
 export const subtitles = (subtitlesJson as unknown as { cues: SubtitleCue[] }).cues;
-export const shotPlan = shotPlanJson as unknown as { shots: { id: string; startFrame: number; endFrame: number; lighting?: string }[] };
+export interface ShotPost { dof?: number; bloom?: number; bloomThreshold?: number; ao?: number; contrast?: number; saturation?: number; vignette?: number; grain?: number }
+export const shotPlan = shotPlanJson as unknown as { shots: { id: string; startFrame: number; endFrame: number; lighting?: string; post?: ShotPost }[] };
+
+/** Per-shot post overrides, cross-faded over 24 frames at shot boundaries (numeric keys only). */
+export function postAt(frame: number): ShotPost {
+  const shots = shotPlan.shots;
+  const i = shots.findIndex((s) => frame >= s.startFrame && frame < s.endFrame);
+  if (i < 0) return {};
+  const cur = shots[i].post ?? {};
+  const prev = i > 0 ? shots[i - 1].post ?? {} : {};
+  const k = Math.min(1, (frame - shots[i].startFrame) / 24);
+  if (k >= 1 || i === 0) return cur;
+  const out: Record<string, number> = {};
+  for (const key of new Set([...Object.keys(prev), ...Object.keys(cur)])) {
+    const a = (prev as Record<string, number>)[key], b = (cur as Record<string, number>)[key];
+    out[key] = a === undefined ? b : b === undefined ? a : a + (b - a) * k;
+  }
+  return out as ShotPost;
+}
 
 /** Lighting schedule derived from the shot plan (consecutive identical presets merged). */
 export const lightingSchedule: LightingCue[] = (() => {

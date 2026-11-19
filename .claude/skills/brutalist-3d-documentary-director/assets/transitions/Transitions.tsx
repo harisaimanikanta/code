@@ -4,6 +4,9 @@
 // See references/transition-system.md and transition-types.json for recipes.
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
+import { bevelBox } from '../core/geometry';
+
+const bb = (v: [number, number, number] | number[]) => bevelBox(v[0], v[1], v[2]);
 import { getMaterial, blendedMaterial, type MaterialPresetId } from '../materials/materials';
 import { smoothstep, progress, easings } from '../core/math';
 import { useAssetTime } from '../core/time';
@@ -72,7 +75,7 @@ export function MaterialMorphSlab({ from = 'concrete-rough' as MaterialPresetId,
 }) {
   const { frame: f } = useAssetTime(frame);
   const k = smoothstep(start, end, f);
-  return <mesh geometry={BOX} material={blendedMaterial(from, to, k)} position={position} rotation={rotation} scale={size} castShadow receiveShadow />;
+  return <mesh geometry={bb(size)} material={blendedMaterial(from, to, k)} position={position} rotation={rotation} castShadow receiveShadow />;
 }
 
 /** Liquid portal: a fluid surface with a darker volume underneath; camera dives through the surface. */
@@ -82,7 +85,7 @@ export function LiquidPortal({ size = [14, 14] as [number, number], depth = 6, c
   return (
     <group position={position} rotation={rotation}>
       <FluidSurface size={size} color={color} glow={glow} frame={frame} />
-      <mesh geometry={BOX} material={getMaterial('glass-tinted-red', { opacity: 0.35, side: THREE.BackSide })} position={[0, -depth / 2, 0]} scale={[size[0], depth, size[1]]} />
+      <mesh geometry={bb([size[0], depth, size[1]])} material={getMaterial('glass-tinted-red', { opacity: 0.35, side: THREE.BackSide })} position={[0, -depth / 2, 0]} />
     </group>
   );
 }

@@ -42,7 +42,7 @@ SEED = SKILL_DIR / "assets"
 MANIFEST = "asset-manifest.json"
 REQUIRED_FIELDS = ["id", "name", "category", "description", "source", "exports", "format", "scale",
                    "materials", "dependencies", "reuse", "version", "tags"]
-CATEGORIES = ["core", "characters", "environments", "architecture", "objects", "materials", "textures",
+CATEGORIES = ["core", "rendering", "characters", "environments", "architecture", "objects", "materials", "textures",
               "lighting", "particles", "biological", "props", "camera-rigs", "transitions"]
 IMPORT_RE = re.compile(r"""(?:import|export)\s+(?:[^'"]*?\s+from\s+)?['"](\.{1,2}/[^'"]+)['"]""")
 

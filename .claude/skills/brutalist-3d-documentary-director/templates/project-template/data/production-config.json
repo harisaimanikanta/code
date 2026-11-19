@@ -51,7 +51,8 @@
  },
  "render": {
   "shadows": true,
-  "antialias": true
+  "antialias": true,
+  "post": "final"
  },
  "library": {
   "path": null,

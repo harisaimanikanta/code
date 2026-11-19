@@ -123,13 +123,13 @@
    "version": "1.0.0",
    "required": true,
    "dependencies": [
-    "tex.procedural"
+    "tex.surface-sets"
    ],
    "files": [
     "materials/materials.ts",
-    "textures/proceduralTextures.ts"
+    "textures/surfaceSets.ts"
    ],
-   "sha256": "11fe647400e8ed718b0c62668862c46863d3f61aa692f65262692bceeabe993e"
+   "sha256": "7ec148cb41e3cc64b4deceb2b684a8808ea019ff00be3211db7ed57d76c042ee"
   },
   {
    "id": "arch.slab",
@@ -156,15 +156,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.pillar",
@@ -189,15 +191,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.pillar-row",
@@ -223,15 +227,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.platform",
@@ -257,15 +263,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.staircase",
@@ -291,15 +299,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.doorway",
@@ -326,15 +336,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.monolith",
@@ -360,15 +372,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.coffered-ceiling",
@@ -393,15 +407,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.slot-light",
@@ -428,15 +444,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "mat.library"
    ],
    "files": [
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "materials/materials.ts"
    ],
-   "sha256": "8f9394d90cb166c64ea810939ad82c2a84c506822c1bc93effb39ace56d38b82"
+   "sha256": "2b0418828c5889fff9d4115e3339a25c8c194f25838e074d733b775a57447b11"
   },
   {
    "id": "arch.corridor",
@@ -464,14 +482,16 @@
    "required": false,
    "dependencies": [
     "arch.slab",
+    "core.geometry",
     "mat.library"
    ],
    "files": [
     "architecture/Spaces.tsx",
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "materials/materials.ts"
    ],
-   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+   "sha256": "31fd1d298c39ce39b91bf03e19685b9a76373ded03ba9725d74e35d5a2dc8b7a"
   },
   {
    "id": "arch.underground-passage",
@@ -498,14 +518,16 @@
    "required": false,
    "dependencies": [
     "arch.slab",
+    "core.geometry",
     "mat.library"
    ],
    "files": [
     "architecture/Spaces.tsx",
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "materials/materials.ts"
    ],
-   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+   "sha256": "31fd1d298c39ce39b91bf03e19685b9a76373ded03ba9725d74e35d5a2dc8b7a"
   },
   {
    "id": "arch.monumental-room",
@@ -533,14 +555,16 @@
    "required": false,
    "dependencies": [
     "arch.slab",
+    "core.geometry",
     "mat.library"
    ],
    "files": [
     "architecture/Spaces.tsx",
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "materials/materials.ts"
    ],
-   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+   "sha256": "31fd1d298c39ce39b91bf03e19685b9a76373ded03ba9725d74e35d5a2dc8b7a"
   },
   {
    "id": "arch.concrete-room",
@@ -568,14 +592,16 @@
    "required": false,
    "dependencies": [
     "arch.slab",
+    "core.geometry",
     "mat.library"
    ],
    "files": [
     "architecture/Spaces.tsx",
     "architecture/Structural.tsx",
+    "core/geometry.ts",
     "materials/materials.ts"
    ],
-   "sha256": "dfe840a729d36b412fed9002c8f6c6dcfa1b4f15b6f1b36da09151bd0db691ce"
+   "sha256": "31fd1d298c39ce39b91bf03e19685b9a76373ded03ba9725d74e35d5a2dc8b7a"
   },
   {
    "id": "env.laboratory",
@@ -912,15 +938,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/LabEquipment.tsx"
    ],
-   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+   "sha256": "7bbcdcb7b3efd298eaeeeb852e04a26a0633bd69ed148f89700cfa492509600c"
   },
   {
    "id": "obj.glass-container",
@@ -946,15 +974,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/LabEquipment.tsx"
    ],
-   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+   "sha256": "7bbcdcb7b3efd298eaeeeb852e04a26a0633bd69ed148f89700cfa492509600c"
   },
   {
    "id": "obj.petri-dish",
@@ -977,15 +1007,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/LabEquipment.tsx"
    ],
-   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+   "sha256": "7bbcdcb7b3efd298eaeeeb852e04a26a0633bd69ed148f89700cfa492509600c"
   },
   {
    "id": "obj.specimen-rack",
@@ -1008,15 +1040,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/LabEquipment.tsx"
    ],
-   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+   "sha256": "7bbcdcb7b3efd298eaeeeb852e04a26a0633bd69ed148f89700cfa492509600c"
   },
   {
    "id": "obj.microscope",
@@ -1039,15 +1073,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/LabEquipment.tsx"
    ],
-   "sha256": "27ae759fc49a0f430e92bc50d7ced4e7f6e946f398e28af730068585bbd8cfff"
+   "sha256": "7bbcdcb7b3efd298eaeeeb852e04a26a0633bd69ed148f89700cfa492509600c"
   },
   {
    "id": "obj.chair",
@@ -1069,17 +1105,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.desk",
@@ -1101,17 +1139,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.lectern",
@@ -1134,17 +1174,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.bench",
@@ -1166,17 +1208,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.door",
@@ -1199,17 +1243,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.screen",
@@ -1233,17 +1279,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.crate",
@@ -1266,17 +1314,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.filing-cabinet",
@@ -1299,17 +1349,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Furniture.tsx"
    ],
-   "sha256": "e3b175dc517cffdf7a32619544f518629412ae87bc0bf5b7316dd94e659e3471"
+   "sha256": "99064225ae8a4be068186b09b56486e5138d1b888327dc12b66c53c8e7de74ec"
   },
   {
    "id": "obj.paper",
@@ -1331,17 +1383,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Documents.tsx"
    ],
-   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+   "sha256": "6eb5f33d86460b36c867bcb6b0ad2664c1543426f2d4eb9fbb94e1f111cf0c46"
   },
   {
    "id": "obj.paper-stack",
@@ -1364,17 +1418,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Documents.tsx"
    ],
-   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+   "sha256": "6eb5f33d86460b36c867bcb6b0ad2664c1543426f2d4eb9fbb94e1f111cf0c46"
   },
   {
    "id": "obj.journal",
@@ -1398,17 +1454,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Documents.tsx"
    ],
-   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+   "sha256": "6eb5f33d86460b36c867bcb6b0ad2664c1543426f2d4eb9fbb94e1f111cf0c46"
   },
   {
    "id": "obj.floating-pages",
@@ -1432,17 +1490,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Documents.tsx"
    ],
-   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+   "sha256": "6eb5f33d86460b36c867bcb6b0ad2664c1543426f2d4eb9fbb94e1f111cf0c46"
   },
   {
    "id": "obj.rejection-stamp",
@@ -1465,17 +1525,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Documents.tsx"
    ],
-   "sha256": "34880ba324dfe64b6ded7ff5d08b95d6d6bcad81e23e73faf7c7848e9e795575"
+   "sha256": "6eb5f33d86460b36c867bcb6b0ad2664c1543426f2d4eb9fbb94e1f111cf0c46"
   },
   {
    "id": "obj.award-medal",
@@ -1502,17 +1564,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Award.tsx"
    ],
-   "sha256": "01db57282e5183e140311cac80d49cfe644f6925aefb8b7db8a8511f22b64919"
+   "sha256": "78a650f08a859ee91229a672584ccc451c4d5394c5ec12b4d809b94a6480184c"
   },
   {
    "id": "obj.trophy",
@@ -1538,17 +1602,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Award.tsx"
    ],
-   "sha256": "01db57282e5183e140311cac80d49cfe644f6925aefb8b7db8a8511f22b64919"
+   "sha256": "78a650f08a859ee91229a672584ccc451c4d5394c5ec12b4d809b94a6480184c"
   },
   {
    "id": "obj.award-plinth",
@@ -1575,17 +1641,19 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "objects/Award.tsx"
    ],
-   "sha256": "01db57282e5183e140311cac80d49cfe644f6925aefb8b7db8a8511f22b64919"
+   "sha256": "78a650f08a859ee91229a672584ccc451c4d5394c5ec12b4d809b94a6480184c"
   },
   {
    "id": "prop.hospital-bed",
@@ -1608,15 +1676,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "props/Medical.tsx"
    ],
-   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+   "sha256": "a71544c8b038f187dd4c10bb53f1da9efbcd70cf1bbe46f4e4a258731eb36254"
   },
   {
    "id": "prop.iv-stand",
@@ -1639,15 +1709,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "props/Medical.tsx"
    ],
-   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+   "sha256": "a71544c8b038f187dd4c10bb53f1da9efbcd70cf1bbe46f4e4a258731eb36254"
   },
   {
    "id": "prop.vitals-monitor",
@@ -1671,15 +1743,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "props/Medical.tsx"
    ],
-   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+   "sha256": "a71544c8b038f187dd4c10bb53f1da9efbcd70cf1bbe46f4e4a258731eb36254"
   },
   {
    "id": "prop.surgical-lamp",
@@ -1702,15 +1776,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "core.time",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "core/time.ts",
     "materials/materials.ts",
     "props/Medical.tsx"
    ],
-   "sha256": "3eb66cbe89957e8702d537c51976ddb3774de2ffdfc82cbc882d8df9dc1234ca"
+   "sha256": "a71544c8b038f187dd4c10bb53f1da9efbcd70cf1bbe46f4e4a258731eb36254"
   },
   {
    "id": "char.figure",
@@ -1736,6 +1812,7 @@
    "dependencies": [
     "char.poses",
     "char.presets",
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library",
@@ -1747,6 +1824,7 @@
     "characters/Figure.tsx",
     "characters/poses.ts",
     "characters/presets.ts",
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
@@ -1754,7 +1832,7 @@
     "objects/Documents.tsx",
     "objects/LabEquipment.tsx"
    ],
-   "sha256": "ed6f05cb75dad2943db76155cd689b4bed386beff76d8e520c1a32390bb9889d"
+   "sha256": "392ded2fb566745bb6059964f01f67984c4e83b62b9c84c8fd542b88d862a003"
   },
   {
    "id": "char.poses",
@@ -1786,7 +1864,7 @@
     "characters/poses.ts",
     "core/math.ts"
    ],
-   "sha256": "fbc65e8f88f962ce876667e6d2801c8576107f71757f13e181a7e8beed8e8339"
+   "sha256": "79c8a8d28c20326fe3829fb42deaca48d3f5c87df5df551d659ba256fb37b686"
   },
   {
    "id": "char.presets",
@@ -1816,7 +1894,7 @@
     "characters/presets.ts",
     "materials/materials.ts"
    ],
-   "sha256": "b21e2e70afeaddc9c81ad52961cc6e7fe7cbbb544c09f6d8540ad45047669288"
+   "sha256": "68aba583c516a5399cd6a3d9b45f2c7ca71876676d5c40c458359d93720d1ada"
   },
   {
    "id": "char.crowd",
@@ -2380,7 +2458,7 @@
     "lighting/LightingDirector.tsx",
     "lighting/lighting-presets.json"
    ],
-   "sha256": "347873d93fa724c26f485bfa7b5b8a03fee5c471fdc65af929725100a3b584ab"
+   "sha256": "c0eca45ded538ab0030b69e4d9696dcaea02ac30e2db10d5c02566ebd57b1342"
   },
   {
    "id": "light.presets-data",
@@ -2426,15 +2504,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "fx.dust-motes",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "lighting/Practicals.tsx",
     "materials/materials.ts",
     "particles/Particles.tsx"
    ],
-   "sha256": "0b76224cb33bab8d702687d6bb7b569c0e8b798185a5ebeb422a85080be574da"
+   "sha256": "3e3daf82fad10be278ab3d5e85dd265d2a807d341132739eb0fad50ad2d1f1d5"
   },
   {
    "id": "light.spot-pool",
@@ -2457,15 +2537,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "fx.dust-motes",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "lighting/Practicals.tsx",
     "materials/materials.ts",
     "particles/Particles.tsx"
    ],
-   "sha256": "0b76224cb33bab8d702687d6bb7b569c0e8b798185a5ebeb422a85080be574da"
+   "sha256": "3e3daf82fad10be278ab3d5e85dd265d2a807d341132739eb0fad50ad2d1f1d5"
   },
   {
    "id": "light.desk-lamp",
@@ -2488,15 +2570,17 @@
    "version": "1.0.0",
    "required": false,
    "dependencies": [
+    "core.geometry",
     "fx.dust-motes",
     "mat.library"
    ],
    "files": [
+    "core/geometry.ts",
     "lighting/Practicals.tsx",
     "materials/materials.ts",
     "particles/Particles.tsx"
    ],
-   "sha256": "0b76224cb33bab8d702687d6bb7b569c0e8b798185a5ebeb422a85080be574da"
+   "sha256": "3e3daf82fad10be278ab3d5e85dd265d2a807d341132739eb0fad50ad2d1f1d5"
   },
   {
    "id": "trans.lens-tunnel",
@@ -2521,18 +2605,20 @@
    "required": false,
    "dependencies": [
     "bio.fluid-surface",
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
     "biological/Fluid.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "transitions/Transitions.tsx"
    ],
-   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+   "sha256": "fb1ec28f1097bcad1fd566412959c1ff16af9ab86220ba28f1240ef08f8766c2"
   },
   {
    "id": "trans.scale-transform",
@@ -2556,18 +2642,20 @@
    "required": false,
    "dependencies": [
     "bio.fluid-surface",
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
     "biological/Fluid.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "transitions/Transitions.tsx"
    ],
-   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+   "sha256": "fb1ec28f1097bcad1fd566412959c1ff16af9ab86220ba28f1240ef08f8766c2"
   },
   {
    "id": "trans.assemble-blocks",
@@ -2591,18 +2679,20 @@
    "required": false,
    "dependencies": [
     "bio.fluid-surface",
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
     "biological/Fluid.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "transitions/Transitions.tsx"
    ],
-   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+   "sha256": "fb1ec28f1097bcad1fd566412959c1ff16af9ab86220ba28f1240ef08f8766c2"
   },
   {
    "id": "trans.material-morph",
@@ -2626,18 +2716,20 @@
    "required": false,
    "dependencies": [
     "bio.fluid-surface",
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
     "biological/Fluid.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "transitions/Transitions.tsx"
    ],
-   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+   "sha256": "fb1ec28f1097bcad1fd566412959c1ff16af9ab86220ba28f1240ef08f8766c2"
   },
   {
    "id": "trans.liquid-portal",
@@ -2661,18 +2753,20 @@
    "required": false,
    "dependencies": [
     "bio.fluid-surface",
+    "core.geometry",
     "core.math",
     "core.time",
     "mat.library"
    ],
    "files": [
     "biological/Fluid.tsx",
+    "core/geometry.ts",
     "core/math.ts",
     "core/time.ts",
     "materials/materials.ts",
     "transitions/Transitions.tsx"
    ],
-   "sha256": "7e711fb3dd93357796e9eb25a138d084e43da222939e4965c8c022ea9bccee00"
+   "sha256": "fb1ec28f1097bcad1fd566412959c1ff16af9ab86220ba28f1240ef08f8766c2"
   },
   {
    "id": "trans.occlusion",
@@ -2836,6 +2930,169 @@
    "sha256": "ee22710667606ab1abd50629360245060cf0204085fd70b5c8ae0504a6b163cc"
   },
   {
+   "materials": [],
+   "dependencies": [],
+   "version": "1.0.0",
+   "history": [
+    {
+     "version": "1.0.0",
+     "date": "2026-11-19",
+     "note": "visual upgrade v2"
+    }
+   ],
+   "id": "core.geometry",
+   "name": "Production geometry kit",
+   "category": "core",
+   "description": "Bevelled real-dimension boxes with world-scale UVs, lathes, tapered capsules, variable-radius tubes, deformed spheres, extrusions \u2014 all cached.",
+   "source": "core/geometry.ts",
+   "exports": [
+    "bevelBox",
+    "bevelBoxBase",
+    "lathe",
+    "taperedCapsule",
+    "cylinderBase",
+    "tubeAlong",
+    "deformedSphere",
+    "extrudeOutline",
+    "boxUV"
+   ],
+   "format": "ts-module",
+   "scale": "meters",
+   "reuse": "Never scale unit cubes: use bevelBox(w,h,d) so edges catch light and textures keep world scale.",
+   "tags": [
+    "geometry",
+    "bevel",
+    "lathe",
+    "capsule",
+    "tube"
+   ],
+   "required": true,
+   "files": [
+    "core/geometry.ts"
+   ],
+   "sha256": "81707bd396a84659f4b6e28a82a3d73ea1c598d76d6f09b0d920ccbb7b72b2e0"
+  },
+  {
+   "materials": [],
+   "dependencies": [
+    "core.math"
+   ],
+   "version": "1.0.0",
+   "history": [
+    {
+     "version": "1.0.0",
+     "date": "2026-11-19",
+     "note": "visual upgrade v2"
+    }
+   ],
+   "id": "tex.surface-sets",
+   "name": "PBR surface sets",
+   "category": "textures",
+   "description": "Procedural albedo+normal+roughness(+metalness) sets: board-formed concrete, plaster, ceramic tile, linoleum, wood, brushed steel, chipped painted metal, fabric weave, skin, wet tissue, velvet, paper.",
+   "source": "textures/surfaceSets.ts",
+   "exports": [
+    "concreteSet",
+    "plasterSet",
+    "tileSet",
+    "linoleumSet",
+    "woodSet",
+    "brushedSteelSet",
+    "paintedMetalSet",
+    "fabricSet",
+    "skinSet",
+    "tissueSet",
+    "velvetSet",
+    "paperSet"
+   ],
+   "format": "ts-module",
+   "scale": "1 UV unit = tile metres (pair with bevelBox UVs)",
+   "reuse": "Used by material presets; call directly only for bespoke materials.",
+   "tags": [
+    "texture",
+    "pbr",
+    "normal map",
+    "roughness",
+    "concrete",
+    "wood",
+    "tile",
+    "fabric",
+    "skin",
+    "tissue"
+   ],
+   "required": true,
+   "files": [
+    "core/math.ts",
+    "textures/surfaceSets.ts"
+   ],
+   "sha256": "197de3201963206a7b95d37ed630ea5b287f0394025dfea1a0764b5cf24fcfb4"
+  },
+  {
+   "materials": [],
+   "dependencies": [],
+   "version": "1.0.0",
+   "history": [
+    {
+     "version": "1.0.0",
+     "date": "2026-11-19",
+     "note": "visual upgrade v2"
+    }
+   ],
+   "id": "render.postfx",
+   "name": "Cinematic post-processing",
+   "category": "rendering",
+   "description": "N8AO ambient occlusion, depth of field focused on the camera target, bloom, AgX tone mapping, grade, vignette, grain, SMAA \u2014 driven by postprocessing directly (works under Remotion's manual render loop).",
+   "source": "rendering/PostFX.tsx",
+   "exports": [
+    "PostFX",
+    "POST_DEFAULTS"
+   ],
+   "format": "tsx-r3f-component",
+   "scale": "n/a",
+   "reuse": "Mounted by Documentary.tsx; tune per preset (lighting-presets post) or per shot (shot.post). Canvas must be `flat`.",
+   "tags": [
+    "post",
+    "ssao",
+    "bloom",
+    "dof",
+    "tonemapping",
+    "grade"
+   ],
+   "required": true,
+   "files": [
+    "rendering/PostFX.tsx"
+   ],
+   "sha256": "65c76737a4d1dd8704c79544056b772445dcdb1e92f9816f8264ab627f6f0d31"
+  },
+  {
+   "materials": [],
+   "dependencies": [],
+   "version": "1.0.0",
+   "history": [
+    {
+     "version": "1.0.0",
+     "date": "2026-11-19",
+     "note": "visual upgrade v2"
+    }
+   ],
+   "id": "render.n8ao-types",
+   "name": "n8ao type declarations",
+   "category": "rendering",
+   "description": "TypeScript declarations for the n8ao package.",
+   "source": "rendering/n8ao.d.ts",
+   "exports": [],
+   "format": "ts-module",
+   "scale": "n/a",
+   "reuse": "Vendored automatically.",
+   "tags": [
+    "types"
+   ],
+   "required": true,
+   "files": [
+    "rendering/n8ao.d.ts"
+   ],
+   "sha256": "5c207f44807f3c2ab66f2b871aeab40509adb98d8c4ddd394f534ad24b87462b"
+  },
+  {
    "id": "mat.concrete-rough",
    "name": "Material: concrete-rough",
    "category": "materials",
@@ -2917,6 +3174,32 @@
    ]
   },
   {
+   "id": "mat.concrete-light",
+   "name": "Material: concrete-light",
+   "category": "materials",
+   "description": "Material preset 'concrete-light' \u2014 getMaterial('concrete-light').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "concrete-light"
+   ],
+   "reuse": "getMaterial('concrete-light', overrides?)",
+   "tags": [
+    "material",
+    "concrete",
+    "light"
+   ],
+   "version": "1.0.0",
+   "preset": "concrete-light",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
    "id": "mat.metal-painted",
    "name": "Material: metal-painted",
    "category": "materials",
@@ -2939,6 +3222,32 @@
    "version": "1.0.0",
    "preset": "metal-painted",
    "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.metal-cream",
+   "name": "Material: metal-cream",
+   "category": "materials",
+   "description": "Material preset 'metal-cream' \u2014 getMaterial('metal-cream').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "metal-cream"
+   ],
+   "reuse": "getMaterial('metal-cream', overrides?)",
+   "tags": [
+    "material",
+    "metal",
+    "cream"
+   ],
+   "version": "1.0.0",
+   "preset": "metal-cream",
    "dependencies": [
     "mat.library"
    ]
@@ -2998,6 +3307,56 @@
    ]
   },
   {
+   "id": "mat.chrome",
+   "name": "Material: chrome",
+   "category": "materials",
+   "description": "Material preset 'chrome' \u2014 getMaterial('chrome').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "chrome"
+   ],
+   "reuse": "getMaterial('chrome', overrides?)",
+   "tags": [
+    "material",
+    "chrome"
+   ],
+   "version": "1.0.0",
+   "preset": "chrome",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.brass",
+   "name": "Material: brass",
+   "category": "materials",
+   "description": "Material preset 'brass' \u2014 getMaterial('brass').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "brass"
+   ],
+   "reuse": "getMaterial('brass', overrides?)",
+   "tags": [
+    "material",
+    "brass"
+   ],
+   "version": "1.0.0",
+   "preset": "brass",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
    "id": "mat.glass",
    "name": "Material: glass",
    "category": "materials",
@@ -3047,6 +3406,58 @@
    "version": "1.0.0",
    "preset": "glass-tinted-red",
    "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.glass-amber",
+   "name": "Material: glass-amber",
+   "category": "materials",
+   "description": "Material preset 'glass-amber' \u2014 getMaterial('glass-amber').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "glass-amber"
+   ],
+   "reuse": "getMaterial('glass-amber', overrides?)",
+   "tags": [
+    "material",
+    "glass",
+    "amber"
+   ],
+   "version": "1.0.0",
+   "preset": "glass-amber",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.glass-green",
+   "name": "Material: glass-green",
+   "category": "materials",
+   "description": "Material preset 'glass-green' \u2014 getMaterial('glass-green').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "glass-green"
+   ],
+   "reuse": "getMaterial('glass-green', overrides?)",
+   "tags": [
+    "material",
+    "glass",
+    "green"
+   ],
+   "version": "1.0.0",
+   "preset": "glass-green",
    "dependencies": [
     "mat.library"
    ]
@@ -3127,6 +3538,58 @@
    "version": "1.0.0",
    "preset": "flesh-wall",
    "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.tissue-wet",
+   "name": "Material: tissue-wet",
+   "category": "materials",
+   "description": "Material preset 'tissue-wet' \u2014 getMaterial('tissue-wet').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "tissue-wet"
+   ],
+   "reuse": "getMaterial('tissue-wet', overrides?)",
+   "tags": [
+    "material",
+    "tissue",
+    "wet"
+   ],
+   "version": "1.0.0",
+   "preset": "tissue-wet",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.tissue-inflamed",
+   "name": "Material: tissue-inflamed",
+   "category": "materials",
+   "description": "Material preset 'tissue-inflamed' \u2014 getMaterial('tissue-inflamed').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "tissue-inflamed"
+   ],
+   "reuse": "getMaterial('tissue-inflamed', overrides?)",
+   "tags": [
+    "material",
+    "tissue",
+    "inflamed"
+   ],
+   "version": "1.0.0",
+   "preset": "tissue-inflamed",
    "dependencies": [
     "mat.library"
    ]
@@ -3240,6 +3703,84 @@
    ]
   },
   {
+   "id": "mat.rubber-black",
+   "name": "Material: rubber-black",
+   "category": "materials",
+   "description": "Material preset 'rubber-black' \u2014 getMaterial('rubber-black').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "rubber-black"
+   ],
+   "reuse": "getMaterial('rubber-black', overrides?)",
+   "tags": [
+    "material",
+    "rubber",
+    "black"
+   ],
+   "version": "1.0.0",
+   "preset": "rubber-black",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.plastic-cream",
+   "name": "Material: plastic-cream",
+   "category": "materials",
+   "description": "Material preset 'plastic-cream' \u2014 getMaterial('plastic-cream').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "plastic-cream"
+   ],
+   "reuse": "getMaterial('plastic-cream', overrides?)",
+   "tags": [
+    "material",
+    "plastic",
+    "cream"
+   ],
+   "version": "1.0.0",
+   "preset": "plastic-cream",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.plastic-white",
+   "name": "Material: plastic-white",
+   "category": "materials",
+   "description": "Material preset 'plastic-white' \u2014 getMaterial('plastic-white').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "plastic-white"
+   ],
+   "reuse": "getMaterial('plastic-white', overrides?)",
+   "tags": [
+    "material",
+    "plastic",
+    "white"
+   ],
+   "version": "1.0.0",
+   "preset": "plastic-white",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
    "id": "mat.emissive-red",
    "name": "Material: emissive-red",
    "category": "materials",
@@ -3343,6 +3884,58 @@
    "version": "1.0.0",
    "preset": "emissive-white",
    "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.emissive-cool",
+   "name": "Material: emissive-cool",
+   "category": "materials",
+   "description": "Material preset 'emissive-cool' \u2014 getMaterial('emissive-cool').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "emissive-cool"
+   ],
+   "reuse": "getMaterial('emissive-cool', overrides?)",
+   "tags": [
+    "material",
+    "emissive",
+    "cool"
+   ],
+   "version": "1.0.0",
+   "preset": "emissive-cool",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.emissive-screen",
+   "name": "Material: emissive-screen",
+   "category": "materials",
+   "description": "Material preset 'emissive-screen' \u2014 getMaterial('emissive-screen').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "emissive-screen"
+   ],
+   "reuse": "getMaterial('emissive-screen', overrides?)",
+   "tags": [
+    "material",
+    "emissive",
+    "screen"
+   ],
+   "version": "1.0.0",
+   "preset": "emissive-screen",
    "dependencies": [
     "mat.library"
    ]
@@ -3458,6 +4051,162 @@
    ]
   },
   {
+   "id": "mat.fabric-shirt",
+   "name": "Material: fabric-shirt",
+   "category": "materials",
+   "description": "Material preset 'fabric-shirt' \u2014 getMaterial('fabric-shirt').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-shirt"
+   ],
+   "reuse": "getMaterial('fabric-shirt', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "shirt"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-shirt",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.fabric-tux",
+   "name": "Material: fabric-tux",
+   "category": "materials",
+   "description": "Material preset 'fabric-tux' \u2014 getMaterial('fabric-tux').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-tux"
+   ],
+   "reuse": "getMaterial('fabric-tux', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "tux"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-tux",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.fabric-gown",
+   "name": "Material: fabric-gown",
+   "category": "materials",
+   "description": "Material preset 'fabric-gown' \u2014 getMaterial('fabric-gown').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-gown"
+   ],
+   "reuse": "getMaterial('fabric-gown', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "gown"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-gown",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.fabric-wool",
+   "name": "Material: fabric-wool",
+   "category": "materials",
+   "description": "Material preset 'fabric-wool' \u2014 getMaterial('fabric-wool').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "fabric-wool"
+   ],
+   "reuse": "getMaterial('fabric-wool', overrides?)",
+   "tags": [
+    "material",
+    "fabric",
+    "wool"
+   ],
+   "version": "1.0.0",
+   "preset": "fabric-wool",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.velvet-red",
+   "name": "Material: velvet-red",
+   "category": "materials",
+   "description": "Material preset 'velvet-red' \u2014 getMaterial('velvet-red').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "velvet-red"
+   ],
+   "reuse": "getMaterial('velvet-red', overrides?)",
+   "tags": [
+    "material",
+    "velvet",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "velvet-red",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.leather-dark",
+   "name": "Material: leather-dark",
+   "category": "materials",
+   "description": "Material preset 'leather-dark' \u2014 getMaterial('leather-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "leather-dark"
+   ],
+   "reuse": "getMaterial('leather-dark', overrides?)",
+   "tags": [
+    "material",
+    "leather",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "leather-dark",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
    "id": "mat.skin-stylized",
    "name": "Material: skin-stylized",
    "category": "materials",
@@ -3508,6 +4257,58 @@
    "version": "1.0.0",
    "preset": "skin-stylized-aged",
    "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.skin-light",
+   "name": "Material: skin-light",
+   "category": "materials",
+   "description": "Material preset 'skin-light' \u2014 getMaterial('skin-light').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "skin-light"
+   ],
+   "reuse": "getMaterial('skin-light', overrides?)",
+   "tags": [
+    "material",
+    "skin",
+    "light"
+   ],
+   "version": "1.0.0",
+   "preset": "skin-light",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.skin-dark",
+   "name": "Material: skin-dark",
+   "category": "materials",
+   "description": "Material preset 'skin-dark' \u2014 getMaterial('skin-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "skin-dark"
+   ],
+   "reuse": "getMaterial('skin-dark', overrides?)",
+   "tags": [
+    "material",
+    "skin",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "skin-dark",
    "dependencies": [
     "mat.library"
    ]
@@ -3567,6 +4368,109 @@
    ]
   },
   {
+   "id": "mat.hair-brown",
+   "name": "Material: hair-brown",
+   "category": "materials",
+   "description": "Material preset 'hair-brown' \u2014 getMaterial('hair-brown').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "hair-brown"
+   ],
+   "reuse": "getMaterial('hair-brown', overrides?)",
+   "tags": [
+    "material",
+    "hair",
+    "brown"
+   ],
+   "version": "1.0.0",
+   "preset": "hair-brown",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.eye-white",
+   "name": "Material: eye-white",
+   "category": "materials",
+   "description": "Material preset 'eye-white' \u2014 getMaterial('eye-white').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "eye-white"
+   ],
+   "reuse": "getMaterial('eye-white', overrides?)",
+   "tags": [
+    "material",
+    "eye",
+    "white"
+   ],
+   "version": "1.0.0",
+   "preset": "eye-white",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.eye-iris",
+   "name": "Material: eye-iris",
+   "category": "materials",
+   "description": "Material preset 'eye-iris' \u2014 getMaterial('eye-iris').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "eye-iris"
+   ],
+   "reuse": "getMaterial('eye-iris', overrides?)",
+   "tags": [
+    "material",
+    "eye",
+    "iris"
+   ],
+   "version": "1.0.0",
+   "preset": "eye-iris",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.lips",
+   "name": "Material: lips",
+   "category": "materials",
+   "description": "Material preset 'lips' \u2014 getMaterial('lips').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "lips"
+   ],
+   "reuse": "getMaterial('lips', overrides?)",
+   "tags": [
+    "material",
+    "lips"
+   ],
+   "version": "1.0.0",
+   "preset": "lips",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
    "id": "mat.paper",
    "name": "Material: paper",
    "category": "materials",
@@ -3588,6 +4492,317 @@
    "version": "1.0.0",
    "preset": "paper",
    "history": [],
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.wood-dark",
+   "name": "Material: wood-dark",
+   "category": "materials",
+   "description": "Material preset 'wood-dark' \u2014 getMaterial('wood-dark').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "wood-dark"
+   ],
+   "reuse": "getMaterial('wood-dark', overrides?)",
+   "tags": [
+    "material",
+    "wood",
+    "dark"
+   ],
+   "version": "1.0.0",
+   "preset": "wood-dark",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.wood-oak",
+   "name": "Material: wood-oak",
+   "category": "materials",
+   "description": "Material preset 'wood-oak' \u2014 getMaterial('wood-oak').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "wood-oak"
+   ],
+   "reuse": "getMaterial('wood-oak', overrides?)",
+   "tags": [
+    "material",
+    "wood",
+    "oak"
+   ],
+   "version": "1.0.0",
+   "preset": "wood-oak",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.wood-floor",
+   "name": "Material: wood-floor",
+   "category": "materials",
+   "description": "Material preset 'wood-floor' \u2014 getMaterial('wood-floor').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "wood-floor"
+   ],
+   "reuse": "getMaterial('wood-floor', overrides?)",
+   "tags": [
+    "material",
+    "wood",
+    "floor"
+   ],
+   "version": "1.0.0",
+   "preset": "wood-floor",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.tile-hospital",
+   "name": "Material: tile-hospital",
+   "category": "materials",
+   "description": "Material preset 'tile-hospital' \u2014 getMaterial('tile-hospital').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "tile-hospital"
+   ],
+   "reuse": "getMaterial('tile-hospital', overrides?)",
+   "tags": [
+    "material",
+    "tile",
+    "hospital"
+   ],
+   "version": "1.0.0",
+   "preset": "tile-hospital",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.tile-white",
+   "name": "Material: tile-white",
+   "category": "materials",
+   "description": "Material preset 'tile-white' \u2014 getMaterial('tile-white').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "tile-white"
+   ],
+   "reuse": "getMaterial('tile-white', overrides?)",
+   "tags": [
+    "material",
+    "tile",
+    "white"
+   ],
+   "version": "1.0.0",
+   "preset": "tile-white",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.linoleum",
+   "name": "Material: linoleum",
+   "category": "materials",
+   "description": "Material preset 'linoleum' \u2014 getMaterial('linoleum').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "linoleum"
+   ],
+   "reuse": "getMaterial('linoleum', overrides?)",
+   "tags": [
+    "material",
+    "linoleum"
+   ],
+   "version": "1.0.0",
+   "preset": "linoleum",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.plaster-wall",
+   "name": "Material: plaster-wall",
+   "category": "materials",
+   "description": "Material preset 'plaster-wall' \u2014 getMaterial('plaster-wall').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "plaster-wall"
+   ],
+   "reuse": "getMaterial('plaster-wall', overrides?)",
+   "tags": [
+    "material",
+    "plaster",
+    "wall"
+   ],
+   "version": "1.0.0",
+   "preset": "plaster-wall",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.plaster-red",
+   "name": "Material: plaster-red",
+   "category": "materials",
+   "description": "Material preset 'plaster-red' \u2014 getMaterial('plaster-red').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "plaster-red"
+   ],
+   "reuse": "getMaterial('plaster-red', overrides?)",
+   "tags": [
+    "material",
+    "plaster",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "plaster-red",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.pig-skin",
+   "name": "Material: pig-skin",
+   "category": "materials",
+   "description": "Material preset 'pig-skin' \u2014 getMaterial('pig-skin').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "pig-skin"
+   ],
+   "reuse": "getMaterial('pig-skin', overrides?)",
+   "tags": [
+    "material",
+    "pig",
+    "skin"
+   ],
+   "version": "1.0.0",
+   "preset": "pig-skin",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.straw",
+   "name": "Material: straw",
+   "category": "materials",
+   "description": "Material preset 'straw' \u2014 getMaterial('straw').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "straw"
+   ],
+   "reuse": "getMaterial('straw', overrides?)",
+   "tags": [
+    "material",
+    "straw"
+   ],
+   "version": "1.0.0",
+   "preset": "straw",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.liquid-green-glow",
+   "name": "Material: liquid-green-glow",
+   "category": "materials",
+   "description": "Material preset 'liquid-green-glow' \u2014 getMaterial('liquid-green-glow').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "liquid-green-glow"
+   ],
+   "reuse": "getMaterial('liquid-green-glow', overrides?)",
+   "tags": [
+    "material",
+    "liquid",
+    "green",
+    "glow"
+   ],
+   "version": "1.0.0",
+   "preset": "liquid-green-glow",
+   "dependencies": [
+    "mat.library"
+   ]
+  },
+  {
+   "id": "mat.liquid-red",
+   "name": "Material: liquid-red",
+   "category": "materials",
+   "description": "Material preset 'liquid-red' \u2014 getMaterial('liquid-red').",
+   "source": "materials/materials.ts",
+   "exports": [
+    "getMaterial"
+   ],
+   "format": "preset",
+   "scale": "n/a",
+   "materials": [
+    "liquid-red"
+   ],
+   "reuse": "getMaterial('liquid-red', overrides?)",
+   "tags": [
+    "material",
+    "liquid",
+    "red"
+   ],
+   "version": "1.0.0",
+   "preset": "liquid-red",
    "dependencies": [
     "mat.library"
    ]
@@ -4643,6 +5858,124 @@
    ]
   },
   {
+   "id": "char.preset.young-doctor",
+   "name": "Character: Young doctor (dark side-parted hair, lab coat, tie)",
+   "category": "characters",
+   "description": "Character identity preset 'young-doctor' (Young doctor (dark side-parted hair, lab coat, tie)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"young-doctor\" (age variant: \"young-doctor@older\")",
+   "tags": [
+    "character",
+    "young",
+    "doctor",
+    "young",
+    "doctor",
+    "(dark",
+    "side-parted",
+    "hair,",
+    "lab",
+    "coat,",
+    "tie)"
+   ],
+   "version": "1.0.0",
+   "preset": "young-doctor",
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.senior-pathologist",
+   "name": "Character: Senior pathologist (grey swept hair, glasses, lab coat)",
+   "category": "characters",
+   "description": "Character identity preset 'senior-pathologist' (Senior pathologist (grey swept hair, glasses, lab coat)).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"senior-pathologist\" (age variant: \"senior-pathologist@older\")",
+   "tags": [
+    "character",
+    "senior",
+    "pathologist",
+    "senior",
+    "pathologist",
+    "(grey",
+    "swept",
+    "hair,",
+    "glasses,",
+    "lab",
+    "coat)"
+   ],
+   "version": "1.0.0",
+   "preset": "senior-pathologist",
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.laureate-tux",
+   "name": "Character: Laureate in tuxedo",
+   "category": "characters",
+   "description": "Character identity preset 'laureate-tux' (Laureate in tuxedo).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"laureate-tux\" (age variant: \"laureate-tux@older\")",
+   "tags": [
+    "character",
+    "laureate",
+    "tux",
+    "laureate",
+    "in",
+    "tuxedo"
+   ],
+   "version": "1.0.0",
+   "preset": "laureate-tux",
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
+   "id": "char.preset.patient",
+   "name": "Character: Patient in hospital gown",
+   "category": "characters",
+   "description": "Character identity preset 'patient' (Patient in hospital gown).",
+   "source": "characters/presets.ts",
+   "exports": [
+    "CHARACTER_PRESETS"
+   ],
+   "format": "preset",
+   "scale": "meters",
+   "materials": [],
+   "reuse": "actor props.character = \"patient\" (age variant: \"patient@older\")",
+   "tags": [
+    "character",
+    "patient",
+    "patient",
+    "in",
+    "hospital",
+    "gown"
+   ],
+   "version": "1.0.0",
+   "preset": "patient",
+   "dependencies": [
+    "char.presets"
+   ]
+  },
+  {
    "id": "char.preset.audience-member",
    "name": "Character: Conference attendee",
    "category": "characters",
@@ -4697,5 +6030,5 @@
    ]
   }
  ],
- "indexedAt": "2026-11-19T12:12:05+00:00"
+ "indexedAt": "2026-11-19T13:34:56+00:00"
 }

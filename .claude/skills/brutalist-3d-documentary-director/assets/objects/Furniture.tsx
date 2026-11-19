@@ -1,6 +1,9 @@
 // Furniture & architectural objects: chair, desk, lectern, bench, hinged door, screen, crate, filing cabinet.
 import React from 'react';
 import * as THREE from 'three';
+import { bevelBox } from '../core/geometry';
+
+const bb = (v: [number, number, number] | number[]) => bevelBox(v[0], v[1], v[2]);
 import { getMaterial, type MaterialPresetId } from '../materials/materials';
 import { envelope, progress, smoothstep } from '../core/math';
 import { useAssetTime } from '../core/time';
@@ -14,8 +17,8 @@ export function Chair({ position, rotation, scale = 1, material = 'metal-dark' a
   const m = getMaterial(material);
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={m} position={[0, 0.46, 0]} scale={[0.46, 0.04, 0.44]} castShadow />
-      <mesh geometry={box} material={m} position={[0, 0.78, -0.21]} rotation={[-0.08, 0, 0]} scale={[0.46, 0.6, 0.04]} castShadow />
+      <mesh geometry={bb([0.46, 0.04, 0.44])} material={m} position={[0, 0.46, 0]} castShadow />
+      <mesh geometry={bb([0.46, 0.6, 0.04])} material={m} position={[0, 0.78, -0.21]} rotation={[-0.08, 0, 0]} castShadow />
       {[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([x, z], i) => (
         <mesh key={i} geometry={box} material={m} position={[x * 0.2, 0.23, z * 0.19]} scale={[0.03, 0.46, 0.03]} />
       ))}
@@ -27,9 +30,9 @@ export function Chair({ position, rotation, scale = 1, material = 'metal-dark' a
 export function Desk({ width = 1.8, depth = 0.85, position, rotation, scale = 1 }: P & { width?: number; depth?: number }) {
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('metal-dark')} position={[0, 0.74, 0]} scale={[width, 0.05, depth]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[-width / 2 + 0.25, 0.36, 0]} scale={[0.45, 0.72, depth]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[width / 2 - 0.05, 0.36, 0]} scale={[0.08, 0.72, depth]} castShadow />
+      <mesh geometry={bb([width, 0.05, depth])} material={getMaterial('metal-dark')} position={[0, 0.74, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.45, 0.72, depth])} material={getMaterial('concrete-dark')} position={[-width / 2 + 0.25, 0.36, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.08, 0.72, depth])} material={getMaterial('concrete-dark')} position={[width / 2 - 0.05, 0.36, 0]} castShadow />
     </group>
   );
 }
@@ -38,9 +41,9 @@ export function Desk({ width = 1.8, depth = 0.85, position, rotation, scale = 1 
 export function Lectern({ position, rotation, scale = 1, glow = true }: P & { glow?: boolean }) {
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[0, 0.55, 0]} scale={[0.7, 1.1, 0.5]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('metal-dark')} position={[0, 1.15, -0.05]} rotation={[0.3, 0, 0]} scale={[0.8, 0.05, 0.55]} castShadow />
-      {glow && <mesh geometry={box} material={getMaterial('emissive-red')} position={[0, 0.9, 0.255]} scale={[0.5, 0.02, 0.01]} />}
+      <mesh geometry={bb([0.7, 1.1, 0.5])} material={getMaterial('concrete-dark')} position={[0, 0.55, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.8, 0.05, 0.55])} material={getMaterial('metal-dark')} position={[0, 1.15, -0.05]} rotation={[0.3, 0, 0]} castShadow />
+      {glow && <mesh geometry={bb([0.5, 0.02, 0.01])} material={getMaterial('emissive-red')} position={[0, 0.9, 0.255]} />}
     </group>
   );
 }
@@ -49,7 +52,7 @@ export function Lectern({ position, rotation, scale = 1, glow = true }: P & { gl
 export function Bench({ length = 3, position, rotation, scale = 1 }: P & { length?: number }) {
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('concrete-rough')} position={[0, 0.42, 0]} scale={[length, 0.12, 0.5]} castShadow receiveShadow />
+      <mesh geometry={bb([length, 0.12, 0.5])} material={getMaterial('concrete-rough')} position={[0, 0.42, 0]} castShadow receiveShadow />
       {[-1, 1].map((s) => <mesh key={s} geometry={box} material={getMaterial('concrete-rough')} position={[s * (length / 2 - 0.3), 0.18, 0]} scale={[0.25, 0.36, 0.45]} />)}
     </group>
   );
@@ -62,9 +65,9 @@ export function Door({ width = 1.4, height = 3, openStart = 0, openEnd = 0, open
   return (
     <group position={position} rotation={rotation} scale={scale}>
       <group position={[-width / 2, 0, 0]} rotation={[0, -a, 0]}>
-        <mesh geometry={box} material={getMaterial('metal-painted')} position={[width / 2, height / 2, 0]} scale={[width, height, 0.08]} castShadow receiveShadow />
-        <mesh geometry={box} material={getMaterial('metal-brushed')} position={[width - 0.15, height * 0.45, 0.06]} scale={[0.04, 0.3, 0.04]} />
-        <mesh geometry={box} material={getMaterial('glass-tinted-red')} position={[width / 2, height * 0.72, 0.045]} scale={[width * 0.25, height * 0.3, 0.01]} />
+        <mesh geometry={bb([width, height, 0.08])} material={getMaterial('metal-painted')} position={[width / 2, height / 2, 0]} castShadow receiveShadow />
+        <mesh geometry={bb([0.04, 0.3, 0.04])} material={getMaterial('metal-brushed')} position={[width - 0.15, height * 0.45, 0.06]} />
+        <mesh geometry={bb([width * 0.25, height * 0.3, 0.01])} material={getMaterial('glass-tinted-red')} position={[width / 2, height * 0.72, 0.045]} />
       </group>
     </group>
   );
@@ -78,8 +81,8 @@ export function Screen({ width = 3.2, height = 1.8, content = 'graph' as 'bars' 
   const n = 12;
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('metal-dark')} scale={[width + 0.12, height + 0.12, 0.08]} castShadow />
-      <mesh geometry={box} material={getMaterial('matte-black')} position={[0, 0, 0.045]} scale={[width, height, 0.01]} />
+      <mesh geometry={bb([width + 0.12, height + 0.12, 0.08])} material={getMaterial('metal-dark')} castShadow />
+      <mesh geometry={bb([width, height, 0.01])} material={getMaterial('matte-black')} position={[0, 0, 0.045]} />
       {power > 0.01 && content === 'bars' && Array.from({ length: n }, (_, i) => {
         const h = (0.2 + 0.7 * Math.abs(Math.sin(i * 1.7 + t * 1.3))) * height * 0.8 * power;
         return <mesh key={i} geometry={box} material={em} position={[-width / 2 + (i + 0.5) * (width / n), -height * 0.4 + h / 2, 0.055]} scale={[(width / n) * 0.6, h, 0.005]} />;
@@ -90,7 +93,7 @@ export function Screen({ width = 3.2, height = 1.8, content = 'graph' as 'bars' 
         return <mesh key={i} geometry={box} material={em} position={[x, y, 0.055]} scale={[width / 30, 0.03, 0.005]} />;
       })}
       {power > 0.01 && content === 'scan' && (
-        <mesh geometry={box} material={em} position={[0, ((t * 0.6) % 1 - 0.5) * height, 0.055]} scale={[width * 0.95, 0.025, 0.005]} />
+        <mesh geometry={bb([width * 0.95, 0.025, 0.005])} material={em} position={[0, ((t * 0.6) % 1 - 0.5) * height, 0.055]} />
       )}
     </group>
   );
@@ -100,7 +103,7 @@ export function Screen({ width = 3.2, height = 1.8, content = 'graph' as 'bars' 
 export function Crate({ size = [1, 1, 1] as V3, position, rotation, scale = 1 }: P & { size?: V3 }) {
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('metal-painted')} position={[0, size[1] / 2, 0]} scale={size} castShadow receiveShadow />
+      <mesh geometry={bb(size)} material={getMaterial('metal-painted')} position={[0, size[1] / 2, 0]} castShadow receiveShadow />
       {[-1, 1].map((s) => <mesh key={s} geometry={box} material={getMaterial('metal-dark')} position={[0, size[1] / 2, s * (size[2] / 2 + 0.01)]} scale={[size[0] * 1.02, size[1] * 0.12, 0.02]} />)}
     </group>
   );

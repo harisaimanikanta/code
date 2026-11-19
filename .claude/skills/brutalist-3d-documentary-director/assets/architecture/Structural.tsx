@@ -2,6 +2,9 @@
 // coffered ceilings, slot lights. All sizes in meters; all pieces sit on y=0 unless noted.
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
+import { bevelBox } from '../core/geometry';
+
+const bb = (v: [number, number, number] | number[]) => bevelBox(v[0], v[1], v[2]);
 import { getMaterial, type MaterialPresetId } from '../materials/materials';
 import { rng } from '../core/math';
 
@@ -13,7 +16,7 @@ const box = new THREE.BoxGeometry(1, 1, 1);
 /** Axis-aligned concrete block. `size` = [w, h, d]; positioned by its base center. */
 export function ConcreteSlab({ size = [4, 0.4, 4], position = [0, 0, 0], rotation, material = 'concrete-rough', castShadow = true, receiveShadow = true }: Base & { size?: V3 }) {
   return (
-    <mesh geometry={box} material={getMaterial(material)} position={[position[0], position[1] + size[1] / 2, position[2]]} rotation={rotation} scale={size} castShadow={castShadow} receiveShadow={receiveShadow} />
+    <mesh geometry={bb(size)} material={getMaterial(material)} position={[position[0], position[1] + size[1] / 2, position[2]]} rotation={rotation} castShadow={castShadow} receiveShadow={receiveShadow} />
   );
 }
 
@@ -22,12 +25,12 @@ export function Pillar({ height = 8, width = 1.1, position = [0, 0, 0], rotation
   const m = getMaterial(material);
   return (
     <group position={position} rotation={rotation}>
-      <mesh geometry={box} material={m} position={[0, 0.2, 0]} scale={[width * 1.35, 0.4, width * 1.35]} castShadow receiveShadow />
-      <mesh geometry={box} material={m} position={[0, height / 2, 0]} scale={[width, height, width]} castShadow receiveShadow />
+      <mesh geometry={bb([width * 1.35, 0.4, width * 1.35])} material={m} position={[0, 0.2, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([width, height, width])} material={m} position={[0, height / 2, 0]} castShadow receiveShadow />
       {capital && (
         <>
-          <mesh geometry={box} material={m} position={[0, height - 0.35, 0]} scale={[width * 1.3, 0.3, width * 1.3]} castShadow />
-          <mesh geometry={box} material={m} position={[0, height - 0.1, 0]} scale={[width * 1.6, 0.2, width * 1.6]} castShadow />
+          <mesh geometry={bb([width * 1.3, 0.3, width * 1.3])} material={m} position={[0, height - 0.35, 0]} castShadow />
+          <mesh geometry={bb([width * 1.6, 0.2, width * 1.6])} material={m} position={[0, height - 0.1, 0]} castShadow />
         </>
       )}
     </group>
@@ -51,7 +54,7 @@ export function Platform({ size = [6, 0.8, 6], steps = 3, position = [0, 0, 0], 
   const stepH = size[1] / Math.max(1, steps);
   return (
     <group position={position} rotation={rotation}>
-      <mesh geometry={box} material={m} position={[0, size[1] / 2, 0]} scale={size} castShadow receiveShadow />
+      <mesh geometry={bb(size)} material={m} position={[0, size[1] / 2, 0]} castShadow receiveShadow />
       {Array.from({ length: steps }, (_, i) => (
         <mesh key={i} geometry={box} material={m} position={[0, stepH * (i + 0.5), size[2] / 2 + (steps - i) * 0.4 - 0.2]} scale={[size[0] * 0.6, stepH * (i + 1), 0.4]} castShadow receiveShadow />
       ))}
@@ -83,10 +86,10 @@ export function Doorway({ width = 2.4, height = 4, depth = 1, wallWidth = 14, wa
       {[-1, 1].map((s) => (
         <mesh key={s} geometry={box} material={m} position={[s * (width / 2 + side / 2), wallHeight / 2, 0]} scale={[side, wallHeight, depth]} castShadow receiveShadow />
       ))}
-      <mesh geometry={box} material={m} position={[0, height + (wallHeight - height) / 2, 0]} scale={[width, wallHeight - height, depth]} castShadow receiveShadow />
+      <mesh geometry={bb([width, wallHeight - height, depth])} material={m} position={[0, height + (wallHeight - height) / 2, 0]} castShadow receiveShadow />
       {/* recessed frame */}
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[0, height + 0.15, depth / 2 + 0.05]} scale={[width + 0.6, 0.3, 0.1]} />
-      {glow && <mesh geometry={box} material={getMaterial(glow)} position={[0, 0.02, 0]} scale={[width, 0.04, depth]} />}
+      <mesh geometry={bb([width + 0.6, 0.3, 0.1])} material={getMaterial('concrete-dark')} position={[0, height + 0.15, depth / 2 + 0.05]} />
+      {glow && <mesh geometry={bb([width, 0.04, depth])} material={getMaterial(glow)} position={[0, 0.02, 0]} />}
     </group>
   );
 }
@@ -120,7 +123,7 @@ export function CofferedCeiling({ size = [20, 20], height = 9, cell = 2.5, depth
   const nz = Math.max(1, Math.round(size[1] / cell));
   return (
     <group position={position}>
-      <mesh geometry={box} material={m} position={[0, height + depth + 0.15, 0]} scale={[size[0], 0.3, size[1]]} receiveShadow />
+      <mesh geometry={bb([size[0], 0.3, size[1]])} material={m} position={[0, height + depth + 0.15, 0]} receiveShadow />
       {Array.from({ length: nx + 1 }, (_, i) => (
         <mesh key={`x${i}`} geometry={box} material={m} position={[-size[0] / 2 + i * (size[0] / nx), height + depth / 2, 0]} scale={[0.3, depth, size[1]]} />
       ))}
@@ -135,7 +138,7 @@ export function CofferedCeiling({ size = [20, 20], height = 9, cell = 2.5, depth
 export function SlotLight({ length = 6, thickness = 0.08, position = [0, 0, 0], rotation, material = 'emissive-red', light = true, color = '#ff2233', intensity = 6, distance = 12 }: Base & { length?: number; thickness?: number; light?: boolean; color?: string; intensity?: number; distance?: number }) {
   return (
     <group position={position} rotation={rotation}>
-      <mesh geometry={box} material={getMaterial(material)} scale={[length, thickness, thickness]} />
+      <mesh geometry={bb([length, thickness, thickness])} material={getMaterial(material)} />
       {light && <pointLight color={color} intensity={intensity} distance={distance} decay={1.6} />}
     </group>
   );

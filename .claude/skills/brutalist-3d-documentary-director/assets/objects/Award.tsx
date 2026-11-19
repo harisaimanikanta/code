@@ -1,6 +1,9 @@
 // Achievement objects: medal, faceted trophy, display plinth with golden reveal light.
 import React from 'react';
 import * as THREE from 'three';
+import { bevelBox } from '../core/geometry';
+
+const bb = (v: [number, number, number] | number[]) => bevelBox(v[0], v[1], v[2]);
 import { getMaterial } from '../materials/materials';
 import { envelope } from '../core/math';
 import { useAssetTime } from '../core/time';
@@ -34,7 +37,7 @@ export function Trophy({ position, rotation, scale = 1 }: P) {
   const gold = getMaterial('gold-metal');
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('matte-black')} position={[0, 0.04, 0]} scale={[0.16, 0.08, 0.16]} castShadow />
+      <mesh geometry={bb([0.16, 0.08, 0.16])} material={getMaterial('matte-black')} position={[0, 0.04, 0]} castShadow />
       <mesh geometry={trophyStem} material={gold} position={[0, 0.15, 0]} castShadow />
       <mesh geometry={trophyCup} material={gold} position={[0, 0.3, 0]} castShadow />
       <mesh geometry={trophyGem} material={getMaterial('emissive-gold')} position={[0, 0.42, 0]} />
@@ -48,8 +51,8 @@ export function AwardPlinth({ revealStart = 0, revealEnd = 1e9, height = 1.1, po
   const k = envelope(f, revealStart, revealEnd, 30, 15);
   return (
     <group position={position} rotation={rotation} scale={scale}>
-      <mesh geometry={box} material={getMaterial('concrete-dark')} position={[0, height / 2, 0]} scale={[0.6, height, 0.6]} castShadow receiveShadow />
-      <mesh geometry={box} material={getMaterial('emissive-gold', { emissiveIntensity: 1.5 })} position={[0, height + 0.005, 0]} scale={[0.5, 0.01, 0.5]} visible={k > 0.05} />
+      <mesh geometry={bb([0.6, height, 0.6])} material={getMaterial('concrete-dark')} position={[0, height / 2, 0]} castShadow receiveShadow />
+      <mesh geometry={bb([0.5, 0.01, 0.5])} material={getMaterial('emissive-gold', { emissiveIntensity: 1.5 })} position={[0, height + 0.005, 0]} visible={k > 0.05} />
       <group position={[0, height + 0.01, 0]}>{children}</group>
       <spotLight position={[0, height + 3, 0.4]} angle={0.35} penumbra={0.6} intensity={60 * k} color="#ffc86b" distance={8} decay={1.5} castShadow={k > 0.1} />
     </group>

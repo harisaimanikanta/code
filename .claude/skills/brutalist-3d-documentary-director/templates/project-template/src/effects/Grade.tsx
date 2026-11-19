@@ -3,19 +3,21 @@
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame } from 'remotion';
 
-export function Grade({ grade, occlusion, letterbox = 0, grainScale = 1 }: {
+export function Grade({ grade, occlusion, letterbox = 0, grainScale = 1, cssVignette = true }: {
   grade: { tint: string; tintOpacity: number; vignette: number; grain: number };
   occlusion: { coverage: number; color: string };
   letterbox?: number; // fraction of height per bar, e.g. 0.06
   grainScale?: number;
+  /** CSS vignette only when the WebGL post chain is off (PostFX has a real vignette) */
+  cssVignette?: boolean;
 }) {
   const frame = useCurrentFrame();
   const seed = frame % 97;
   return (
     <AbsoluteFill style={{ pointerEvents: 'none' }}>
       <AbsoluteFill style={{ backgroundColor: grade.tint, opacity: grade.tintOpacity, mixBlendMode: 'soft-light' }} />
-      <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 45%, rgba(0,0,0,${grade.vignette}) 100%)` }} />
-      {grade.grain > 0 && (
+      {cssVignette && <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 45%, rgba(0,0,0,${grade.vignette}) 100%)` }} />}
+      {grade.grain * grainScale > 0 && (
         <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: grade.grain * grainScale, mixBlendMode: 'overlay' }}>
           <filter id={`grain-${seed}`}>
             <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves={2} seed={seed} stitchTiles="stitch" />

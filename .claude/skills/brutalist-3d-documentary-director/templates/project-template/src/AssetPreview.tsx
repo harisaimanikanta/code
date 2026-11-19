@@ -7,8 +7,21 @@ import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { LightingDirector } from './library/lighting/LightingDirector';
 import { getComponent } from './world/registry';
+import { PostFX } from './library/rendering/PostFX';
 
-export interface AssetPreviewProps { component: string; props?: Record<string, unknown>; preset?: string; label?: string; [key: string]: unknown }
+export interface AssetPreviewProps { component: string; props?: Record<string, unknown>; preset?: string; label?: string; camera?: { position: [number, number, number]; target: [number, number, number]; fov?: number }; dof?: number; [key: string]: unknown }
+
+function FixedCam({ position, target, fov = 30 }: { position: [number, number, number]; target: [number, number, number]; fov?: number }) {
+  const { camera } = useThree();
+  useLayoutEffect(() => {
+    camera.position.set(...position);
+    (camera as THREE.PerspectiveCamera).fov = fov;
+    camera.near = 0.01;
+    camera.lookAt(...target);
+    (camera as THREE.PerspectiveCamera).updateProjectionMatrix();
+  }, [camera, position, target, fov]);
+  return null;
+}
 
 function AutoFrame({ children, orbitDeg }: { children: React.ReactNode; orbitDeg: number }) {
   const ref = useRef<THREE.Group>(null);
@@ -33,16 +46,19 @@ function AutoFrame({ children, orbitDeg }: { children: React.ReactNode; orbitDeg
   return <group ref={ref}>{children}</group>;
 }
 
-export const AssetPreview: React.FC<AssetPreviewProps> = ({ component, props = {}, preset = 'high-contrast-character', label }) => {
+export const AssetPreview: React.FC<AssetPreviewProps> = ({ component, props = {}, preset = 'high-contrast-character', label, camera, dof = 0 }) => {
   const frame = useCurrentFrame();
   const C = getComponent(component);
   return (
     <AbsoluteFill style={{ backgroundColor: '#050304' }}>
-      <ThreeCanvas width={800} height={800} shadows camera={{ fov: 30, position: [3, 2, 3] }}>
+      <ThreeCanvas width={800} height={800} flat shadows={{ type: THREE.PCFSoftShadowMap }} camera={{ fov: 30, position: [3, 2, 3] }}>
         <LightingDirector schedule={[{ start: 0, end: 1e9, preset }]} focus={[0, 0, 0]} />
-        <AutoFrame orbitDeg={frame * 0.5}>
-          <C {...props} />
-        </AutoFrame>
+        {camera ? (<><FixedCam {...camera} /><C {...props} /></>) : (
+          <AutoFrame orbitDeg={frame * 0.5}>
+            <C {...props} />
+          </AutoFrame>
+        )}
+        <PostFX quality="final" dof={dof} ao={1.5} focusDistance={camera ? Math.hypot(camera.position[0] - camera.target[0], camera.position[1] - camera.target[1], camera.position[2] - camera.target[2]) : 3} />
       </ThreeCanvas>
       {label && <div style={{ position: 'absolute', left: 24, bottom: 18, color: '#fff', fontFamily: "'Oswald','Arial Narrow',sans-serif", fontWeight: 700, fontSize: 28, letterSpacing: 1, textTransform: 'uppercase' }}>{label}</div>}
     </AbsoluteFill>

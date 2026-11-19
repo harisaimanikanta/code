@@ -4,6 +4,7 @@
 import React, { useLayoutEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useThree } from '@react-three/fiber';
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { smoothstep } from '../core/math';
 import { useAssetTime } from '../core/time';
 import presetsJson from './lighting-presets.json';
@@ -16,6 +17,8 @@ export interface LightingPreset {
   rim: { color: string; intensity: number; dir: number[] };
   fill: { color: string; intensity: number; dir: number[] };
   exposure: number; grade: { tint: string; tintOpacity: number; vignette: number; grain: number };
+  environment?: { intensity: number; rotation?: number };
+  post?: { bloom?: number; bloomThreshold?: number; ao?: number; contrast?: number; saturation?: number; vignette?: number; grain?: number; dof?: number };
 }
 export const LIGHTING_PRESETS = presetsJson.presets as unknown as Record<string, LightingPreset & { description: string }>;
 
@@ -35,6 +38,12 @@ export function blendPresets(a: LightingPreset, b: LightingPreset, t: number): L
     fill: { color: c(a.fill.color, b.fill.color, t), intensity: n(a.fill.intensity, b.fill.intensity, t), dir: v(a.fill.dir, b.fill.dir, t) },
     exposure: n(a.exposure, b.exposure, t),
     grade: { tint: c(a.grade.tint, b.grade.tint, t), tintOpacity: n(a.grade.tintOpacity, b.grade.tintOpacity, t), vignette: n(a.grade.vignette, b.grade.vignette, t), grain: n(a.grade.grain, b.grade.grain, t) },
+    environment: { intensity: n(a.environment?.intensity ?? 0.25, b.environment?.intensity ?? 0.25, t), rotation: n(a.environment?.rotation ?? 0, b.environment?.rotation ?? 0, t) },
+    post: Object.fromEntries([...new Set([...Object.keys(a.post ?? {}), ...Object.keys(b.post ?? {})])].map((key) => {
+      const ka = key as keyof NonNullable<LightingPreset['post']>;
+      const va = a.post?.[ka], vb = b.post?.[ka];
+      return [key, va === undefined ? vb : vb === undefined ? va : n(va, vb, t)];
+    })),
   };
 }
 
@@ -66,7 +75,7 @@ export function lightingAt(schedule: LightingCue[], frame: number, blendFrames =
 const dirVec = (d: number[], dist: number) => new THREE.Vector3(d[0], d[1], d[2]).normalize().multiplyScalar(dist);
 
 /** Mount once inside the canvas. `focus` = world point the key light's shadow frustum follows (camera target). */
-export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36, shadowSize = 18, frame }: { schedule: LightingCue[]; focus?: [number, number, number]; blendFrames?: number; shadowSize?: number; frame?: number }) {
+export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36, shadowSize = 12, frame }: { schedule: LightingCue[]; focus?: [number, number, number]; blendFrames?: number; shadowSize?: number; frame?: number }) {
   const { frame: f } = useAssetTime(frame);
   const L = useMemo(() => lightingAt(schedule, f, blendFrames), [schedule, f, blendFrames]);
   const { scene, gl } = useThree();
@@ -75,7 +84,20 @@ export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36
   const fill = useRef<THREE.DirectionalLight>(null);
   const target = useMemo(() => new THREE.Object3D(), []);
 
+  // Image-based lighting: a PMREM-filtered studio room, tinted per mood, so metals, glass, wet tissue and
+  // clearcoats get real reflections instead of looking like flat plastic.
+  const envTex = useMemo(() => {
+    const pm = new THREE.PMREMGenerator(gl);
+    const room = new RoomEnvironment();
+    const tex = pm.fromScene(room, 0.04).texture;
+    pm.dispose();
+    return tex;
+  }, [gl]);
+
   useLayoutEffect(() => {
+    scene.environment = envTex;
+    scene.environmentIntensity = L.environment?.intensity ?? 0.25;
+    scene.environmentRotation.set(0, L.environment?.rotation ?? 0, 0);
     scene.background = new THREE.Color(L.background);
     scene.fog = new THREE.FogExp2(L.fog.color, L.fog.density);
     gl.toneMappingExposure = L.exposure;
@@ -98,7 +120,7 @@ export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36
     <>
       <primitive object={target} />
       <hemisphereLight args={[L.hemi.sky, L.hemi.ground, L.hemi.intensity]} />
-      <directionalLight ref={key} color={L.key.color} intensity={L.key.intensity} castShadow shadow-mapSize={[2048, 2048]} shadow-bias={-0.0004} shadow-normalBias={0.02} />
+      <directionalLight ref={key} color={L.key.color} intensity={L.key.intensity} castShadow shadow-mapSize={[4096, 4096]} shadow-bias={-0.0003} shadow-normalBias={0.025} shadow-radius={4} />
       <directionalLight ref={rim} color={L.rim.color} intensity={L.rim.intensity} />
       <directionalLight ref={fill} color={L.fill.color} intensity={L.fill.intensity} />
     </>
