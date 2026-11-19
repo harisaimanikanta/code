@@ -77,6 +77,10 @@ case "$MODE" in
     TITLE=$(python3 -c "import json,re;print(re.sub(r'[^a-z0-9]+','-',json.load(open('data/production-config.json'))['title'].lower()).strip('-') or 'documentary')")
     OUT="out/${TITLE}.mp4"
     render render src/index.ts Documentary "$OUT" --scale="${SCALE:-1}" "${CONC_ARGS[@]}" --crf=18 --pixel-format=yuv420p
+    # Remotion's JPEG frame pipeline can tag output as full-range yuvj420p; normalise to broadcast-safe yuv420p
+    if [[ "$(ffprobe -v error -select_streams v:0 -show_entries stream=pix_fmt -of csv=p=0 "$OUT")" != "yuv420p" ]]; then
+      ffmpeg -v error -y -i "$OUT" -vf "scale=in_range=full:out_range=tv,format=yuv420p" -c:v libx264 -crf 16 -preset medium -c:a copy -movflags +faststart "${OUT%.mp4}.tmp.mp4" && mv "${OUT%.mp4}.tmp.mp4" "$OUT"
+    fi
     if [[ "${SCALE:-1}" == "1" ]]; then python3 "$SKILL/scripts/validate-video.py" . "$OUT" --json-out analysis/qc-video.json
     else python3 "$SKILL/scripts/validate-video.py" . "$OUT" --preview --json-out analysis/qc-video.json; fi
     echo "final: $OUT";;
