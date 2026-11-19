@@ -2481,7 +2481,7 @@
    "files": [
     "lighting/lighting-presets.json"
    ],
-   "sha256": "3696f000ba3f966e76a527e0d6f2d97389845ab1b2edb0007fb77b511193d34b"
+   "sha256": "9cde5e933de8ff7d22fdccb90599aab3317320c67b8938ceca95728c95318159"
   },
   {
    "id": "light.hanging-lamp",
@@ -4752,7 +4752,7 @@
     "materials/materials.ts",
     "objects/GLTFModel.tsx"
    ],
-   "sha256": "1f053878757eb7fd7a860a262efbd4adfeaba188b011ef40286094db969770ae"
+   "sha256": "6e571e3ae9891309ac3847a48c502ecf16bef98b943c37752b77f7ce44d34a3c"
   },
   {
    "id": "env.publication-desk",
@@ -7861,5 +7861,5 @@
    ]
   }
  ],
- "indexedAt": "2026-11-19T19:03:32+00:00"
+ "indexedAt": "2026-11-19T19:08:30+00:00"
 }

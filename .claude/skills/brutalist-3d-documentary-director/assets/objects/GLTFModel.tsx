@@ -6,6 +6,7 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { useThree } from '@react-three/fiber';
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js';
 import { continueRender, delayRender, staticFile } from 'remotion';
 import { getMaterial, type MaterialPresetId } from '../materials/materials';
@@ -38,13 +39,15 @@ export interface GLTFModelProps {
 
 export function GLTFModel({ src, position, rotation, scale = 1, materialOverride, clips = [], castShadow = true, frame }: GLTFModelProps) {
   const { frame: f, fps } = useAssetTime(frame);
+  const { advance } = useThree();
   const [gltf, setGltf] = useState<GLTF | null>(null);
   const [handle] = useState(() => delayRender(`Loading model ${src}`));
+  const [failed, setFailed] = useState(false);
   useEffect(() => {
     load(staticFile(src))
-      .then((g) => { setGltf(g); continueRender(handle); })
-      .catch((e) => { console.error(`GLTFModel: failed to load ${src}`, e); continueRender(handle); });
-  }, [src, handle]);
+      .then((g) => setGltf(g))
+      .catch((e) => { console.error(`GLTFModel: failed to load ${src}`, e); setFailed(true); });
+  }, [src]);
 
   const scene = useMemo(() => {
     if (!gltf) return null;
@@ -88,6 +91,15 @@ export function GLTFModel({ src, position, rotation, scale = 1, materialOverride
     mixer.update(0); // evaluate at the exact times set above (no wall-clock dependency)
     void t;
   }, [gltf, mixer, f, fps, clips, src]);
+
+  // release the frame only once the model is actually in the scene graph and posed for this frame
+  // Remotion's ThreeCanvas only draws when the frame changes; an asynchronously loaded model mounts after that
+  // draw, so request one more render of the current frame before releasing it.
+  useLayoutEffect(() => {
+    if (!scene && !failed) return;
+    if (scene) advance(performance.now());
+    continueRender(handle);
+  }, [scene, failed, handle, advance]);
 
   if (!scene) return null;
   return <primitive object={scene} position={position} rotation={rotation} scale={scale} />;

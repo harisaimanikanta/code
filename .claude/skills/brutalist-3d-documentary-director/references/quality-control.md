@@ -44,3 +44,13 @@ Fix → re-bake → re-validate → re-render affected range (`preview FROM TO`)
 
 The skill's own self-test (`bash SKILL/scripts/selftest.sh`) exercises the scripts end-to-end on a synthetic
 voiceover; run it after modifying the skill.
+
+## v2 proof-of-concept gate (what it caught in the reference production)
+
+The storyboard production `examples/the-patient-was-him/` went through six PoC iterations. Each failure below was
+invisible to the automated validators and was fixed at its source:
+salmon-pink colour (AgX tone mapping → ACES), unreadable sign lettering (raking shadow light), the camera pushing
+through a character (walk him aside), a glass held at the forehead (pose), a sun hidden by slabs (set layout), a
+non-silhouette (outfit + camera height), camera staring at walls mid-transition (look along the path; lower the path
+under a lintel), a lying character's anchor pointing at the ceiling (global anchor), hard particle diamonds (soft point
+sprites), wall text overflowing 9:16 (two lines). Always render and look.

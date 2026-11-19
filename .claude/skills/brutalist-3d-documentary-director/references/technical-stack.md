@@ -75,3 +75,19 @@ transmission/post-processing passes (grade is CSS). Preview at `--scale 0.5`; fu
 
 `new-project.py --aspect 9:16` → 1080×1920. Use tighter FOV (26–34), keep subjects in the upper-middle third,
 subtitles auto-move to 24 % from bottom.
+
+## v2 additions
+
+- Dependencies: `postprocessing` 6.39.6 + `n8ao` 2.0.1 driven directly (the `@react-three/postprocessing` wrapper
+  renders black under Remotion's manual `advance()` loop because its buffers are sized at mount).
+- `rendering/PostFX.tsx` — post chain; `rendering/n8ao.d.ts` — types.
+- `core/geometry.ts` — bevelled real-dimension geometry, lathes, capsules, tubes, extrusions (cached).
+- `textures/surfaceSets.ts` — procedural PBR map sets; `textures/canvasTextures.ts` — in-world screens/print/flag/sky;
+  `textures/fonts/` — Oswald Bold typeface JSON (3D text) + WOFF (subtitles), SIL OFL 1.1, rebuilt by
+  `scripts/build-typeface.mjs`.
+- Zone activation: `shot.environment` + optional `shot.activeZones` decide which sets are mounted (±45 frames);
+  objects/actors carry `zone`. Without zones, distance culling applies.
+- Render timeouts: heavy first frames compile many shaders; `render-project.sh` passes `--timeout` (240 s,
+  `RENDER_TIMEOUT_MS`).
+- Measured (4-core CPU, SwiftShader, 540×960, `post: preview`, shadow 1024): ≈4–5 s/frame wall-clock with 4 workers
+  for dressed v2 sets — a 68 s film ≈ 2.5 h. GPU machines are 10–50× faster.

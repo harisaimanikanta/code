@@ -92,9 +92,23 @@ assets/                      seed library: 83 components/modules + 72 indexed pr
 | `render-project.sh` | Pre-flight QC, then stills, preview or full render (ANGLE → SwiftShader fallback) |
 | `selftest.sh` | Offline end-to-end test of all of the above |
 
+## v2 visual standard
+
+Version 2 rebuilt the visual pipeline:
+- **Sets:** dressed production sets (lab, lecture theatre, endoscopy room, animal lab, ceremony stage, publication desk, brutalist exterior, red-sun horizon) and a period prop kit.
+- **Geometry:** bevelled real-dimension geometry with world-scale UVs.
+- **Materials:** procedural PBR surface sets (albedo, normal and roughness).
+- **Lighting:** image-based reflections, fluorescent area lights and three-point subject rigs.
+- **Post chain:** ambient occlusion, focus-tracked depth of field, bloom, ACES tone mapping and grade.
+- **Characters v2:** sculpted, clothed, expressive, blinking, with distance-driven walks.
+- **Extras:** animals; stomach and molecule visualisation; extruded 3D lettering (Oswald, OFL); a glTF loader with deterministic clip playback; shot-plan-driven set activation; and a mandatory visual proof-of-concept gate.
+
+See `SKILL.md → Visual quality standard`, `references/asset-quality-checklist.md` and `examples/the-patient-was-him/`. The previous version is archived in `backups/` at the repository root.
+
 ## Known limitations
 
 - **Transcription needs an ASR backend.** Without one, wording comes from a supplied script. Timing is then estimated from detected speech: sentence boundaries snap to real pauses, but word timing is approximate. With neither a script nor ASR, the skill stops and asks.
 - **Rendering is CPU-bound without a GPU.** Expect about 0.5 s/frame at 960×540 on 4 cores. Preview first; full 1080p renders of long films take hours.
-- **Faces are deliberately simple and low-poly.** There is no lip-sync or facial animation.
+- **Procedural faces are stylised.** They have brows, lids, mouth and blinking but no lip-sync. For extreme close-ups, supply a licensed rigged glTF and use `GLTFModel`.
+- **No external model library ships with the skill.** No licensed models were available offline, so v2 is entirely procedural; the glTF path is tested with a generated test model.
 - **The library ships no external model files.** Every asset is procedural, so glTF imports are project assets.

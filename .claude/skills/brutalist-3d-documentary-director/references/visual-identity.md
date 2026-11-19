@@ -49,3 +49,10 @@ text-heavy screens · real logos/insignia · likenesses of real people (use gene
 Users may override palette ("cold blue brutalism"), geometry ("higher poly"), or aspect ratio. Apply overrides
 via lighting presets (`lighting-presets.json`), material overrides (`getMaterial(id, {color})`) and project
 config — never by forking library assets. Record the override in `docs/creative-direction.md`.
+
+## v2 production standard
+
+See `SKILL.md → Visual quality standard` and `asset-quality-checklist.md`. In short: dressed sets with layered
+depth, bevelled geometry, PBR surfaces, motivated practical lights + subject rigs, real post (AO, DoF, bloom,
+ACES), expressive characters, 3D lettering for text. Colour contrast is intelligent: red dominates the light, but
+skin, concrete grey, toxic green biology and gold achievement must still read as themselves.

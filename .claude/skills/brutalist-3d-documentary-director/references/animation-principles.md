@@ -48,3 +48,20 @@ indifference/rejection, high as rapt interest. One draw call per body part.
 
 Anticipation before big actions (5–10 frames), overlap (head look leads body turn), ease in/out on poses (via
 `fade`), secondary motion (breathing idle is always on), and restraint: one primary action per beat.
+
+## v2 character system
+
+- Poses added: `cover-mouth`, `facepalm`, `clutch-stomach`, `examine`, `present`, `pickup`, `clap`, `think`, `vomit`,
+  `lie` (rests on a bed: place the root ≈0.56 m above the bed's floor), `handshake`, `nod`.
+- Facial channels in every pose: `browRaise`, `browFurrow`, `lids`, `mouthOpen`, `smile`; expression actions
+  `{"type": "expression", "expression": "shock|pain|smile|determined|sad|closed|concentrate", start, end}`.
+- Automatic secondary motion: blinking (deterministic per identity), breathing, weight shifts, head drift.
+- Walks are distance-driven (`stride`), so feet don't slide; use `turn` + `walk` to get characters out of the camera's
+  path before a push-in.
+- Identity grammar: `"<preset>[@young|adult|older|elderly][+labcoat|suit|tuxedo|gown|sweater|surgical]"` — same face,
+  hair style and skin in every variant.
+- Hand items: `glass`, `tumbler`, `flask`, `culture`, `vial`, `paper`, `newspaper`, `journal`, `medal`, `pill`, `slide`, `pen`
+  (`item` + `itemFrames`, `leftItem`).
+- Camera anchors follow an actor's position and walk, not its pose: for lying/bent characters add a global anchor.
+- Animals: `Pig` (breathing, sniffing, ear flicks, distance-driven trot), `PigPen`, `PigGroup`.
+- Skeletal clips: `GLTFModel` plays named clips from a licensed .glb deterministically (`clips: [{clip, start, end}]`).
