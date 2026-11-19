@@ -35,6 +35,7 @@ On 20 November 1989 Mexico City introduced Hoy No Circula ("Today [it] doesn't d
 - How many households bought a second car: a review finds weak direct evidence for the "second-car hypothesis"; one survey summary says under 5% bought another car (S9). Script says "some families", never "everyone".
 - Davis sample period (1986-2005 vs 1986-1993 for parts of the analysis). Script says "years of hourly readings".
 - Whether permanence was announced in March 1990 or at season's end. Script says "By 1990".
+- Second-car purchases: supported by 1994 contemporary reporting (Christian Science Monitor, citing studies incl. one by INAINE: the program encouraged people to buy a second, often older and more polluting car) and Eskeland & Feyzioglu 1997; but later household studies (Transportation Research Part D, 2017 and 2022) do not find second-car buying to be a main adaptation, and one textbook summary says most owners simply stopped using their car on the restricted day. Script keeps "some families".
 ### POPULAR LEGENDS (don't state as fact)
 - Birds dropping dead mid-flight from smog - anecdotal; omit.
 ### UNKNOWN
@@ -44,7 +45,7 @@ On 20 November 1989 Mexico City introduced Hoy No Circula ("Today [it] doesn't d
 - Plain fact: the dates, the plate rule, "one car in five", permanence by 1990, "no evidence the air got cleaner" (Davis), registrations up, older/dirtier mix, "some households bought another car" (Eskeland & Feyzioglu).
 - Attribute: the economist's finding (name Davis); fuel sales.
 - Avoid: "everyone bought a second car", "made the air worse", UN ranking, bird deaths, exact car counts.
-- Dramatized (v4): a composite driver, his wife, their two quoted lines and the backfire gag illustrate the documented behaviour (households buying an additional, often older car). Not real people; labelled in the description and on screen.
+- No characters: a search for a real, named driver who bought a second car (1990s press) found none, so the script uses no individual people except economist Lucas Davis. The v4 composite driver and wife were dropped at the owner's request.
 
 ## Sources
 | # | Title | Publisher / author | Date | URL | Tier | Read in full? |
@@ -58,6 +59,10 @@ On 20 November 1989 Mexico City introduced Hoy No Circula ("Today [it] doesn't d
 | S7 | Saturday driving restrictions fail to improve air quality in Mexico City | Scientific Reports (PMC5289101) | 2017 | https://pmc.ncbi.nlm.nih.gov/articles/PMC5289101 | 2 | Snippet |
 | S8 | A lot of hot air | Stanford Social Innovation Review | 2008 | https://ssir.org/articles/entry/a_lot_of_hot_air | 3 | Snippet |
 | S9 | Second-car hypothesis review | US DOT / ROSA P | — | https://rosap.ntl.bts.gov/view/dot/58949/dot_58949_DS1.pdf | 2-3 | Snippet |
+
+| S10 | Mexico City struggles to clear the air | Christian Science Monitor | 1994-10-19 | https://www.csmonitor.com/1994/1019/19121.html | 3 (period press) | Snippet |
+| S11 | Getting around a license-plate ban: behavioral responses to Mexico City's driving restriction | Transportation Research Part D | 2017 | https://www.sciencedirect.com/science/article/abs/pii/S1361920917303498 | 2 | Snippet |
+| S12 | Examining behavioral responses to Mexico City's driving restriction: a mixed methods approach | Transportation Research Part D | 2022 | https://www.sciencedirect.com/science/article/abs/pii/S1361920922000220 | 2 | Snippet |
 
 ## Limitations
 The Davis PDF and Cornell/NBER copies were blocked by this session's network policy (proxy 403). All facts are from abstracts and search summaries. Read S1 and S2 in full before publishing.
