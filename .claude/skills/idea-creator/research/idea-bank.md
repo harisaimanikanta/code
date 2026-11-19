@@ -128,7 +128,7 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 56 | John Snow's Broad Street pump (1854) | medical | 9 | low | idea |
 | 57 | Gimli Glider (1983) | engineering | 9 | medium | idea |
 | 58 | Beringer's Lying Stones (1725) | hoax | 8 | low | idea |
-| 59 | Hoy No Circula, Mexico City (1989) | backfired plan | 8 | low | idea |
+| 59 | Hoy No Circula, Mexico City (1989) | backfired plan | 8 | low | scripted (VIRAL-SCRIPT-WRITER) |
 | 60 | Mike the Headless Chicken (1945) | medical | 8 | low | idea |
 
 ---
