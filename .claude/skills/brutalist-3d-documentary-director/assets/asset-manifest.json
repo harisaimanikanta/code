@@ -2783,7 +2783,7 @@
     "characters/poses.ts",
     "core/math.ts"
    ],
-   "sha256": "2b81bad0d306502a9a5b5eecc845bf96873029dae20ed06ca34553fdf31b469a"
+   "sha256": "a8f613d65ce567e3ee192077529755b1bbcf5ee2616cbf622f87eb581aea9fcb"
   },
   {
    "id": "cam.vec",
@@ -4697,5 +4697,5 @@
    ]
   }
  ],
- "indexedAt": "2026-11-19T11:55:26+00:00"
+ "indexedAt": "2026-11-19T12:12:05+00:00"
 }

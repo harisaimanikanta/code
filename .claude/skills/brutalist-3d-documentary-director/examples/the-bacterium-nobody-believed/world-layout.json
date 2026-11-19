@@ -425,6 +425,60 @@
    }
   },
   {
+   "id": "door_spot",
+   "component": "SpotPool",
+   "position": [
+    0,
+    0,
+    -15
+   ],
+   "props": {
+    "position": [
+     0,
+     6.5,
+     3
+    ],
+    "target": [
+     0,
+     0.5,
+     -2
+    ],
+    "color": "#ff4a3a",
+    "intensity": 500,
+    "angle": 0.5,
+    "distance": 22,
+    "castShadow": false
+   }
+  },
+  {
+   "id": "corridor_end_lamp",
+   "component": "HangingLamp",
+   "position": [
+    0,
+    6.2,
+    -41
+   ],
+   "props": {
+    "cable": 0.8,
+    "intensity": 60,
+    "distance": 16
+   }
+  },
+  {
+   "id": "lab_entry_lamp",
+   "component": "HangingLamp",
+   "position": [
+    -1.5,
+    4.3,
+    -47.5
+   ],
+   "props": {
+    "cable": 0.6,
+    "intensity": 45,
+    "distance": 12
+   }
+  },
+  {
    "id": "hall_shaft",
    "component": "LightShaft",
    "position": [
@@ -634,6 +688,27 @@
     1420,
     1475
    ]
+  },
+  {
+   "id": "pillar-wipe",
+   "shape": "box",
+   "center": [
+    -3.4,
+    -19,
+    -136.5
+   ],
+   "halfSize": [
+    0.6,
+    7,
+    0.6
+   ],
+   "color": "#000000",
+   "feather": 0.1,
+   "frames": [
+    1745,
+    1795
+   ],
+   "intent": "declared intentional dark window: foreground pillar wipe"
   }
  ]
 }

@@ -81,6 +81,14 @@ def subtitle_cues(phrases: list[list[dict]], max_chars: int, duration: float) ->
             chunk.append(w)
         if chunk:
             cues.append(chunk)
+    # merge cues that would flash by (< 0.9 s spoken) into a neighbour when the result still fits two lines
+    merged: list[list[dict]] = []
+    for c in cues:
+        if merged and (c[-1]["end"] - c[0]["start"] < 0.9 or merged[-1][-1]["end"] - merged[-1][0]["start"] < 0.9) and len(text_of(merged[-1] + c)) <= max_chars * 2:
+            merged[-1] = merged[-1] + c
+        else:
+            merged.append(c)
+    cues = merged
     out = []
     for i, c in enumerate(cues):
         start = c[0]["start"]

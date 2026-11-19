@@ -118,11 +118,15 @@ for kind in ("zones", "objects", "actors"):
 for o in layout["occluders"]:
   o["center"] = shift(o["center"], dz_for(o["center"][2]))
 layout["objects"].append({"id": "dais_spot", "component": "SpotPool", "position": [0, 0, 0], "props": {"position": [0, 12, 5], "target": [0, 1.6, 0], "color": "#ff5040", "intensity": 900, "angle": 0.32, "distance": 30}})
+layout["objects"].append({"id": "door_spot", "component": "SpotPool", "position": [0, 0, -15], "props": {"position": [0, 6.5, 3], "target": [0, 0.5, -2], "color": "#ff4a3a", "intensity": 500, "angle": 0.5, "distance": 22, "castShadow": False}})
+layout["objects"].append({"id": "corridor_end_lamp", "component": "HangingLamp", "position": [0, 6.2, -41], "props": {"cable": 0.8, "intensity": 60, "distance": 16}})
+layout["objects"].append({"id": "lab_entry_lamp", "component": "HangingLamp", "position": [-1.5, 4.3, -47.5], "props": {"cable": 0.6, "intensity": 45, "distance": 12}})
+layout["occluders"].append({"id": "pillar-wipe", "shape": "box", "center": [-3.4, -19, -136.5], "halfSize": [0.6, 7, 0.6], "color": "#000000", "feather": 0.1, "frames": [1745, 1795], "intent": "declared intentional dark window: foreground pillar wipe"})
 layout["objects"].append({"id": "hall_shaft", "component": "LightShaft", "position": [0, 12.5, 0], "props": {"length": 12, "radius": 3.2, "color": "#ff3a2a", "intensity": 0.1}})
 json.dump(layout, open(f"{P}/data/world-layout.json", "w"), indent=1)
 json.dump(plan, open(f"{P}/data/shot-plan.json", "w"), indent=1)
 cfg = json.load(open(f"{P}/data/production-config.json"))
-cfg["camera"]["initial"] = {"position": [0, 9.6, 17], "target": [0, 2.6, 0], "fov": 40, "rollDeg": 0}
+cfg["camera"]["initial"] = {"position": [0, 9.6, 13.5], "target": [0, 2.6, 0], "fov": 40, "rollDeg": 0}
 cfg["style"]["letterbox"] = 0
 json.dump(cfg, open(f"{P}/data/production-config.json", "w"), indent=1)
 print("directed", len(S), "moves")

@@ -63,7 +63,7 @@ case "$MODE" in
   preview)
     FROM="${FROM:-0}"; TO="${TO:-$(( FROM + FPS * 10 < N ? FROM + FPS * 10 : N - 1 ))}"
     OUT="out/preview-${FROM}-${TO}.mp4"
-    render render src/index.ts Documentary "$OUT" --frames="${FROM}-${TO}" --scale="${SCALE:-0.5}" "${CONC_ARGS[@]}"
+    render render src/index.ts Documentary "$OUT" --frames="${FROM}-${TO}" --scale="${SCALE:-0.5}" --pixel-format=yuv420p "${CONC_ARGS[@]}"
     python3 "$SKILL/scripts/validate-video.py" . "$OUT" --preview --json-out analysis/qc-preview.json || true
     ffmpeg -v error -y -i "$OUT" -vf "fps=1,scale=480:-1,tile=4x3" -frames:v 1 "out/preview-${FROM}-${TO}-sheet.png" || true
     echo "preview: $OUT  (contact sheet: out/preview-${FROM}-${TO}-sheet.png) — INSPECT before full render";;
@@ -76,7 +76,7 @@ case "$MODE" in
   full)
     TITLE=$(python3 -c "import json,re;print(re.sub(r'[^a-z0-9]+','-',json.load(open('data/production-config.json'))['title'].lower()).strip('-') or 'documentary')")
     OUT="out/${TITLE}.mp4"
-    render render src/index.ts Documentary "$OUT" --scale="${SCALE:-1}" "${CONC_ARGS[@]}" --crf=18
+    render render src/index.ts Documentary "$OUT" --scale="${SCALE:-1}" "${CONC_ARGS[@]}" --crf=18 --pixel-format=yuv420p
     if [[ "${SCALE:-1}" == "1" ]]; then python3 "$SKILL/scripts/validate-video.py" . "$OUT" --json-out analysis/qc-video.json
     else python3 "$SKILL/scripts/validate-video.py" . "$OUT" --preview --json-out analysis/qc-video.json; fi
     echo "final: $OUT";;

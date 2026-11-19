@@ -13,6 +13,10 @@ validators can't judge beauty, legibility or story.
 | Types | `npx tsc --noEmit` | type errors |
 | Video | `validate-video.py . out/x.mp4` | resolution/aspect/fps/duration/codec, missing or truncated voiceover, clipping, unintended black segments (outside occluder windows), frozen picture (static camera), invalid subtitles; warns on hard-cut signatures and loudness outside −20…−12 LUFS |
 
+Black-frame detection doubles as a composition check: a "black segment" outside an occluder window usually means
+the camera is staring at an unlit wall, sits outside a room, or a zone lacks practical light — fix the shot, don't
+raise the threshold. Intentional dark wipes must be declared as occluders with a `frames` window.
+
 ## Human review checklist (stills + preview)
 
 Camera: motion purposeful and smooth · orbits reveal something · no wall/geometry clipping (camera inside a

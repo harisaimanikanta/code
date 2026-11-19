@@ -10,7 +10,8 @@ Baked by `npm run bake` (`scripts/bake-camera.ts`) → `src/generated/camera-tra
    end state (position, look target, FOV, roll) and must return it at u=0 (the compiler asserts this).
 2. **Orbits derive from the inherited position** — start angle/radius/height are measured from where the camera
    *is*; `radius`/`height` are approached over `approach` (default 35 %) of the move.
-3. **Fluid-head look blending** — the previous look target blends to the new one by interpolating yaw (shortest
+3. **Fluid-head look blending** — the inherited aim is carried *with the camera* as a held direction (so flying
+   past the previous target can't whip the view), then blends to the new one by interpolating yaw (shortest
    way, direction locked at move start) and pitch, never by lerping points (which can flip 180°) or slerping
    through the pole. The blend length `lead` is auto-extended so re-aiming stays under ~100°/s.
 4. **Velocity blending** — positions and look angles are Gaussian-smoothed (`camera.smoothingSeconds`, default

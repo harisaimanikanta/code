@@ -217,7 +217,10 @@ function lookBlend(ctx: Ctx, u: number, frame: number, fallback?: V3, pos?: V3):
   const goal0 = spec.target !== undefined ? R.resolve(spec.target, ctx.startFrame) : fallback ?? start.target;
   const lead = autoLead(ctx, lookAngle(start.pos, start.target, goal0), spec.lead ?? 0.3);
   const w = lead <= 0 ? 1 : smoothstep(0, lead, u);
-  return blendLook(pos ?? start.pos, start.target, goal, w, yawDelta(start.pos, start.target, goal0));
+  const p = pos ?? start.pos;
+  // the inherited aim travels WITH the camera (a held direction), so flying past the old target can't whip the view
+  const carried = add(p, sub(start.target, start.pos));
+  return blendLook(p, carried, goal, w, yawDelta(start.pos, start.target, goal0));
 }
 function fovAt(ctx: Ctx, u: number): number {
   const end = ctx.spec.fovEnd ?? ctx.spec.fov ?? ctx.start.fov;
@@ -328,7 +331,8 @@ const generators: Record<MoveType, (ctx: Ctx) => Sampler> = {
         const along = spline.atU(e + ahead);
         const along0 = spline.atU(0.15 + ahead);
         const alongLead = autoLead(ctx, lookAngle(start.pos, start.target, along0), spec.lead ?? 0.25);
-        const fromPrev = blendLook(pos, start.target, along, smoothstep(0, alongLead, u), yawDelta(start.pos, start.target, along0));
+        const carried = add(pos, sub(start.target, start.pos));
+        const fromPrev = blendLook(pos, carried, along, smoothstep(0, alongLead, u), yawDelta(start.pos, start.target, along0));
         target = spec.target !== undefined ? blendLook(pos, fromPrev, R.resolve(spec.target, frame), smoothstep(0.6, 1, u)) : fromPrev;
       } else target = lookBlend(ctx, u, frame, undefined, pos);
       return { pos, target, fov: fovAt(ctx, u), roll: rollAt(ctx, u) };

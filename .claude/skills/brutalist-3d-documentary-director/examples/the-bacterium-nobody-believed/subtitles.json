@@ -126,8 +126,8 @@
   },
   {
    "start": 9.905,
-   "end": 11.67,
-   "text": "and too much acid.",
+   "end": 12.537,
+   "text": "and too much acid. Nothing",
    "words": [
     {
      "text": "and",
@@ -148,18 +148,7 @@
      "text": "acid.",
      "start": 10.921,
      "end": 11.52
-    }
-   ],
-   "emphasis": [
-    "much"
-   ],
-   "position": "bottom"
-  },
-  {
-   "start": 12.06,
-   "end": 12.537,
-   "text": "Nothing",
-   "words": [
+    },
     {
      "text": "Nothing,",
      "start": 12.06,
@@ -256,8 +245,8 @@
   },
   {
    "start": 19.364,
-   "end": 22.18,
-   "text": "pathologist Robin Warren kept seeing",
+   "end": 22.994,
+   "text": "pathologist Robin Warren kept seeing something",
    "words": [
     {
      "text": "pathologist",
@@ -283,18 +272,7 @@
      "text": "seeing",
      "start": 21.879,
      "end": 22.2
-    }
-   ],
-   "emphasis": [
-    "pathologist"
-   ],
-   "position": "bottom"
-  },
-  {
-   "start": 22.2,
-   "end": 22.994,
-   "text": "something",
-   "words": [
+    },
     {
      "text": "something",
      "start": 22.2,
@@ -302,7 +280,7 @@
     }
    ],
    "emphasis": [
-    "something"
+    "pathologist"
    ],
    "position": "bottom"
   },
@@ -417,8 +395,8 @@
   },
   {
    "start": 31.18,
-   "end": 34.029,
-   "text": "he argued these bacteria caused the",
+   "end": 34.758,
+   "text": "he argued these bacteria caused the disease.",
    "words": [
     {
      "text": "he",
@@ -449,18 +427,7 @@
      "text": "the",
      "start": 33.733,
      "end": 34.049
-    }
-   ],
-   "emphasis": [
-    "bacteria"
-   ],
-   "position": "bottom"
-  },
-  {
-   "start": 34.049,
-   "end": 34.849,
-   "text": "disease.",
-   "words": [
+    },
     {
      "text": "disease.",
      "start": 34.049,
@@ -468,7 +435,7 @@
     }
    ],
    "emphasis": [
-    "disease"
+    "bacteria"
    ],
    "position": "bottom"
   },
@@ -536,8 +503,8 @@
   },
   {
    "start": 41.906,
-   "end": 45.095,
-   "text": "Marshall drank a culture of the bacteria",
+   "end": 45.828,
+   "text": "Marshall drank a culture of the bacteria himself.",
    "words": [
     {
      "text": "Marshall",
@@ -573,18 +540,7 @@
      "text": "bacteria",
      "start": 44.306,
      "end": 45.115
-    }
-   ],
-   "emphasis": [
-    "Marshall"
-   ],
-   "position": "bottom"
-  },
-  {
-   "start": 45.115,
-   "end": 45.915,
-   "text": "himself.",
-   "words": [
+    },
     {
      "text": "himself.",
      "start": 45.115,
@@ -592,7 +548,7 @@
     }
    ],
    "emphasis": [
-    "himself"
+    "Marshall"
    ],
    "position": "bottom"
   },
@@ -666,8 +622,8 @@
   },
   {
    "start": 51.813,
-   "end": 54.779,
-   "text": "Warren and Marshall received the Nobel",
+   "end": 55.082,
+   "text": "Warren and Marshall received the Nobel Prize",
    "words": [
     {
      "text": "Warren",
@@ -698,6 +654,11 @@
      "text": "Nobel",
      "start": 54.263,
      "end": 54.799
+    },
+    {
+     "text": "Prize",
+     "start": 54.799,
+     "end": 55.102
     }
    ],
    "emphasis": [
@@ -706,25 +667,9 @@
    "position": "bottom"
   },
   {
-   "start": 54.799,
-   "end": 55.102,
-   "text": "Prize",
-   "words": [
-    {
-     "text": "Prize",
-     "start": 54.799,
-     "end": 55.102
-    }
-   ],
-   "emphasis": [
-    "Prize"
-   ],
-   "position": "bottom"
-  },
-  {
    "start": 55.102,
-   "end": 57.632,
-   "text": "in Physiology or Medicine.",
+   "end": 59.259,
+   "text": "in Physiology or Medicine. Sometimes",
    "words": [
     {
      "text": "in",
@@ -745,18 +690,7 @@
      "text": "Medicine.",
      "start": 56.712,
      "end": 57.482
-    }
-   ],
-   "emphasis": [
-    "Physiology"
-   ],
-   "position": "bottom"
-  },
-  {
-   "start": 58.341,
-   "end": 59.259,
-   "text": "Sometimes",
-   "words": [
+    },
     {
      "text": "Sometimes,",
      "start": 58.341,
@@ -764,7 +698,7 @@
     }
    ],
    "emphasis": [
-    "Sometimes"
+    "Physiology"
    ],
    "position": "bottom"
   },
