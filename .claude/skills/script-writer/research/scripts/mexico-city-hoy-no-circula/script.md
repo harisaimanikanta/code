@@ -9,71 +9,61 @@ Format: **True Mechanism Parable** · 2026-11-19 · From IDEA CARD (idea-creator
 - **Attributed:** fuel sales didn't fall. **Disputed:** how many families bought a second car (script says "some"). **Avoided:** UN ranking, dead birds, "made the air worse".
 - **Sources:** World Bank Economic Review 1997, Journal of Political Economy 2008, Scientific Reports 2017, RFF, Chilango, Wikipedia (leads).
 
-## B. Five hook options (v2)
+## B. Five hook options (v3)
 | # | Type | Hook | Clar | Cur | Orig | Acc | Stop | Avg |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Second-person cold open (R3-style) | "Imagine the city bans your car every Monday. So you buy a second car. Now you can drive every single day." | 10 | 9 | 9 | 9 | 9 | **9.2** |
-| 2 | Shock (paradox) | "A city banned every car for one day a week, and ended up with more cars." (v1 hook) | 10 | 9 | 8 | 9 | 8 | 8.8 |
+| 1 | Shock (cause → absurd effect) | "Mexico City banned every car from driving one day a week. So some people just bought another car." | 10 | 9 | 8 | 9 | 9 | **9.0** |
+| 2 | Shock (paradox) | "A city banned every car for one day a week, and ended up with more cars." | 10 | 9 | 8 | 9 | 8 | 8.8 |
 | 3 | Cold-open action | "He parked his car on Monday and drove off in a different one." | 8 | 9 | 9 | 7 | 9 | 8.4 |
 | 4 | Contradiction | "The rule meant to take one car in five off the road put more cars on it." | 8 | 8 | 7 | 9 | 6 | 7.6 |
 | 5 | Mystery | "Why did a ban on driving make people buy cars?" | 9 | 9 | 6 | 9 | 7 | 8.0 |
 
-**Recommended: #1.** It puts the viewer inside the loophole in three beats (rule, workaround, payoff), the way reference R3 ("Imagine your boss…") does, and it's accurate because it describes a documented behaviour rather than a named person. The next line ("Sounds like a loophole…") ties it to the real data. Scores are editorial judgement, not view predictions.
+**Recommended: #1.** The whole story in two blunt sentences, like the references' openers: no set-up, no "imagine", and it's accurate ("some people"). Scores are editorial judgement, not view predictions.
 
-## C. Final voiceover script v2 (223 words · ~64 s at 3.5 words/s)
+## C. Final voiceover script v3 (215 words · ~61 s at 3.5 words/s)
 <!-- VOICEOVER START -->
-Imagine the city bans your car every Monday.
-So you buy a second car.
-Now you can drive every single day.
-Sounds like a loophole. In Mexico City, it showed up in the data.
-You see, it's 1989, and Mexico City is choking on smog. The fix: Hoy No Circula. Today, you don't drive.
-Check the last digit on your plate. Five or six? Your car stays home on Monday. Seven or eight? Tuesday.
-One car in five, gone every weekday. On paper, it's perfect.
-It's meant to be temporary. By 1990, permanent.
-But the smog stays.
-So economists start digging.
-Clue one. Fuel sales don't drop.
-Clue two. Car registrations go up.
-Clue three. The cars are getting older. And dirtier.
-Years later, economist Lucas Davis checks the city's air monitors, hour by hour. The verdict? No evidence the ban cleaned the air. At all.
-Because the rule has one tiny flaw.
-It doesn't ban a driver. It bans a plate.
-Plate ends in five? Get one that ends in seven.
-So some families do exactly that. They buy a cheap old car, the kind that pollutes the most, and park it next to the first one.
-Monday, the old one. Tuesday, the new one.
-The city wanted one car in five off the road.
-In some driveways, it got one more.
+Mexico City banned every car from driving one day a week. So some people just bought another car.
+You see, it's 1989, and the city is choking on smog. So the government makes a rule. Hoy No Circula. Today, you don't drive.
+It goes by the last digit on your plate. Ends in five or six, your car stays home on Monday. Seven or eight, Tuesday.
+That should take one car in five off the road, every weekday.
+It's meant to be temporary. By 1990, it's permanent.
+But the smog doesn't move.
+Fuel sales don't drop. Car registrations go up. And the cars on the road get older and dirtier.
+Years later, economist Lucas Davis goes through the city's air monitors, hour by hour. He finds no evidence the ban cleaned the air at all.
+Because the rule doesn't ban a driver. It bans a plate.
+If your plate ends in five, all you need is a car whose plate ends in seven.
+So some families buy one. Usually a cheap old car, the kind that pollutes the most.
+On Monday, they drive the old one. On Tuesday, the new one.
+They never miss a day.
+The ban was supposed to take one car in five off the road.
+In some driveways, it added one.
 <!-- VOICEOVER END -->
 
-Beat map: second-person cold open (rule → loophole → payoff) 0:00–0:06 → doubt + "it's real" 0:06–0:10 → "You see," 0:10 → the plate rule as a game 0:16–0:22 → "On paper, it's perfect." 0:24 → permanent, smog stays 0:25–0:29 → detective rule of three (clue one/two/three) 0:30–0:40 → reversal: Davis's verdict 0:40–0:48 → "one tiny flaw" 0:48 → mechanism (plate, not driver) 0:50–0:56 → the payoff in action (Monday/Tuesday swap) 0:56–1:00 → ironic hard cut that loops to the hook 1:00–1:04.
+Beat map (reference structure, no devices): cold open 0:00–0:05 → "You see," 0:05 → the rule 0:13–0:20 → "one in five" stakes 0:20–0:23 → permanent / smog doesn't move 0:23–0:28 → rule of three (fuel → registrations → older cars) 0:28–0:35 → reversal: Davis finds no improvement 0:35–0:42 → mechanism (plate, not driver) 0:42–0:52 → payoff in action (Monday/Tuesday) 0:52–0:56 → hard cut 0:56–1:01.
 
-v1 → v2 changes: abstract paradox opener → viewer-in-the-story opener; "economists start counting" → a detective "clue one / two / three" ladder; added the "On paper, it's perfect" set-up line and the "one tiny flaw" turn before the mechanism; the Monday/Tuesday swap shows the loophole working instead of explaining it; the last line ("one more") now loops back to the opening "second car". Average sentence length 6.4 → 5.4 words.
+v2 → v3: removed "Imagine", the detective "clue" device, "On paper, it's perfect" and "one tiny flaw". Straight narration in the reference order. 215 words, inside the references' 216–237 range.
 
-## D. Storyboard v2 (stylised 3D look · new image every ~1.2 s · consistent character sheet)
-Character sheet (every prompt): *"You" - stylised 3D cartoon driver, round white head, dot eyes, thick moustache, short-sleeved 1989 shirt. Car A - boxy white 1980s sedan, plate ending in 5, yellow sticker. Car B - battered old green 1970s sedan puffing smoke, plate ending in 7, pink sticker. Economist - same style, glasses, trench coat (detective look), magnifying glass.* All shots tagged "Dramatization"; the driver is a composite.
+## D. Storyboard v3 (stylised 3D look · new image every ~1.2 s · consistent character sheet)
+Character sheet (every prompt): *Driver - stylised 3D cartoon man, round white head, dot eyes, thick moustache, short-sleeved 1989 shirt. Car A - boxy white 1980s sedan, plate ending in 5, yellow sticker. Car B - battered old green 1970s sedan puffing smoke, plate ending in 7, pink sticker. Economist - same style, glasses, sweater.* All shots tagged "Dramatization"; the driver is a composite.
 
 | Time | Voiceover | Shots (≈1.2 s each) | Key image prompt | Motion / camera | SFX | Music | Caption |
 |---|---|---|---|---|---|---|---|
-| 0:00–0:02 | Imagine the city bans your car every Monday. | ① calendar MONDAY ② red NO stamp lands on Car A's plate ③ driver's jaw drops | stylised 3D cartoon driver beside a boxy white 1980s sedan as a giant red prohibition stamp slams onto its licence plate, smoggy 1989 street, vertical 9:16 | stamp slam, push-in | stamp THUD | silence | word-by-word |
-| 0:02–0:04 | So you buy a second car. | driver slaps cash on a used-car dealer's hood; Car B rolls up coughing smoke | cartoon driver handing cash to a grinning used-car dealer at a dusty 1989 lot, battered green sedan | snap cuts | cash register KA-CHING, engine splutter | plucked note | — |
-| 0:04–0:06 | Now you can drive every single day. | driver grins, two keys jingling, both cars in the driveway | driver dangling two sets of keys in front of two cars in a driveway | quick push-in | key jingle | — | — |
-| 0:06–0:10 | Sounds like a loophole. In Mexico City, it showed up in the data. | ① wink to camera ② smash cut to real-looking stack of research papers | stack of 1990s economics papers with graphs on a desk | smash cut | record scratch → paper thump | pulse starts | — |
-| 0:10–0:16 | You see, it's 1989… The fix: Hoy No Circula. Today, you don't drive. | ① skyline under brown smog ② banner "HOY NO CIRCULA" unfurls | stylised 3D Mexico City skyline under thick brown smog, sun a pale orange disc, 1989 | slow aerial drift → banner drop | city hum, cough | low pulse | "MEXICO CITY · 1989" |
-| 0:16–0:22 | Check the last digit… Seven or eight? Tuesday. | ① ECU plate 5 → MON ② plate 7 → TUE, like a game-show wheel | close-up of 1989 Mexican plates ending in 5 and 7 with yellow and pink stickers | whip-pans | game-show ding per digit | ticking percussion | "5-6 → MON" "7-8 → TUE" |
-| 0:22–0:25 | One car in five, gone every weekday. On paper, it's perfect. | ① overhead: five cars, one fades ② official proudly holds up a neat chart | top-down stylised street with five cars, one dissolving | top-down hold | poof, ding | — | "1 IN 5" |
-| 0:25–0:27 | It's meant to be temporary. By 1990, permanent. | sign "TEMPORAL" repainted "PERMANENTE" | official street sign being repainted | quick cuts | brush swipe | — | "1990" |
-| 0:27–0:29 | But the smog stays. | same skyline, still brown | same smoggy skyline | hold 1.5 s | wind, cough | music drops | — |
-| 0:29–0:31 | So economists start digging. | economist in trench coat lifts magnifying glass | cartoon economist dressed as a detective with a magnifying glass in a 1990s office full of paper | push-in | noir sting | detective pizzicato | — |
-| 0:31–0:33 | Clue one. Fuel sales don't drop. | magnifier over petrol-pump counter spinning | close-up of a 1990 petrol pump counter spinning | crash zoom | pump ding-ding | — | "CLUE 1" |
-| 0:33–0:36 | Clue two. Car registrations go up. | queue at registration window, plates stacking | long queue at a 1990s vehicle registration counter, stack of plates growing | dolly along queue | stamp stamp stamp | — | "CLUE 2" |
-| 0:36–0:40 | Clue three. The cars are getting older. And dirtier. | Car B coughs black smoke into the magnifier | battered old green sedan puffing black exhaust | snap cuts | backfire BANG | bass hit | "CLUE 3" |
-| 0:40–0:48 | Years later, economist Lucas Davis… No evidence… At all. | ① wall of air monitors at night ② flat line ③ "At all." on the economist's deadpan face | stylised 3D air-monitoring station with screens showing a flat jagged line, night | slow push-in → hard cut on "At all." | beeps → flatline tone | tension | "NO IMPROVEMENT" |
-| 0:48–0:50 | Because the rule has one tiny flaw. | magnifier slowly turns toward a plate | — | slow rack focus | single tick | silence | — |
-| 0:50–0:53 | It doesn't ban a driver. It bans a plate. | traffic cop points at the plate, ignores the man beside it | cartoon traffic officer pointing at a licence plate while the driver shrugs | static, comic timing | whistle | — | "A PLATE" |
-| 0:53–0:56 | Plate ends in five? Get one that ends in seven. | plate 5 flips to plate 7 | two plates side by side, ending in 5 and 7 | flip transition | ding | — | "5 → 7" |
-| 0:56–1:00 | So some families do exactly that… park it next to the first one. | callback: the opening driveway, Car B rolls in beside Car A | same driveway as 0:04, the green sedan parking next to the white one | same angle as opening | engine splutter | playful bassoon | — |
-| 1:00–1:02 | Monday, the old one. Tuesday, the new one. | driver hops car to car, calendar flips | — | fast cuts | door slam ×2 | — | "MON" "TUE" |
-| 1:02–1:04 | The city wanted one car in five off the road. In some driveways, it got one more. | pull back from the driveway to a whole street of double driveways under smog → **cut on "more"** | same 1989 street, two cars in each of several driveways, brown smog | slow pull-back → hard cut | silence → one horn honk | stops dead | — |
+| 0:00–0:03 | Mexico City banned every car from driving one day a week. | ① red NO stamp slams onto Car A's plate ② driver stares at it | stylised 3D cartoon driver beside a boxy white 1980s sedan as a giant red prohibition stamp slams onto its licence plate, smoggy 1989 street, vertical 9:16 | stamp slam, push-in | stamp THUD | silence | word-by-word |
+| 0:03–0:05 | So some people just bought another car. | Car B rolls into the driveway beside Car A, coughing smoke | battered green 1970s sedan parking next to a white 1980s sedan in a small driveway | hard cut | engine splutter | one plucked note | — |
+| 0:05–0:13 | You see, it's 1989… Today, you don't drive. | ① skyline under brown smog ② banner "HOY NO CIRCULA" unfurls | stylised 3D Mexico City skyline under thick brown smog, sun a pale orange disc, 1989 | slow aerial drift → banner drop | city hum, cough | low pulse | "MEXICO CITY · 1989" |
+| 0:13–0:20 | It goes by the last digit… Seven or eight, Tuesday. | ① ECU plate 5 → MON crossed out ② plate 7 → TUE crossed out | close-up of 1989 Mexican plates ending in 5 and 7 with yellow and pink stickers | whip-pans | click per digit | ticking percussion | "5-6 → MON" "7-8 → TUE" |
+| 0:20–0:23 | That should take one car in five off the road, every weekday. | overhead: five cars, one fades | top-down stylised street with five cars, one dissolving | top-down hold | poof | — | "1 IN 5" |
+| 0:23–0:26 | It's meant to be temporary. By 1990, it's permanent. | sign "TEMPORAL" repainted "PERMANENTE" | official street sign being repainted | quick cuts | brush swipe | — | "1990" |
+| 0:26–0:28 | But the smog doesn't move. | same skyline, still brown | same smoggy skyline | hold 1.5 s | wind, cough | music drops | — |
+| 0:28–0:30 | Fuel sales don't drop. | petrol-pump counter spinning | close-up of a 1990 petrol pump counter spinning | crash zoom | pump ding-ding | pulse returns | — |
+| 0:30–0:32 | Car registrations go up. | queue at registration window, plates stacking | long queue at a 1990s vehicle registration counter, stack of plates growing | dolly along queue | stamp stamp stamp | — | — |
+| 0:32–0:35 | And the cars on the road get older and dirtier. | Car B in traffic, black smoke | battered old green sedan puffing black exhaust in 1990 traffic | snap cuts | backfire BANG | bass hit | — |
+| 0:35–0:42 | Years later, economist Lucas Davis… no evidence the ban cleaned the air at all. | ① economist at a wall of air monitors ② flat line ③ he takes off his glasses | stylised 3D air-monitoring station with screens showing a flat jagged line, night | slow push-in | beeps → flatline tone | tension | "NO IMPROVEMENT" |
+| 0:42–0:45 | Because the rule doesn't ban a driver. It bans a plate. | traffic cop points at the plate, ignores the man beside it | cartoon traffic officer pointing at a licence plate while the driver shrugs | static, comic timing | whistle | silence | "A PLATE" |
+| 0:45–0:48 | If your plate ends in five, all you need is a car whose plate ends in seven. | plate 5 flips to plate 7 | two plates side by side, ending in 5 and 7 | flip transition | ding | — | "5 → 7" |
+| 0:48–0:52 | So some families buy one… the kind that pollutes the most. | family hands cash to used-car dealer; Car B | cartoon family buying a battered green sedan at a dusty 1990 used-car lot | push-in | cash register, splutter | playful bassoon | — |
+| 0:52–0:56 | On Monday, they drive the old one. On Tuesday, the new one. They never miss a day. | driver hops car to car, calendar flips MON→FRI | — | fast cuts | door slam ×2, ticks | — | "MON" "TUE" |
+| 0:56–1:01 | The ban was supposed to take one car in five off the road. In some driveways, it added one. | pull back from the driveway (the 0:03 shot) to a street of double driveways under smog → **cut on "one"** | same 1989 street, two cars in each of several driveways, brown smog | slow pull-back → hard cut | silence → one horn honk | stops dead | — |
 
 ## E. Editing direction
 - **Pace:** a cut every ~1.2 s; hold 1.5 s on "But the smog doesn't lift." and on "So where did the extra cars come from?"
@@ -81,7 +71,7 @@ Character sheet (every prompt): *"You" - stylised 3D cartoon driver, round white
 - **Music:** ticking percussion for the rules → pizzicato "investigation" bed for the economists → drop to silence before the mechanism → playful bassoon for the second car → dead stop.
 - **Captions:** 1–2 words, bold white, lower-middle. Extra text only: "MEXICO CITY · 1989", "1 IN 5", "1990", "FUEL ↑", "CARS ↑", "NO IMPROVEMENT".
 - **Taste/accuracy:** the driver is a composite; tag "Dramatization". Don't show a "most polluted city" headline (unverified primary). Don't show the air getting *worse*.
-- **Loop:** the final street shot mirrors the opening street shot, with doubled cars.
+- **Loop:** the final pull-back starts on the 0:03 driveway shot, so the end flows back into the hook.
 
 ## F. Publishing package
 - **Titles:** 1. Why Banning Cars Put More Cars on the Road · 2. The Car Ban That Made People Buy Cars · 3. Why Mexico City's Car Ban Backfired · 4. One Day Without a Car (Didn't Work) · 5. The Rule That Stopped Plates, Not Drivers
@@ -90,19 +80,20 @@ Character sheet (every prompt): *"You" - stylised 3D cartoon driver, round white
 - **Hashtags:** #history #economics #mexicocity #unintendedconsequences #truestory #historyshorts #cobraeffect
 - **Pinned comment:** "Not everyone bought a second car, but enough did that the fleet got bigger and older. Would your city's version work any better?"
 
-## G. Quality report (v2)
-| Criterion | v1 | v2 | Note |
-|---|---|---|---|
-| Hook (20) | 18 | 19 | The viewer is inside the loophole within 6 s; R3-style second person |
-| Progression (20) | 18 | 19 | "On paper, it's perfect" sets up the fall; "one tiny flaw" turn before the mechanism |
-| Retention (20) | 18 | 19 | Detective clue ladder; three re-hooks ("At all." / "one tiny flaw" / Monday-Tuesday swap) |
-| Accuracy (20) | 18 | 18 | "some families" kept; opener is a dramatized practice, tied to data in line 4; −2 for summary-level sourcing |
-| Narration (10) | 9 | 9 | Avg 5.4 words/sentence; one 20-word sentence (the second-car line) |
-| Payoff (10) | 9 | 10 | "one more" loops straight back to the "second car" opening |
-| **Total** | **90** | **94/100** | ≥ 85 → deliver |
+## G. Quality report (v3)
+| Criterion | Score | Note |
+|---|---|---|
+| Hook (20) | 19 | Two blunt sentences: the rule, then the absurd result |
+| Progression (20) | 19 | Reference order, no devices; every line moves the story |
+| Retention (20) | 18 | Rule of three (fuel → registrations → older cars) and the Monday/Tuesday payoff carry it; fewer re-hooks than v2 by design |
+| Accuracy (20) | 18 | "some people / some families" kept; −2 for summary-level sourcing |
+| Narration (10) | 9 | Avg 7.7 words/sentence, close to the references |
+| Payoff (10) | 10 | "In some driveways, it added one." loops to the opening driveway shot |
+| **Total** | **93/100** | ≥ 85 → deliver |
 
-- **Duration:** ~64 s · **Words:** 223 (script_stats.py)
-- **Historical confidence:** Medium-high: the failure and fleet growth are in two peer-reviewed studies; how many households bought a second car is disputed (hence "some families").
-- **Strongest moment:** 0:48–0:56 ("one tiny flaw… It doesn't ban a driver. It bans a plate.")
-- **Weak point:** the opener is a dramatized "you"; keep line 4 ("it showed up in the data") so it reads as evidence, not a claim that everyone did it. No documented mocking character.
+- **Duration:** ~61 s · **Words:** 215 (script_stats.py)
+- **Historical confidence:** Medium-high: the failure and fleet growth are in two peer-reviewed studies; how many households bought a second car is disputed (hence "some").
+- **Strongest moment:** 0:42–0:56 ("It doesn't ban a driver. It bans a plate." → Monday/Tuesday swap)
+- **Weak point:** no documented mocking character, so there's no reaction beat; the hook does that job.
+- **Revision history:** v1 90 → v2 94 (devices added) → v3 93 (devices removed at the owner's request; straight reference style).
 - **Sources reviewed:** 9 (abstracts and search summaries; read Davis 2008 and Eskeland & Feyzioglu 1997 in full before publishing).
