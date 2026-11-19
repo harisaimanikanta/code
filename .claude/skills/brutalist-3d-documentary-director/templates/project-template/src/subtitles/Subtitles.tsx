@@ -1,7 +1,17 @@
 // Subtitle system: condensed bold white type, crimson emphasis, optional word-level highlight,
 // mobile-safe margins, top/bottom placement per cue so the primary subject is never covered.
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, continueRender, delayRender } from 'remotion';
+import oswaldUrl from '../library/textures/fonts/oswald-latin-700-normal.woff';
+
+// Bundled Oswald Bold (OFL) — subtitles never fall back to a random system font, and no network is needed.
+if (typeof document !== 'undefined' && !(window as unknown as { __oswaldLoading?: boolean }).__oswaldLoading) {
+  (window as unknown as { __oswaldLoading?: boolean }).__oswaldLoading = true;
+  const handle = delayRender('Loading Oswald');
+  new FontFace('Oswald', `url(${oswaldUrl})`, { weight: '700' }).load()
+    .then((f) => { (document.fonts as unknown as { add(face: FontFace): void }).add(f); continueRender(handle); })
+    .catch(() => continueRender(handle));
+}
 import type { SubtitleCue } from '../data';
 
 const CRIMSON = '#e0182b';

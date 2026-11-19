@@ -244,3 +244,14 @@ export function paperSet(seed = 5, size = 256): SurfaceSet {
     return { h: fibre * 0.5, c, r: 0.9 };
   });
 }
+
+/** Hair: fine directional strands (normal) with clumping and sheen-friendly roughness. Stretched along v. */
+export function hairSet(tint = '#15100d', seed = 21, size = 256): SurfaceSet {
+  const base = hex(tint);
+  return build(`hair|${tint}|${seed}`, size, 3.5, (u, v) => {
+    const strand = tnoise(seed, u * 160, v * 3, 160) * 0.7 + tnoise(seed + 1, u * 60, v * 2, 60) * 0.3;
+    const clump = tfbm(seed + 2, u * 8, v * 2, 8, 3);
+    const s = 0.8 + strand * 0.35 + clump * 0.15;
+    return { h: strand * 0.8 + clump * 0.4, c: [base[0] * s, base[1] * s, base[2] * s], r: 0.45 + strand * 0.2 };
+  });
+}

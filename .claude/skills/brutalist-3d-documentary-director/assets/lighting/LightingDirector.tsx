@@ -75,7 +75,7 @@ export function lightingAt(schedule: LightingCue[], frame: number, blendFrames =
 const dirVec = (d: number[], dist: number) => new THREE.Vector3(d[0], d[1], d[2]).normalize().multiplyScalar(dist);
 
 /** Mount once inside the canvas. `focus` = world point the key light's shadow frustum follows (camera target). */
-export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36, shadowSize = 12, frame }: { schedule: LightingCue[]; focus?: [number, number, number]; blendFrames?: number; shadowSize?: number; frame?: number }) {
+export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36, shadowSize = 12, shadowMapSize = 2048, frame }: { schedule: LightingCue[]; focus?: [number, number, number]; blendFrames?: number; shadowSize?: number; shadowMapSize?: number; frame?: number }) {
   const { frame: f } = useAssetTime(frame);
   const L = useMemo(() => lightingAt(schedule, f, blendFrames), [schedule, f, blendFrames]);
   const { scene, gl } = useThree();
@@ -120,7 +120,7 @@ export function LightingDirector({ schedule, focus = [0, 0, 0], blendFrames = 36
     <>
       <primitive object={target} />
       <hemisphereLight args={[L.hemi.sky, L.hemi.ground, L.hemi.intensity]} />
-      <directionalLight ref={key} color={L.key.color} intensity={L.key.intensity} castShadow shadow-mapSize={[4096, 4096]} shadow-bias={-0.0003} shadow-normalBias={0.025} shadow-radius={4} />
+      <directionalLight ref={key} color={L.key.color} intensity={L.key.intensity} castShadow shadow-mapSize={[shadowMapSize, shadowMapSize]} shadow-bias={-0.0003} shadow-normalBias={0.025} shadow-radius={4} />
       <directionalLight ref={rim} color={L.rim.color} intensity={L.rim.intensity} />
       <directionalLight ref={fill} color={L.fill.color} intensity={L.fill.intensity} />
     </>

@@ -69,6 +69,8 @@ def validate_library(root: Path, R: Report) -> dict:
         if not f.exists():
             missing_src.append(src)
             continue
+        if f.suffix in ('.woff', '.woff2', '.ttf', '.otf', '.png', '.jpg', '.glb', '.ktx2', '.hdr', '.bin'):
+            continue  # binary asset: existence checked above
         text = f.read_text()
         exported = set(EXPORT_RE.findall(text))
         if f.suffix == ".json":
@@ -117,7 +119,7 @@ def validate_library(root: Path, R: Report) -> dict:
         dirnames[:] = [d for d in dirnames if not d.startswith(".") and d != "node_modules"]
         for fn in filenames:
             rel = (Path(dirpath) / fn).relative_to(root).as_posix()
-            if rel == "asset-manifest.json" or fn.endswith((".md", ".png", ".jpg")):
+            if rel == "asset-manifest.json" or fn.endswith((".md", ".png", ".jpg", ".txt")):
                 continue
             if rel not in declared:
                 orphans.append(rel)
@@ -170,7 +172,7 @@ def validate_project(P: Path, R: Report) -> None:
     bad_chars = []
     for e in walk(ents):
         ch = (e.get("props") or {}).get("character")
-        if isinstance(ch, str) and ch.split("@")[0] not in known_chars:
+        if isinstance(ch, str) and ch.split("+")[0].split("@")[0] not in known_chars:
             bad_chars.append(f"{e['id']}: {ch}")
     R.fail(f"unknown character presets: {bad_chars}") if bad_chars else R.ok("character presets resolve")
     # material presets referenced in layout props

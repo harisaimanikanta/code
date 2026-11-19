@@ -103,7 +103,7 @@ export function SubjectRig({ position = [0, 0, 0] as V3, facing = 0, height = 1.
   return (
     <group position={position} rotation={[0, facing, 0]}>
       <primitive object={target} />
-      <spotLight position={at(keySide * 0.75, distance, height + 1.4)} target={target} color={keyColor} intensity={keyIntensity} angle={0.55} penumbra={0.9} distance={distance * 3} decay={1.8} castShadow={castShadow} shadow-mapSize={[2048, 2048]} shadow-bias={-0.0002} shadow-normalBias={0.02} />
+      <spotLight position={at(keySide * 0.75, distance, height + 1.4)} target={target} color={keyColor} intensity={keyIntensity} angle={0.55} penumbra={0.9} distance={distance * 3} decay={1.8} castShadow={castShadow} shadow-mapSize={[1024, 1024]} shadow-bias={-0.0002} shadow-normalBias={0.02} />
       <spotLight position={at(-keySide * 1.1, distance, height + 0.3)} target={target} color={fillColor} intensity={fillIntensity} angle={0.8} penumbra={1} distance={distance * 3} decay={1.8} />
       <spotLight position={at(Math.PI - keySide * 0.5, distance * 0.9, height + 1.0)} target={target} color={rimColor} intensity={rimIntensity} angle={0.5} penumbra={0.7} distance={distance * 3} decay={1.8} />
     </group>

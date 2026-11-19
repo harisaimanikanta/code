@@ -81,7 +81,7 @@ export const POSES: Record<PoseName, (t: number, seed: number, hipY: number, pha
   raise: (t) => P({ rShoulderFwd: 2.7, rShoulderOut: 0.1, rElbow: 0.25 + 0.05 * Math.sin(t * 2), rFingers: 0.85, spineBend: -0.08, headPitch: -0.25, smile: 1, browRaise: 0.3 }),
   cross: () => P({ lShoulderFwd: 0.42, rShoulderFwd: 0.42, lShoulderOut: -0.38, rShoulderOut: -0.38, lElbow: 1.95, rElbow: 1.95, spineBend: -0.06, headPitch: -0.08, browFurrow: 0.5, smile: -0.3 }),
   inspect: (t) => P({ spineBend: 0.55, neckPitch: 0.3, headPitch: 0.1, lShoulderFwd: 0.75, rShoulderFwd: 0.75, lElbow: 0.85, rElbow: 0.85 + 0.08 * Math.sin(t * 1.3), lShoulderOut: -0.05, rShoulderOut: -0.05, rFingers: 0.6 + 0.2 * Math.sin(t * 1.3), browFurrow: 0.5, lids: 0.3 }),
-  drink: () => P({ rShoulderFwd: 1.0, rShoulderOut: -0.35, rElbow: 2.25, rFingers: 0.8, headPitch: -0.35, spineBend: -0.08, lids: 0.5, mouthOpen: 0.25 }),
+  drink: () => P({ rShoulderFwd: 0.85, rShoulderOut: -0.58, rElbow: 2.05, rFingers: 0.8, headPitch: -0.35, spineBend: -0.08, lids: 0.5, mouthOpen: 0.25 }),
   slump: (t) => P({ spineBend: 0.35, neckPitch: 0.35, headPitch: 0.2 + 0.03 * Math.sin(t), lShoulderFwd: 0.1, rShoulderFwd: 0.1, lids: 0.45, browFurrow: 0.5, breath: 0.5 + 0.5 * Math.sin(t * 2.6) }),
   write: (t) => P({ spineBend: 0.35, neckPitch: 0.25, rShoulderFwd: 0.7, rElbow: 1.3 + 0.05 * Math.sin(t * 9), rWrist: 0.1 * Math.sin(t * 11), rFingers: 0.7, lShoulderFwd: 0.5, lElbow: 1.2, lids: 0.35, browFurrow: 0.3 }),
   'cover-mouth': (t) => P({ rShoulderFwd: 1.05, rShoulderOut: -0.42, rElbow: 2.25, rWrist: -0.3, rFingers: 0.15, headPitch: 0.05, spineBend: -0.05, browRaise: 1, lids: -0.35, lShoulderFwd: 0.15 + 0.03 * Math.sin(t * 4) }),
@@ -93,7 +93,7 @@ export const POSES: Record<PoseName, (t: number, seed: number, hipY: number, pha
   clap: (t) => P({ lShoulderFwd: 0.7, rShoulderFwd: 0.7, lShoulderOut: -0.35 + 0.18 * Math.abs(Math.sin(t * 9)), rShoulderOut: -0.35 + 0.18 * Math.abs(Math.sin(t * 9)), lElbow: 1.4, rElbow: 1.4, lFingers: 0.05, rFingers: 0.05, smile: 1 }),
   think: (t) => P({ rShoulderFwd: 0.95, rShoulderOut: -0.3, rElbow: 2.3, rFingers: 0.6, lShoulderFwd: 0.4, lShoulderOut: -0.3, lElbow: 1.6, headPitch: 0.08, headYaw: 0.1 * Math.sin(t * 0.3), browFurrow: 0.5, lids: 0.2 }),
   vomit: (t) => P({ spineBend: 0.95, neckPitch: 0.45 + 0.08 * Math.sin(t * 5), lShoulderFwd: 0.95, rShoulderFwd: 0.95, lElbow: 0.25, rElbow: 0.25, lShoulderOut: 0.2, rShoulderOut: 0.2, lKnee: 0.12, rKnee: 0.12, lids: 0.8, mouthOpen: 0.5, browFurrow: 1 }),
-  lie: (t, _s, hipY) => P({ rootPitch: -Math.PI / 2, rootDrop: 0.12 - hipY, lShoulderOut: 0.15, rShoulderOut: 0.15, lElbow: 0.3, rElbow: 0.6, headPitch: -0.25, headYaw: 0.25 + 0.04 * Math.sin(t * 0.4), lids: 0.4, breath: 0.5 + 0.5 * Math.sin(t * 1.2) }),
+  lie: (t, _s, hipY) => P({ rootPitch: -Math.PI / 2, rootDrop: 0.12 - hipY, lShoulderOut: 0.12, rShoulderOut: 0.12, lShoulderFwd: -0.05, rShoulderFwd: -0.05, lElbow: 0.04, rElbow: 0.06, lFingers: 0.5, rFingers: 0.5, headPitch: -0.25, headYaw: 0.25 + 0.04 * Math.sin(t * 0.4), lids: 0.4, breath: 0.5 + 0.5 * Math.sin(t * 1.2) }),
   handshake: (t) => P({ rShoulderFwd: 0.65, rShoulderOut: -0.05, rElbow: 0.75 + 0.06 * Math.sin(t * 8), rFingers: 0.55, smile: 0.7 }),
   nod: (t) => P({ headPitch: 0.12 + 0.12 * Math.sin(t * 6), smile: 0.3 }),
 };

@@ -253,7 +253,7 @@ export function Figure({ character, position = [0, 0, 0], yaw = 0, actions = [],
           position={[sx * hr * 0.15, browY - pose.browFurrow * hr * 0.03, hr * 0.9]}
           rotation={[0.1, 0, sx * (-Math.PI / 2 + 0.12 - pose.browFurrow * 0.25 + pose.browRaise * 0.08)]} />
       ))}
-      <mesh geometry={NOSE(fc.nose)} material={skin} position={[0, -hr * 0.12, hr * 0.86]} scale={[hr * 0.16, hr * 0.26, hr * 0.2]} castShadow />
+      <mesh geometry={NOSE(fc.nose)} material={skin} position={[0, -hr * 0.12, hr * 0.84]} scale={[hr * 0.15, hr * 0.25, hr * 0.15]} castShadow />
       {[-1, 1].map((sx) => <mesh key={`ear${sx}`} geometry={EAR} material={skin} position={[sx * hr * 0.97 * fc.w, hr * 0.02, -hr * 0.05]} scale={[hr * 0.22, hr * 0.28, hr * 0.2]} rotation={[0, sx * -0.3, 0]} />)}
       {/* mouth: lips with smile corners and opening */}
       <mesh geometry={MOUTH} material={getMaterial('matte-black')} position={[0, mouthY - pose.mouthOpen * hr * 0.06, hr * 0.84]} scale={[hr * 0.17, hr * (0.01 + pose.mouthOpen * 0.09), hr * 0.04]} />

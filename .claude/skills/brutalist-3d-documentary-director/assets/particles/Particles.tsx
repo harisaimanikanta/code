@@ -7,27 +7,24 @@ import { radialGradientTexture } from '../textures/proceduralTextures';
 
 type V3 = [number, number, number];
 
-/** Floating dust motes in a box volume. Catch light as small additive specks. */
+/** Floating dust motes in a box volume: soft round additive point sprites (read as bokeh when close to the
+ *  lens, never as hard geometric chips). Deterministic drift. */
 export function DustMotes({ count = 400, bounds = [20, 8, 20] as V3, color = '#ff6a5a', size = 0.014, drift = 0.15, seed = 12, position, frame, opacity = 0.55 }: {
   count?: number; bounds?: V3; color?: string; size?: number; drift?: number; seed?: number; position?: V3; frame?: number; opacity?: number;
 }) {
   const { t } = useAssetTime(frame);
-  const ref = useRef<THREE.InstancedMesh>(null);
-  const geo = useMemo(() => new THREE.OctahedronGeometry(1, 0), []);
-  const mat = useMemo(() => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }), [color, opacity]);
-  const items = useMemo(() => { const r = rng(seed); return Array.from({ length: count }, () => ({ p: [(r() - 0.5) * bounds[0], r() * bounds[1], (r() - 0.5) * bounds[2]] as V3, s: size * (0.4 + r()), ph: r() * 100 })); }, [count, bounds, size, seed]);
+  const items = useMemo(() => { const r = rng(seed); return Array.from({ length: count }, () => ({ p: [(r() - 0.5) * bounds[0], r() * bounds[1], (r() - 0.5) * bounds[2]] as V3, ph: r() * 100 })); }, [count, bounds, seed]);
+  const geo = useMemo(() => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(count * 3), 3)); return g; }, [count]);
+  const mat = useMemo(() => new THREE.PointsMaterial({ color, size: size * 2.6, map: radialGradientTexture(), alphaMap: radialGradientTexture(), transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true, toneMapped: false }), [color, size, opacity]);
   useLayoutEffect(() => {
-    if (!ref.current) return;
-    const m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), s = new THREE.Vector3();
+    const pos = geo.attributes.position as THREE.BufferAttribute;
     items.forEach((it, i) => {
-      p.set(it.p[0] + fbm1(i, t * 0.1 + it.ph) * drift * 6, ((it.p[1] + t * drift * 0.3) % bounds[1]), it.p[2] + fbm1(i + 500, t * 0.1 + it.ph) * drift * 6);
-      m.compose(p, q, s.setScalar(it.s));
-      ref.current!.setMatrixAt(i, m);
+      pos.setXYZ(i, it.p[0] + fbm1(i, t * 0.1 + it.ph) * drift * 6, ((it.p[1] + t * drift * 0.3) % bounds[1]), it.p[2] + fbm1(i + 500, t * 0.1 + it.ph) * drift * 6);
     });
-    ref.current.instanceMatrix.needsUpdate = true;
-    ref.current.computeBoundingSphere();
-  }, [items, t, drift, bounds]);
-  return <group position={position}><instancedMesh ref={ref} args={[geo, mat, count]} frustumCulled={false} /></group>;
+    pos.needsUpdate = true;
+    geo.computeBoundingSphere();
+  }, [items, t, drift, bounds, geo]);
+  return <group position={position}><points geometry={geo} material={mat} frustumCulled={false} /></group>;
 }
 
 /** Rising embers / sparks (triumph or destruction beats). */
@@ -73,7 +70,7 @@ export function ParticleVeil({ width = 12, height = 8, depth = 3, count = 1200, 
 }) {
   return (
     <group position={position} rotation={rotation}>
-      <DustMotes count={count} bounds={[width, height, depth]} color={color} size={0.06} drift={0.25} seed={seed} frame={frame} opacity={0.85} />
+      <DustMotes count={count} bounds={[width, height, depth]} color={color} size={0.03} drift={0.25} seed={seed} frame={frame} opacity={0.75} />
     </group>
   );
 }

@@ -52,7 +52,8 @@
  "render": {
   "shadows": true,
   "antialias": true,
-  "post": "final"
+  "post": "final",
+  "shadowMapSize": 2048
  },
  "library": {
   "path": null,

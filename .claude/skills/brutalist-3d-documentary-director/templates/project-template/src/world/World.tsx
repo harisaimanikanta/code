@@ -4,12 +4,15 @@
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
 import { getComponent } from './registry';
-import type { WorldEntity, WorldLayout } from '../data';
+import { activeZonesAt, type WorldEntity, type WorldLayout } from '../data';
 
 const DEFAULT_CULL = { zone: 120, object: 45, actor: 45 } as const;
 
-function visible(e: WorldEntity, kind: keyof typeof DEFAULT_CULL, cam: [number, number, number], frame: number): boolean {
+function visible(e: WorldEntity, kind: keyof typeof DEFAULT_CULL, cam: [number, number, number], frame: number, active: Set<string> | null): boolean {
   if (e.frames && (frame < e.frames[0] || frame > e.frames[1])) return false;
+  // zones are gated by the shot plan; entities tagged with a zone follow their zone
+  const zoneId = kind === 'zone' ? e.id : e.zone;
+  if (active && zoneId) return active.has(zoneId);
   const p = e.position ?? [0, 0, 0];
   const d = Math.hypot(cam[0] - p[0], cam[1] - p[1], cam[2] - p[2]);
   return d <= (e.cullRadius ?? DEFAULT_CULL[kind]);
@@ -33,11 +36,12 @@ function Entity({ e }: { e: WorldEntity }) {
 
 export function World({ layout, cameraPosition }: { layout: WorldLayout; cameraPosition: [number, number, number] }) {
   const frame = useCurrentFrame();
+  const active = activeZonesAt(frame);
   return (
     <>
-      {(layout.zones ?? []).filter((e) => visible(e, 'zone', cameraPosition, frame)).map((e) => <Entity key={e.id} e={e} />)}
-      {(layout.objects ?? []).filter((e) => visible(e, 'object', cameraPosition, frame)).map((e) => <Entity key={e.id} e={e} />)}
-      {(layout.actors ?? []).filter((e) => visible(e, 'actor', cameraPosition, frame)).map((e) => <Entity key={e.id} e={e} />)}
+      {(layout.zones ?? []).filter((e) => visible(e, 'zone', cameraPosition, frame, active)).map((e) => <Entity key={e.id} e={e} />)}
+      {(layout.objects ?? []).filter((e) => visible(e, 'object', cameraPosition, frame, active)).map((e) => <Entity key={e.id} e={e} />)}
+      {(layout.actors ?? []).filter((e) => visible(e, 'actor', cameraPosition, frame, active)).map((e) => <Entity key={e.id} e={e} />)}
     </>
   );
 }

@@ -102,19 +102,24 @@ def asr_vosk(audio: Path, model_dir: str) -> list[dict]:
 # ------------------------------------------------------------------------------------------------ script handling
 
 def script_tokens(text: str) -> list[dict]:
-    """Script words with attached trailing punctuation (kept for sentence detection and subtitles)."""
-    toks = tokenize(text)
+    """Script words with attached trailing punctuation (kept for sentence detection and subtitles).
+    Paragraph breaks (blank lines) are recorded as `para: True` on the last word — narrators pause longest there."""
     words: list[dict] = []
-    for t in toks:
-        if re.fullmatch(r"[.,!?;:—–]", t):
-            if words:
-                words[-1]["punct"] = words[-1].get("punct", "") + t
-            continue
-        words.append({"text": t})
+    for para in re.split(r"\n\s*\n", text.strip()):
+        for t in tokenize(para):
+            if re.fullmatch(r"[.,!?;:—–]", t):
+                if words:
+                    words[-1]["punct"] = words[-1].get("punct", "") + t
+                continue
+            words.append({"text": t})
+        if words:
+            words[-1]["para"] = True
     return words
 
 
-def pause_weight(punct: str) -> float:
+def pause_weight(punct: str, para: bool = False) -> float:
+    if para:
+        return 2.6
     if not punct:
         return 0.0
     if any(c in punct for c in ".!?"):
@@ -124,87 +129,89 @@ def pause_weight(punct: str) -> float:
     return 0.6
 
 
+def _level(w: dict) -> int:
+    """Boundary strength: 3 paragraph, 2 sentence, 1 clause, 0 none."""
+    if w.get("para"):
+        return 3
+    p = w.get("punct", "")
+    if any(c in p for c in ".!?"):
+        return 2
+    if any(c in p for c in ",;:—–"):
+        return 1
+    return 0
+
+
+def _proportional(words: list[dict], weights: list[float], speech: list[tuple[float, float]], t0: float, t1: float) -> list[tuple[float, float]]:
+    sub = [(max(s, t0), min(e, t1)) for s, e in speech if e > t0 and s < t1] or [(t0, t1)]
+    total = sum(e - s for s, e in sub) or (t1 - t0)
+    tot_w = sum(weights) or 1
+
+    def to_abs(x: float) -> float:
+        acc = 0.0
+        for s, e in sub:
+            if x <= acc + (e - s) + 1e-9:
+                return s + (x - acc)
+            acc += e - s
+        return t1
+
+    out, c = [], 0.0
+    for w in weights:
+        a = to_abs(c / tot_w * total)
+        c += w
+        out.append((a, to_abs(c / tot_w * total)))
+    return out
+
+
+def _dp_match(cands: list[tuple[int, float]], pauses: list[tuple[float, float]], strength: float) -> list[tuple[int, float, float]]:
+    """Monotonic matching of boundary candidates (word idx, estimated end) to pauses maximising
+    strength × pause length − distance penalty. Returns [(word idx, pause start, pause end)]."""
+    nb, nq = len(cands), len(pauses)
+    if not nb or not nq:
+        return []
+    val = lambda b, q: strength * (0.5 + min(pauses[q][1] - pauses[q][0], 1.2)) - 0.5 * abs(cands[b][1] - pauses[q][0])  # noqa: E731
+    S = [[0.0] * (nq + 1) for _ in range(nb + 1)]
+    for b in range(1, nb + 1):
+        for q in range(1, nq + 1):
+            v = val(b - 1, q - 1)
+            S[b][q] = max(S[b - 1][q], S[b][q - 1], S[b - 1][q - 1] + v if v > 0 else -1e9)
+    out, b, q = [], nb, nq
+    while b > 0 and q > 0:
+        v = val(b - 1, q - 1)
+        if v > 0 and abs(S[b][q] - (S[b - 1][q - 1] + v)) < 1e-9:
+            out.append((cands[b - 1][0], pauses[q - 1][0], pauses[q - 1][1])); b -= 1; q -= 1
+        elif S[b][q] == S[b - 1][q]:
+            b -= 1
+        else:
+            q -= 1
+    return out[::-1]
+
+
 def estimate_from_script(words: list[dict], speech: list[tuple[float, float]], pauses: list[tuple[float, float]]) -> list[dict]:
-    """No-ASR alignment. Distribute words over speech time by syllable weight, then snap each
-    sentence/clause end to the nearest real pause (monotonic), and redistribute inside each span."""
+    """No-ASR alignment, hierarchical: paragraphs → sentences → clauses. At each level the span's words are
+    placed proportionally (syllable weights) over its real speech, then that level's boundaries are snapped to
+    the span's pauses with a monotonic DP (longest pauses favoured). Unmatched boundaries keep proportional timing."""
     if not words or not speech:
         return []
     weights = [syllables(w["text"]) + 0.3 for w in words]
-    # 1) proportional placement on concatenated speech time
-    total_speech = sum(e - s for s, e in speech)
-    total_w = sum(weights)
+    times: list[tuple[float, float] | None] = [None] * len(words)
 
-    def speech_to_abs(x: float) -> float:
-        acc = 0.0
-        for s, e in speech:
-            if x <= acc + (e - s):
-                return s + (x - acc)
-            acc += e - s
-        return speech[-1][1]
+    def solve(i0: int, i1: int, t0: float, t1: float, level: int) -> None:
+        est = _proportional(words[i0:i1 + 1], weights[i0:i1 + 1], speech, t0, t1)
+        if level == 0:
+            for k, (a, b) in enumerate(est):
+                times[i0 + k] = (a, max(b, a + 0.05))
+            return
+        inner = [(s, e) for s, e in pauses if s > t0 + 0.05 and e < t1 - 0.05]
+        cands = [(i0 + k, est[k][1]) for k in range(i1 - i0) if _level(words[i0 + k]) >= level]
+        anchors = _dp_match(cands, inner, {3: 2.6, 2: 1.6, 1: 0.8}[level])
+        prev_i, prev_t = i0, t0
+        for wi, ps, pe in anchors:
+            solve(prev_i, wi, prev_t, ps, level - 1)
+            prev_i, prev_t = wi + 1, pe
+        solve(prev_i, i1, prev_t, t1, level - 1)
 
-    cum = 0.0
-    est_end = []
-    for w in weights:
-        cum += w
-        est_end.append(speech_to_abs(cum / total_w * total_speech))
-    # 2) align punctuation boundaries to real pauses with a monotonic DP (global, tolerant of drift):
-    #    value(i, j) = punctuation strength × pause length − distance penalty; unmatched pauses are
-    #    mid-phrase breaths, unmatched boundaries keep proportional timing.
-    boundaries = [i for i, w in enumerate(words) if pause_weight(w.get("punct", "")) >= 0.6 and i < len(words) - 1]
-    inner = list(pauses)
-    nb, nq = len(boundaries), len(inner)
-
-    def value(bi: int, qj: int) -> float:
-        i = boundaries[bi]
-        s, e = inner[qj]
-        return pause_weight(words[i].get("punct", "")) * (0.5 + min(e - s, 1.2)) - 0.6 * abs(est_end[i] - s)
-
-    S = [[0.0] * (nq + 1) for _ in range(nb + 1)]
-    for bi in range(1, nb + 1):
-        for qj in range(1, nq + 1):
-            v = value(bi - 1, qj - 1)
-            S[bi][qj] = max(S[bi - 1][qj], S[bi][qj - 1], S[bi - 1][qj - 1] + v if v > 0 else -1e9)
-    anchors: list[tuple[int, float, float]] = []  # (word index, word end time, next word start time)
-    bi, qj = nb, nq
-    while bi > 0 and qj > 0:
-        v = value(bi - 1, qj - 1)
-        if v > 0 and abs(S[bi][qj] - (S[bi - 1][qj - 1] + v)) < 1e-9:
-            anchors.append((boundaries[bi - 1], inner[qj - 1][0], inner[qj - 1][1]))
-            bi, qj = bi - 1, qj - 1
-        elif S[bi][qj] == S[bi - 1][qj]:
-            bi -= 1
-        else:
-            qj -= 1
-    anchors.reverse()
-    # 3) redistribute words between anchors over the speech inside each span
-    spans = []
-    prev_i, prev_t = -1, speech[0][0]
-    for i, t_end, t_next in anchors:
-        spans.append((prev_i + 1, i, prev_t, t_end))
-        prev_i, prev_t = i, t_next
-    spans.append((prev_i + 1, len(words) - 1, prev_t, speech[-1][1]))
-    out: list[dict] = []
-    for a, b, t0, t1 in spans:
-        sub_speech = [(max(s, t0), min(e, t1)) for s, e in speech if e > t0 and s < t1]
-        sub_total = sum(e - s for s, e in sub_speech) or (t1 - t0)
-        sw = weights[a:b + 1]
-        tot = sum(sw) or 1
-
-        def to_abs(x: float) -> float:
-            acc = 0.0
-            for s, e in sub_speech:
-                if x <= acc + (e - s) + 1e-9:
-                    return s + (x - acc)
-                acc += e - s
-            return t1
-
-        c = 0.0
-        for k, w in enumerate(sw):
-            start = to_abs(c / tot * sub_total)
-            c += w
-            end = to_abs(c / tot * sub_total)
-            out.append({**words[a + k], "start": round(start, 3), "end": round(max(end, start + 0.05), 3), "conf": None, "timing": "estimated"})
-    return out
+    solve(0, len(words) - 1, speech[0][0], speech[-1][1], 3)
+    return [{**{k: v for k, v in w.items() if k != "para"}, "start": round(t[0], 3), "end": round(t[1], 3), "conf": None, "timing": "estimated"} for w, t in zip(words, times)]
 
 
 def align_script_to_asr(script_words: list[dict], asr: list[dict]) -> tuple[list[dict], dict]:

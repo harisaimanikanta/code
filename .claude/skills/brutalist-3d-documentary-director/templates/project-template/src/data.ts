@@ -18,7 +18,7 @@ export interface ProductionConfig {
   lighting: { blendFrames: number };
   style: { letterbox: number; grainScale: number };
   subtitles: { enabled: boolean; wordHighlight: boolean; fontFamily: string; maxCharsPerLine: number; safeMarginPct: number };
-  render: { shadows: boolean; antialias: boolean; post?: 'off' | 'draft' | 'preview' | 'final' };
+  render: { shadows: boolean; antialias: boolean; post?: 'off' | 'draft' | 'preview' | 'final'; shadowMapSize?: number };
 }
 
 export interface WorldEntity {
@@ -31,6 +31,8 @@ export interface WorldEntity {
   actions?: unknown[];
   cullRadius?: number;
   frames?: [number, number];
+  /** zone id this entity belongs to — mounted only while that zone is active (see activeZonesAt) */
+  zone?: string;
   children?: WorldEntity[];
 }
 export interface WorldLayout {
@@ -48,7 +50,25 @@ export const layout = layoutJson as unknown as WorldLayout;
 export const track = trackJson as unknown as BakedTrack;
 export const subtitles = (subtitlesJson as unknown as { cues: SubtitleCue[] }).cues;
 export interface ShotPost { dof?: number; bloom?: number; bloomThreshold?: number; ao?: number; contrast?: number; saturation?: number; vignette?: number; grain?: number }
-export const shotPlan = shotPlanJson as unknown as { shots: { id: string; startFrame: number; endFrame: number; lighting?: string; post?: ShotPost }[] };
+export const shotPlan = shotPlanJson as unknown as { shots: { id: string; startFrame: number; endFrame: number; lighting?: string; post?: ShotPost; environment?: string; activeZones?: string[] }[] };
+
+/**
+ * Narration-driven set management: a zone is mounted only while a shot within ±margin frames uses it
+ * (shot.environment, plus optional shot.activeZones for zones that must be visible from there, e.g. the
+ * next room through a doorway). Keeps lights/shadow passes/geometry to what the camera can actually see.
+ * Returns null when the plan has no environments (falls back to pure distance culling).
+ */
+export function activeZonesAt(frame: number, margin = 45): Set<string> | null {
+  const out = new Set<string>();
+  let any = false;
+  for (const s of shotPlan.shots) {
+    if (s.environment && s.environment !== 'TODO') any = true;
+    if (s.endFrame + margin < frame || s.startFrame - margin > frame) continue;
+    if (s.environment) out.add(s.environment);
+    for (const z of s.activeZones ?? []) out.add(z);
+  }
+  return any ? out : null;
+}
 
 /** Per-shot post overrides, cross-faded over 24 frames at shot boundaries (numeric keys only). */
 export function postAt(frame: number): ShotPost {

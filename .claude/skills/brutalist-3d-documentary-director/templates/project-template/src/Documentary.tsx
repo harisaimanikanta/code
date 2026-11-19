@@ -33,7 +33,7 @@ export const Documentary: React.FC = () => {
         camera={{ fov: track.fov[0], near: 0.02, far: 400, position: [0, 0, 0] }}
       >
         <CameraRig track={track} />
-        <LightingDirector schedule={lightingSchedule} focus={cam.target} blendFrames={config.lighting.blendFrames} />
+        <LightingDirector schedule={lightingSchedule} focus={cam.target} blendFrames={config.lighting.blendFrames} shadowMapSize={config.render.shadowMapSize ?? 2048} />
         <World layout={layout} cameraPosition={cam.p} />
         {config.render.post !== 'off' && <PostFX quality={config.render.post ?? 'final'} focusDistance={dist(cam.p, cam.target)} {...post} />}
       </ThreeCanvas>

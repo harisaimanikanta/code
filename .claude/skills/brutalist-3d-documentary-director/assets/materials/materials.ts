@@ -1,7 +1,7 @@
 // Material preset library (v2: PBR with procedural albedo/normal/roughness sets). Shared, cached materials — never create ad-hoc materials in scenes
 // when a preset fits. Extend with `getMaterial(id, overrides)` (overrides produce a separate cached clone).
 import * as THREE from 'three';
-import { brushedSteelSet, concreteSet, fabricSet, linoleumSet, paintedMetalSet, paperSet, plasterSet, skinSet, tileSet, tissueSet, velvetSet, woodSet, type SurfaceSet } from '../textures/surfaceSets';
+import { brushedSteelSet, hairSet, concreteSet, fabricSet, linoleumSet, paintedMetalSet, paperSet, plasterSet, skinSet, tileSet, tissueSet, velvetSet, woodSet, type SurfaceSet } from '../textures/surfaceSets';
 
 /** Studio palette (see references/visual-identity.md). */
 export const PALETTE = {
@@ -95,9 +95,9 @@ export const MATERIAL_PRESETS: Record<MaterialPresetId, Spec> = {
   'skin-stylized-aged': { kind: 'physical', params: { color: '#ffffff', roughness: 1, sheen: 0.25, sheenColor: '#e0a090' }, textures: () => S(R(skinSet('#a3735f', 22), 3), 0.25) },
   'skin-light': { kind: 'physical', params: { color: '#ffffff', roughness: 1, sheen: 0.35, sheenColor: '#ffc0aa' }, textures: () => S(R(skinSet('#c9927a', 32), 3), 0.25) },
   'skin-dark': { kind: 'physical', params: { color: '#ffffff', roughness: 1, sheen: 0.4, sheenColor: '#a87060' }, textures: () => S(R(skinSet('#6a4232', 42), 3), 0.25) },
-  'hair-dark': { kind: 'physical', params: { color: '#15100d', roughness: 0.55, sheen: 1, sheenColor: '#6a5040', sheenRoughness: 0.3 } },
-  'hair-grey': { kind: 'physical', params: { color: '#8f8a85', roughness: 0.55, sheen: 1, sheenColor: '#ffffff', sheenRoughness: 0.35 } },
-  'hair-brown': { kind: 'physical', params: { color: '#3a2416', roughness: 0.55, sheen: 1, sheenColor: '#8a6040', sheenRoughness: 0.3 } },
+  'hair-dark': { kind: 'physical', params: { color: '#ffffff', roughness: 1, sheen: 1, sheenColor: '#6a5040', sheenRoughness: 0.3 }, textures: () => S(R(hairSet('#1a130f', 21), 4), 0.9) },
+  'hair-grey': { kind: 'physical', params: { color: '#ffffff', roughness: 1, sheen: 1, sheenColor: '#ffffff', sheenRoughness: 0.35 }, textures: () => S(R(hairSet('#9a958f', 23), 4), 0.9) },
+  'hair-brown': { kind: 'physical', params: { color: '#ffffff', roughness: 1, sheen: 1, sheenColor: '#8a6040', sheenRoughness: 0.3 }, textures: () => S(R(hairSet('#3a2416', 25), 4), 0.9) },
   'eye-white': { kind: 'physical', params: { color: '#d8d2c8', roughness: 0.15, clearcoat: 1 } },
   'eye-iris': { kind: 'physical', params: { color: '#2a1a12', roughness: 0.1, clearcoat: 1 } },
   lips: { kind: 'physical', params: { color: '#8a4a42', roughness: 0.5, sheen: 0.3, sheenColor: '#ff9a8a' } },
@@ -105,8 +105,8 @@ export const MATERIAL_PRESETS: Record<MaterialPresetId, Spec> = {
   'wood-dark': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.35, clearcoatRoughness: 0.35 }, textures: () => S(woodSet('#3b2216', 4), 0.6) },
   'wood-oak': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.3, clearcoatRoughness: 0.4 }, textures: () => S(woodSet('#7a5434', 24), 0.6) },
   'wood-floor': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.5, clearcoatRoughness: 0.3 }, textures: () => S(woodSet('#4a2c1c', 34, 6), 0.7) },
-  'tile-hospital': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.4, clearcoatRoughness: 0.2, envMapIntensity: 0.9 }, textures: () => S(tileSet('#8fa39b', '#3a3a36', 6), 1) },
-  'tile-white': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.5, clearcoatRoughness: 0.15, envMapIntensity: 0.9 }, textures: () => S(tileSet('#d8d6cf', '#5a5853', 8, 15), 1) },
+  'tile-hospital': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.4, clearcoatRoughness: 0.2, envMapIntensity: 0.9 }, textures: () => S(tileSet('#8fa39b', '#3a3a36', 13), 1) },
+  'tile-white': { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.5, clearcoatRoughness: 0.15, envMapIntensity: 0.9 }, textures: () => S(tileSet('#b9b5ab', '#5a5853', 16, 15), 1) },
   linoleum: { kind: 'physical', params: { color: '#ffffff', roughness: 1, clearcoat: 0.3, clearcoatRoughness: 0.3 }, textures: () => S(linoleumSet('#4b2626', '#2a1c1c'), 0.5) },
   'plaster-wall': { kind: 'standard', params: { color: '#ffffff', roughness: 1 }, textures: () => S(plasterSet('#6d6460', 3), 0.6) },
   'plaster-red': { kind: 'standard', params: { color: '#ffffff', roughness: 1 }, textures: () => S(plasterSet('#5a1c1e', 33), 0.6) },

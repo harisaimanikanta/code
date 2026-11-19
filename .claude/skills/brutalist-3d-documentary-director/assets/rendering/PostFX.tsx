@@ -29,10 +29,13 @@ export interface PostFXProps {
   saturation?: number; // -1..1
   vignette?: number; // 0..1
   grain?: number; // 0..0.2
+  /** ACES keeps saturated crimson deep (studio default); AGX is softer but desaturates reds toward pink */
+  toneMapping?: 'aces' | 'agx';
+  exposure?: number;
 }
 
-export const POST_DEFAULTS: Required<Omit<PostFXProps, 'quality' | 'focusDistance'>> = {
-  dof: 0.4, bloom: 0.8, bloomThreshold: 0.92, ao: 2.5, aoRadius: 1.0, contrast: 0.1, saturation: 0.04, vignette: 0.55, grain: 0.045,
+export const POST_DEFAULTS: Required<Omit<PostFXProps, 'quality' | 'focusDistance' | 'toneMapping' | 'exposure'>> = {
+  dof: 0.4, bloom: 0.8, bloomThreshold: 0.92, ao: 2.5, aoRadius: 1.0, contrast: 0.12, saturation: 0.12, vignette: 0.55, grain: 0.045,
 };
 
 export function PostFX(props: PostFXProps) {
@@ -54,7 +57,7 @@ export function PostFX(props: PostFXProps) {
     }
     const dof = new DepthOfFieldEffect(camera, { worldFocusDistance: 5, worldFocusRange: 3, bokehScale: 2, resolutionScale: quality === 'final' ? 0.75 : 0.5 });
     const bloom = new BloomEffect({ intensity: 1, luminanceThreshold: 0.6, luminanceSmoothing: 0.25, mipmapBlur: true, radius: 0.72 });
-    const tone = new ToneMappingEffect({ mode: ToneMappingMode.AGX });
+    const tone = new ToneMappingEffect({ mode: (props.toneMapping ?? 'aces') === 'agx' ? ToneMappingMode.AGX : ToneMappingMode.ACES_FILMIC });
     const bc = new BrightnessContrastEffect({ contrast: 0.1 });
     const hs = new HueSaturationEffect({ saturation: 0.04 });
     const vig = new VignetteEffect({ offset: 0.28, darkness: 0.55 });
@@ -65,7 +68,7 @@ export function PostFX(props: PostFXProps) {
     composer.addPass(new EffectPass(camera, bloom, tone, bc, hs, vig, noise));
     composer.addPass(new EffectPass(camera, smaa));
     return { composer, ao, dof, bloom, bc, hs, vig, noise };
-  }, [gl, scene, camera, quality]);
+  }, [gl, scene, camera, quality, props.toneMapping]);
 
   useLayoutEffect(() => () => chain.composer.dispose(), [chain]);
 
@@ -90,6 +93,7 @@ export function PostFX(props: PostFXProps) {
     hs.saturation = p.saturation;
     vig.darkness = p.vignette;
     noise.blendMode.opacity.value = p.grain;
+    gl.toneMappingExposure = props.exposure ?? gl.toneMappingExposure;
     composer.render();
   }, 1);
 
