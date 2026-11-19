@@ -596,7 +596,7 @@
    "audioStart": 53.333,
    "audioEnd": 57.667,
    "narration": "When the case was published, the patient was him.",
-   "visualPurpose": "Through a veil to the desk: the published case; THE PATIENT WAS HIM rises out of the wall.",
+   "visualPurpose": "Through the stomach wall to the desk: the published case; THE PATIENT WAS HIM rises out of the wall.",
    "emotion": "irony",
    "environment": "press",
    "characters": [
@@ -607,9 +607,10 @@
    ],
    "lighting": "crimson-rim",
    "camera": {
-    "move": "travel",
+    "move": "through",
     "via": [
-     "veil2"
+     "stomachCore",
+     "stomachBack"
     ],
     "to": "pressFront",
     "target": {
@@ -620,8 +621,9 @@
       0
      ]
     },
+    "lookAhead": 3,
     "fov": 40,
-    "lead": 0.5
+    "lead": 0.25
    },
    "cameraTarget": {
     "anchor": "press.wallText",
@@ -632,7 +634,7 @@
     ]
    },
    "animation": "",
-   "transitionIn": "particle",
+   "transitionIn": "camera-through-object",
    "transitionOut": "none",
    "sound": [],
    "subtitle": "auto",

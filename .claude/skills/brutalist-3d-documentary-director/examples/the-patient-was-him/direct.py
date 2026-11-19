@@ -7,7 +7,7 @@ LEC = [0, -26, -65.2]
 ANI = [8.0, -26, -79.15]
 HOS = [17.1, -26, -79.15]
 STO = [17.5, -24.5, -95]
-PRE = [17.5, -26, -118]
+PRE = [17.5, -26, -107]
 CER = [17.5, -26, -140]
 HOR = [17.5, -26, -166]
 def add(a, b): return [round(a[0] + b[0], 3), round(a[1] + b[1], 3), round(a[2] + b[2], 3)]
@@ -22,7 +22,7 @@ layout = {
   "stampDesk": add(LEC, [-3.5, 1.75, -6.5]), "stageDoor": [5.5, -24.4, -74.55], "aniInside": [6.6, -24.3, -77.0],
   "aniEastDoor": [13.3, -24.4, -79.15], "hosInside": [15.2, -24.4, -78.6], "monitorFront": add(HOS, [0.45, 1.25, -1.0]), "patientChest": add(HOS, [0.0, 0.85, -0.5]), "bedside": add(HOS, [1.7, 1.6, 0.9]),
   "monitorIn": add(HOS, [0.42, 1.25, -1.9]), "wallBehind": add(HOS, [0.4, 1.4, -3.7]), "stomachApproach": add(STO, [0.6, 1.0, 9.0]),
-  "veil2": [17.5, -23.2, -108.0], "pressFront": add(PRE, [0.3, 1.7, 3.9]), "pressExit": add(PRE, [3.6, 2.2, -0.5]),
+  "stomachCore": add(STO, [0.3, 1.2, -0.6]), "stomachBack": add(STO, [0.3, 0.9, -5.5]), "pressFront": add(PRE, [0.3, 1.7, 3.9]), "pressExit": add(PRE, [3.6, 2.2, -0.5]),
   "cerAudience": add(CER, [0.6, 2.4, 6.0]), "curtainGap": add(CER, [0, 2.2, -8.8]), "horizonIn": add(HOR, [0, 3.0, 6.5]),
  },
  "zones": [
@@ -55,7 +55,6 @@ layout = {
   {"id": "ammonia2", "component": "Molecule", "position": add(STO, [4.0, 0.6, 5.5]), "props": {"kind": "ammonia", "appearStart": 1460}},
   {"id": "pills", "component": "Capsules", "position": add(STO, [2.2, -0.2, 4.0]), "scale": 6, "props": {"count": 30, "spread": 0.35, "pourStart": 1505, "pourEnd": 1580}},
   {"id": "swarm2", "component": "MicrobeSwarm", "position": add(STO, [1.5, 0.5, 3.0]), "props": {"count": 90, "bounds": [8, 5, 6], "size": 0.35}},
-  {"id": "veil2", "component": "ParticleVeil", "position": [17.5, -23.5, -108.5], "props": {"width": 12, "height": 8, "depth": 2.5, "count": 1200, "color": "#ff2a3a"}},
   {"id": "laureate_rig", "component": "SubjectRig", "position": add(CER, [0, 1.0, -4.6]), "props": {"facing": 0, "keyColor": "#ffd890", "keyIntensity": 70, "rimColor": "#ff9a3a", "rimIntensity": 70}},
   {"id": "horizon_rim", "component": "SpotPool", "position": HOR, "props": {"position": [0, 6, -20], "target": [0, 3.5, -8], "color": "#ff1a10", "intensity": 220, "angle": 0.35, "penumbra": 0.5, "castShadow": False}},
  ],
@@ -83,8 +82,9 @@ layout = {
  ],
  "occluders": [
   {"id": "scope-barrel", "shape": "box", "center": add(LAB, [0.4, 0.42, -0.25]), "halfSize": [0.22, 1.12, 0.32], "color": "#030703", "feather": 0.25, "frames": [455, 520]},
-  {"id": "monitor-screen", "shape": "box", "center": add(HOS, [0.42, 1.25, -2.65]), "halfSize": [0.4, 0.35, 1.0], "color": "#2a0306", "feather": 0.2, "frames": [1320, 1395]},
+  {"id": "monitor-screen", "shape": "box", "center": add(HOS, [0.42, 1.25, -2.15]), "halfSize": [0.4, 0.35, 0.35], "color": "#2a0306", "feather": 0.2, "frames": [1320, 1395]},
   {"id": "theatre-door", "shape": "box", "center": [0, -24.3, -55.0], "halfSize": [1.6, 1.8, 1.2], "color": "#3a0508", "feather": 0.8, "frames": [700, 770]},
+  {"id": "stomach-wall", "shape": "sphere", "center": add(STO, [0.3, 0.95, -3.0]), "radius": 0.9, "color": "#4a0508", "feather": 0.35, "frames": [1620, 1680]},
   {"id": "curtain", "shape": "box", "center": add(CER, [0, 3, -8.9]), "halfSize": [8, 4, 0.5], "color": "#2a0204", "feather": 0.3, "frames": [1880, 1930]},
  ],
 }
@@ -127,8 +127,8 @@ S = [
       "Inflamed stomach with glowing colonies; urea → ammonia: the bacteria neutralise acid around them.", "stomach", (), ("stomach", "molecules"), emotion="understanding", post={"dof": 0.3, "bloom": 1.1}),
  shot(15, 1505, 1600, "discovery", {"move": "orbit", "target": "stomach", "sweepDeg": 50, "height": 0.4, "radiusEnd": 7.0, "fov": 38},
       "Antibiotic capsules pour in; the colonies are wiped out.", "stomach", (), ("pills",), sound=("shimmer",), emotion="cure", post={"dof": 0.3}),
- shot(16, 1600, 1730, "crimson-rim", {"move": "travel", "via": ["veil2"], "to": "pressFront", "target": {"anchor": "press.wallText", "offset": [0, -0.6, 0]}, "fov": 40, "lead": 0.5},
-      "Through a veil to the desk: the published case; THE PATIENT WAS HIM rises out of the wall.", "press", ("marshall_press",), ("newspaper",), tin="particle", emotion="irony", post={"dof": 0.4}),
+ shot(16, 1600, 1730, "crimson-rim", {"move": "through", "via": ["stomachCore", "stomachBack"], "to": "pressFront", "target": {"anchor": "press.wallText", "offset": [0, -0.6, 0]}, "lookAhead": 3, "fov": 40, "lead": 0.25},
+      "Through the stomach wall to the desk: the published case; THE PATIENT WAS HIM rises out of the wall.", "press", ("marshall_press",), ("newspaper",), tin="camera-through-object", emotion="irony", post={"dof": 0.4}),
  shot(17, 1730, 1885, "golden-award", {"move": "travel", "via": ["pressExit", "cerAudience"], "to": {"anchor": "ceremony.plinth", "offset": [1.8, 0.2, 3.2]}, "target": "laureate_m.head", "fov": 34, "lead": 0.5},
       "Over the applauding hall to the laureates presenting their medals.", "ceremony", ("laureate_m", "laureate_w"), ("medal", "plaque"), tin="room-to-room", sound=("boom",), emotion="vindication", post={"dof": 0.5, "bloom": 1.2}),
  shot(18, 1885, 1955, "punchline", {"move": "through", "via": ["curtainGap"], "to": "horizonIn", "lookAhead": 4, "fov": 44, "lead": 0.3},
@@ -146,7 +146,7 @@ for s in S:
   s["narration"] = " ".join(w["text"] + w.get("punct", "") for w in ws)
 ZONE_OF = {"hero_bact": "micro", "veil": "micro", "stamp_desk": "lecture", "stamp_papers": "lecture", "stamp": "lecture", "marshall_rig_lec": "lecture",
   "marshall_rig_ani": "animal", "patient_rig": "hospital", "stomach": "stomach", "stomach_key": "stomach", "stomach_rim": "stomach", "neutral_bact": "stomach",
-  "urea": "stomach", "ammonia1": "stomach", "ammonia2": "stomach", "pills": "stomach", "swarm2": "stomach", "veil2": "press", "laureate_rig": "ceremony",
+  "urea": "stomach", "ammonia1": "stomach", "ammonia2": "stomach", "pills": "stomach", "swarm2": "stomach", "laureate_rig": "ceremony",
   "horizon_rim": "horizon", "warren": "lab", "marshall_lec": "lecture", "warren_lec": "lecture", "marshall_ani": "animal", "patient": "hospital",
   "marshall_press": "press", "laureate_m": "ceremony", "laureate_w": "ceremony", "silhouette": "horizon"}
 for kind in ("objects", "actors"):

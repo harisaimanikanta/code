@@ -129,7 +129,7 @@
     "materials/materials.ts",
     "textures/surfaceSets.ts"
    ],
-   "sha256": "5a862895db18e6c5099e0e33c4943431bbe430968c2213272e89e95baa64b5db"
+   "sha256": "dd9082675d9b14f91e80bd9f78b87b9300f90da1744f0d490911775932ff8a82"
   },
   {
    "id": "arch.slab",
@@ -4151,7 +4151,7 @@
     "core/time.ts",
     "materials/materials.ts"
    ],
-   "sha256": "41fb426ca05c80a02f53e5a8c3f518da1fb074b036b11133b63163bd09c1eb79"
+   "sha256": "162d7f0b81d5410128ff44586d7a0b7e91f58e0bae780476220c4adc7476a160"
   },
   {
    "id": "env.room-shell",
@@ -7861,5 +7861,5 @@
    ]
   }
  ],
- "indexedAt": "2026-11-19T19:08:30+00:00"
+ "indexedAt": "2026-11-19T23:36:03+00:00"
 }

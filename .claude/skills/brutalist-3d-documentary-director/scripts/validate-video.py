@@ -92,8 +92,10 @@ def main():
         if not any(fr and fr[0] / cfg["fps"] - 0.5 <= s and e <= fr[1] / cfg["fps"] + 0.5 for fr in occl):
             unexplained.append((round(s, 2), round(e, 2)))
     R.fail(f"unintended black segments: {unexplained[:6]}") if unexplained else R.ok(f"no unintended black frames ({len(blacks)} intentional occlusion fills)")
-    freezes = re.findall(r"freeze_start: ([\d.]+)", err)
-    R.fail(f"frozen/static picture at {freezes[:6]} s — camera or animation stopped") if freezes else R.ok("no frozen/static picture segments")
+    freezes = [float(x) for x in re.findall(r"freeze_start: ([\d.]+)", err)]
+    # a full-frame occluder fill (declared camera-through-object window) is intentionally uniform for a few frames
+    unexplained_f = [round(x, 2) for x in freezes if not any(fr and fr[0] / cfg["fps"] - 0.5 <= x <= fr[1] / cfg["fps"] + 0.5 for fr in occl)]
+    R.fail(f"frozen/static picture at {unexplained_f[:6]} s — camera or animation stopped") if unexplained_f else R.ok(f"no frozen/static picture segments ({len(freezes) - len(unexplained_f)} inside declared occluder windows)")
     cuts = re.findall(r"pts_time:([\d.]+)", err)
     (R.ok if not cuts else R.warn)(f"{len(cuts)} high scene-change frames (possible hard cuts) at {cuts[:8]} s" if cuts else "no hard-cut signatures (scene-change score below threshold)")
 

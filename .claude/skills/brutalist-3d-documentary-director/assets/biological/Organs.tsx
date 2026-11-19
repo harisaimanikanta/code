@@ -64,6 +64,7 @@ export function StomachOrgan({ inflamed = 0, colonies = 0, peristalsis = 1, posi
       <mesh geometry={duo} material={getMaterial('tissue-wet')} castShadow />
       <mesh geometry={eso} material={getMaterial('tissue-wet')} castShadow />
       {inflamed > 0 && <pointLight position={[0.02, -0.02, 0.12]} color="#ff2a1a" intensity={0.4 * inflamed} distance={0.6} decay={2} />}
+      {inflamed > 0 && <pointLight position={[-0.03, 0.02, 0.01]} color="#ff6a4a" intensity={0.08 * inflamed} distance={0.35} decay={2} />}
       {colonies > 0 && colonyPts.slice(0, Math.round(60 * colonies)).map((c, i) => (
         <mesh key={i} geometry={cached('colony', () => new THREE.SphereGeometry(1, 10, 8))} material={getMaterial('bacteria-toxic')} position={c.p} scale={c.s * (1 + 0.15 * Math.sin(t * 2 + c.ph))} />
       ))}

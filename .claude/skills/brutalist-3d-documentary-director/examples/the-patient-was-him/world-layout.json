@@ -132,20 +132,25 @@
    -23.5,
    -86.0
   ],
-  "veil2": [
-   17.5,
-   -23.2,
-   -108.0
+  "stomachCore": [
+   17.8,
+   -23.3,
+   -95.6
+  ],
+  "stomachBack": [
+   17.8,
+   -23.6,
+   -100.5
   ],
   "pressFront": [
    17.8,
    -24.3,
-   -114.1
+   -103.1
   ],
   "pressExit": [
    21.1,
    -23.8,
-   -118.5
+   -107.5
   ],
   "cerAudience": [
    18.1,
@@ -262,7 +267,7 @@
    "position": [
     17.5,
     -26,
-    -118
+    -107
    ],
    "cullRadius": 30,
    "props": {
@@ -588,23 +593,6 @@
    "zone": "stomach"
   },
   {
-   "id": "veil2",
-   "component": "ParticleVeil",
-   "position": [
-    17.5,
-    -23.5,
-    -108.5
-   ],
-   "props": {
-    "width": 12,
-    "height": 8,
-    "depth": 2.5,
-    "count": 1200,
-    "color": "#ff2a3a"
-   },
-   "zone": "press"
-  },
-  {
    "id": "laureate_rig",
    "component": "SubjectRig",
    "position": [
@@ -884,7 +872,7 @@
    "position": [
     17.15,
     -26,
-    -117.65
+    -106.65
    ],
    "rotation": [
     0,
@@ -1042,12 +1030,12 @@
    "center": [
     17.52,
     -24.75,
-    -81.8
+    -81.3
    ],
    "halfSize": [
     0.4,
     0.35,
-    1.0
+    0.35
    ],
    "color": "#2a0306",
    "feather": 0.2,
@@ -1074,6 +1062,22 @@
    "frames": [
     700,
     770
+   ]
+  },
+  {
+   "id": "stomach-wall",
+   "shape": "sphere",
+   "center": [
+    17.8,
+    -23.55,
+    -98.0
+   ],
+   "radius": 0.9,
+   "color": "#4a0508",
+   "feather": 0.35,
+   "frames": [
+    1620,
+    1680
    ]
   },
   {

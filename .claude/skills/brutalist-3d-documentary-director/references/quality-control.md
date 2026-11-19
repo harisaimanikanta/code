@@ -54,3 +54,9 @@ through a character (walk him aside), a glass held at the forehead (pose), a sun
 non-silhouette (outfit + camera height), camera staring at walls mid-transition (look along the path; lower the path
 under a lintel), a lying character's anchor pointing at the ceiling (global anchor), hard particle diamonds (soft point
 sprites), wall text overflowing 9:16 (two lines). Always render and look.
+The full-render video QC then caught two more that stills missed, both fixed at source and re-rendered for the affected range:
+- **About 1 s of black void** between two sets (the camera turned away from the lit subject before reaching a thin veil). Replaced with a camera-through-object pass through the stomach, using double-sided wet tissue and finely tiled textures so the interior reads as an organ, not a red card.
+- **An oversized occluder** that held a solid colour long enough to register as a frozen picture. Occluders are now sized so full coverage lasts 4–12 frames. A freeze inside a declared occluder window is reported as intentional, like a declared black frame.
+
+To fix a range without re-rendering the whole film: `render-project.sh . preview F0 F1`, then splice it onto the earlier render with ffmpeg (trim + concat), reusing the original audio, and run `validate-video.py` on the result.
+
