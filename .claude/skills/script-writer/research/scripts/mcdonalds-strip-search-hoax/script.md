@@ -19,24 +19,31 @@ Format: **True Mechanism Parable** · 2026-11-20 · From IDEA CARD (idea-creator
 
 **Recommended: #1.** Owner feedback: v1 was hard to follow. #1 says who, what and how in the first 5 seconds, in plain words, then asks the one question the video answers ("how do you make a normal person do this?"). The payoff at the end answers exactly that. Scores are editorial judgement, not view predictions.
 
-## C. Final voiceover script v2 (235 words · ~64 s at 3.7 words/s)
+## C. Final voiceover script v3 - merged with the owner's draft (245 words · ~66 s at 3.7 words/s)
 <!-- VOICEOVER START -->
-In 2004, a man got a McDonald's manager to strip-search her own employee. He never set foot in the store. He did it with one phone call.
+A stranger got a McDonald's manager to strip-search her own employee. He never set foot in the restaurant. He did it with one phone call.
 So how do you make a normal person do something this wrong?
-It's a Friday in Kentucky. The office phone rings. A man says he's a police officer. He says a worker stole a purse, and describes her.
+April 2004, Kentucky. The phone rings. A man says he's a police officer. Officer Scott. He says an employee stole a purse, and describes her.
 The manager knows who he means: an 18-year-old girl at the counter.
-Here's the trick. He never asks for the bad thing first.
-First: bring her to the office. Easy.
-Then: search her, here, or she goes to the police station.
-Then: take her clothes.
-Every order is just a little worse than the last one. So every order feels okay.
-For over three hours, the manager does what the voice says. One worker walks out in disgust. But nobody checks with the real police.
-Then the caller gets the manager's fiancé to watch the girl, and talks him into abusing her.
-Finally, a 58-year-old maintenance man takes the phone. He listens. And says no.
-That one "no" breaks the spell. The manager calls her boss. There was no officer.
-And it wasn't the first time. Police counted over 70 calls like this, in 30 states.
-That's the scary part. He didn't need to be in the room. He just needed someone to say yes to the first small thing.
+Then the orders begin. And he never asks for the worst thing first.
+Bring her to the office.
+Search her.
+Take her clothes.
+Find someone to watch her.
+Each order goes a little further. And each one sounds like police business.
+One employee walks out in disgust. The manager keeps going.
+She calls her fiancé to watch the girl. And the caller talks him into abusing her.
+For more than three hours, a voice on the phone runs that room.
+Then a 58-year-old maintenance man takes the phone. He listens. And he says no.
+That one no breaks the spell. The manager calls her supervisor.
+Nobody from the police had called. No investigation. No stolen purse. No Officer Scott.
+And it wasn't his first call. Over 70 like it, in 30 states.
+He didn't need a weapon. He didn't need to be in the room.
+Because the most dangerous part of an order isn't what it asks you to do. It's that you already said yes to the one before it.
 <!-- VOICEOVER END -->
+
+v3 = v2's structure and length + the owner's draft's best lines ("Then the orders begin", the four one-line orders, "No investigation. No stolen purse. No Officer Scott.", "He didn't need a weapon", and the closing line about saying yes to the order before).
+Fixes applied to the owner's draft: "people who would abuse her" → one abuser, the fiancé (accuracy); "32 states" → 30 (sources say 30); "security guard" and the acquitted suspect's name dropped (sources differ on his job; he was acquitted); the victim is not named; the walk-out employee's gender isn't confirmed, so "One employee"; cut from 357 words (~1:40) to 245 (~1:06).
 
 Structure (hook → problem → explanation → payoff, per research round 3):
 - **Hook 0:00–0:06:** the whole shocking fact, plainly: who, what, how ("one phone call").
@@ -94,12 +101,13 @@ Character sheet (every prompt): *Manager - stylised 3D cartoon woman, round whit
 | Accuracy (20) | 18 | All beats in research.md; no unverified side details; −2 for summary-level sourcing |
 | Narration (10) | 10 | Plain words, 7.3 words/sentence, no jargon |
 | Payoff (10) | 10 | Answers the opening question and turns it on the viewer |
-| **Total** | **96/100** | ≥ 85 → deliver |
+| **Total** | **96/100** (v2) · **97/100** (v3: +1 payoff) | ≥ 85 → deliver |
 
 - **Duration:** ~64 s at 3.7 words/s (67 s at 3.5) · **Words:** 235 (script_stats.py)
 - **Historical confidence:** High (national news + court rulings). The "First / Then / Then" orders are a simplified sequence of documented steps (office → search under threat of the station → clothes).
 - **Strongest moment:** 0:42–0:48 ("He listens. And says no.")
 - **Risk:** sensitive subject; keep visuals off-screen and the title neutral.
-- **Revision history:** v1 93 (owner: hard to understand) → v2 96 (problem → explanation → payoff, plain language).
+- **Revision history:** v1 93 (owner: hard to understand) → v2 96 (problem → explanation → payoff, plain language) → v3 97 (merged with the owner's draft: stronger orders list and closing line).
+- **Duration (v3):** ~66 s at 3.7 words/s · **Words:** 245
 - **Research round 3 (2026-11-20):** see `references/viral-storytelling-playbook.md` §Round 3.
 - **Sources reviewed:** 7 (search summaries; read the Kentucky Court of Appeals opinion before publishing).
