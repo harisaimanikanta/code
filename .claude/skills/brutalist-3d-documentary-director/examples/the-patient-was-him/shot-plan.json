@@ -1,0 +1,778 @@
+{
+ "version": 1,
+ "fps": 30,
+ "durationFrames": 2043,
+ "shots": [
+  {
+   "id": "S001",
+   "startFrame": 0,
+   "endFrame": 125,
+   "audioStart": 0.0,
+   "audioEnd": 4.167,
+   "narration": "Perth, Australia. The early nineteen eighties.",
+   "visualPurpose": "Establish Perth: a brutalist institute at dusk under a red sun; descend toward the cast PERTH AUSTRALIA sign.",
+   "emotion": "place, weight",
+   "environment": "ext",
+   "characters": [],
+   "objects": [
+    "sign",
+    "flag"
+   ],
+   "lighting": "mystery",
+   "camera": {
+    "move": "crane",
+    "distance": -5.2,
+    "forward": 5.5,
+    "target": "ext.sign",
+    "fov": 46,
+    "lead": 0.3
+   },
+   "cameraTarget": "ext.sign",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "amb:hall",
+    "boom"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.15
+   }
+  },
+  {
+   "id": "S002",
+   "startFrame": 125,
+   "endFrame": 275,
+   "audioStart": 4.167,
+   "audioEnd": 9.167,
+   "narration": "Medicine had a rule: nothing can live in the acid of the stomach.",
+   "visualPurpose": "Glide across the plaza to the entrance: the rule of medicine is the building itself.",
+   "emotion": "authority",
+   "environment": "ext",
+   "characters": [],
+   "objects": [],
+   "lighting": "industrial-red",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "doorApproach"
+    ],
+    "to": "doorway",
+    "target": "lab.center",
+    "fov": 42,
+    "lead": 0.6
+   },
+   "cameraTarget": "lab.center",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "doorway",
+   "sound": [
+    "whoosh"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.2
+   },
+   "activeZones": [
+    "lab"
+   ]
+  },
+  {
+   "id": "S003",
+   "startFrame": 275,
+   "endFrame": 455,
+   "audioStart": 9.167,
+   "audioEnd": 15.167,
+   "narration": "But pathologist Robin Warren kept seeing something in his biopsies. Spiral",
+   "visualPurpose": "Inside the pathology lab, revolve around Warren bent over the microscope.",
+   "emotion": "curiosity",
+   "environment": "lab",
+   "characters": [
+    "warren"
+   ],
+   "objects": [
+    "microscope"
+   ],
+   "lighting": "low-key-lab",
+   "camera": {
+    "move": "orbit",
+    "target": "warren.head",
+    "radius": 2.0,
+    "sweepDeg": -110,
+    "height": 0.25,
+    "fov": 32,
+    "lead": 0.4
+   },
+   "cameraTarget": "warren.head",
+   "animation": "",
+   "transitionIn": "doorway",
+   "transitionOut": "none",
+   "sound": [
+    "amb:lab"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.7
+   }
+  },
+  {
+   "id": "S004",
+   "startFrame": 455,
+   "endFrame": 500,
+   "audioStart": 15.167,
+   "audioEnd": 16.667,
+   "narration": "bacteria, living in the",
+   "visualPurpose": "Push into the glowing eyepiece.",
+   "emotion": "",
+   "environment": "lab",
+   "characters": [],
+   "objects": [
+    "microscope"
+   ],
+   "lighting": "discovery",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "eyeFront"
+    ],
+    "to": "eyePiece",
+    "target": "lab.microscopeObjective",
+    "fov": 30,
+    "lead": 0.5
+   },
+   "cameraTarget": "lab.microscopeObjective",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "microscope-lens",
+   "sound": [
+    "riser"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.8
+   },
+   "activeZones": [
+    "lens"
+   ]
+  },
+  {
+   "id": "S005",
+   "startFrame": 500,
+   "endFrame": 575,
+   "audioStart": 16.667,
+   "audioEnd": 19.167,
+   "narration": "stomach lining. A young doctor,",
+   "visualPurpose": "Dive through the optical path (scale transformation).",
+   "emotion": "",
+   "environment": "lens",
+   "characters": [],
+   "objects": [],
+   "lighting": "microscopic-green",
+   "camera": {
+    "move": "through",
+    "via": [
+     "underScope",
+     "lensEntry",
+     "lensMid"
+    ],
+    "to": "lensExit",
+    "lookAhead": 3,
+    "fov": 55,
+    "lead": 0.15
+   },
+   "cameraTarget": "path",
+   "animation": "",
+   "transitionIn": "microscope-lens",
+   "transitionOut": "none",
+   "sound": [
+    "amb:micro"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0,
+    "bloom": 1.3
+   },
+   "activeZones": [
+    "lab",
+    "micro"
+   ]
+  },
+  {
+   "id": "S006",
+   "startFrame": 575,
+   "endFrame": 690,
+   "audioStart": 19.167,
+   "audioEnd": 23.0,
+   "narration": "Barry Marshall, believed him. Together",
+   "visualPurpose": "Spiral bacteria living in the mucus above the stomach lining.",
+   "emotion": "revelation",
+   "environment": "micro",
+   "characters": [],
+   "objects": [
+    "hero_bact"
+   ],
+   "lighting": "explanation",
+   "camera": {
+    "move": "spiral",
+    "target": "hero_bact",
+    "radius": 6.0,
+    "radiusEnd": 4.4,
+    "sweepDeg": 120,
+    "height": 1.8,
+    "heightEnd": 0.5,
+    "fov": 40,
+    "lead": 0.35
+   },
+   "cameraTarget": "hero_bact",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.5
+   },
+   "activeZones": [
+    "lens"
+   ]
+  },
+  {
+   "id": "S007",
+   "startFrame": 690,
+   "endFrame": 800,
+   "audioStart": 23.0,
+   "audioEnd": 26.667,
+   "narration": "they presented their findings. They were rejected.",
+   "visualPurpose": "Through a crimson veil into the lecture theatre; Marshall presents to an audience that looks away.",
+   "emotion": "defiance",
+   "environment": "lecture",
+   "characters": [
+    "marshall_lec",
+    "warren_lec"
+   ],
+   "objects": [],
+   "lighting": "rejection",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "veilIn",
+     "lecBackDoor",
+     "overSeats"
+    ],
+    "to": "stageFront",
+    "target": "marshall_lec.head",
+    "lookAlongPath": true,
+    "lookAhead": 4,
+    "fov": 36,
+    "lead": 0.2
+   },
+   "cameraTarget": "marshall_lec.head",
+   "animation": "",
+   "transitionIn": "particle",
+   "transitionOut": "none",
+   "sound": [
+    "amb:hall"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.4
+   },
+   "activeZones": [
+    "micro"
+   ]
+  },
+  {
+   "id": "S008",
+   "startFrame": 800,
+   "endFrame": 880,
+   "audioStart": 26.667,
+   "audioEnd": 29.333,
+   "narration": "They tried to infect pigs.",
+   "visualPurpose": "REJECTED slams onto their papers.",
+   "emotion": "rejection",
+   "environment": "lecture",
+   "characters": [],
+   "objects": [
+    "stamp"
+   ],
+   "lighting": "rejection",
+   "camera": {
+    "move": "orbit",
+    "target": "stamp_papers",
+    "radius": 1.3,
+    "sweepDeg": 70,
+    "height": 0.9,
+    "fov": 32,
+    "lead": 0.5
+   },
+   "cameraTarget": "stamp_papers",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "stamp"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.8
+   }
+  },
+  {
+   "id": "S009",
+   "startFrame": 880,
+   "endFrame": 990,
+   "audioStart": 29.333,
+   "audioEnd": 33.0,
+   "narration": "The pigs stayed healthy. So Marshall did",
+   "visualPurpose": "Through the stage door into the animal lab: the pigs stay healthy.",
+   "emotion": "frustration",
+   "environment": "animal",
+   "characters": [],
+   "objects": [
+    "pigs"
+   ],
+   "lighting": "experiment",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "stageDoor"
+    ],
+    "to": "aniInside",
+    "target": "animal.penA",
+    "fov": 38,
+    "lead": 0.5
+   },
+   "cameraTarget": "animal.penA",
+   "animation": "",
+   "transitionIn": "doorway",
+   "transitionOut": "none",
+   "sound": [
+    "amb:office"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.3
+   },
+   "activeZones": [
+    "lecture"
+   ]
+  },
+  {
+   "id": "S010",
+   "startFrame": 990,
+   "endFrame": 1140,
+   "audioStart": 33.0,
+   "audioEnd": 38.0,
+   "narration": "the unthinkable. He drank the bacteria himself. Within days,",
+   "visualPurpose": "Portrait revolve: Marshall raises the glowing culture and drinks it.",
+   "emotion": "resolve",
+   "environment": "animal",
+   "characters": [
+    "marshall_ani"
+   ],
+   "objects": [
+    "culture"
+   ],
+   "lighting": "crimson-rim",
+   "camera": {
+    "preset": "portrait-revolve",
+    "target": "marshall_ani.head",
+    "radius": 1.6,
+    "sweepDeg": 150,
+    "height": 0.0,
+    "fov": 30
+   },
+   "cameraTarget": "marshall_ani.head",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "glass"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.9
+   }
+  },
+  {
+   "id": "S011",
+   "startFrame": 1140,
+   "endFrame": 1215,
+   "audioStart": 38.0,
+   "audioEnd": 40.5,
+   "narration": "he was violently ill.",
+   "visualPurpose": "He doubles over in pain.",
+   "emotion": "sickness",
+   "environment": "animal",
+   "characters": [
+    "marshall_ani"
+   ],
+   "objects": [],
+   "lighting": "punchline",
+   "camera": {
+    "move": "dolly",
+    "to": {
+     "anchor": "marshall_ani.head",
+     "offset": [
+      0.9,
+      -0.15,
+      0.6
+     ]
+    },
+    "target": "marshall_ani.chest",
+    "fov": 34,
+    "lead": 0.5
+   },
+   "cameraTarget": "marshall_ani.chest",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "heartbeat"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.8
+   }
+  },
+  {
+   "id": "S012",
+   "startFrame": 1215,
+   "endFrame": 1300,
+   "audioStart": 40.5,
+   "audioEnd": 43.333,
+   "narration": "An endoscope showed his stomach inflamed,",
+   "visualPurpose": "Into the endoscopy room: past the patient on the bed to the monitor showing his inflamed stomach.",
+   "emotion": "clinical",
+   "environment": "hospital",
+   "characters": [
+    "patient"
+   ],
+   "objects": [
+    "endoscopy"
+   ],
+   "lighting": "explanation",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "aniEastDoor",
+     "hosInside"
+    ],
+    "to": "bedside",
+    "target": "patientChest",
+    "fov": 44,
+    "lead": 0.3
+   },
+   "cameraTarget": "patientChest",
+   "animation": "",
+   "transitionIn": "doorway",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.4
+   },
+   "activeZones": [
+    "animal"
+   ]
+  },
+  {
+   "id": "S013",
+   "startFrame": 1300,
+   "endFrame": 1395,
+   "audioStart": 43.333,
+   "audioEnd": 46.5,
+   "narration": "and swarming with bacteria. The bacteria",
+   "visualPurpose": "Through the screen into the stomach itself.",
+   "emotion": "",
+   "environment": "stomach",
+   "characters": [],
+   "objects": [],
+   "lighting": "explanation",
+   "camera": {
+    "move": "through",
+    "via": [
+     "monitorFront",
+     "monitorIn",
+     "wallBehind"
+    ],
+    "to": "stomachApproach",
+    "lookAhead": 3,
+    "fov": 44,
+    "lead": 0.45
+   },
+   "cameraTarget": "path",
+   "animation": "",
+   "transitionIn": "camera-through-object",
+   "transitionOut": "none",
+   "sound": [
+    "whoosh"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0
+   },
+   "activeZones": [
+    "stomach",
+    "hospital"
+   ]
+  },
+  {
+   "id": "S014",
+   "startFrame": 1395,
+   "endFrame": 1505,
+   "audioStart": 46.5,
+   "audioEnd": 50.167,
+   "narration": "survive by neutralising the acid around them.",
+   "visualPurpose": "Inflamed stomach with glowing colonies; urea \u2192 ammonia: the bacteria neutralise acid around them.",
+   "emotion": "understanding",
+   "environment": "stomach",
+   "characters": [],
+   "objects": [
+    "stomach",
+    "molecules"
+   ],
+   "lighting": "explanation",
+   "camera": {
+    "move": "orbit",
+    "target": "stomach",
+    "radius": 8.5,
+    "sweepDeg": 70,
+    "height": 1.2,
+    "fov": 38,
+    "lead": 0.4
+   },
+   "cameraTarget": "stomach",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.3,
+    "bloom": 1.1
+   }
+  },
+  {
+   "id": "S015",
+   "startFrame": 1505,
+   "endFrame": 1600,
+   "audioStart": 50.167,
+   "audioEnd": 53.333,
+   "narration": "And antibiotics could wipe them out.",
+   "visualPurpose": "Antibiotic capsules pour in; the colonies are wiped out.",
+   "emotion": "cure",
+   "environment": "stomach",
+   "characters": [],
+   "objects": [
+    "pills"
+   ],
+   "lighting": "discovery",
+   "camera": {
+    "move": "orbit",
+    "target": "stomach",
+    "sweepDeg": 50,
+    "height": 0.4,
+    "radiusEnd": 7.0,
+    "fov": 38
+   },
+   "cameraTarget": "stomach",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "shimmer"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.3
+   }
+  },
+  {
+   "id": "S016",
+   "startFrame": 1600,
+   "endFrame": 1730,
+   "audioStart": 53.333,
+   "audioEnd": 57.667,
+   "narration": "When the case was published, the patient was him.",
+   "visualPurpose": "Through the stomach wall to the desk: the published case; THE PATIENT WAS HIM rises out of the wall.",
+   "emotion": "irony",
+   "environment": "press",
+   "characters": [
+    "marshall_press"
+   ],
+   "objects": [
+    "newspaper"
+   ],
+   "lighting": "crimson-rim",
+   "camera": {
+    "move": "through",
+    "via": [
+     "stomachCore",
+     "stomachBack"
+    ],
+    "to": "pressFront",
+    "target": {
+     "anchor": "press.wallText",
+     "offset": [
+      0,
+      -0.6,
+      0
+     ]
+    },
+    "lookAhead": 3,
+    "fov": 40,
+    "lead": 0.25
+   },
+   "cameraTarget": {
+    "anchor": "press.wallText",
+    "offset": [
+     0,
+     -0.6,
+     0
+    ]
+   },
+   "animation": "",
+   "transitionIn": "camera-through-object",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.4
+   },
+   "activeZones": [
+    "stomach"
+   ]
+  },
+  {
+   "id": "S017",
+   "startFrame": 1730,
+   "endFrame": 1885,
+   "audioStart": 57.667,
+   "audioEnd": 62.833,
+   "narration": "In 2005, Warren and Marshall received the Nobel Prize.",
+   "visualPurpose": "Over the applauding hall to the laureates presenting their medals.",
+   "emotion": "vindication",
+   "environment": "ceremony",
+   "characters": [
+    "laureate_m",
+    "laureate_w"
+   ],
+   "objects": [
+    "medal",
+    "plaque"
+   ],
+   "lighting": "golden-award",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "pressExit",
+     "cerAudience"
+    ],
+    "to": {
+     "anchor": "ceremony.plinth",
+     "offset": [
+      1.8,
+      0.2,
+      3.2
+     ]
+    },
+    "target": "laureate_m.head",
+    "fov": 34,
+    "lead": 0.5
+   },
+   "cameraTarget": "laureate_m.head",
+   "animation": "",
+   "transitionIn": "room-to-room",
+   "transitionOut": "none",
+   "sound": [
+    "boom"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.5,
+    "bloom": 1.2
+   },
+   "activeZones": [
+    "press"
+   ]
+  },
+  {
+   "id": "S018",
+   "startFrame": 1885,
+   "endFrame": 1955,
+   "audioStart": 62.833,
+   "audioEnd": 65.167,
+   "narration": "Sometimes, the proof has",
+   "visualPurpose": "Through the curtain into the red horizon.",
+   "emotion": "",
+   "environment": "horizon",
+   "characters": [],
+   "objects": [],
+   "lighting": "punchline",
+   "camera": {
+    "move": "through",
+    "via": [
+     "curtainGap"
+    ],
+    "to": "horizonIn",
+    "lookAhead": 4,
+    "fov": 44,
+    "lead": 0.3
+   },
+   "cameraTarget": "path",
+   "animation": "",
+   "transitionIn": "camera-through-object",
+   "transitionOut": "none",
+   "sound": [
+    "whoosh"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0
+   },
+   "activeZones": [
+    "ceremony"
+   ]
+  },
+  {
+   "id": "S019",
+   "startFrame": 1955,
+   "endFrame": 2043,
+   "audioStart": 65.167,
+   "audioEnd": 68.1,
+   "narration": "to go through you.",
+   "visualPurpose": "A lone silhouette against the red sun.",
+   "emotion": "irony, awe",
+   "environment": "horizon",
+   "characters": [
+    "silhouette"
+   ],
+   "objects": [],
+   "lighting": "punchline",
+   "camera": {
+    "move": "orbit",
+    "target": "silhouette.head",
+    "radius": 6.5,
+    "radiusEnd": 7.5,
+    "sweepDeg": 22,
+    "height": -0.4,
+    "heightEnd": -0.2,
+    "fov": 38,
+    "lead": 0.5
+   },
+   "cameraTarget": "silhouette.head",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "boom"
+   ],
+   "subtitle": "auto",
+   "post": {
+    "dof": 0.2
+   }
+  }
+ ]
+}

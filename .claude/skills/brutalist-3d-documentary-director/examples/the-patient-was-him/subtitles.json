@@ -1,0 +1,914 @@
+{
+ "cues": [
+  {
+   "start": 0.554,
+   "end": 1.951,
+   "text": "Perth, Australia.",
+   "words": [
+    {
+     "text": "Perth,",
+     "start": 0.554,
+     "end": 0.881
+    },
+    {
+     "text": "Australia.",
+     "start": 1.137,
+     "end": 1.801
+    }
+   ],
+   "emphasis": [
+    "Australia"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 2.24,
+   "end": 3.917,
+   "text": "The early nineteen eighties.",
+   "words": [
+    {
+     "text": "The",
+     "start": 2.24,
+     "end": 2.456
+    },
+    {
+     "text": "early",
+     "start": 2.456,
+     "end": 2.838
+    },
+    {
+     "text": "nineteen",
+     "start": 2.838,
+     "end": 3.385
+    },
+    {
+     "text": "eighties.",
+     "start": 3.385,
+     "end": 3.767
+    }
+   ],
+   "emphasis": [
+    "nineteen"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 4.189,
+   "end": 5.784,
+   "text": "Medicine had a rule:",
+   "words": [
+    {
+     "text": "Medicine",
+     "start": 4.189,
+     "end": 4.771
+    },
+    {
+     "text": "had",
+     "start": 4.771,
+     "end": 5.0
+    },
+    {
+     "text": "a",
+     "start": 5.0,
+     "end": 5.229
+    },
+    {
+     "text": "rule:",
+     "start": 5.229,
+     "end": 5.634
+    }
+   ],
+   "emphasis": [
+    "Medicine"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 5.968,
+   "end": 8.933,
+   "text": "nothing can live in the acid of the stomach.",
+   "words": [
+    {
+     "text": "nothing",
+     "start": 5.968,
+     "end": 6.408
+    },
+    {
+     "text": "can",
+     "start": 6.408,
+     "end": 6.657
+    },
+    {
+     "text": "live",
+     "start": 6.657,
+     "end": 6.906
+    },
+    {
+     "text": "in",
+     "start": 6.906,
+     "end": 7.155
+    },
+    {
+     "text": "the",
+     "start": 7.155,
+     "end": 7.404
+    },
+    {
+     "text": "acid",
+     "start": 7.404,
+     "end": 7.845
+    },
+    {
+     "text": "of",
+     "start": 7.845,
+     "end": 8.094
+    },
+    {
+     "text": "the",
+     "start": 8.094,
+     "end": 8.343
+    },
+    {
+     "text": "stomach.",
+     "start": 8.343,
+     "end": 8.783
+    }
+   ],
+   "emphasis": [
+    "nothing"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 9.488,
+   "end": 13.12,
+   "text": "But pathologist Robin Warren kept seeing something",
+   "words": [
+    {
+     "text": "But",
+     "start": 9.488,
+     "end": 9.783
+    },
+    {
+     "text": "pathologist",
+     "start": 9.783,
+     "end": 10.758
+    },
+    {
+     "text": "Robin",
+     "start": 10.758,
+     "end": 11.28
+    },
+    {
+     "text": "Warren",
+     "start": 11.28,
+     "end": 11.802
+    },
+    {
+     "text": "kept",
+     "start": 11.802,
+     "end": 12.097
+    },
+    {
+     "text": "seeing",
+     "start": 12.097,
+     "end": 12.392
+    },
+    {
+     "text": "something",
+     "start": 12.392,
+     "end": 13.14
+    }
+   ],
+   "emphasis": [
+    "pathologist"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 13.14,
+   "end": 14.402,
+   "text": "in his biopsies.",
+   "words": [
+    {
+     "text": "in",
+     "start": 13.14,
+     "end": 13.435
+    },
+    {
+     "text": "his",
+     "start": 13.435,
+     "end": 13.73
+    },
+    {
+     "text": "biopsies.",
+     "start": 13.73,
+     "end": 14.252
+    }
+   ],
+   "emphasis": [
+    "biopsies"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 14.685,
+   "end": 15.841,
+   "text": "Spiral bacteria",
+   "words": [
+    {
+     "text": "Spiral",
+     "start": 14.685,
+     "end": 15.168
+    },
+    {
+     "text": "bacteria,",
+     "start": 15.168,
+     "end": 15.861
+    }
+   ],
+   "emphasis": [
+    "bacteria"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 15.861,
+   "end": 18.006,
+   "text": "living in the stomach lining.",
+   "words": [
+    {
+     "text": "living",
+     "start": 15.861,
+     "end": 16.344
+    },
+    {
+     "text": "in",
+     "start": 16.344,
+     "end": 16.617
+    },
+    {
+     "text": "the",
+     "start": 16.617,
+     "end": 16.89
+    },
+    {
+     "text": "stomach",
+     "start": 16.89,
+     "end": 17.373
+    },
+    {
+     "text": "lining.",
+     "start": 17.373,
+     "end": 17.856
+    }
+   ],
+   "emphasis": [
+    "stomach"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 18.55,
+   "end": 22.006,
+   "text": "A young doctor, Barry Marshall, believed him.",
+   "words": [
+    {
+     "text": "A",
+     "start": 18.55,
+     "end": 18.826
+    },
+    {
+     "text": "young",
+     "start": 18.826,
+     "end": 19.102
+    },
+    {
+     "text": "doctor,",
+     "start": 19.102,
+     "end": 19.59
+    },
+    {
+     "text": "Barry",
+     "start": 19.868,
+     "end": 20.307
+    },
+    {
+     "text": "Marshall,",
+     "start": 20.307,
+     "end": 20.746
+    },
+    {
+     "text": "believed",
+     "start": 21.003,
+     "end": 21.615
+    },
+    {
+     "text": "him.",
+     "start": 21.615,
+     "end": 21.856
+    }
+   ],
+   "emphasis": [
+    "Marshall"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 22.344,
+   "end": 24.928,
+   "text": "Together they presented their findings.",
+   "words": [
+    {
+     "text": "Together",
+     "start": 22.344,
+     "end": 23.042
+    },
+    {
+     "text": "they",
+     "start": 23.042,
+     "end": 23.318
+    },
+    {
+     "text": "presented",
+     "start": 23.318,
+     "end": 24.016
+    },
+    {
+     "text": "their",
+     "start": 24.016,
+     "end": 24.291
+    },
+    {
+     "text": "findings.",
+     "start": 24.291,
+     "end": 24.778
+    }
+   ],
+   "emphasis": [
+    "presented"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 25.228,
+   "end": 26.521,
+   "text": "They were rejected.",
+   "words": [
+    {
+     "text": "They",
+     "start": 25.228,
+     "end": 25.48
+    },
+    {
+     "text": "were",
+     "start": 25.48,
+     "end": 25.732
+    },
+    {
+     "text": "rejected.",
+     "start": 25.732,
+     "end": 26.371
+    }
+   ],
+   "emphasis": [
+    "rejected"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 27.125,
+   "end": 29.336,
+   "text": "They tried to infect pigs.",
+   "words": [
+    {
+     "text": "They",
+     "start": 27.125,
+     "end": 27.482
+    },
+    {
+     "text": "tried",
+     "start": 27.482,
+     "end": 27.839
+    },
+    {
+     "text": "to",
+     "start": 27.839,
+     "end": 28.197
+    },
+    {
+     "text": "infect",
+     "start": 28.197,
+     "end": 28.829
+    },
+    {
+     "text": "pigs.",
+     "start": 28.829,
+     "end": 29.186
+    }
+   ],
+   "emphasis": [
+    "infect"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 29.636,
+   "end": 31.447,
+   "text": "The pigs stayed healthy.",
+   "words": [
+    {
+     "text": "The",
+     "start": 29.636,
+     "end": 29.984
+    },
+    {
+     "text": "pigs",
+     "start": 29.984,
+     "end": 30.333
+    },
+    {
+     "text": "stayed",
+     "start": 30.333,
+     "end": 30.681
+    },
+    {
+     "text": "healthy.",
+     "start": 30.681,
+     "end": 31.297
+    }
+   ],
+   "emphasis": [
+    "healthy"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 32.0,
+   "end": 34.282,
+   "text": "So Marshall did the unthinkable.",
+   "words": [
+    {
+     "text": "So",
+     "start": 32.0,
+     "end": 32.264
+    },
+    {
+     "text": "Marshall",
+     "start": 32.264,
+     "end": 32.731
+    },
+    {
+     "text": "did",
+     "start": 32.731,
+     "end": 32.995
+    },
+    {
+     "text": "the",
+     "start": 32.995,
+     "end": 33.259
+    },
+    {
+     "text": "unthinkable.",
+     "start": 33.259,
+     "end": 34.132
+    }
+   ],
+   "emphasis": [
+    "Marshall"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 34.579,
+   "end": 38.285,
+   "text": "He drank the bacteria himself. Within days",
+   "words": [
+    {
+     "text": "He",
+     "start": 34.579,
+     "end": 34.879
+    },
+    {
+     "text": "drank",
+     "start": 34.879,
+     "end": 35.178
+    },
+    {
+     "text": "the",
+     "start": 35.178,
+     "end": 35.478
+    },
+    {
+     "text": "bacteria",
+     "start": 35.478,
+     "end": 36.238
+    },
+    {
+     "text": "himself.",
+     "start": 36.238,
+     "end": 36.768
+    },
+    {
+     "text": "Within",
+     "start": 37.287,
+     "end": 37.829
+    },
+    {
+     "text": "days,",
+     "start": 37.829,
+     "end": 38.135
+    }
+   ],
+   "emphasis": [
+    "Within"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 38.391,
+   "end": 40.006,
+   "text": "he was violently ill.",
+   "words": [
+    {
+     "text": "he",
+     "start": 38.391,
+     "end": 38.656
+    },
+    {
+     "text": "was",
+     "start": 38.656,
+     "end": 38.92
+    },
+    {
+     "text": "violently",
+     "start": 38.92,
+     "end": 39.591
+    },
+    {
+     "text": "ill.",
+     "start": 39.591,
+     "end": 39.856
+    }
+   ],
+   "emphasis": [
+    "violently"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 40.548,
+   "end": 43.629,
+   "text": "An endoscope showed his stomach inflamed",
+   "words": [
+    {
+     "text": "An",
+     "start": 40.548,
+     "end": 40.84
+    },
+    {
+     "text": "endoscope",
+     "start": 40.84,
+     "end": 41.582
+    },
+    {
+     "text": "showed",
+     "start": 41.582,
+     "end": 42.098
+    },
+    {
+     "text": "his",
+     "start": 42.098,
+     "end": 42.39
+    },
+    {
+     "text": "stomach",
+     "start": 42.39,
+     "end": 42.907
+    },
+    {
+     "text": "inflamed,",
+     "start": 42.907,
+     "end": 43.649
+    }
+   ],
+   "emphasis": [
+    "endoscope"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 43.649,
+   "end": 45.641,
+   "text": "and swarming with bacteria.",
+   "words": [
+    {
+     "text": "and",
+     "start": 43.649,
+     "end": 43.941
+    },
+    {
+     "text": "swarming",
+     "start": 43.941,
+     "end": 44.457
+    },
+    {
+     "text": "with",
+     "start": 44.457,
+     "end": 44.75
+    },
+    {
+     "text": "bacteria.",
+     "start": 44.75,
+     "end": 45.491
+    }
+   ],
+   "emphasis": [
+    "swarming"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 45.97,
+   "end": 50.14,
+   "text": "The bacteria survive by neutralising the acid around them.",
+   "words": [
+    {
+     "text": "The",
+     "start": 45.97,
+     "end": 46.235
+    },
+    {
+     "text": "bacteria",
+     "start": 46.235,
+     "end": 46.909
+    },
+    {
+     "text": "survive",
+     "start": 46.909,
+     "end": 47.378
+    },
+    {
+     "text": "by",
+     "start": 47.378,
+     "end": 47.643
+    },
+    {
+     "text": "neutralising",
+     "start": 47.643,
+     "end": 48.521
+    },
+    {
+     "text": "the",
+     "start": 48.521,
+     "end": 48.786
+    },
+    {
+     "text": "acid",
+     "start": 48.786,
+     "end": 49.255
+    },
+    {
+     "text": "around",
+     "start": 49.255,
+     "end": 49.725
+    },
+    {
+     "text": "them.",
+     "start": 49.725,
+     "end": 49.99
+    }
+   ],
+   "emphasis": [
+    "neutralising"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 50.415,
+   "end": 53.203,
+   "text": "And antibiotics could wipe them out.",
+   "words": [
+    {
+     "text": "And",
+     "start": 50.415,
+     "end": 50.733
+    },
+    {
+     "text": "antibiotics",
+     "start": 50.733,
+     "end": 51.783
+    },
+    {
+     "text": "could",
+     "start": 51.783,
+     "end": 52.1
+    },
+    {
+     "text": "wipe",
+     "start": 52.1,
+     "end": 52.418
+    },
+    {
+     "text": "them",
+     "start": 52.418,
+     "end": 52.735
+    },
+    {
+     "text": "out.",
+     "start": 52.735,
+     "end": 53.053
+    }
+   ],
+   "emphasis": [
+    "antibiotics"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 53.757,
+   "end": 55.732,
+   "text": "When the case was published",
+   "words": [
+    {
+     "text": "When",
+     "start": 53.757,
+     "end": 54.036
+    },
+    {
+     "text": "the",
+     "start": 54.036,
+     "end": 54.315
+    },
+    {
+     "text": "case",
+     "start": 54.315,
+     "end": 54.594
+    },
+    {
+     "text": "was",
+     "start": 54.594,
+     "end": 54.873
+    },
+    {
+     "text": "published,",
+     "start": 54.873,
+     "end": 55.582
+    }
+   ],
+   "emphasis": [
+    "published"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 55.881,
+   "end": 57.443,
+   "text": "the patient was him.",
+   "words": [
+    {
+     "text": "the",
+     "start": 55.881,
+     "end": 56.177
+    },
+    {
+     "text": "patient",
+     "start": 56.177,
+     "end": 56.701
+    },
+    {
+     "text": "was",
+     "start": 56.701,
+     "end": 56.997
+    },
+    {
+     "text": "him.",
+     "start": 56.997,
+     "end": 57.293
+    }
+   ],
+   "emphasis": [
+    "patient"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 57.986,
+   "end": 59.724,
+   "text": "In 2005",
+   "words": [
+    {
+     "text": "In",
+     "start": 57.986,
+     "end": 58.355
+    },
+    {
+     "text": "2005,",
+     "start": 58.355,
+     "end": 59.574
+    }
+   ],
+   "emphasis": [
+    "2005"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 59.83,
+   "end": 64.378,
+   "text": "Warren and Marshall received the Nobel Prize. Sometimes",
+   "words": [
+    {
+     "text": "Warren",
+     "start": 59.83,
+     "end": 60.318
+    },
+    {
+     "text": "and",
+     "start": 60.318,
+     "end": 60.593
+    },
+    {
+     "text": "Marshall",
+     "start": 60.593,
+     "end": 61.081
+    },
+    {
+     "text": "received",
+     "start": 61.081,
+     "end": 61.781
+    },
+    {
+     "text": "the",
+     "start": 61.781,
+     "end": 62.057
+    },
+    {
+     "text": "Nobel",
+     "start": 62.057,
+     "end": 62.544
+    },
+    {
+     "text": "Prize.",
+     "start": 62.544,
+     "end": 62.82
+    },
+    {
+     "text": "Sometimes,",
+     "start": 63.522,
+     "end": 64.228
+    }
+   ],
+   "emphasis": [
+    "Sometimes"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 64.486,
+   "end": 66.607,
+   "text": "the proof has to go through you.",
+   "words": [
+    {
+     "text": "the",
+     "start": 64.486,
+     "end": 64.768
+    },
+    {
+     "text": "proof",
+     "start": 64.768,
+     "end": 65.049
+    },
+    {
+     "text": "has",
+     "start": 65.049,
+     "end": 65.331
+    },
+    {
+     "text": "to",
+     "start": 65.331,
+     "end": 65.612
+    },
+    {
+     "text": "go",
+     "start": 65.612,
+     "end": 65.894
+    },
+    {
+     "text": "through",
+     "start": 65.894,
+     "end": 66.175
+    },
+    {
+     "text": "you.",
+     "start": 66.175,
+     "end": 66.457
+    }
+   ],
+   "emphasis": [
+    "through"
+   ],
+   "position": "bottom"
+  }
+ ]
+}

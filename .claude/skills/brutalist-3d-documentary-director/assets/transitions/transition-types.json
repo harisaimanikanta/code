@@ -1,0 +1,21 @@
+{
+  "$comment": "Catalogue of spatial transitions. Each recipe = world geometry + continuous camera move (+ optional occluder). Used by validate-shot-plan.py to check transition types and by the director when designing adjacent zones. minSeconds = shortest duration that reads as motion rather than a cut.",
+  "types": {
+    "doorway": { "geometry": ["Doorway", "MonumentalRoom.doorways", "Door"], "camera": "travel through the opening; via = [approach point 3m before, doorway centre, 3m after]", "occluder": null, "minSeconds": 1.5 },
+    "corridor": { "geometry": ["BrutalistCorridor", "UndergroundPassage", "ArchiveCorridor"], "camera": "travel along centreline; lookAlongPath; optional slight roll", "occluder": null, "minSeconds": 2.5 },
+    "pillar-occlusion": { "geometry": ["Pillar", "PillarRow"], "camera": "track laterally so a near pillar sweeps across the lens; the environment changes behind it", "occluder": "optional box around pillar, feather 0.4", "minSeconds": 1.0 },
+    "object-fly-through": { "geometry": ["any object with a hollow or gap"], "camera": "travel with via through the gap; target ahead", "occluder": null, "minSeconds": 1.2 },
+    "microscope-lens": { "geometry": ["Microscope", "LensTunnel", "MicroscopicWorld"], "camera": "push into eyepiece anchor → through LensTunnel → emerge above MicroscopicWorld (scale transformation implied)", "occluder": "sphere at eyepiece, radius 0.03-0.05, colour #050805", "minSeconds": 2.5 },
+    "anatomical-tunnel": { "geometry": ["AnatomicalTunnel"], "camera": "travel along tunnelCenterline() waypoints, lookAlongPath", "occluder": null, "minSeconds": 3.0 },
+    "liquid": { "geometry": ["LiquidPortal", "FluidSurface", "GlassContainer"], "camera": "descend through the surface plane; colour fog shifts via lighting preset change", "occluder": "box under surface, colour of liquid, feather 0.2", "minSeconds": 1.5 },
+    "scale-transformation": { "geometry": ["ScaleTransform"], "camera": "orbit or push while the subject scales 1→N; camera distance constant", "occluder": null, "minSeconds": 2.0 },
+    "architectural-morph": { "geometry": ["AssembleBlocks"], "camera": "crane or orbit while blocks assemble into the next space", "occluder": null, "minSeconds": 2.5 },
+    "foreground-wipe": { "geometry": ["Pillar", "ConcreteSlab", "Figure"], "camera": "track so a foreground element passes within 0.5–1.5 m of the lens", "occluder": "box/sphere on the element, dark colour", "minSeconds": 0.8 },
+    "particle": { "geometry": ["ParticleVeil", "DustMotes"], "camera": "push through a dense veil; lighting preset changes behind it", "occluder": null, "minSeconds": 1.5 },
+    "material-transformation": { "geometry": ["MaterialMorphSlab", "blendedMaterial()"], "camera": "slow push or orbit while surfaces morph (concrete → tissue)", "occluder": null, "minSeconds": 2.0 },
+    "camera-through-object": { "geometry": ["Figure (shoulder)", "any solid"], "camera": "travel through the object volume; occluder fills frame for 4–10 frames while the camera crosses", "occluder": "sphere/box matching the object, colour of its surface", "minSeconds": 1.0 },
+    "room-to-room": { "geometry": ["adjacent zones sharing a wall opening"], "camera": "continuous travel; lighting cue changes at the threshold", "occluder": null, "minSeconds": 2.0 },
+    "match-position": { "geometry": ["two zones with matching silhouette at the same world position"], "camera": "orbit around the shared silhouette while the zone behind cross-transforms (AssembleBlocks / MaterialMorph / ScaleTransform)", "occluder": null, "minSeconds": 2.0 },
+    "none": { "geometry": [], "camera": "continuation within the same zone", "occluder": null, "minSeconds": 0 }
+  }
+}

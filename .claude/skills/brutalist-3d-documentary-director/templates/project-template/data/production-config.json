@@ -1,0 +1,63 @@
+{
+ "title": "Untitled Brutalist Documentary",
+ "fps": 30,
+ "width": 1920,
+ "height": 1080,
+ "durationFrames": 240,
+ "audio": {
+  "voiceover": null,
+  "soundBed": null,
+  "voiceoverDurationSec": null,
+  "voiceVolume": 1.0,
+  "bedVolume": 1.0
+ },
+ "camera": {
+  "initial": {
+   "position": [
+    -2.5,
+    1.9,
+    5.0
+   ],
+   "target": [
+    1.0,
+    1.4,
+    0.3
+   ],
+   "fov": 38,
+   "rollDeg": 0
+  },
+  "smoothingSeconds": 0.4,
+  "handheld": {
+   "position": 0.01,
+   "rotationDeg": 0.12,
+   "frequency": 0.35
+  },
+  "maxSpeed": 20,
+  "orbitTargetRatio": 0.3
+ },
+ "lighting": {
+  "blendFrames": 36
+ },
+ "style": {
+  "letterbox": 0,
+  "grainScale": 1
+ },
+ "subtitles": {
+  "enabled": true,
+  "wordHighlight": false,
+  "fontFamily": "'Oswald', 'Bebas Neue', 'Arial Narrow', 'Liberation Sans Narrow', Impact, sans-serif",
+  "maxCharsPerLine": 38,
+  "safeMarginPct": 9
+ },
+ "render": {
+  "shadows": true,
+  "antialias": true,
+  "post": "final",
+  "shadowMapSize": 2048
+ },
+ "library": {
+  "path": null,
+  "linkMode": "vendor",
+  "lock": "asset-lock.json"
+ }
+}

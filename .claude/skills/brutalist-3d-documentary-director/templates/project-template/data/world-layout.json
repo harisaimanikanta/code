@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "units": "meters",
+ "anchors": {},
+ "zones": [
+  {
+   "id": "lab",
+   "component": "Laboratory",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "props": {
+    "microscopeGlow": 0.8
+   }
+  }
+ ],
+ "objects": [],
+ "actors": [
+  {
+   "id": "scientist",
+   "component": "Figure",
+   "position": [
+    1.25,
+    0,
+    0.35
+   ],
+   "rotation": [
+    0,
+    -1.5708,
+    0
+   ],
+   "props": {
+    "character": "scientist"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "gesture",
+     "start": 10,
+     "end": 130
+    },
+    {
+     "type": "look",
+     "start": 120,
+     "end": 240,
+     "yaw": -0.4,
+     "pitch": 0.3
+    }
+   ]
+  }
+ ],
+ "occluders": []
+}

@@ -1,0 +1,714 @@
+{
+ "version": 1,
+ "units": "meters",
+ "anchors": {
+  "atriumDoorBefore": [
+   0,
+   2.3,
+   -9.5
+  ],
+  "atriumDoor": [
+   0,
+   2.3,
+   -15
+  ],
+  "corridorMid": [
+   0,
+   2.1,
+   -31
+  ],
+  "labEntry": [
+   0,
+   1.9,
+   -45.5
+  ],
+  "labInside": [
+   -1.8,
+   1.8,
+   -48.6
+  ],
+  "lensEntry": [
+   0.4,
+   -0.9,
+   -52.6
+  ],
+  "lensMid": [
+   0.4,
+   -8.36,
+   -55.5
+  ],
+  "lensExit": [
+   0.4,
+   -15.6,
+   -58.3
+  ],
+  "underScope": [
+   0.4,
+   0.35,
+   -52.35
+  ],
+  "microApproach": [
+   1.6,
+   -19.2,
+   -60.8
+  ],
+  "veilIn": [
+   0,
+   -22.8,
+   -81.5
+  ],
+  "confDoorS": [
+   0,
+   -23.4,
+   -88.6
+  ],
+  "overAudience": [
+   0.2,
+   -22.3,
+   -95.5
+  ],
+  "stageFront": [
+   0.6,
+   -22.9,
+   -101.5
+  ],
+  "throughA": [
+   0.95,
+   -24.15,
+   -108.6
+  ],
+  "confDoorN": [
+   0.7,
+   -24.1,
+   -112.7
+  ],
+  "awardEntry": [
+   0.4,
+   -24.0,
+   -116.8
+  ],
+  "pillarPass": [
+   -1.7,
+   -24.1,
+   -136.6
+  ],
+  "voidApproach": [
+   0.4,
+   -23.2,
+   -150.2
+  ]
+ },
+ "zones": [
+  {
+   "id": "atrium",
+   "component": "MonumentalRoom",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "cullRadius": 70,
+   "props": {
+    "size": [
+     30,
+     30
+    ],
+    "height": 14,
+    "doorways": [
+     {
+      "wall": "n",
+      "width": 3.5,
+      "height": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "corridor",
+   "component": "BrutalistCorridor",
+   "position": [
+    0,
+    0,
+    -15
+   ],
+   "cullRadius": 60,
+   "props": {
+    "length": 30,
+    "width": 7,
+    "height": 7
+   }
+  },
+  {
+   "id": "lab",
+   "component": "Laboratory",
+   "position": [
+    0,
+    0,
+    -52
+   ],
+   "cullRadius": 50,
+   "props": {
+    "microscopeGlow": 0.9
+   }
+  },
+  {
+   "id": "lens",
+   "component": "LensTunnel",
+   "position": [
+    0.4,
+    -0.9,
+    -52.6
+   ],
+   "rotation": [
+    -1.2,
+    0,
+    0
+   ],
+   "cullRadius": 30,
+   "props": {
+    "length": 16,
+    "radius": 1.8
+   }
+  },
+  {
+   "id": "micro",
+   "component": "MicroscopicWorld",
+   "position": [
+    0,
+    -26,
+    -60
+   ],
+   "cullRadius": 45,
+   "props": {
+    "swarm": 220
+   }
+  },
+  {
+   "id": "conference",
+   "component": "ConferenceHall",
+   "position": [
+    0,
+    -26,
+    -100
+   ],
+   "cullRadius": 40,
+   "props": {
+    "attention": 0.15,
+    "screenContent": "bars",
+    "doorways": [
+     {
+      "wall": "s",
+      "width": 3.5,
+      "height": 4.5
+     },
+     {
+      "wall": "n",
+      "width": 3.5,
+      "height": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "award",
+   "component": "AwardHall",
+   "position": [
+    0,
+    -26,
+    -126
+   ],
+   "cullRadius": 45
+  },
+  {
+   "id": "void",
+   "component": "StomachLining",
+   "position": [
+    0,
+    -26,
+    -156
+   ],
+   "cullRadius": 35,
+   "props": {
+    "size": [
+     18,
+     18
+    ],
+    "foldHeight": 0.7,
+    "segments": 60
+   }
+  }
+ ],
+ "objects": [
+  {
+   "id": "dais",
+   "component": "Platform",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "props": {
+    "size": [
+     6,
+     0.8,
+     6
+    ],
+    "steps": 3
+   }
+  },
+  {
+   "id": "pages",
+   "component": "FloatingPages",
+   "position": [
+    0,
+    0.8,
+    0
+   ],
+   "props": {
+    "radius": 3.8,
+    "height": 5,
+    "appearAt": 150,
+    "count": 46,
+    "speed": 0.22
+   }
+  },
+  {
+   "id": "acid",
+   "component": "FluidSurface",
+   "position": [
+    0,
+    0.06,
+    7.5
+   ],
+   "props": {
+    "size": [
+     10,
+     5
+    ],
+    "color": "#6a0810",
+    "waveHeight": 0.05
+   }
+  },
+  {
+   "id": "hero_bact",
+   "component": "SpiralBacterium",
+   "position": [
+    0.5,
+    -22.4,
+    -62
+   ],
+   "rotation": [
+    0.4,
+    0,
+    1.1
+   ],
+   "scale": 2.6,
+   "cullRadius": 40
+  },
+  {
+   "id": "veil",
+   "component": "ParticleVeil",
+   "position": [
+    0,
+    -23.5,
+    -84.5
+   ],
+   "props": {
+    "width": 16,
+    "height": 8,
+    "depth": 3,
+    "count": 1500
+   }
+  },
+  {
+   "id": "plinth",
+   "component": "AwardPlinth",
+   "position": [
+    0,
+    -25.6,
+    -126
+   ],
+   "props": {
+    "revealStart": 1500,
+    "revealEnd": 1745
+   },
+   "children": [
+    {
+     "id": "medal",
+     "component": "AwardMedal",
+     "position": [
+      0,
+      0.14,
+      0
+     ],
+     "scale": 2.5
+    }
+   ]
+  },
+  {
+   "id": "lone_bact",
+   "component": "SpiralBacterium",
+   "position": [
+    0,
+    -23.8,
+    -156
+   ],
+   "rotation": [
+    0.3,
+    0,
+    0.9
+   ],
+   "scale": 1.6,
+   "cullRadius": 40
+  },
+  {
+   "id": "void_shaft",
+   "component": "LightShaft",
+   "position": [
+    0,
+    -17,
+    -156
+   ],
+   "props": {
+    "length": 14,
+    "radius": 3,
+    "color": "#ff1a2a",
+    "intensity": 0.12
+   }
+  },
+  {
+   "id": "void_spot",
+   "component": "SpotPool",
+   "position": [
+    0,
+    -26,
+    -156
+   ],
+   "props": {
+    "position": [
+     0,
+     8,
+     2
+    ],
+    "target": [
+     0,
+     2.2,
+     0
+    ],
+    "color": "#ff2a2a",
+    "intensity": 140
+   }
+  },
+  {
+   "id": "dais_spot",
+   "component": "SpotPool",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "props": {
+    "position": [
+     0,
+     12,
+     5
+    ],
+    "target": [
+     0,
+     1.6,
+     0
+    ],
+    "color": "#ff5040",
+    "intensity": 900,
+    "angle": 0.32,
+    "distance": 30
+   }
+  },
+  {
+   "id": "door_spot",
+   "component": "SpotPool",
+   "position": [
+    0,
+    0,
+    -15
+   ],
+   "props": {
+    "position": [
+     0,
+     6.5,
+     3
+    ],
+    "target": [
+     0,
+     0.5,
+     -2
+    ],
+    "color": "#ff4a3a",
+    "intensity": 500,
+    "angle": 0.5,
+    "distance": 22,
+    "castShadow": false
+   }
+  },
+  {
+   "id": "corridor_end_lamp",
+   "component": "HangingLamp",
+   "position": [
+    0,
+    6.2,
+    -41
+   ],
+   "props": {
+    "cable": 0.8,
+    "intensity": 60,
+    "distance": 16
+   }
+  },
+  {
+   "id": "lab_entry_lamp",
+   "component": "HangingLamp",
+   "position": [
+    -1.5,
+    4.3,
+    -47.5
+   ],
+   "props": {
+    "cable": 0.6,
+    "intensity": 45,
+    "distance": 12
+   }
+  },
+  {
+   "id": "hall_shaft",
+   "component": "LightShaft",
+   "position": [
+    0,
+    12.5,
+    0
+   ],
+   "props": {
+    "length": 12,
+    "radius": 3.2,
+    "color": "#ff3a2a",
+    "intensity": 0.1
+   }
+  }
+ ],
+ "actors": [
+  {
+   "id": "doctor",
+   "component": "Figure",
+   "position": [
+    0,
+    0.8,
+    0
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "props": {
+    "character": "older-male"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "cross",
+     "start": 10,
+     "end": 200
+    },
+    {
+     "type": "pose",
+     "pose": "gesture",
+     "start": 200,
+     "end": 380
+    }
+   ]
+  },
+  {
+   "id": "warren",
+   "component": "Figure",
+   "position": [
+    1.3,
+    0,
+    -51.7
+   ],
+   "rotation": [
+    0,
+    -1.5708,
+    0
+   ],
+   "props": {
+    "character": "scientist"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "inspect",
+     "start": 480,
+     "end": 820
+    }
+   ]
+  },
+  {
+   "id": "marshall",
+   "component": "Figure",
+   "position": [
+    1.2,
+    -25,
+    -106.2
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "props": {
+    "character": "doctor",
+    "item": "culture",
+    "itemFrames": [
+     1150,
+     1335
+    ]
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "gesture",
+     "start": 1030,
+     "end": 1150
+    },
+    {
+     "type": "pose",
+     "pose": "hold",
+     "start": 1150,
+     "end": 1240
+    },
+    {
+     "type": "pose",
+     "pose": "drink",
+     "start": 1240,
+     "end": 1335
+    },
+    {
+     "type": "pose",
+     "pose": "slump",
+     "start": 1385,
+     "end": 1520,
+     "fade": 18
+    }
+   ]
+  },
+  {
+   "id": "warren_old",
+   "component": "Figure",
+   "position": [
+    -1.7,
+    -25.6,
+    -125.3
+   ],
+   "rotation": [
+    0,
+    0.35,
+    0
+   ],
+   "props": {
+    "character": "scientist@older"
+   },
+   "actions": [
+    {
+     "type": "look",
+     "start": 1500,
+     "end": 1760,
+     "yaw": 0.3,
+     "pitch": -0.1
+    }
+   ]
+  },
+  {
+   "id": "marshall_old",
+   "component": "Figure",
+   "position": [
+    1.7,
+    -25.6,
+    -125.3
+   ],
+   "rotation": [
+    0,
+    -0.35,
+    0
+   ],
+   "props": {
+    "character": "doctor@older"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "raise",
+     "start": 1580,
+     "end": 1720
+    }
+   ]
+  }
+ ],
+ "occluders": [
+  {
+   "id": "scope-barrel",
+   "shape": "box",
+   "center": [
+    0.4,
+    0.42,
+    -52.2
+   ],
+   "halfSize": [
+    0.22,
+    1.12,
+    0.32
+   ],
+   "color": "#030703",
+   "feather": 0.25,
+   "frames": [
+    760,
+    830
+   ]
+  },
+  {
+   "id": "marshall-shoulder",
+   "shape": "sphere",
+   "center": [
+    0.98,
+    -23.62,
+    -106.0
+   ],
+   "radius": 0.2,
+   "color": "#120305",
+   "feather": 0.25,
+   "frames": [
+    1420,
+    1475
+   ]
+  },
+  {
+   "id": "pillar-wipe",
+   "shape": "box",
+   "center": [
+    -3.4,
+    -19,
+    -136.5
+   ],
+   "halfSize": [
+    0.6,
+    7,
+    0.6
+   ],
+   "color": "#000000",
+   "feather": 0.1,
+   "frames": [
+    1745,
+    1795
+   ],
+   "intent": "declared intentional dark window: foreground pillar wipe"
+  }
+ ]
+}

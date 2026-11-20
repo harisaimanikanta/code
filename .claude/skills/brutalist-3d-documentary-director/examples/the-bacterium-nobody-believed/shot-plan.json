@@ -1,0 +1,633 @@
+{
+ "version": 1,
+ "fps": 30,
+ "durationFrames": 1979,
+ "director": "brutalist-3d-documentary-director",
+ "shots": [
+  {
+   "id": "S001",
+   "startFrame": 0,
+   "endFrame": 80,
+   "audioStart": 0.0,
+   "audioEnd": 2.667,
+   "narration": "For most of the twentieth century,",
+   "visualPurpose": "Descend into a monumental hall of medical orthodoxy; a lone doctor stands on a dais.",
+   "emotion": "certainty, weight",
+   "environment": "atrium",
+   "characters": [
+    "doctor"
+   ],
+   "objects": [
+    "dais"
+   ],
+   "lighting": "mystery",
+   "camera": {
+    "move": "crane",
+    "distance": -5.2,
+    "forward": 7,
+    "target": "doctor.head",
+    "fov": 38,
+    "lead": 0.4
+   },
+   "cameraTarget": "doctor.head",
+   "animation": "doctor arms crossed",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "amb:hall",
+    "boom"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S002",
+   "startFrame": 80,
+   "endFrame": 159,
+   "audioStart": 2.667,
+   "audioEnd": 5.3,
+   "narration": "doctors were certain.",
+   "visualPurpose": "Hero orbit: the establishment's certainty embodied.",
+   "emotion": "authority",
+   "environment": "atrium",
+   "characters": [
+    "doctor"
+   ],
+   "objects": [
+    "dais"
+   ],
+   "lighting": "mystery",
+   "camera": {
+    "preset": "hero-orbit",
+    "target": "doctor.head",
+    "radius": 5.5,
+    "sweepDeg": 50,
+    "height": 0.2
+   },
+   "cameraTarget": "doctor.head",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S003",
+   "startFrame": 159,
+   "endFrame": 354,
+   "audioStart": 5.3,
+   "audioEnd": 11.8,
+   "narration": "Stomach ulcers came from stress, spicy food, and too much acid.",
+   "visualPurpose": "Beliefs as a vortex of prescriptions orbiting the doctor; an acid pool glows \u2014 stress, spice, acid as dogma.",
+   "emotion": "received wisdom",
+   "environment": "atrium",
+   "characters": [
+    "doctor"
+   ],
+   "objects": [
+    "pages",
+    "acid"
+   ],
+   "lighting": "industrial-red",
+   "camera": {
+    "preset": "rising-spiral",
+    "target": "doctor.chest",
+    "radius": 6,
+    "radiusEnd": 8,
+    "sweepDeg": 140,
+    "height": 0.8,
+    "heightEnd": 3.8
+   },
+   "cameraTarget": "doctor.chest",
+   "animation": "pages vortex appears; doctor gestures",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "shimmer"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S004",
+   "startFrame": 354,
+   "endFrame": 475,
+   "audioStart": 11.8,
+   "audioEnd": 15.833,
+   "narration": "Nothing, they believed, could live inside the stomach.",
+   "visualPurpose": "Leave the hall through the doorway into an empty corridor: a stomach where 'nothing could live'.",
+   "emotion": "emptiness",
+   "environment": "corridor",
+   "characters": [],
+   "objects": [],
+   "lighting": "volumetric-corridor",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "atriumDoorBefore",
+     "atriumDoor"
+    ],
+    "to": "corridorMid",
+    "lookAlongPath": true,
+    "fov": 44,
+    "lead": 0.3
+   },
+   "cameraTarget": "path",
+   "animation": "",
+   "transitionIn": "doorway",
+   "transitionOut": "none",
+   "sound": [
+    "amb:corridor"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S005",
+   "startFrame": 475,
+   "endFrame": 615,
+   "audioStart": 15.833,
+   "audioEnd": 20.5,
+   "narration": "In Perth, Australia, pathologist Robin",
+   "visualPurpose": "Corridor opens into a low-key lab; a pathologist bends over a microscope.",
+   "emotion": "quiet persistence",
+   "environment": "lab",
+   "characters": [
+    "warren"
+   ],
+   "objects": [
+    "microscope"
+   ],
+   "lighting": "low-key-lab",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "labEntry"
+    ],
+    "to": "labInside",
+    "target": "warren.head",
+    "fov": 38,
+    "lead": 0.5
+   },
+   "cameraTarget": "warren.head",
+   "animation": "warren inspects",
+   "transitionIn": "room-to-room",
+   "transitionOut": "none",
+   "sound": [
+    "amb:lab"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S006",
+   "startFrame": 615,
+   "endFrame": 745,
+   "audioStart": 20.5,
+   "audioEnd": 24.833,
+   "narration": "Warren kept seeing something under the microscope.",
+   "visualPurpose": "Orbit the scientist at work; reveal the glowing eyepiece.",
+   "emotion": "curiosity",
+   "environment": "lab",
+   "characters": [
+    "warren"
+   ],
+   "objects": [
+    "microscope"
+   ],
+   "lighting": "low-key-lab",
+   "camera": {
+    "preset": "hero-orbit",
+    "target": "warren.head",
+    "radius": 2.4,
+    "sweepDeg": -95,
+    "height": 0.25,
+    "fov": 34
+   },
+   "cameraTarget": "warren.head",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S007",
+   "startFrame": 745,
+   "endFrame": 790,
+   "audioStart": 24.833,
+   "audioEnd": 26.333,
+   "narration": "Spiral bacteria,",
+   "visualPurpose": "Push into the eyepiece.",
+   "emotion": "anticipation",
+   "environment": "lab",
+   "characters": [],
+   "objects": [
+    "microscope"
+   ],
+   "lighting": "discovery",
+   "camera": {
+    "move": "travel",
+    "via": [
+     {
+      "anchor": "lab.microscopeEyepiece",
+      "offset": [
+       0,
+       0.22,
+       0.75
+      ]
+     }
+    ],
+    "to": {
+     "anchor": "lab.microscopeEyepiece",
+     "offset": [
+      0,
+      0.04,
+      0.1
+     ]
+    },
+    "target": "lab.microscopeObjective",
+    "fov": 30,
+    "lead": 0.6
+   },
+   "cameraTarget": "lab.microscopeObjective",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "microscope-lens",
+   "sound": [
+    "riser"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S008",
+   "startFrame": 790,
+   "endFrame": 870,
+   "audioStart": 26.333,
+   "audioEnd": 29.0,
+   "narration": "living in the stomach lining.",
+   "visualPurpose": "Through the lens: optical rings rush past (scale transformation into the microscopic).",
+   "emotion": "wonder",
+   "environment": "lens",
+   "characters": [],
+   "objects": [
+    "lens"
+   ],
+   "lighting": "microscopic-green",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "underScope",
+     "lensEntry",
+     "lensMid"
+    ],
+    "to": "lensExit",
+    "lookAlongPath": true,
+    "lookAhead": 3,
+    "fov": 55,
+    "lead": 0.15
+   },
+   "cameraTarget": "path",
+   "animation": "",
+   "transitionIn": "microscope-lens",
+   "transitionOut": "none",
+   "sound": [
+    "amb:micro"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S009",
+   "startFrame": 870,
+   "endFrame": 1050,
+   "audioStart": 29.0,
+   "audioEnd": 35.0,
+   "narration": "With Barry Marshall, he argued these bacteria caused the disease.",
+   "visualPurpose": "Spiral bacteria living in the mucus layer above the stomach lining \u2014 the claim made visible.",
+   "emotion": "revelation",
+   "environment": "micro",
+   "characters": [],
+   "objects": [
+    "hero_bact"
+   ],
+   "lighting": "explanation",
+   "camera": {
+    "move": "spiral",
+    "target": "hero_bact",
+    "radius": 6.5,
+    "radiusEnd": 4.5,
+    "sweepDeg": 130,
+    "height": 1.8,
+    "heightEnd": 0.6,
+    "fov": 40,
+    "lead": 0.35
+   },
+   "cameraTarget": "hero_bact",
+   "animation": "swarm drifts, hero bacterium corkscrews",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "amb:micro"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S010",
+   "startFrame": 1050,
+   "endFrame": 1160,
+   "audioStart": 35.0,
+   "audioEnd": 38.667,
+   "narration": "The medical world rejected them.",
+   "visualPurpose": "Push through a crimson particle veil into a conference hall whose audience looks away.",
+   "emotion": "rejection, coldness",
+   "environment": "conference",
+   "characters": [
+    "marshall"
+   ],
+   "objects": [
+    "veil"
+   ],
+   "lighting": "rejection",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "veilIn",
+     "confDoorS",
+     "overAudience"
+    ],
+    "to": "stageFront",
+    "target": "marshall.head",
+    "fov": 38,
+    "lead": 0.55
+   },
+   "cameraTarget": "marshall.head",
+   "animation": "",
+   "transitionIn": "particle",
+   "transitionOut": "none",
+   "sound": [
+    "amb:hall",
+    "impact"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S011",
+   "startFrame": 1160,
+   "endFrame": 1385,
+   "audioStart": 38.667,
+   "audioEnd": 46.167,
+   "narration": "So in 1984, Marshall drank a culture of the bacteria himself.",
+   "visualPurpose": "Revolve around Marshall as he raises and drinks the culture.",
+   "emotion": "defiance",
+   "environment": "conference",
+   "characters": [
+    "marshall"
+   ],
+   "objects": [],
+   "lighting": "experiment",
+   "camera": {
+    "preset": "portrait-revolve",
+    "target": "marshall.head",
+    "radius": 2.3,
+    "sweepDeg": 300,
+    "height": 0.05,
+    "heightEnd": -0.1,
+    "fov": 30
+   },
+   "cameraTarget": "marshall.head",
+   "animation": "hold \u2192 drink",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "glass"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S012",
+   "startFrame": 1385,
+   "endFrame": 1440,
+   "audioStart": 46.167,
+   "audioEnd": 48.0,
+   "narration": "Within days, he",
+   "visualPurpose": "He falls ill: push in on the slumping shoulder.",
+   "emotion": "sickness, proof",
+   "environment": "conference",
+   "characters": [
+    "marshall"
+   ],
+   "objects": [],
+   "lighting": "crimson-rim",
+   "camera": {
+    "move": "dolly",
+    "to": {
+     "anchor": "marshall.shoulderR",
+     "offset": [
+      0.05,
+      -0.05,
+      0.75
+     ]
+    },
+    "target": {
+     "anchor": "marshall.shoulderR",
+     "offset": [
+      0,
+      -0.05,
+      0.2
+     ]
+    },
+    "fov": 34,
+    "lead": 0.5
+   },
+   "cameraTarget": {
+    "anchor": "marshall.shoulderR",
+    "offset": [
+     0,
+     -0.05,
+     0.2
+    ]
+   },
+   "animation": "slump",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "heartbeat"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S013",
+   "startFrame": 1440,
+   "endFrame": 1500,
+   "audioStart": 48.0,
+   "audioEnd": 50.0,
+   "narration": "fell ill. In",
+   "visualPurpose": "Through his shoulder and the doorway behind him into the award hall.",
+   "emotion": "release",
+   "environment": "award",
+   "characters": [
+    "marshall"
+   ],
+   "objects": [],
+   "lighting": "golden-award",
+   "camera": {
+    "move": "through",
+    "via": [
+     {
+      "anchor": "marshall.shoulderR",
+      "offset": [
+       0,
+       -0.07,
+       0.15
+      ]
+     },
+     "throughA",
+     "confDoorN"
+    ],
+    "to": "awardEntry",
+    "lookAhead": 3,
+    "fov": 40,
+    "lead": 0.3
+   },
+   "cameraTarget": "path",
+   "animation": "",
+   "transitionIn": "camera-through-object",
+   "transitionOut": "none",
+   "sound": [
+    "whoosh"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S014",
+   "startFrame": 1500,
+   "endFrame": 1620,
+   "audioStart": 50.0,
+   "audioEnd": 54.0,
+   "narration": "2005, Warren and Marshall received the",
+   "visualPurpose": "Golden reveal: the medal on its plinth between the two aged researchers.",
+   "emotion": "vindication",
+   "environment": "award",
+   "characters": [
+    "warren_old",
+    "marshall_old"
+   ],
+   "objects": [
+    "plinth",
+    "medal"
+   ],
+   "lighting": "golden-award",
+   "camera": {
+    "move": "orbit",
+    "target": "plinth.top",
+    "radius": 5.2,
+    "sweepDeg": 70,
+    "height": 1.1,
+    "fov": 36,
+    "lead": 0.4
+   },
+   "cameraTarget": "plinth.top",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "shimmer"
+   ],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S015",
+   "startFrame": 1620,
+   "endFrame": 1740,
+   "audioStart": 54.0,
+   "audioEnd": 58.0,
+   "narration": "Nobel Prize in Physiology or Medicine.",
+   "visualPurpose": "Continue the revolve as Marshall raises his arm.",
+   "emotion": "triumph",
+   "environment": "award",
+   "characters": [
+    "warren_old",
+    "marshall_old"
+   ],
+   "objects": [
+    "plinth"
+   ],
+   "lighting": "triumph",
+   "camera": {
+    "move": "orbit",
+    "target": "plinth.top",
+    "sweepDeg": 70,
+    "height": 1.8,
+    "fov": 36
+   },
+   "cameraTarget": "plinth.top",
+   "animation": "marshall_old raises arm",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S016",
+   "startFrame": 1740,
+   "endFrame": 1815,
+   "audioStart": 58.0,
+   "audioEnd": 60.5,
+   "narration": "Sometimes, the truth hides",
+   "visualPurpose": "Slide past a pillar out of the light into crimson darkness.",
+   "emotion": "sober return",
+   "environment": "void",
+   "characters": [],
+   "objects": [
+    "lone_bact"
+   ],
+   "lighting": "punchline",
+   "camera": {
+    "move": "travel",
+    "via": [
+     "pillarPass"
+    ],
+    "to": "voidApproach",
+    "target": "lone_bact",
+    "fov": 36,
+    "lead": 0.5
+   },
+   "cameraTarget": "lone_bact",
+   "animation": "",
+   "transitionIn": "pillar-occlusion",
+   "transitionOut": "none",
+   "sound": [],
+   "subtitle": "auto"
+  },
+  {
+   "id": "S017",
+   "startFrame": 1815,
+   "endFrame": 1979,
+   "audioStart": 60.5,
+   "audioEnd": 65.967,
+   "narration": "in the one place everyone agrees nothing can live.",
+   "visualPurpose": "A single bacterium alive on the stomach lining \u2014 the place nobody believed anything could live.",
+   "emotion": "irony, awe",
+   "environment": "void",
+   "characters": [],
+   "objects": [
+    "lone_bact"
+   ],
+   "lighting": "punchline",
+   "camera": {
+    "move": "orbit",
+    "target": "lone_bact",
+    "radius": 3.4,
+    "radiusEnd": 4.8,
+    "sweepDeg": 100,
+    "height": 0.6,
+    "heightEnd": 1.6,
+    "fov": 34
+   },
+   "cameraTarget": "lone_bact",
+   "animation": "",
+   "transitionIn": "none",
+   "transitionOut": "none",
+   "sound": [
+    "boom"
+   ],
+   "subtitle": "auto"
+  }
+ ]
+}

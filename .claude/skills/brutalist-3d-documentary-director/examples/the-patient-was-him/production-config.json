@@ -1,0 +1,71 @@
+{
+ "title": "The Patient Was Him",
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "durationFrames": 2043,
+ "audio": {
+  "voiceover": "voiceover.wav",
+  "soundBed": "sound-bed.wav",
+  "voiceoverDurationSec": 68.0792,
+  "voiceVolume": 1.0,
+  "bedVolume": 1.0
+ },
+ "camera": {
+  "initial": {
+   "position": [
+    -4,
+    9.5,
+    6
+   ],
+   "target": [
+    -8,
+    1.8,
+    -11
+   ],
+   "fov": 48,
+   "rollDeg": 0
+  },
+  "smoothingSeconds": 0.4,
+  "handheld": {
+   "position": 0.01,
+   "rotationDeg": 0.12,
+   "frequency": 0.35
+  },
+  "maxSpeed": 20,
+  "orbitTargetRatio": 0.3
+ },
+ "lighting": {
+  "blendFrames": 36
+ },
+ "style": {
+  "letterbox": 0,
+  "grainScale": 1
+ },
+ "subtitles": {
+  "enabled": true,
+  "wordHighlight": false,
+  "fontFamily": "'Oswald', 'Bebas Neue', 'Arial Narrow', 'Liberation Sans Narrow', Impact, sans-serif",
+  "maxCharsPerLine": 38,
+  "safeMarginPct": 9
+ },
+ "render": {
+  "shadows": true,
+  "antialias": true,
+  "post": "final",
+  "shadowMapSize": 1024
+ },
+ "library": {
+  "path": null,
+  "linkMode": "vendor",
+  "lock": "asset-lock.json"
+ },
+ "inputs": {
+  "voiceover": "inputs/voiceover.mp3",
+  "script": "inputs/narration.txt",
+  "storyboard": [
+   "inputs/storyboard.png"
+  ],
+  "references": []
+ }
+}

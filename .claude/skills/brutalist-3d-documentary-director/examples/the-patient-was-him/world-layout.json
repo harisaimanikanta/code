@@ -1,0 +1,1104 @@
+{
+ "version": 1,
+ "units": "meters",
+ "anchors": {
+  "extHigh": [
+   -3,
+   7.5,
+   2
+  ],
+  "signFront": [
+   -6.2,
+   1.9,
+   -6.6
+  ],
+  "doorApproach": [
+   0,
+   1.75,
+   -14.5
+  ],
+  "doorway": [
+   0,
+   1.7,
+   -19.0
+  ],
+  "labInside": [
+   1.6,
+   1.75,
+   -21.3
+  ],
+  "eyeFront": [
+   0.4,
+   1.7,
+   -23.45
+  ],
+  "eyePiece": [
+   0.4,
+   1.48,
+   -24.29
+  ],
+  "underScope": [
+   0.4,
+   0.35,
+   -24.8
+  ],
+  "lensEntry": [
+   0.4,
+   -0.9,
+   -24.9
+  ],
+  "lensMid": [
+   0.4,
+   -8.36,
+   -27.8
+  ],
+  "lensExit": [
+   0.4,
+   -15.6,
+   -30.65
+  ],
+  "veilIn": [
+   0,
+   -23.9,
+   -51.5
+  ],
+  "lecBackDoor": [
+   0,
+   -24.4,
+   -55.9
+  ],
+  "overSeats": [
+   0.6,
+   -22.4,
+   -60.5
+  ],
+  "stageFront": [
+   1.4,
+   -23.3,
+   -66.4
+  ],
+  "stampDesk": [
+   -3.5,
+   -24.25,
+   -71.7
+  ],
+  "stageDoor": [
+   5.5,
+   -24.4,
+   -74.55
+  ],
+  "aniInside": [
+   6.6,
+   -24.3,
+   -77.0
+  ],
+  "aniEastDoor": [
+   13.3,
+   -24.4,
+   -79.15
+  ],
+  "hosInside": [
+   15.2,
+   -24.4,
+   -78.6
+  ],
+  "monitorFront": [
+   17.55,
+   -24.75,
+   -80.15
+  ],
+  "patientChest": [
+   17.1,
+   -25.15,
+   -79.65
+  ],
+  "bedside": [
+   18.8,
+   -24.4,
+   -78.25
+  ],
+  "monitorIn": [
+   17.52,
+   -24.75,
+   -81.05
+  ],
+  "wallBehind": [
+   17.5,
+   -24.6,
+   -82.85
+  ],
+  "stomachApproach": [
+   18.1,
+   -23.5,
+   -86.0
+  ],
+  "stomachCore": [
+   17.8,
+   -23.3,
+   -95.6
+  ],
+  "stomachBack": [
+   17.8,
+   -23.6,
+   -100.5
+  ],
+  "pressFront": [
+   17.8,
+   -24.3,
+   -103.1
+  ],
+  "pressExit": [
+   21.1,
+   -23.8,
+   -107.5
+  ],
+  "cerAudience": [
+   18.1,
+   -23.6,
+   -134.0
+  ],
+  "curtainGap": [
+   17.5,
+   -23.8,
+   -148.8
+  ],
+  "horizonIn": [
+   17.5,
+   -23.0,
+   -159.5
+  ]
+ },
+ "zones": [
+  {
+   "id": "ext",
+   "component": "InstituteExterior",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "cullRadius": 120,
+   "props": {
+    "entranceOpen": true
+   }
+  },
+  {
+   "id": "lab",
+   "component": "PathologyLab",
+   "position": [
+    0,
+    0,
+    -24.45
+   ],
+   "cullRadius": 40,
+   "props": {
+    "microscopeGlow": 0.9,
+    "focusTurn": 0.6
+   }
+  },
+  {
+   "id": "lens",
+   "component": "LensTunnel",
+   "position": [
+    0.4,
+    -0.9,
+    -24.9
+   ],
+   "rotation": [
+    -1.2,
+    0,
+    0
+   ],
+   "cullRadius": 30,
+   "props": {
+    "length": 16,
+    "radius": 1.8
+   }
+  },
+  {
+   "id": "micro",
+   "component": "MicroscopicWorld",
+   "position": [
+    0,
+    -26,
+    -33
+   ],
+   "cullRadius": 45,
+   "props": {
+    "swarm": 240
+   }
+  },
+  {
+   "id": "lecture",
+   "component": "LectureTheatre",
+   "position": [
+    0,
+    -26,
+    -65.2
+   ],
+   "cullRadius": 40,
+   "props": {
+    "attention": 0.12
+   }
+  },
+  {
+   "id": "animal",
+   "component": "AnimalLab",
+   "position": [
+    8.0,
+    -26,
+    -79.15
+   ],
+   "cullRadius": 30
+  },
+  {
+   "id": "hospital",
+   "component": "EndoscopyRoom",
+   "position": [
+    17.1,
+    -26,
+    -79.15
+   ],
+   "cullRadius": 30
+  },
+  {
+   "id": "press",
+   "component": "PublicationDesk",
+   "position": [
+    17.5,
+    -26,
+    -107
+   ],
+   "cullRadius": 30,
+   "props": {
+    "revealStart": 1640,
+    "revealEnd": 1700
+   }
+  },
+  {
+   "id": "ceremony",
+   "component": "CeremonyStage",
+   "position": [
+    17.5,
+    -26,
+    -140
+   ],
+   "cullRadius": 40,
+   "props": {
+    "revealStart": 1730
+   }
+  },
+  {
+   "id": "horizon",
+   "component": "RedSunHorizon",
+   "position": [
+    17.5,
+    -26,
+    -166
+   ],
+   "cullRadius": 260
+  }
+ ],
+ "objects": [
+  {
+   "id": "hero_bact",
+   "component": "SpiralBacterium",
+   "position": [
+    0.5,
+    -22.4,
+    -35
+   ],
+   "rotation": [
+    0.4,
+    0,
+    1.1
+   ],
+   "scale": 2.6,
+   "cullRadius": 40,
+   "zone": "micro"
+  },
+  {
+   "id": "veil",
+   "component": "ParticleVeil",
+   "position": [
+    0,
+    -23.5,
+    -54.4
+   ],
+   "props": {
+    "width": 10,
+    "height": 7,
+    "depth": 2.2,
+    "count": 4500
+   },
+   "zone": "micro"
+  },
+  {
+   "id": "stamp_desk",
+   "component": "Desk",
+   "position": [
+    -3.5,
+    -25.2,
+    -71.7
+   ],
+   "rotation": [
+    0,
+    0.3,
+    0
+   ],
+   "zone": "lecture"
+  },
+  {
+   "id": "stamp_papers",
+   "component": "PaperStack",
+   "position": [
+    -3.45,
+    -24.43,
+    -71.65
+   ],
+   "props": {
+    "sheets": 16
+   },
+   "zone": "lecture"
+  },
+  {
+   "id": "stamp",
+   "component": "StampMark",
+   "position": [
+    -3.45,
+    -24.38,
+    -71.65
+   ],
+   "props": {
+    "text": "REJECTED",
+    "size": 0.07,
+    "at": 772
+   },
+   "zone": "lecture"
+  },
+  {
+   "id": "marshall_rig_lec",
+   "component": "SubjectRig",
+   "position": [
+    1.8,
+    -25.2,
+    -71.3
+   ],
+   "props": {
+    "facing": 0,
+    "keyIntensity": 55,
+    "rimIntensity": 70
+   },
+   "zone": "lecture"
+  },
+  {
+   "id": "marshall_rig_ani",
+   "component": "SubjectRig",
+   "position": [
+    10.4,
+    -26,
+    -76.9
+   ],
+   "props": {
+    "facing": 1.5708,
+    "keyIntensity": 45,
+    "rimIntensity": 80,
+    "keySide": -1
+   },
+   "zone": "animal"
+  },
+  {
+   "id": "patient_rig",
+   "component": "SubjectRig",
+   "position": [
+    17.3,
+    -26,
+    -79.65
+   ],
+   "props": {
+    "facing": 0,
+    "height": 0.9,
+    "keyIntensity": 30,
+    "rimIntensity": 40,
+    "rimColor": "#ff2a2a"
+   },
+   "zone": "hospital"
+  },
+  {
+   "id": "stomach",
+   "component": "StomachOrgan",
+   "position": [
+    17.5,
+    -24.5,
+    -95
+   ],
+   "rotation": [
+    0,
+    -0.5,
+    0.15
+   ],
+   "scale": 22,
+   "cullRadius": 45,
+   "props": {
+    "inflamed": 1,
+    "colonies": 1
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "stomach_key",
+   "component": "SpotPool",
+   "position": [
+    17.5,
+    -24.5,
+    -95
+   ],
+   "props": {
+    "position": [
+     5,
+     7,
+     6
+    ],
+    "target": [
+     0,
+     1,
+     0
+    ],
+    "color": "#ffd0c0",
+    "intensity": 260,
+    "angle": 0.45,
+    "penumbra": 0.6
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "stomach_rim",
+   "component": "SpotPool",
+   "position": [
+    17.5,
+    -24.5,
+    -95
+   ],
+   "props": {
+    "position": [
+     -6,
+     3,
+     -7
+    ],
+    "target": [
+     0,
+     1,
+     0
+    ],
+    "color": "#ff1a1a",
+    "intensity": 300,
+    "angle": 0.5,
+    "penumbra": 0.7,
+    "castShadow": false
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "neutral_bact",
+   "component": "NeutralisingBacterium",
+   "position": [
+    20.9,
+    -23.1,
+    -90.8
+   ],
+   "rotation": [
+    0.5,
+    0,
+    0.9
+   ],
+   "scale": 0.9,
+   "zone": "stomach"
+  },
+  {
+   "id": "urea",
+   "component": "Molecule",
+   "position": [
+    22.1,
+    -22.2,
+    -91.8
+   ],
+   "props": {
+    "kind": "urea",
+    "appearStart": 1390
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "ammonia1",
+   "component": "Molecule",
+   "position": [
+    19.8,
+    -22.5,
+    -89.8
+   ],
+   "props": {
+    "kind": "ammonia",
+    "appearStart": 1430
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "ammonia2",
+   "component": "Molecule",
+   "position": [
+    21.5,
+    -23.9,
+    -89.5
+   ],
+   "props": {
+    "kind": "ammonia",
+    "appearStart": 1460
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "pills",
+   "component": "Capsules",
+   "position": [
+    19.7,
+    -24.7,
+    -91.0
+   ],
+   "scale": 6,
+   "props": {
+    "count": 30,
+    "spread": 0.35,
+    "pourStart": 1505,
+    "pourEnd": 1580
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "swarm2",
+   "component": "MicrobeSwarm",
+   "position": [
+    19.0,
+    -24.0,
+    -92.0
+   ],
+   "props": {
+    "count": 90,
+    "bounds": [
+     8,
+     5,
+     6
+    ],
+    "size": 0.35
+   },
+   "zone": "stomach"
+  },
+  {
+   "id": "laureate_rig",
+   "component": "SubjectRig",
+   "position": [
+    17.5,
+    -25.0,
+    -144.6
+   ],
+   "props": {
+    "facing": 0,
+    "keyColor": "#ffd890",
+    "keyIntensity": 70,
+    "rimColor": "#ff9a3a",
+    "rimIntensity": 70
+   },
+   "zone": "ceremony"
+  },
+  {
+   "id": "horizon_rim",
+   "component": "SpotPool",
+   "position": [
+    17.5,
+    -26,
+    -166
+   ],
+   "props": {
+    "position": [
+     0,
+     6,
+     -20
+    ],
+    "target": [
+     0,
+     3.5,
+     -8
+    ],
+    "color": "#ff1a10",
+    "intensity": 220,
+    "angle": 0.35,
+    "penumbra": 0.5,
+    "castShadow": false
+   },
+   "zone": "horizon"
+  }
+ ],
+ "actors": [
+  {
+   "id": "warren",
+   "component": "Figure",
+   "position": [
+    1.25,
+    0,
+    -24.15
+   ],
+   "rotation": [
+    0,
+    -1.5708,
+    0
+   ],
+   "props": {
+    "character": "senior-pathologist"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "inspect",
+     "start": 240,
+     "end": 430
+    },
+    {
+     "type": "expression",
+     "expression": "concentrate",
+     "start": 240,
+     "end": 430
+    },
+    {
+     "type": "walk",
+     "start": 432,
+     "end": 470,
+     "path": [
+      [
+       1.25,
+       0,
+       -24.15
+      ],
+      [
+       2.1,
+       0,
+       -23.35
+      ]
+     ]
+    },
+    {
+     "type": "turn",
+     "start": 470,
+     "end": 500,
+     "yaw": -2.4
+    },
+    {
+     "type": "pose",
+     "pose": "think",
+     "start": 480,
+     "end": 700
+    }
+   ],
+   "zone": "lab"
+  },
+  {
+   "id": "marshall_lec",
+   "component": "Figure",
+   "position": [
+    1.8,
+    -25.2,
+    -71.3
+   ],
+   "rotation": [
+    0,
+    -0.15,
+    0
+   ],
+   "props": {
+    "character": "young-doctor"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "gesture",
+     "start": 560,
+     "end": 760
+    },
+    {
+     "type": "pose",
+     "pose": "cross",
+     "start": 770,
+     "end": 900
+    },
+    {
+     "type": "expression",
+     "expression": "determined",
+     "start": 560,
+     "end": 900
+    }
+   ],
+   "zone": "lecture"
+  },
+  {
+   "id": "warren_lec",
+   "component": "Figure",
+   "position": [
+    0.4,
+    -25.2,
+    -72.1
+   ],
+   "rotation": [
+    0,
+    0.35,
+    0
+   ],
+   "props": {
+    "character": "senior-pathologist"
+   },
+   "actions": [
+    {
+     "type": "look",
+     "start": 600,
+     "end": 900,
+     "yaw": -0.5,
+     "pitch": 0.05
+    },
+    {
+     "type": "expression",
+     "expression": "sad",
+     "start": 780,
+     "end": 900
+    }
+   ],
+   "zone": "lecture"
+  },
+  {
+   "id": "marshall_ani",
+   "component": "Figure",
+   "position": [
+    10.4,
+    -26,
+    -76.9
+   ],
+   "rotation": [
+    0,
+    1.5708,
+    0
+   ],
+   "props": {
+    "character": "young-doctor",
+    "item": "culture",
+    "itemFrames": [
+     990,
+     1120
+    ]
+   },
+   "actions": [
+    {
+     "type": "look",
+     "start": 800,
+     "end": 980,
+     "yaw": 1.2,
+     "pitch": 0.25
+    },
+    {
+     "type": "pose",
+     "pose": "examine",
+     "start": 990,
+     "end": 1060
+    },
+    {
+     "type": "expression",
+     "expression": "determined",
+     "start": 990,
+     "end": 1070
+    },
+    {
+     "type": "pose",
+     "pose": "drink",
+     "start": 1060,
+     "end": 1120
+    },
+    {
+     "type": "pose",
+     "pose": "clutch-stomach",
+     "start": 1135,
+     "end": 1240,
+     "fade": 14
+    },
+    {
+     "type": "expression",
+     "expression": "pain",
+     "start": 1135,
+     "end": 1240
+    }
+   ],
+   "zone": "animal"
+  },
+  {
+   "id": "patient",
+   "component": "Figure",
+   "position": [
+    17.3,
+    -25.44,
+    -79.65
+   ],
+   "rotation": [
+    0,
+    1.5708,
+    0
+   ],
+   "props": {
+    "character": "young-doctor+gown"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "lie",
+     "start": 0,
+     "end": 99999,
+     "fade": 0
+    },
+    {
+     "type": "expression",
+     "expression": "pain",
+     "start": 1150,
+     "end": 1400
+    }
+   ],
+   "zone": "hospital"
+  },
+  {
+   "id": "marshall_press",
+   "component": "Figure",
+   "position": [
+    17.15,
+    -26,
+    -106.65
+   ],
+   "rotation": [
+    0,
+    2.8,
+    0
+   ],
+   "props": {
+    "character": "young-doctor",
+    "item": "newspaper",
+    "itemFrames": [
+     0,
+     99999
+    ]
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "examine",
+     "start": 1590,
+     "end": 1680
+    },
+    {
+     "type": "pose",
+     "pose": "facepalm",
+     "start": 1685,
+     "end": 1760
+    },
+    {
+     "type": "expression",
+     "expression": "smile",
+     "start": 1690,
+     "end": 1760
+    }
+   ],
+   "zone": "press"
+  },
+  {
+   "id": "laureate_m",
+   "component": "Figure",
+   "position": [
+    18.2,
+    -25.0,
+    -144.6
+   ],
+   "rotation": [
+    0,
+    -0.25,
+    0
+   ],
+   "props": {
+    "character": "young-doctor@older+tuxedo",
+    "item": "medal"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "present",
+     "start": 1730,
+     "end": 1900
+    },
+    {
+     "type": "expression",
+     "expression": "smile",
+     "start": 1730,
+     "end": 1900
+    }
+   ],
+   "zone": "ceremony"
+  },
+  {
+   "id": "laureate_w",
+   "component": "Figure",
+   "position": [
+    16.75,
+    -25.0,
+    -144.7
+   ],
+   "rotation": [
+    0,
+    0.25,
+    0
+   ],
+   "props": {
+    "character": "senior-pathologist@elderly+tuxedo",
+    "item": "medal"
+   },
+   "actions": [
+    {
+     "type": "pose",
+     "pose": "present",
+     "start": 1730,
+     "end": 1900
+    },
+    {
+     "type": "expression",
+     "expression": "smile",
+     "start": 1760,
+     "end": 1900
+    }
+   ],
+   "zone": "ceremony"
+  },
+  {
+   "id": "silhouette",
+   "component": "Figure",
+   "position": [
+    17.5,
+    -23.6,
+    -174
+   ],
+   "rotation": [
+    0,
+    3.141592653589793,
+    0
+   ],
+   "props": {
+    "character": "young-doctor@older+tuxedo"
+   },
+   "actions": [
+    {
+     "type": "look",
+     "start": 1960,
+     "end": 2043,
+     "yaw": 0.15,
+     "pitch": -0.1
+    }
+   ],
+   "zone": "horizon"
+  }
+ ],
+ "occluders": [
+  {
+   "id": "scope-barrel",
+   "shape": "box",
+   "center": [
+    0.4,
+    0.42,
+    -24.7
+   ],
+   "halfSize": [
+    0.22,
+    1.12,
+    0.32
+   ],
+   "color": "#030703",
+   "feather": 0.25,
+   "frames": [
+    455,
+    520
+   ]
+  },
+  {
+   "id": "monitor-screen",
+   "shape": "box",
+   "center": [
+    17.52,
+    -24.75,
+    -81.3
+   ],
+   "halfSize": [
+    0.4,
+    0.35,
+    0.35
+   ],
+   "color": "#2a0306",
+   "feather": 0.2,
+   "frames": [
+    1320,
+    1395
+   ]
+  },
+  {
+   "id": "theatre-door",
+   "shape": "box",
+   "center": [
+    0,
+    -24.3,
+    -55.0
+   ],
+   "halfSize": [
+    1.6,
+    1.8,
+    1.2
+   ],
+   "color": "#3a0508",
+   "feather": 0.8,
+   "frames": [
+    700,
+    770
+   ]
+  },
+  {
+   "id": "stomach-wall",
+   "shape": "sphere",
+   "center": [
+    17.8,
+    -23.55,
+    -98.0
+   ],
+   "radius": 0.9,
+   "color": "#4a0508",
+   "feather": 0.35,
+   "frames": [
+    1620,
+    1680
+   ]
+  },
+  {
+   "id": "curtain",
+   "shape": "box",
+   "center": [
+    17.5,
+    -23,
+    -148.9
+   ],
+   "halfSize": [
+    8,
+    4,
+    0.5
+   ],
+   "color": "#2a0204",
+   "feather": 0.3,
+   "frames": [
+    1880,
+    1930
+   ]
+  }
+ ]
+}

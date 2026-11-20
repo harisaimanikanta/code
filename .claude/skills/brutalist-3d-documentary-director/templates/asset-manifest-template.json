@@ -1,0 +1,25 @@
+{
+  "$comment": "Template for one asset-manifest entry (library asset-manifest.json → assets[]). Fields marked (auto) are maintained by asset-library.py reindex.",
+  "assets": [
+    {
+      "id": "obj.centrifuge",
+      "name": "Centrifuge",
+      "category": "objects",
+      "description": "Benchtop centrifuge with spinning rotor (frame-driven).",
+      "source": "objects/Centrifuge.tsx",
+      "exports": ["Centrifuge"],
+      "format": "tsx-r3f-component",
+      "scale": "meters, real-world size (0.5 x 0.35 x 0.5)",
+      "materials": ["metal-dark", "emissive-red"],
+      "dependencies": ["core.math", "core.time", "mat.library"],
+      "reuse": "Place on LabTable top (y=0.92); props: spinStart, spinEnd, rpm.",
+      "visualReference": "previews/obj.centrifuge.png",
+      "tags": ["lab", "centrifuge", "equipment"],
+      "version": "1.0.0",
+      "required": false,
+      "files": ["objects/Centrifuge.tsx", "core/math.ts", "core/time.ts", "materials/materials.ts"],
+      "sha256": "(auto)",
+      "history": [{ "version": "1.0.0", "date": "2026-01-01", "note": "created" }]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+ "title": "The Bacterium Nobody Believed",
+ "fps": 30,
+ "width": 1920,
+ "height": 1080,
+ "durationFrames": 1979,
+ "audio": {
+  "voiceover": "voiceover.wav",
+  "soundBed": "sound-bed.wav",
+  "voiceoverDurationSec": 65.9565,
+  "voiceVolume": 1.0,
+  "bedVolume": 1.0
+ },
+ "camera": {
+  "initial": {
+   "position": [
+    0,
+    9.6,
+    17
+   ],
+   "target": [
+    0,
+    2.6,
+    0
+   ],
+   "fov": 40,
+   "rollDeg": 0
+  },
+  "smoothingSeconds": 0.4,
+  "handheld": {
+   "position": 0.01,
+   "rotationDeg": 0.12,
+   "frequency": 0.35
+  },
+  "maxSpeed": 20,
+  "orbitTargetRatio": 0.3
+ },
+ "lighting": {
+  "blendFrames": 36
+ },
+ "style": {
+  "letterbox": 0,
+  "grainScale": 1
+ },
+ "subtitles": {
+  "enabled": true,
+  "wordHighlight": false,
+  "fontFamily": "'Oswald', 'Bebas Neue', 'Arial Narrow', 'Liberation Sans Narrow', Impact, sans-serif",
+  "maxCharsPerLine": 38,
+  "safeMarginPct": 9
+ },
+ "render": {
+  "shadows": true,
+  "antialias": true
+ },
+ "library": {
+  "path": null,
+  "linkMode": "vendor",
+  "lock": "asset-lock.json"
+ },
+ "inputs": {
+  "voiceover": "inputs/voiceover.mp3",
+  "script": "inputs/narration.txt",
+  "storyboard": [],
+  "references": []
+ }
+}

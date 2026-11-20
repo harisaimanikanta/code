@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "fps": 30,
+  "durationFrames": 1800,
+  "$comment": "One object per continuous camera move. Shots tile [0, durationFrames) with no gaps. Times in seconds, frames integer, endFrame exclusive. camera schema: references/camera-system.md.",
+  "shots": [
+    {
+      "id": "S001",
+      "audioStart": 0.0,
+      "audioEnd": 5.2,
+      "startFrame": 0,
+      "endFrame": 156,
+      "narration": "Exact narration covered by this move (verbatim from the transcript).",
+      "beats": ["B001", "B002"],
+      "visualPurpose": "What the audience must understand/feel in this move.",
+      "emotion": "certainty, weight",
+      "environment": "atrium",
+      "characters": ["doctor"],
+      "objects": ["dais"],
+      "lighting": "mystery",
+      "camera": { "preset": "hero-orbit", "target": "doctor.head", "radius": 4.5, "sweepDeg": 60, "height": 0.2, "fov": 34 },
+      "cameraTarget": "doctor.head",
+      "animation": "doctor: pose cross 10–150",
+      "transitionIn": "none",
+      "transitionOut": "doorway",
+      "sound": ["amb:hall", "boom", { "type": "impact", "at": 2.4, "gain": -3 }],
+      "subtitle": "auto",
+      "notes": ""
+    }
+  ]
+}

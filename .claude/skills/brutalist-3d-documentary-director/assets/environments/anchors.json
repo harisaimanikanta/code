@@ -1,0 +1,565 @@
+{
+ "$comment": "Component-local named anchors (meters, at scale 1, before entity rotation). Referenced as '<entityId>.<anchor>' in shot-plan camera specs. Keep in sync when a component's geometry changes (bump its version).",
+ "components": {
+  "Laboratory": {
+   "center": [
+    0,
+    1.2,
+    0
+   ],
+   "bench": [
+    0,
+    0.95,
+    0
+   ],
+   "microscope": [
+    0.4,
+    1.15,
+    0
+   ],
+   "microscopeEyepiece": [
+    0.4,
+    1.47,
+    0.11
+   ],
+   "microscopeObjective": [
+    0.4,
+    1.19,
+    -0.02
+   ],
+   "door": [
+    0,
+    1.6,
+    7
+   ],
+   "shelves": [
+    -5.5,
+    1.5,
+    -3
+   ],
+   "flask": [
+    -0.6,
+    1.05,
+    0.1
+   ]
+  },
+  "ConferenceHall": {
+   "stage": [
+    0,
+    1.0,
+    -6
+   ],
+   "lectern": [
+    0,
+    1.9,
+    -5.4
+   ],
+   "screen": [
+    0,
+    4.5,
+    -10.4
+   ],
+   "audience": [
+    0,
+    1.5,
+    3
+   ],
+   "aisle": [
+    0,
+    1.6,
+    9
+   ],
+   "door": [
+    0,
+    2,
+    12
+   ]
+  },
+  "ConcreteOffice": {
+   "desk": [
+    0,
+    0.8,
+    -1
+   ],
+   "chair": [
+    0,
+    1.2,
+    0
+   ],
+   "window": [
+    0,
+    2.9,
+    -3.8
+   ],
+   "papers": [
+    0.3,
+    0.8,
+    -1
+   ]
+  },
+  "AwardHall": {
+   "plinth": [
+    0,
+    1.2,
+    0
+   ],
+   "above": [
+    0,
+    6,
+    0
+   ],
+   "entrance": [
+    0,
+    1.7,
+    14
+   ]
+  },
+  "MicroscopicWorld": {
+   "surface": [
+    0,
+    1,
+    0
+   ],
+   "swarm": [
+    0,
+    2.6,
+    0
+   ],
+   "entry": [
+    0,
+    7,
+    14
+   ]
+  },
+  "ArchiveCorridor": {
+   "entry": [
+    0,
+    1.7,
+    0
+   ],
+   "mid": [
+    0,
+    1.7,
+    -20
+   ],
+   "exit": [
+    0,
+    1.7,
+    -40
+   ]
+  },
+  "BrutalistCorridor": {
+   "entry": [
+    0,
+    1.7,
+    0
+   ],
+   "mid": [
+    0,
+    1.7,
+    -20
+   ],
+   "exit": [
+    0,
+    1.7,
+    -40
+   ]
+  },
+  "UndergroundPassage": {
+   "entry": [
+    0,
+    1.6,
+    0
+   ],
+   "exit": [
+    0,
+    1.6,
+    -30
+   ]
+  },
+  "MonumentalRoom": {
+   "center": [
+    0,
+    2,
+    0
+   ]
+  },
+  "Microscope": {
+   "eyepiece": [
+    0,
+    0.52,
+    0.11
+   ],
+   "objective": [
+    0,
+    0.27,
+    -0.02
+   ],
+   "stage": [
+    0,
+    0.22,
+    -0.02
+   ],
+   "center": [
+    0,
+    0.3,
+    0
+   ]
+  },
+  "LensTunnel": {
+   "entry": [
+    0,
+    0,
+    0
+   ],
+   "mid": [
+    0,
+    0,
+    -10
+   ],
+   "exit": [
+    0,
+    0,
+    -20
+   ]
+  },
+  "AwardPlinth": {
+   "top": [
+    0,
+    1.25,
+    0
+   ]
+  },
+  "Doorway": {
+   "center": [
+    0,
+    2,
+    0
+   ],
+   "before": [
+    0,
+    1.7,
+    3
+   ],
+   "after": [
+    0,
+    1.7,
+    -3
+   ]
+  },
+  "Monolith": {
+   "center": [
+    0,
+    3,
+    0
+   ],
+   "top": [
+    0,
+    7,
+    0
+   ]
+  },
+  "Figure": {
+   "head": [
+    0,
+    1.65,
+    0
+   ],
+   "face": [
+    0,
+    1.63,
+    0.12
+   ],
+   "chest": [
+    0,
+    1.35,
+    0
+   ],
+   "hands": [
+    0,
+    1.0,
+    0.15
+   ],
+   "feet": [
+    0,
+    0.1,
+    0
+   ],
+   "shoulderR": [
+    -0.22,
+    1.45,
+    0
+   ],
+   "shoulderL": [
+    0.22,
+    1.45,
+    0
+   ]
+  },
+  "PathologyLab": {
+   "center": [
+    0,
+    1.4,
+    0
+   ],
+   "bench": [
+    0,
+    0.95,
+    0
+   ],
+   "microscope": [
+    0.4,
+    1.15,
+    0
+   ],
+   "microscopeEyepiece": [
+    0.4,
+    1.44,
+    0.11
+   ],
+   "microscopeObjective": [
+    0.4,
+    1.19,
+    -0.02
+   ],
+   "doorSouth": [
+    0,
+    1.6,
+    5.2
+   ],
+   "doorEast": [
+    6.2,
+    1.6,
+    2.5
+   ],
+   "window": [
+    -5.6,
+    1.75,
+    -2.5
+   ],
+   "desk": [
+    5.4,
+    1.0,
+    0.6
+   ],
+   "shelves": [
+    -1.5,
+    1.9,
+    -4.6
+   ],
+   "sink": [
+    1.6,
+    1.1,
+    -4.6
+   ]
+  },
+  "LectureTheatre": {
+   "stage": [
+    0,
+    1.6,
+    -6.5
+   ],
+   "lectern": [
+    1.8,
+    2.4,
+    -5.6
+   ],
+   "screen": [
+    -1.5,
+    3.6,
+    -8.7
+   ],
+   "audience": [
+    0,
+    2.0,
+    0
+   ],
+   "backDoor": [
+    0,
+    1.8,
+    9.2
+   ],
+   "stageDoor": [
+    5.5,
+    2.0,
+    -9.2
+   ]
+  },
+  "EndoscopyRoom": {
+   "bed": [
+    0,
+    0.9,
+    -0.5
+   ],
+   "monitor": [
+    0.4,
+    1.3,
+    -1.85
+   ],
+   "patientHead": [
+    -0.9,
+    0.95,
+    -0.5
+   ],
+   "door": [
+    1.6,
+    1.5,
+    3.2
+   ],
+   "doorWest": [
+    -3.2,
+    1.5,
+    0
+   ]
+  },
+  "AnimalLab": {
+   "penA": [
+    -2.2,
+    0.6,
+    -1.6
+   ],
+   "penB": [
+    2.2,
+    0.6,
+    -1.6
+   ],
+   "door": [
+    -2.5,
+    1.5,
+    4.2
+   ],
+   "doorEast": [
+    5.2,
+    1.5,
+    0
+   ]
+  },
+  "CeremonyStage": {
+   "plinth": [
+    0,
+    2.4,
+    -5.5
+   ],
+   "medal": [
+    0,
+    2.5,
+    -5.5
+   ],
+   "plaque": [
+    0,
+    5.9,
+    -7.8
+   ],
+   "stageFront": [
+    0,
+    1.8,
+    -2.5
+   ],
+   "audience": [
+    0,
+    1.6,
+    2
+   ]
+  },
+  "InstituteExterior": {
+   "entrance": [
+    0,
+    1.7,
+    -18.5
+   ],
+   "sign": [
+    -8,
+    1.8,
+    -11
+   ],
+   "flag": [
+    8,
+    9,
+    -12
+   ],
+   "plaza": [
+    0,
+    1.7,
+    -6
+   ],
+   "facade": [
+    0,
+    8,
+    -19
+   ],
+   "sun": [
+    18,
+    22,
+    -170
+   ]
+  },
+  "StomachOrgan": {
+   "center": [
+    0.03,
+    0.05,
+    0.0
+   ],
+   "antrum": [
+    0.1,
+    -0.07,
+    0.01
+   ],
+   "fundus": [
+    -0.09,
+    0.12,
+    0.01
+   ]
+  },
+  "Pig": {
+   "center": [
+    0,
+    0.55,
+    0
+   ],
+   "head": [
+    0,
+    0.65,
+    0.55
+   ]
+  },
+  "PublicationDesk": {
+   "desk": [
+    0,
+    0.95,
+    -0.5
+   ],
+   "newspaper": [
+    0.2,
+    0.8,
+    -0.35
+   ],
+   "wallText": [
+    0,
+    2.75,
+    -1.9
+   ],
+   "front": [
+    0,
+    1.6,
+    3
+   ]
+  },
+  "RedSunHorizon": {
+   "standpoint": [
+    0,
+    2.4,
+    -8
+   ],
+   "sun": [
+    0,
+    26,
+    -190
+   ],
+   "stairs": [
+    0,
+    1.2,
+    -4
+   ]
+  }
+ }
+}

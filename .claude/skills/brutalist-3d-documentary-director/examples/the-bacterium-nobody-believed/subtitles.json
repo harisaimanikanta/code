@@ -1,0 +1,788 @@
+{
+ "cues": [
+  {
+   "start": 0.415,
+   "end": 3.363,
+   "text": "For most of the twentieth century",
+   "words": [
+    {
+     "text": "For",
+     "start": 0.415,
+     "end": 0.752
+    },
+    {
+     "text": "most",
+     "start": 0.752,
+     "end": 1.089
+    },
+    {
+     "text": "of",
+     "start": 1.089,
+     "end": 1.425
+    },
+    {
+     "text": "the",
+     "start": 1.425,
+     "end": 1.762
+    },
+    {
+     "text": "twentieth",
+     "start": 1.762,
+     "end": 2.358
+    },
+    {
+     "text": "century,",
+     "start": 2.358,
+     "end": 3.213
+    }
+   ],
+   "emphasis": [
+    "twentieth"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 3.535,
+   "end": 5.17,
+   "text": "doctors were certain.",
+   "words": [
+    {
+     "text": "doctors",
+     "start": 3.535,
+     "end": 4.114
+    },
+    {
+     "text": "were",
+     "start": 4.114,
+     "end": 4.441
+    },
+    {
+     "text": "certain.",
+     "start": 4.441,
+     "end": 5.02
+    }
+   ],
+   "emphasis": [
+    "doctors"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 5.557,
+   "end": 8.375,
+   "text": "Stomach ulcers came from stress",
+   "words": [
+    {
+     "text": "Stomach",
+     "start": 5.557,
+     "end": 6.279
+    },
+    {
+     "text": "ulcers",
+     "start": 6.279,
+     "end": 7.001
+    },
+    {
+     "text": "came",
+     "start": 7.001,
+     "end": 7.409
+    },
+    {
+     "text": "from",
+     "start": 7.409,
+     "end": 7.817
+    },
+    {
+     "text": "stress,",
+     "start": 7.817,
+     "end": 8.225
+    }
+   ],
+   "emphasis": [
+    "Stomach"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 8.544,
+   "end": 9.745,
+   "text": "spicy food",
+   "words": [
+    {
+     "text": "spicy",
+     "start": 8.544,
+     "end": 9.215
+    },
+    {
+     "text": "food,",
+     "start": 9.215,
+     "end": 9.595
+    }
+   ],
+   "emphasis": [
+    "spicy"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 9.905,
+   "end": 12.537,
+   "text": "and too much acid. Nothing",
+   "words": [
+    {
+     "text": "and",
+     "start": 9.905,
+     "end": 10.244
+    },
+    {
+     "text": "too",
+     "start": 10.244,
+     "end": 10.582
+    },
+    {
+     "text": "much",
+     "start": 10.582,
+     "end": 10.921
+    },
+    {
+     "text": "acid.",
+     "start": 10.921,
+     "end": 11.52
+    },
+    {
+     "text": "Nothing,",
+     "start": 12.06,
+     "end": 12.557
+    }
+   ],
+   "emphasis": [
+    "Nothing"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 12.557,
+   "end": 14.028,
+   "text": "they believed",
+   "words": [
+    {
+     "text": "they",
+     "start": 12.557,
+     "end": 13.164
+    },
+    {
+     "text": "believed,",
+     "start": 13.164,
+     "end": 13.878
+    }
+   ],
+   "emphasis": [
+    "believed"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 14.233,
+   "end": 16.531,
+   "text": "could live inside the stomach.",
+   "words": [
+    {
+     "text": "could",
+     "start": 14.233,
+     "end": 14.562
+    },
+    {
+     "text": "live",
+     "start": 14.562,
+     "end": 14.89
+    },
+    {
+     "text": "inside",
+     "start": 14.89,
+     "end": 15.471
+    },
+    {
+     "text": "the",
+     "start": 15.471,
+     "end": 15.8
+    },
+    {
+     "text": "stomach.",
+     "start": 15.8,
+     "end": 16.381
+    }
+   ],
+   "emphasis": [
+    "stomach"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 17.231,
+   "end": 19.16,
+   "text": "In Perth, Australia",
+   "words": [
+    {
+     "text": "In",
+     "start": 17.231,
+     "end": 17.58
+    },
+    {
+     "text": "Perth,",
+     "start": 17.58,
+     "end": 17.928
+    },
+    {
+     "text": "Australia,",
+     "start": 18.257,
+     "end": 19.01
+    }
+   ],
+   "emphasis": [
+    "Australia"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 19.364,
+   "end": 22.994,
+   "text": "pathologist Robin Warren kept seeing something",
+   "words": [
+    {
+     "text": "pathologist",
+     "start": 19.364,
+     "end": 20.424
+    },
+    {
+     "text": "Robin",
+     "start": 20.424,
+     "end": 20.991
+    },
+    {
+     "text": "Warren",
+     "start": 20.991,
+     "end": 21.559
+    },
+    {
+     "text": "kept",
+     "start": 21.559,
+     "end": 21.879
+    },
+    {
+     "text": "seeing",
+     "start": 21.879,
+     "end": 22.2
+    },
+    {
+     "text": "something",
+     "start": 22.2,
+     "end": 23.014
+    }
+   ],
+   "emphasis": [
+    "pathologist"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 23.014,
+   "end": 24.865,
+   "text": "under the microscope.",
+   "words": [
+    {
+     "text": "under",
+     "start": 23.014,
+     "end": 23.581
+    },
+    {
+     "text": "the",
+     "start": 23.581,
+     "end": 23.901
+    },
+    {
+     "text": "microscope.",
+     "start": 23.901,
+     "end": 24.715
+    }
+   ],
+   "emphasis": [
+    "microscope"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 25.261,
+   "end": 26.743,
+   "text": "Spiral bacteria",
+   "words": [
+    {
+     "text": "Spiral",
+     "start": 25.261,
+     "end": 25.808
+    },
+    {
+     "text": "bacteria,",
+     "start": 25.808,
+     "end": 26.593
+    }
+   ],
+   "emphasis": [
+    "bacteria"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 26.901,
+   "end": 29.086,
+   "text": "living in the stomach lining.",
+   "words": [
+    {
+     "text": "living",
+     "start": 26.901,
+     "end": 27.394
+    },
+    {
+     "text": "in",
+     "start": 27.394,
+     "end": 27.672
+    },
+    {
+     "text": "the",
+     "start": 27.672,
+     "end": 27.951
+    },
+    {
+     "text": "stomach",
+     "start": 27.951,
+     "end": 28.443
+    },
+    {
+     "text": "lining.",
+     "start": 28.443,
+     "end": 28.936
+    }
+   ],
+   "emphasis": [
+    "stomach"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 29.524,
+   "end": 31.007,
+   "text": "With Barry Marshall",
+   "words": [
+    {
+     "text": "With",
+     "start": 29.524,
+     "end": 29.818
+    },
+    {
+     "text": "Barry",
+     "start": 29.818,
+     "end": 30.337
+    },
+    {
+     "text": "Marshall,",
+     "start": 30.337,
+     "end": 30.857
+    }
+   ],
+   "emphasis": [
+    "Marshall"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 31.18,
+   "end": 34.758,
+   "text": "he argued these bacteria caused the disease.",
+   "words": [
+    {
+     "text": "he",
+     "start": 31.18,
+     "end": 31.496
+    },
+    {
+     "text": "argued",
+     "start": 31.496,
+     "end": 32.055
+    },
+    {
+     "text": "these",
+     "start": 32.055,
+     "end": 32.371
+    },
+    {
+     "text": "bacteria",
+     "start": 32.371,
+     "end": 33.174
+    },
+    {
+     "text": "caused",
+     "start": 33.174,
+     "end": 33.733
+    },
+    {
+     "text": "the",
+     "start": 33.733,
+     "end": 34.049
+    },
+    {
+     "text": "disease.",
+     "start": 34.049,
+     "end": 34.608
+    }
+   ],
+   "emphasis": [
+    "bacteria"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 35.471,
+   "end": 38.197,
+   "text": "The medical world rejected them.",
+   "words": [
+    {
+     "text": "The",
+     "start": 35.471,
+     "end": 35.79
+    },
+    {
+     "text": "medical",
+     "start": 35.79,
+     "end": 36.6
+    },
+    {
+     "text": "world",
+     "start": 36.6,
+     "end": 36.918
+    },
+    {
+     "text": "rejected",
+     "start": 36.918,
+     "end": 37.728
+    },
+    {
+     "text": "them.",
+     "start": 37.728,
+     "end": 38.047
+    }
+   ],
+   "emphasis": [
+    "rejected"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 38.924,
+   "end": 41.734,
+   "text": "So in 1984",
+   "words": [
+    {
+     "text": "So",
+     "start": 38.924,
+     "end": 39.425
+    },
+    {
+     "text": "in",
+     "start": 39.425,
+     "end": 39.926
+    },
+    {
+     "text": "1984,",
+     "start": 39.926,
+     "end": 41.584
+    }
+   ],
+   "emphasis": [
+    "1984"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 41.906,
+   "end": 45.828,
+   "text": "Marshall drank a culture of the bacteria himself.",
+   "words": [
+    {
+     "text": "Marshall",
+     "start": 41.906,
+     "end": 42.469
+    },
+    {
+     "text": "drank",
+     "start": 42.469,
+     "end": 42.788
+    },
+    {
+     "text": "a",
+     "start": 42.788,
+     "end": 43.106
+    },
+    {
+     "text": "culture",
+     "start": 43.106,
+     "end": 43.67
+    },
+    {
+     "text": "of",
+     "start": 43.67,
+     "end": 43.988
+    },
+    {
+     "text": "the",
+     "start": 43.988,
+     "end": 44.306
+    },
+    {
+     "text": "bacteria",
+     "start": 44.306,
+     "end": 45.115
+    },
+    {
+     "text": "himself.",
+     "start": 45.115,
+     "end": 45.678
+    }
+   ],
+   "emphasis": [
+    "Marshall"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 46.355,
+   "end": 47.466,
+   "text": "Within days",
+   "words": [
+    {
+     "text": "Within",
+     "start": 46.355,
+     "end": 46.969
+    },
+    {
+     "text": "days,",
+     "start": 46.969,
+     "end": 47.316
+    }
+   ],
+   "emphasis": [
+    "Within"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 47.696,
+   "end": 48.934,
+   "text": "he fell ill.",
+   "words": [
+    {
+     "text": "he",
+     "start": 47.696,
+     "end": 48.059
+    },
+    {
+     "text": "fell",
+     "start": 48.059,
+     "end": 48.421
+    },
+    {
+     "text": "ill.",
+     "start": 48.421,
+     "end": 48.784
+    }
+   ],
+   "emphasis": [
+    "fell"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 49.631,
+   "end": 51.642,
+   "text": "In 2005",
+   "words": [
+    {
+     "text": "In",
+     "start": 49.631,
+     "end": 50.063
+    },
+    {
+     "text": "2005,",
+     "start": 50.063,
+     "end": 51.492
+    }
+   ],
+   "emphasis": [
+    "2005"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 51.813,
+   "end": 55.082,
+   "text": "Warren and Marshall received the Nobel Prize",
+   "words": [
+    {
+     "text": "Warren",
+     "start": 51.813,
+     "end": 52.35
+    },
+    {
+     "text": "and",
+     "start": 52.35,
+     "end": 52.653
+    },
+    {
+     "text": "Marshall",
+     "start": 52.653,
+     "end": 53.189
+    },
+    {
+     "text": "received",
+     "start": 53.189,
+     "end": 53.959
+    },
+    {
+     "text": "the",
+     "start": 53.959,
+     "end": 54.263
+    },
+    {
+     "text": "Nobel",
+     "start": 54.263,
+     "end": 54.799
+    },
+    {
+     "text": "Prize",
+     "start": 54.799,
+     "end": 55.102
+    }
+   ],
+   "emphasis": [
+    "Marshall"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 55.102,
+   "end": 59.259,
+   "text": "in Physiology or Medicine. Sometimes",
+   "words": [
+    {
+     "text": "in",
+     "start": 55.102,
+     "end": 55.406
+    },
+    {
+     "text": "Physiology",
+     "start": 55.406,
+     "end": 56.409
+    },
+    {
+     "text": "or",
+     "start": 56.409,
+     "end": 56.712
+    },
+    {
+     "text": "Medicine.",
+     "start": 56.712,
+     "end": 57.482
+    },
+    {
+     "text": "Sometimes,",
+     "start": 58.341,
+     "end": 59.109
+    }
+   ],
+   "emphasis": [
+    "Physiology"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 59.433,
+   "end": 62.915,
+   "text": "the truth hides in the one place everyone",
+   "words": [
+    {
+     "text": "the",
+     "start": 59.433,
+     "end": 59.773
+    },
+    {
+     "text": "truth",
+     "start": 59.773,
+     "end": 60.112
+    },
+    {
+     "text": "hides",
+     "start": 60.112,
+     "end": 60.713
+    },
+    {
+     "text": "in",
+     "start": 60.713,
+     "end": 61.053
+    },
+    {
+     "text": "the",
+     "start": 61.053,
+     "end": 61.393
+    },
+    {
+     "text": "one",
+     "start": 61.393,
+     "end": 61.733
+    },
+    {
+     "text": "place",
+     "start": 61.733,
+     "end": 62.072
+    },
+    {
+     "text": "everyone",
+     "start": 62.072,
+     "end": 62.935
+    }
+   ],
+   "emphasis": [
+    "everyone"
+   ],
+   "position": "bottom"
+  },
+  {
+   "start": 62.935,
+   "end": 64.966,
+   "text": "agrees nothing can live.",
+   "words": [
+    {
+     "text": "agrees",
+     "start": 62.935,
+     "end": 63.536
+    },
+    {
+     "text": "nothing",
+     "start": 63.536,
+     "end": 64.137
+    },
+    {
+     "text": "can",
+     "start": 64.137,
+     "end": 64.476
+    },
+    {
+     "text": "live.",
+     "start": 64.476,
+     "end": 64.816
+    }
+   ],
+   "emphasis": [
+    "nothing"
+   ],
+   "position": "bottom"
+  }
+ ]
+}
