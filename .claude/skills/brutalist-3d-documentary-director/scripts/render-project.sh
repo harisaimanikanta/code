@@ -50,6 +50,12 @@ python3 "$SKILL/scripts/validate-camera-path.py" . --json-out analysis/qc-camera
 npx tsc --noEmit
 echo "pre-flight passed"
 
+normalise_pixfmt() { # Remotion's JPEG pipeline can tag output full-range yuvj420p → broadcast-safe yuv420p
+  if [[ "$(ffprobe -v error -select_streams v:0 -show_entries stream=pix_fmt -of csv=p=0 "$1")" != "yuv420p" ]]; then
+    ffmpeg -v error -y -i "$1" -vf "scale=in_range=full:out_range=tv,format=yuv420p" -c:v libx264 -crf 16 -preset medium -c:a copy -movflags +faststart "${1%.mp4}.tmp.mp4" && mv "${1%.mp4}.tmp.mp4" "$1"
+  fi
+}
+
 render() { # args...
   local gl
   for gl in angle swangle; do
@@ -64,6 +70,7 @@ case "$MODE" in
     FROM="${FROM:-0}"; TO="${TO:-$(( FROM + FPS * 10 < N ? FROM + FPS * 10 : N - 1 ))}"
     OUT="out/preview-${FROM}-${TO}.mp4"
     render render src/index.ts Documentary "$OUT" --frames="${FROM}-${TO}" --scale="${SCALE:-0.5}" --pixel-format=yuv420p "${CONC_ARGS[@]}"
+    normalise_pixfmt "$OUT"
     python3 "$SKILL/scripts/validate-video.py" . "$OUT" --preview --json-out analysis/qc-preview.json || true
     W=$(python3 -c "import json;c=json.load(open('data/production-config.json'));print(270 if c['height']>c['width'] else 480)")
     ffmpeg -v error -y -i "$OUT" -vf "fps=2,scale=${W}:-1,tile=6x2" -frames:v 1 "out/preview-${FROM}-${TO}-sheet.png" || true
