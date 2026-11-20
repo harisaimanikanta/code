@@ -107,3 +107,4 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 |---|---|---|
 | 41 | The Doctor Who Drank the Cure (Barry Marshall, 1984) | scripted (`scripts/barry-marshall-h-pylori/`) |
 | 59 | Why Banning Cars Put More Cars on the Road (Hoy No Circula, 1989) | scripted (`scripts/mexico-city-hoy-no-circula/`) |
+| 61 | The Phone Call That Made a Manager Strip-Search Her Employee (Kentucky, 2004) | scripted (`scripts/mcdonalds-strip-search-hoax/`) |

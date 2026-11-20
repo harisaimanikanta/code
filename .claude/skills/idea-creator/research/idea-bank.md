@@ -134,7 +134,7 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 ## Batch 2026-11-20 - dark psychology (status: idea) - full IDEA CARDS in `research/batches/2026-11-20-dark-psychology.md`
 | # | Story | Category | Fit | Competition | Status |
 |---|---|---|---|---|---|
-| 61 | McDonald's strip-search hoax call (2004) | con | 9 | low | idea |
+| 61 | McDonald's strip-search hoax call (2004) | con | 9 | low | scripted (VIRAL-SCRIPT-WRITER) |
 | 62 | Kitty Genovese "38 witnesses" myth (1964) | media myth | 9 | low | idea |
 | 63 | Norrmalmstorg hostages / Stockholm syndrome (1973) | crime | 9 | low | idea |
 | 64 | Milgram, Gina Perry's archive twist (1961) | science | 9 | low | idea |
