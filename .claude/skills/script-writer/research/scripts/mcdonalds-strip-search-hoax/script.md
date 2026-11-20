@@ -8,92 +8,98 @@ Format: **True Mechanism Parable** · 2026-11-20 · From IDEA CARD (idea-creator
 - **Verified:** all beats in the script. **Reported:** "boss was asleep", "calls stopped", "former prison guard". **Avoided:** the victim's name, any detail of the abuse, calling the acquitted man the caller.
 - **Sources:** ABC News (2005-2007), CBS, Courthouse News, Wikipedia (leads).
 
-## B. Five hook options
-| # | Type | Hook | Clar | Cur | Orig | Acc | Stop | Avg |
+## B. Five hook options (v2 - simple, clear, open loop)
+| # | Type | Hook (first 2 lines) | Clar | Cur | Orig | Acc | Stop | Avg |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Cold-open action | "She took a teenager's clothes, put them in a bag, and locked them in her car. Because a voice on the phone told her to." | 10 | 10 | 9 | 10 | 10 | **9.8** |
-| 2 | Cold-open action | "She picked up the restaurant phone, and a man said he was a police officer." | 9 | 8 | 7 | 10 | 7 | 8.2 |
-| 3 | Shock | "A man on the phone made a McDonald's manager do the unthinkable, and never set foot inside." | 8 | 9 | 7 | 9 | 8 | 8.2 |
+| 1 | Shock + method + open loop | "In 2004, a man got a McDonald's manager to strip-search her own employee. He never set foot in the store. He did it with one phone call." → "So how do you make a normal person do something this wrong?" | 10 | 10 | 9 | 10 | 10 | **9.8** |
+| 2 | Cold-open action (v1) | "She took a teenager's clothes, put them in a bag, and locked them in her car. Because a voice on the phone told her to." | 8 | 10 | 9 | 10 | 9 | 9.2 |
+| 3 | Question | "How do you get a stranger to do something terrible, without ever meeting them?" | 9 | 9 | 7 | 10 | 7 | 8.4 |
 | 4 | Contradiction | "There was no police officer. Nobody in the restaurant noticed for three hours." | 9 | 9 | 8 | 9 | 8 | 8.6 |
-| 5 | Mystery | "Who was Officer Scott?" | 7 | 8 | 7 | 10 | 6 | 7.6 |
+| 5 | Mystery | "A voice on the phone made 70 calls like this. Here's the trick he used." | 9 | 9 | 7 | 9 | 8 | 8.4 |
 
-**Recommended: #1.** A physical, absurd act in the references' "She/He [did X]" form, completely true, and the second sentence ("Because a voice on the phone told her to") is the gap. Scores are editorial judgement, not view predictions.
+**Recommended: #1.** Owner feedback: v1 was hard to follow. #1 says who, what and how in the first 5 seconds, in plain words, then asks the one question the video answers ("how do you make a normal person do this?"). The payoff at the end answers exactly that. Scores are editorial judgement, not view predictions.
 
-## C. Final voiceover script (232 words · ~63 s at the references' 3.7 words/s)
+## C. Final voiceover script v2 (235 words · ~64 s at 3.7 words/s)
 <!-- VOICEOVER START -->
-She took a teenager's clothes, put them in a bag, and locked them in her car. Because a voice on the phone told her to.
-You see, it's 2004, at a McDonald's in Kentucky. The caller says he's a police officer. Officer Scott.
-He describes a girl who stole a purse. The assistant manager knows exactly who he means. An 18-year-old employee.
-First, he says search her here, or she goes to jail.
-Then he says take her clothes.
-Then he says you're needed out front. Find someone to watch her.
-One employee walks out in disgust.
-So she calls her fiancé. The "officer" starts giving him orders. He follows them, and it becomes a crime.
-Then a 58-year-old maintenance man takes the phone.
-He listens. And says no.
-After more than three hours, he's the first to refuse.
-She calls her boss, who says she's been asleep. She never talked to any police.
-There was no Officer Scott.
-And this wasn't his first call. More than 70 like it, in 30 states.
-Police traced a calling card to Florida and arrested a former prison guard. A jury acquitted him. But after his arrest, the calls stopped.
-So how did a voice do all this?
-He never asked for the worst thing first. Each order was just a little worse than the last.
-The caller never set foot inside. He didn't have to.
+In 2004, a man got a McDonald's manager to strip-search her own employee. He never set foot in the store. He did it with one phone call.
+So how do you make a normal person do something this wrong?
+It's a Friday in Kentucky. The office phone rings. A man says he's a police officer. He says a worker stole a purse, and describes her.
+The manager knows who he means: an 18-year-old girl at the counter.
+Here's the trick. He never asks for the bad thing first.
+First: bring her to the office. Easy.
+Then: search her, here, or she goes to the police station.
+Then: take her clothes.
+Every order is just a little worse than the last one. So every order feels okay.
+For over three hours, the manager does what the voice says. One worker walks out in disgust. But nobody checks with the real police.
+Then the caller gets the manager's fiancé to watch the girl, and talks him into abusing her.
+Finally, a 58-year-old maintenance man takes the phone. He listens. And says no.
+That one "no" breaks the spell. The manager calls her boss. There was no officer.
+And it wasn't the first time. Police counted over 70 calls like this, in 30 states.
+That's the scary part. He didn't need to be in the room. He just needed someone to say yes to the first small thing.
 <!-- VOICEOVER END -->
 
-Beat map: cold-open action + "because a voice told her to" 0:00–0:05 → "You see," 0:05 → the accusation 0:10–0:16 → escalation ladder: First / Then / Then 0:16–0:25 → walk-out (documented doubt #1) 0:25 → fiancé, "it becomes a crime" 0:27–0:32 → maintenance man: "He listens. And says no." (documented doubt #2) 0:32–0:38 → reversal: boss asleep, "There was no Officer Scott." 0:38–0:44 → scale: 70+ calls, 30 states 0:44–0:47 → arrest, acquittal, calls stop 0:47–0:54 → mechanism: one small step at a time 0:54–1:00 → hard cut 1:00–1:03.
+Structure (hook → problem → explanation → payoff, per research round 3):
+- **Hook 0:00–0:06:** the whole shocking fact, plainly: who, what, how ("one phone call").
+- **Problem / open loop 0:06–0:09:** "So how do you make a normal person do something this wrong?"
+- **Setup 0:09–0:18:** the fake officer, the accusation, the girl. Only three people to track: the manager, the girl, the voice.
+- **Explanation 0:18–0:30:** "Here's the trick": First / Then / Then, plus the rule in one line ("every order is just a little worse… so every order feels okay").
+- **Escalation 0:30–0:42:** three hours; one worker walks out; nobody checks; it turns into abuse.
+- **Turn 0:42–0:48:** "He listens. And says no."
+- **Reveal 0:48–0:56:** "There was no officer." Over 70 calls, 30 states.
+- **Payoff 0:56–1:04:** answers the opening question, and turns it on the viewer: "He just needed someone to say yes to the first small thing."
 
-## D. Storyboard (stylised 3D look · new image every ~1.2 s · consistent character sheet)
-Character sheet (every prompt): *Manager - stylised 3D cartoon woman, round white head, dot eyes, 50s, short hair, 2004 fast-food manager uniform and headset. Teen employee - shown only from behind or as a silhouette, fully clothed in uniform in every shot. Fiancé - shown only as a shadow at the door. Maintenance man - stylised older man, grey moustache, work shirt, mop bucket. The caller - never shown: only a phone cord, a payphone and a voice.* All shots labelled "Dramatization". **No nudity, no abuse shown, no victim face.**
+v1 → v2: v1 opened on a confusing image (clothes in a car), had five people to track and never said the "trick" out loud. v2 states the event in the first line, asks one question, names the trick before showing it, and the ending answers the question directly. Dropped: the arrest/acquittal (true but a side plot), "former prison guard", and "her boss was asleep".
+
+## D. Storyboard v2 (stylised 3D look · new image every ~1.2 s · consistent character sheet)
+Character sheet (every prompt): *Manager - stylised 3D cartoon woman, round white head, dot eyes, 50s, short hair, 2004 fast-food manager uniform and headset. The girl - shown only from behind or as a silhouette, always fully clothed in uniform. Fiancé - only a shadow in a doorway. Maintenance man - stylised older man, grey moustache, work shirt, mop bucket. The caller - never shown: a beige phone, a cord, a voice.* All shots labelled "Dramatization". **No nudity, no abuse shown, no victim face.** No McDonald's logo in AI images (generic restaurant).
 
 | Time | Voiceover | Shots (≈1.2 s each) | Key image prompt | Motion / camera | SFX | Music | Caption |
 |---|---|---|---|---|---|---|---|
-| 0:00–0:03 | She took a teenager's clothes, put them in a bag, and locked them in her car. | ① ECU paper bag being folded shut ② car trunk/door slams in a dark parking lot ③ car lock clicks | stylised 3D cartoon fast-food manager locking a folded paper bag into her car in a dark 2004 restaurant parking lot, golden sign glowing, night, vertical 9:16 | fast push-ins | paper crinkle, door SLAM, lock beep | silence | word-by-word |
-| 0:03–0:05 | Because a voice on the phone told her to. | ECU of a beige office phone receiver, cord swinging | close-up of a 2004 beige office phone receiver hanging off a desk, cord swaying, fluorescent light | slow rack focus | faint voice through phone | low drone starts | — |
-| 0:05–0:10 | You see, it's 2004… Officer Scott. | ① exterior of a small-town fast-food restaurant ② manager at desk answering the phone | stylised 3D small-town Kentucky fast-food restaurant at dusk, generic red-and-yellow sign (no logo), 2004 cars | aerial drift → push-in | phone RING | pulse | "KENTUCKY · 2004" |
-| 0:10–0:16 | He describes a girl who stole a purse… An 18-year-old employee. | ① purse on a counter ② manager looks through the office window at a teen's back at the register | manager's eyes through blinds looking at a teen employee seen from behind at a counter | slow push-in | register beeps | — | — |
-| 0:16–0:25 | First… Then… Then… Find someone to watch her. | ① phone ② manager nods ③ office door closing ④ manager glances at the front line | cramped 2004 fast-food back office, door closing, phone on the desk | each "Then" = hard cut closer to the phone | one deeper bass note per "Then" | tension rises | "FIRST" "THEN" "THEN" |
-| 0:25–0:27 | One employee walks out in disgust. | a young worker throws down a cap and pushes out the back door | young cartoon employee tossing a uniform cap on a counter and leaving through a back door | quick cut | door bang | — | — |
-| 0:27–0:32 | So she calls her fiancé… and it becomes a crime. | ① manager dialling ② a man's shadow in the doorway ③ office door shuts, camera stays outside | long shadow of a man in a doorway of a fast-food back office; door closing on the camera | hold on the closed door | door closes, muffled phone voice | music drops to a heartbeat | — |
-| 0:32–0:36 | Then a 58-year-old maintenance man takes the phone. He listens. | maintenance man with mop bucket, phone at his ear, frowning | stylised older maintenance man holding an office phone, mop bucket beside him, frowning | slow push-in | mop bucket wheel squeak | silence | — |
-| 0:36–0:38 | And says no. | he sets the phone down on the desk | — | hard cut | receiver CLACK | — | "NO." |
-| 0:38–0:41 | After more than three hours, he's the first to refuse. | wall clock spinning back across three hours | office wall clock hands sweeping three hours | time-lapse | clock ticks | — | "3+ HOURS" |
-| 0:41–0:44 | She calls her boss… She never talked to any police. | manager on phone, face falling | close-up of the manager's face going pale, phone at her ear | slow zoom | — | low hit | — |
-| 0:44–0:46 | There was no Officer Scott. | empty phone cord, dangling receiver, dial tone | receiver dangling from a desk, dial tone | hold | long DIAL TONE | silence | — |
-| 0:46–0:49 | And this wasn't his first call. More than 70 like it, in 30 states. | US map lights up with phone icons, one by one | stylised 3D map of the United States lighting up with small phone icons | quick build | phone rings stacking | tension | "70+ CALLS · 30 STATES" |
-| 0:49–0:55 | Police traced a calling card… the calls stopped. | ① a prepaid calling card ② a payphone in Florida ③ the payphone goes silent | 2004 prepaid calling card on a counter; a Florida payphone at night | snap cuts | card swipe, cuffs click, silence | — | "ACQUITTED" |
-| 0:55–1:00 | So how did a voice do all this? He never asked for the worst thing first… | a staircase of small steps descending into darkness, one order per step | stylised 3D staircase of small steps descending into darkness, each step a little lower | camera steps down | one footstep per step | slow descending piano | — |
-| 1:00–1:03 | The caller never set foot inside. He didn't have to. | back to the opening: the phone receiver on the desk → **cut on "to"** | same close-up of the beige office phone receiver | slow push-in → hard cut | faint dial tone → silence | stops dead | — |
+| 0:00–0:03 | In 2004, a man got a McDonald's manager to strip-search her own employee. | ① ECU ringing beige phone ② manager's shocked face lit by a monitor | close-up of a ringing beige office phone on a cluttered fast-food back-office desk, fluorescent light, 2004, vertical 9:16 | fast push-in | phone RING | silence | "2004" + word-by-word |
+| 0:03–0:06 | He never set foot in the store. He did it with one phone call. | ① empty doorway ② phone cord swinging | empty restaurant back door, then the phone cord swaying | snap cuts | single ring | low drone | "ONE PHONE CALL" |
+| 0:06–0:09 | So how do you make a normal person do something this wrong? | manager in office, frozen, phone at ear | — | slow push-in | — | — | — |
+| 0:09–0:15 | It's a Friday in Kentucky… and describes her. | ① restaurant exterior at dusk ② purse on a counter ③ phone | small-town fast-food restaurant at dusk, generic sign | drift | traffic, register beeps | pulse | "KENTUCKY" |
+| 0:15–0:18 | The manager knows who he means: an 18-year-old girl at the counter. | manager looks through blinds at a teen's back at the register | — | rack focus | — | — | "18" |
+| 0:18–0:21 | Here's the trick. He never asks for the bad thing first. | a staircase of small steps going down into darkness | stylised 3D staircase of small steps descending into darkness | camera tilts down | bass hit | music drops | "THE TRICK" |
+| 0:21–0:27 | First… Easy. Then… Then: take her clothes. | each order = one step down the staircase, step lights up with a word | each step labelled OFFICE → SEARCH → CLOTHES | step down per order | one footstep per order | ticking | "1" "2" "3" |
+| 0:27–0:30 | Every order is just a little worse… So every order feels okay. | wide: the staircase is long and the top is far away | — | slow pull-back | — | — | — |
+| 0:30–0:36 | For over three hours… One worker walks out… nobody checks with the real police. | ① wall clock sweeping 3 hours ② worker tosses cap, leaves ③ phone still at the manager's ear | — | time-lapse / quick cuts | clock ticks, door bang | tension | "3+ HOURS" |
+| 0:36–0:42 | Then the caller gets the manager's fiancé… talks him into abusing her. | a man's shadow in the doorway; door closes; camera stays outside | long shadow of a man in an office doorway, door closing on the camera | hold on closed door | door click, muffled phone voice | heartbeat only | — |
+| 0:42–0:48 | Finally, a 58-year-old maintenance man takes the phone. He listens. And says no. | maintenance man with mop bucket, phone at ear → sets it down | — | push-in → hard cut | receiver CLACK | silence | "NO." |
+| 0:48–0:52 | That one "no" breaks the spell. The manager calls her boss. There was no officer. | dangling receiver, dial tone | receiver hanging off the desk | hold | long DIAL TONE | — | "NO OFFICER" |
+| 0:52–0:56 | And it wasn't the first time. Over 70 calls like this, in 30 states. | US map lighting up with phone icons | stylised 3D map of the USA lighting up with phone icons | quick build | rings stacking | tension | "70+ CALLS · 30 STATES" |
+| 0:56–1:04 | That's the scary part… the first small thing. | back to the top of the staircase: the first, tiny step, lit → **cut on "thing"** | the first small step of the staircase, lit by a single bulb | slow push-in → hard cut | one footstep → silence | stops dead | — |
 
 ## E. Editing direction
 - **Pace:** a cut every ~1.2 s; hold 1 s of silence after "And says no." and after "There was no Officer Scott."
-- **SFX:** the phone is the main character: ring, receiver clack, dial tone; one bass note per "First / Then / Then".
+- **SFX:** the phone is the main character: ring, receiver clack, dial tone; one footstep per "First / Then / Then" (the staircase).
 - **Music:** low drone → rising tension through the ladder → heartbeat only during the fiancé beat → silence for the refusal → slow descending piano for the mechanism → stop dead.
 - **Captions:** 1–2 words, bold white. Extra text only: "KENTUCKY · 2004", "NO.", "3+ HOURS", "70+ CALLS · 30 STATES", "ACQUITTED".
 - **Taste (non-negotiable):** no nudity, no depiction of the abuse, no victim face or name; the camera stays outside the closed door. No McDonald's logo in AI images (use a generic restaurant). Tag "Dramatization".
-- **Loop:** opens and ends on the same phone receiver.
+- **Loop:** the last shot (the first small step) answers the opening question; replay goes straight back to the ringing phone.
 
 ## F. Publishing package
 - **Titles:** 1. The Phone Call That Fooled a Whole Restaurant · 2. A Voice on the Phone Gave Orders for 3 Hours · 3. Why Nobody Questioned "Officer Scott" · 4. The Fake Cop Who Never Showed Up · 5. How One Phone Call Made a Manager Obey
-- **Recommended:** #3 "Why Nobody Questioned 'Officer Scott'" (a "why" mechanism title like the references; it avoids sexual keywords that can limit reach).
+- **Recommended:** #3 "Why Nobody Questioned 'Officer Scott'" (or "How One Phone Call Made a Manager Obey", which matches the v2 hook) (a "why" mechanism title like the references; it avoids sexual keywords that can limit reach).
 - **Description:** In April 2004, a caller posing as a police officer phoned a McDonald's in Mount Washington, Kentucky, and talked an assistant manager into searching and detaining an 18-year-old employee for over three hours. More than 70 similar hoax calls were reported in 30 US states. A suspect was arrested and acquitted; the calls stopped. The employee later won about $6.1 million in court. Stylised dramatization. Sources: ABC News Primetime (2005), ABC/CBS News (2007), Kentucky Court of Appeals coverage (Courthouse News).
 - **Hashtags:** #truecrime #psychology #history #obedience #darkpsychology #truestory #historyshorts
 - **Pinned comment:** "One person in the building said no. Be the maintenance man."
 
-## G. Quality report
+## G. Quality report (v2)
 | Criterion | Score | Note |
 |---|---|---|
-| Hook (20) | 20 | Physical, absurd, true; the second sentence is the gap |
-| Progression (20) | 18 | First/Then/Then ladder → walk-out → crime → refusal → reveal → scale → mechanism |
-| Retention (20) | 19 | Re-hooks: "And says no." / "There was no Officer Scott." / "70+ calls" |
-| Accuracy (20) | 18 | All beats in research.md; acquitted suspect never called the caller; −2 for summary-level sourcing |
-| Narration (10) | 9 | 7.1 words/sentence; one quoted-style order chain, no invented dialogue |
-| Payoff (10) | 9 | "He didn't have to." lands the mechanism and loops to the phone |
-| **Total** | **93/100** | ≥ 85 → deliver |
+| Hook (20) | 20 | Whole event in 13 words, method in the next 2 lines, then one clear question |
+| Progression (20) | 19 | Hook → problem → setup → named trick → escalation → turn → reveal → payoff; only 3 people to track |
+| Retention (20) | 19 | Open loop answered last; re-hooks at "Here's the trick", "And says no", "70 calls" |
+| Accuracy (20) | 18 | All beats in research.md; no unverified side details; −2 for summary-level sourcing |
+| Narration (10) | 10 | Plain words, 7.3 words/sentence, no jargon |
+| Payoff (10) | 10 | Answers the opening question and turns it on the viewer |
+| **Total** | **96/100** | ≥ 85 → deliver |
 
-- **Duration:** ~63 s at 3.7 words/s (67 s at 3.5) · **Words:** 232 (script_stats.py)
-- **Historical confidence:** High for the event and outcomes (national news + court rulings); Medium for "boss asleep", "calls stopped" and "former prison guard" (widely reported).
-- **Strongest moment:** 0:32–0:38 ("He listens. And says no.")
-- **Weak point / risk:** sensitive subject; YouTube may limit reach if visuals or titles are sexualised. Keep everything off-screen and the title neutral.
-- **Draft → final:** v1 was 258 words (74 s); cut the town name from the narration, merged the accusation lines and compressed the fiancé beat; added "After more than three hours" to carry the duration.
+- **Duration:** ~64 s at 3.7 words/s (67 s at 3.5) · **Words:** 235 (script_stats.py)
+- **Historical confidence:** High (national news + court rulings). The "First / Then / Then" orders are a simplified sequence of documented steps (office → search under threat of the station → clothes).
+- **Strongest moment:** 0:42–0:48 ("He listens. And says no.")
+- **Risk:** sensitive subject; keep visuals off-screen and the title neutral.
+- **Revision history:** v1 93 (owner: hard to understand) → v2 96 (problem → explanation → payoff, plain language).
+- **Research round 3 (2026-11-20):** see `references/viral-storytelling-playbook.md` §Round 3.
 - **Sources reviewed:** 7 (search summaries; read the Kentucky Court of Appeals opinion before publishing).

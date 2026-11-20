@@ -117,3 +117,22 @@ and it rewards viewers who know the famous version. Hypothesis - track it agains
 - Do PLAIN-CLAIM/CONTRADICTION titles outperform LABEL titles relative to channel median?
 - Archival vs AI-reconstruction visuals - any difference in comments mentioning "fake"/"AI"?
 - Typical duration of outlier Shorts in this niche.
+
+
+---
+
+## Round 3 - script clarity & retention research (2026-11-20)
+Access: web search summaries of creator-education guides (vidIQ, OpusClip, Social Media Examiner, Tokcount, Virvid, Faceless.so, CapCut and others).
+Reddit was not reachable (blocked for this crawler); YouTube transcript downloads were blocked ("sign in to confirm you're not a bot"),
+so the 5 saved reference transcripts were re-read instead. X/Instagram not searched. All figures in these guides are vendor claims [EXTERNAL], not verified.
+
+Consistent advice across sources [EXTERNAL]:
+1. **The first ~3 seconds decide the swipe.** State the most shocking true fact plainly, with no build-up; the on-screen text must carry it too (many watch muted).
+2. **Hook → problem/question → explanation → payoff.** Open one loop right after the hook and close it at the end; deliver exactly what the hook promised.
+3. **Vague teasers read as bait** ("you won't believe…"). Specific beats vague.
+4. **Re-hook every ~10–15 s** with a new beat (a turn, a reveal, a number).
+5. **End right after the payoff**; a last line or image that echoes the opening encourages rewatches.
+
+Owner feedback (2026-11-20) [OBSERVED]: the cold-open-image style (v1 of the McDonald's script) was "hard to understand". For dark-psychology /
+true-crime topics, prefer: **plain-fact hook (who, what, how) → one question → name the trick → show it → turn → reveal → answer the question.**
+Keep the cast to ~3 people; cut side plots (arrests, trials) unless they are the payoff.
