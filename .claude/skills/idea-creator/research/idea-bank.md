@@ -131,6 +131,20 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 59 | Hoy No Circula, Mexico City (1989) | backfired plan | 8 | low | scripted (VIRAL-SCRIPT-WRITER) |
 | 60 | Mike the Headless Chicken (1945) | medical | 8 | low | idea |
 
+## Batch 2026-11-20 - dark psychology (status: idea) - full IDEA CARDS in `research/batches/2026-11-20-dark-psychology.md`
+| # | Story | Category | Fit | Competition | Status |
+|---|---|---|---|---|---|
+| 61 | McDonald's strip-search hoax call (2004) | con | 9 | low | idea |
+| 62 | Kitty Genovese "38 witnesses" myth (1964) | media myth | 9 | low | idea |
+| 63 | Norrmalmstorg hostages / Stockholm syndrome (1973) | crime | 9 | low | idea |
+| 64 | Milgram, Gina Perry's archive twist (1961) | science | 9 | low | idea |
+| 65 | Rosenhan pseudopatients, possibly faked (1973) | science hoax | 9 | low | idea |
+| 66 | Henry Murray's Harvard stress study and Ted Kaczynski (1959) | science / crime | 8 | low | idea |
+| 67 | Operation Midnight Climax, CIA safehouses (1950s-60s) | espionage | 8 | low | idea |
+| 68 | The Monster Study, Iowa orphans (1939) | medical | 8 | low | idea |
+| 69 | The Third Wave classroom experiment (1967) | experiment | 7 | low | idea |
+| 70 | Harlow's "pit of despair" (1970s) | science | 7 | low | idea |
+
 ---
 
 ## Rejected (never re-pitch without new evidence)
@@ -138,3 +152,4 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 |---|---|---|
 | 2026-11-19 | Delhi "cobra effect" bounty | Weakly sourced anecdote; use the documented Hanoi rat bounty instead |
 | 2026-11-19 | Dancing Plague "400 dead" framing | Death toll disputed by historians; only pitch with the uncertainty stated |
+| 2026-11-20 | Stanford Prison Experiment (as told) | Heavily disputed (guards coached, per later archives); only pitch as a "debunk" angle |
