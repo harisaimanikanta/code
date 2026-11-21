@@ -136,3 +136,20 @@ Consistent advice across sources [EXTERNAL]:
 Owner feedback (2026-11-20) [OBSERVED]: the cold-open-image style (v1 of the McDonald's script) was "hard to understand". For dark-psychology /
 true-crime topics, prefer: **plain-fact hook (who, what, how) → one question → name the trick → show it → turn → reveal → answer the question.**
 Keep the cast to ~3 people; cut side plots (arrests, trials) unless they are the payoff.
+
+---
+
+## Round 4 - retention science & the Retention Engine (2026-11-21)
+Full method and sources: `references/retention-engine.md`. Summary of what changed:
+- **Hooks must open a specific question or create anticipation** in ≤ 15 words, with no context first (owner: 5–7/10 hooks were not enough).
+  Ten hook archetypes (how/why questions, outcome-first, contradiction, countdown, cold-open action, direct "you", one-detail,
+  wrong-belief, mini-list); write 8+ and keep only 10/10.
+- **Explanation = but/therefore chain with a re-hook every 8–12 s**; ≤ 3 named people; context only inside the action.
+- **Payoff = answers the hook's own question with a surprise that feels inevitable, plus a second reveal**, then stops.
+- **Length 60–90 s** (≈ 210–330 words at 3.5–3.7 w/s).
+- New lint: `scripts/retention_check.py`. Calibration: on the McDonald's v3 script it flagged a 74-word (~21 s) stretch with no
+  re-hook (the mid-video sag); on the owner's draft it flagged length (~99 s), a 24-word hook with no question, 9 names and an
+  85-word stretch without a re-hook.
+- Evidence levels: YouTube's "Viewed vs swiped away" definition [OFFICIAL]; curiosity-gap (Loewenstein) and reward prediction error /
+  surprise (Schultz; Antony et al. 2021) [PEER-REVIEWED]; curve shapes and benchmarks [EXTERNAL vendor blogs, directional only];
+  question vs statement hooks: no public evidence that one always wins [DATA, limited]. Reddit and YouTube transcripts were blocked.

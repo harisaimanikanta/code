@@ -1,8 +1,14 @@
 # Scriptwriting Framework
 
+> **Since 2026-11-21 the writing method is `references/retention-engine.md`** (question/anticipation hook → but/therefore
+> explanation with re-hooks → surprise payoff, 60–90 s, three 10/10 gates). This file keeps the voice rules, the /100 rubric and the
+> older formats. Where they conflict, the Retention Engine wins. The True Mechanism Parable below is now an optional *voice*
+> (cold-open action, "You see,") that can be used inside the engine when the story has a strong physical opening.
+
+
 Voice: an intelligent friend telling the craziest true story they've ever heard. Spoken, not read.
 
-## DEFAULT FORMAT: the True Mechanism Parable
+## OPTIONAL VOICE: the True Mechanism Parable (use inside the Retention Engine)
 This is the owner's chosen style, reverse-engineered from five reference Shorts (6.8M–35.1M views). Full breakdown in
 `references/reference-style-analysis.md`. Use it for every script unless the user asks for another style.
 
@@ -68,7 +74,7 @@ Proportions scale with total length.
 - Numbers: say them how a person would ("seventy thousand francs", not "70,000 FRF").
 - End strong. Don't trail off into "and that's the story of…".
 
-## Five hook types (generate one of each, every script)
+## Five classic hook types (superseded by the 10 archetypes in `references/retention-engine.md`)
 In the parable format, at least two of the five should be **cold-open actions** ("He …"), since that is the reference style's dominant opener.
 1. **Shock** - the most extreme true fact, bluntly. "In 1925, a man sold the Eiffel Tower."
 2. **Curiosity** - an open loop with a specific promise. "There's a reason no one ever reported the Eiffel Tower stolen."
@@ -82,7 +88,7 @@ Clarity (understood instantly, no context needed) · Curiosity (gap strength) ·
 Scroll-stop (concrete, visual, surprising in < 2 s). An inaccurate hook can't be recommended,
 whatever its other scores. Scores are editorial judgement, **not** view predictions.
 
-## Quality control (score /100, revise below 85)
+## Quality control (score /100; deliver only at ≥ 90 AND hook/explanation/payoff each 10/10 per the Retention Engine)
 | Criterion | Max | What earns full marks |
 |---|---|---|
 | Hook strength | 20 | First sentence alone creates a must-know gap; concrete; accurate |

@@ -19,6 +19,8 @@ REQUIRED = [
     "research/research-log.md",
     "research/story-ideas.md",
     "scripts/script_stats.py",
+    "scripts/retention_check.py",
+    "references/retention-engine.md",
 ]
 errors = []
 
