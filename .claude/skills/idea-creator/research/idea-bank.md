@@ -145,6 +145,20 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 69 | The Third Wave classroom experiment (1967) | experiment | 7 | low | idea |
 | 70 | Harlow's "pit of despair" (1970s) | science | 7 | low | idea |
 
+## Batch 2026-11-21 - mixed, true crime / cons (status: idea) - full IDEA CARDS in `research/batches/2026-11-21-mixed-crime.md`
+| # | Story | Category | Fit | Competition | Status |
+|---|---|---|---|---|---|
+| 71 | BTK caught by floppy-disk metadata (2005) | crime | 10 | low | idea |
+| 72 | Stanislav Petrov's false alarm (1983) | Cold War | 10 | low | idea |
+| 73 | Harold Shipman's forged will (1998) | crime | 9 | low | idea |
+| 74 | Alves Reis and the real fake banknotes (1925) | con | 9 | low | idea |
+| 75 | Typhoid Mary (1907-1938) | medical | 9 | low | idea |
+| 76 | Radium Girls (1917-1928) | medical | 9 | low | idea |
+| 77 | Unabomber identified by his brother (1995) | crime | 8 | low | idea |
+| 78 | Agloe, the paper town (1930s) | maps | 8 | low | idea |
+| 79 | Golden State Killer via genetic genealogy (2018) | crime | 8 | low | idea |
+| 80 | Elmer McCurdy, the funhouse corpse (1976) | other | 7 | low | idea |
+
 ---
 
 ## Rejected (never re-pitch without new evidence)
