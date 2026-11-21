@@ -49,6 +49,8 @@ Follow `references/retention-engine.md` step by step:
 3. **Beat map before prose:** hook → first partial answer + new gap → 3–5 re-hooks (but/therefore) → main answer → second reveal →
    last line. Write the open question for every beat.
 4. **Write** 60–90 s (≈ 210–330 words at 3.5–3.7 words/s), plain words, ≤ 3 named people, one idea per sentence.
+   **Kid + audio-only rule (§4a):** a 10-year-old must understand it from the audio alone, with no visuals: everyday words, terms
+   explained in the same breath, no "this/here/look", no unclear he/she, numbers written as spoken words, reading grade ≤ 6.
 5. **Lint:** `python3 ${CLAUDE_SKILL_DIR}/scripts/retention_check.py <file>` and
    `python3 ${CLAUDE_SKILL_DIR}/scripts/script_stats.py <file> --wps 3.6`. Fix every ✗.
 6. **Three-draft loop (mandatory, never skip, never shorten):** the script is written **three times** and audited **twice** before

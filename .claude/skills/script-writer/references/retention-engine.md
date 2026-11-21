@@ -90,11 +90,40 @@ A 10/10 explanation feels like the viewer is **solving it alongside you**, never
 ### Explanation score (each 0–2, total /10)
 | Criterion | 2 = full marks |
 |---|---|
-| **Clarity** | A 12-year-old could retell it after one listen; ≤ 3 names |
+| **Clarity** | A 10-year-old could retell it after **one listen with no visuals**; ≤ 3 names; reading grade ≤ 6 |
 | **Causality** | Every beat is "but" or "therefore"; zero "and then" |
 | **Re-hooks** | A new gap opens at least every ~12 s, none faked |
 | **Density** | New concrete info every 3–5 s; no sentence can be cut without loss |
 | **Mechanism** | The "how" is understandable in one sentence and is shown, not only told |
+
+## 4a. Kid test + audio-only test (mandatory for every line)
+Owner rule (2026-11-21): **a 10-year-old must understand the whole story from the audio alone, with no visuals.**
+
+### Kid test (plain language)
+1. **Everyday words.** If a 10-year-old wouldn't use the word, swap it: "acquitted" → "the jury said not guilty"; "asymptomatic" →
+   "she never felt sick"; "metadata" → "hidden information inside the file". Technical terms are allowed only when the story needs
+   them, and then they're **explained in the same breath** ("a floppy disk, a little plastic square computers used to save files").
+2. **Short sentences**: most 4–12 words, none over 18. One idea per sentence.
+3. **Reading level**: aim for grade 5 or lower on the lint's estimate (grade ≤ 6 is the hard limit).
+4. **Explain the stakes like a kid would feel them**: "he could go to prison forever", not "he faced severe legal consequences".
+
+### Audio-only test (the script must work with the screen off)
+1. **Nothing depends on the picture.** Banned: "this", "here", "look at", "as you can see", "this guy", "right here", pointing words
+   with no noun. Every date, number, name or place that matters must be **spoken**, not only shown in captions.
+2. **Pronouns are never ambiguous.** When two people of the same gender are in a scene, use the role ("the manager", "the caller")
+   instead of "she" / "he". After a gap of 2+ sentences, repeat the noun.
+3. **Introduce people by role first**: "a family doctor named Harold Shipman", then "the doctor". Max 3 named people.
+4. **Signpost by ear**: "First… Then… Finally…", "Here's the problem.", "Now the twist." The ear can't scroll back.
+5. **Say numbers the way people talk**: "about two hundred and fifty", "seventy calls"; no digits, abbreviations, symbols,
+   parentheses or "e.g." in the voiceover. Write them as spoken words for the TTS.
+6. **Remind before you rely**: if the payoff needs a detail from 30+ seconds ago, mention it again in a few words right before.
+7. **Avoid sound-alike confusion**: words that blur when spoken quickly (e.g. "can"/"can't" at the end of a line), similar names,
+   or two numbers in one sentence.
+8. **Rhythm**: vary sentence length; put the key word at the end of the sentence where the voice lands.
+
+### Lint support
+`retention_check.py` reports an estimated reading grade, hard words (3+ syllables), visual-dependent phrases, digits/abbreviations/
+parentheses and likely-ambiguous pronouns. Every flag must be fixed or justified in the audit.
 
 ## 5. The payoff (last 10–15 %) - the "click"
 A 10/10 payoff **answers the exact question from the hook**, with **a detail the viewer didn't predict but immediately accepts**
@@ -170,6 +199,12 @@ change structure, not only words. If the final check still finds a problem, keep
 - [ ] Is there a second reveal, and is it true?
 - [ ] Anything after the last strong line? Last line ≤ 12 words?
 
+**Kid + audio-only (§4a)**
+- [ ] Would a 10-year-old understand every word? Any term not explained in the same breath?
+- [ ] Close your eyes: does every line make sense without the picture? Any "this/here/look"?
+- [ ] Any unclear he/she? Any number or date that is only on screen?
+- [ ] Lint: reading grade ≤ 6, no visual-dependent phrases, no digits/abbreviations in the voiceover.
+
 **Whole script**
 - [ ] 60–90 s at 3.5–3.7 words/s? Read it aloud in your head: any tongue-twisters or rhythm stalls?
 - [ ] Every claim in a research bucket; qualifiers kept; no invented people, dialogue, events or numbers?
@@ -202,6 +237,7 @@ Then the full text of Draft 1 and Draft 2, each followed by its audit findings (
 ## 9. Owner feedback log (what "good" means for this channel)
 - 2026-11-19: invented characters are not allowed, even as composites. Real people or none.
 - 2026-11-20: "unclear" scripts get swiped → plain words, ≤ 3 names, say the trick out loud.
+- 2026-11-21 (c): a 10-year-old must understand the script from the audio alone, with no visuals (§4a).
 - 2026-11-21 (b): every script must be written 3 times and audited 2 times (§7a) before delivery.
 - 2026-11-21: hooks scoring 5–7/10 aren't good enough. Every script must open with **a question or anticipation**, keep the
   explanation from leaking retention, and end with a payoff that feels like a reward. Length 60–90 s.

@@ -63,6 +63,7 @@ Fit the story; never pad.
 Proportions scale with total length.
 
 ## Writing rules
+- **Kid + audio-only test** (`references/retention-engine.md` §4a): a 10-year-old must follow it from the audio alone.
 - Short sentences, mostly 4–14 words. Vary rhythm; one longer sentence can build momentum before a short punch.
 - Concrete nouns and numbers over adjectives ("7,000 tonnes of iron" > "a huge amount of metal").
 - One idea per sentence. Cut any sentence that doesn't advance, escalate or flip.

@@ -20,6 +20,25 @@ REHOOK = [r"\?", r"\bbut\b", r"\bso\b", r"\buntil\b", r"\bexcept\b", r"\binstead
           r"\bnever\b", r"\bonly\b", r"\bwhy\b", r"\bhow\b", r"\bwhat\b"]
 GAP_WORDS = [r"\bhow\b", r"\bwhy\b", r"\bwhat\b", r"\?", r"\bonly\b", r"\bone\b", r"\bnever\b", r"\bbut\b",
              r"\bwithout\b", r"\bjust\b", r"\bsecret\b", r"\bnobody\b", r"\bminutes?\b", r"\bseconds?\b"]
+VISUAL = [r"\bas you can see\b", r"\blook at\b", r"\bright here\b", r"\bthis guy\b", r"\bthis man\b", r"\bthis woman\b",
+          r"\bon (the )?screen\b", r"\bpictured\b", r"\bshown here\b", r"\bwatch this\b", r"\bthis one\b", r"\bover here\b"]
+EASY_LONG = {"everyone", "everything", "somebody", "anybody", "everybody", "another", "another's", "together", "however",
+             "family", "important", "remember", "different", "eventually", "already", "nobody", "company", "police",
+             "officer", "seventeen", "seventy", "hundred", "employee", "manager", "restaurant", "computer", "telephone",
+             "america", "american", "anything", "something", "understand", "yesterday", "tomorrow", "beautiful", "animal",
+             "january", "february", "november", "december", "october", "september", "history", "actually", "really",
+             "eleven", "thirteen", "fourteen", "fifteen", "sixteen", "eighteen", "nineteen", "seventy", "eighty", "ninety"}
+
+
+def syllables(word):
+    w = word.lower().strip("'’")
+    if len(w) <= 3:
+        return 1
+    w = re.sub(r"(?:[^laeiouy]es|ed|[^laeiouy]e)$", "", w)
+    w = re.sub(r"^y", "", w)
+    return max(1, len(re.findall(r"[aeiouy]{1,2}", w)))
+
+
 COMMON_CAPS = {"I", "He", "She", "They", "It", "The", "A", "An", "And", "But", "So", "Then", "One", "That", "This",
                "Now", "His", "Her", "No", "Nobody", "Every", "Because", "If", "When", "What", "Why", "How", "We",
                "You", "Your", "There", "Here", "In", "On", "At", "For", "After", "Before", "Years", "Two", "Three"}
@@ -102,6 +121,26 @@ def main():
     last = sentences[-1] if sentences else ""
     lw = len(last.split())
     (ok if lw <= 12 else issues).append(f"last line: {lw} words (≤12): \"{last}\"")
+
+    # kid test: reading grade (Flesch-Kincaid estimate) and hard words
+    wl = [w for w in words if re.search(r"[A-Za-z]", w)]
+    syl = sum(syllables(w) for w in wl)
+    grade = 0.39 * (len(wl) / max(1, len(sentences))) + 11.8 * (syl / max(1, len(wl))) - 15.59
+    (ok if grade <= 6 else issues).append(f"reading grade (kid test, estimate): {grade:.1f} (target ≤5, hard limit ≤6)")
+    hard = sorted({w.lower() for w in wl if syllables(w) >= 3 and w.lower() not in EASY_LONG and not w[0].isupper()})
+    (ok if len(hard) <= 6 else issues).append(f"hard words (3+ syllables, check each is everyday or explained): {len(hard)} {hard[:20]}")
+
+    # audio-only test
+    vis = [p.strip("\\b") for p in VISUAL if re.search(p, low)]
+    (ok if not vis else issues).append("visual-dependent phrases: " + (", ".join(vis) if vis else "none"))
+    digits = re.findall(r"\d[\d,.%]*|\(|\)|\b[A-Z]{2,}\b|e\.g\.|etc\.", vo)
+    (ok if not digits else issues).append("digits / abbreviations / brackets in voiceover (write as spoken words): "
+                                          + (" ".join(digits[:15]) if digits else "none"))
+    amb = 0
+    for a, b in zip(sentences, sentences[1:]):
+        if re.match(r"^(he|she|they|it)\b", b.lower()) and len(re.findall(r"\b(man|woman|manager|caller|officer|doctor|boy|girl|brother|wife|husband|police|detective|killer)\b", a.lower())) >= 2:
+            amb += 1
+    (ok if amb == 0 else issues).append(f"possibly ambiguous pronouns (sentence starts with he/she/they after 2+ people): {amb}")
 
     # banned
     hits = [b for b in BANNED if b in low]
