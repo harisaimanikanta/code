@@ -246,7 +246,7 @@ export async function setup({ canvas, width: W, height: H }) {
   S(58.4, 61.95, 'full', (t, p) => { R0(t); K.officeDoor.rotation.y = -1.45 * (1 - smooth(prog(t, 58.5, 59.4))); K.strip.material.opacity = smooth(prog(t, 59.1, 59.5));
     if (t < 59.0) { place(wal, [2.2, -4.42], Math.PI / 2, t); }
     const dim = smooth(prog(t, 59.0, 60.6)); lights(lerp(6, 3, dim), lerp(7, 3, dim), 7, lerp(4, 1.2, dim), 6, 14); K.exitLight.intensity = lerp(0.35, 0.8, dim);
-    return done(mv(p, [0.62, 1.05, -3.35], [1.6, 0.75, -4.45], [0.75, 0.88, -3.65], [1.6, 0.7, -4.45], 46, 44), { exposure: lerp(0.9, 0.82, dim), sat: lerp(1.0, 0.9, dim), aperture: 0.003 }); });
+    return done(mv(p, [0.55, 1.35, -2.55], [1.55, 0.9, -4.45], [0.62, 1.2, -2.85], [1.55, 0.85, -4.45], 50, 48), { exposure: lerp(0.9, 0.82, dim), sat: lerp(1.0, 0.9, dim), aperture: 0.003 }); });
   const corridorDim = () => { K.officeDoor.rotation.y = 0; K.strip.material.opacity = 1; lights(3, 3, 7, 1.2, 6, 14); K.exitLight.intensity = 0.8; };
   // 22  "For more than three hours…"  the clock
   S(61.95, 64.4, 'full', (t, p) => { R0(t); corridorDim(); return done(mv(p, [1.15, 2.02, -4.38], [0.47, 2.15, -4.45], [1.02, 2.08, -4.42], [0.47, 2.15, -4.45], 34, 30), { exposure: 0.84, sat: 0.92, aperture: 0.004 }); });
@@ -330,7 +330,8 @@ export async function setup({ canvas, width: W, height: H }) {
     const g = t < 111.62 ? 0 : t < 111.82 ? -easeIn(prog(t, 111.62, 111.82)) : -1 + easeOut(prog(t, 111.95, 112.4)), lift = t < 111.62 ? smooth(prog(t, 111.2, 111.62)) : 1 + g;
     CK.gavel.position.set(0.55, 1.83 + 0.2 * lift, -3.55 - 0.05 * lift); CK.gavel.rotation.set(-0.6 * lift, 0.3, 0); J.reach('L', CK.gavel.position.clone().add(V(0, -0.2, 0.02)), poleFor(J, 'L'));
     CK.jurors.forEach((j, i) => { j.rest(); j.sit(1); j.idle(t, 0.4, i); j.face('neutral'); }); CK.def.rest(); CK.def.sit(1); CK.def.idle(t, 0.3, 7);
-    return { scene: court, ...CAMV.court.at(t), aperture: 0.003, exposure: 0.95 }; });
+    const c = t < 110.64 ? CAMV.court.at(t) : mv(prog(t, 110.64, 112.38), [-0.1, 2.2, -2.45], [-0.4, 1.78, -3.6], [-0.22, 2.1, -2.8], [-0.4, 1.78, -3.6], 40, 36);
+    return { scene: court, ...c, aperture: 0.003, exposure: 0.95 }; });
   // 39–45  the symbolic void: the phone, the empty doorway, the cord, the dominoes, the last small domino
   const voidState = (t) => { VK.phone.rest(); VK.phone.ring(t, t > 139.85 && t < 140.6); VK.phone.updateCord();
     VK.dom.forEach((d, i) => { const dur = 0.32 + 0.22 * Math.sqrt(d.h); d.pivot.rotation.x = -d.rest * easeIn(prog(t, FALL[i], FALL[i] + dur)); });
