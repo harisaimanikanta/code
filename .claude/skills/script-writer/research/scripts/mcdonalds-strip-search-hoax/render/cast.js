@@ -182,7 +182,7 @@ export function makeCast(look = {}) {
     const sh = joint('shoulder' + n, chest, s * shW * 0.92, 0.445);
     { const sb = ball(0.055 * B, M.top, 20, 14); sb.position.x = -s * 0.012; sh.add(sb); }
     const ua = limb(0.06 * B, 0.05, 0.29, M.top); sh.add(ua);
-    if (!sleeveLong) { ua.geometry.dispose(); ua.geometry = new THREE.CylinderGeometry(0.06 * B, 0.054, 0.16, 20, 2, true).translate(0, -0.08, 0); ua.material = M.top.clone(); ua.material.side = THREE.DoubleSide;
+    if (!sleeveLong) { ua.geometry.dispose(); ua.geometry = new THREE.CylinderGeometry(0.06 * B, 0.054, 0.16, 20, 2, true).translate(0, -0.08, 0); ua.material = M.top.clone(); ua.material.side = THREE.DoubleSide; ua.material.userData.isTop = true; ua.userData.sleeve = true;
       const arm = limb(0.045, 0.04, 0.29, M.skin); sh.add(arm); }
     const el = joint('elbow' + n, sh, 0, -0.29);
     el.add(ball(0.043, sleeveLong ? M.top : M.skin, 16, 12));
@@ -215,7 +215,19 @@ export function makeCast(look = {}) {
   }
   if (L.top === 'robe') { const robe = lathe([[0.2, 0.55], [0.24, 0.3], [0.27, 0], [0.3, -0.5], [0.33, -0.85]], phys('#111116', { roughness: 0.7, sheen: 0.4 })); robe.scale.z = 0.75; chest.add(robe); }
 
+  // ---- wardrobe states: bare torso (top removed), a loose shirt shell (for taking the top off), an apron ----
+  const shirt = lathe(torsoProf.map(([r, y]) => [r * 1.05, y - 0.01]), M.top, 40); shirt.scale.z = 0.7; shirt.visible = false; chest.add(shirt);
+  const apronM = phys(L.apronColor || '#3b3a36', { roughness: 0.9, sheen: 0.3, side: THREE.DoubleSide, normalMap: fabricNormal(), normalScale: new THREE.Vector2(0.35, 0.35) });
+  const apron = new THREE.Group(); apron.visible = false; chest.add(apron);
+  { const front = shadow(new THREE.Mesh(new THREE.CylinderGeometry(0.17 * B, 0.21 * B, 1.0, 32, 4, true, -1.25, 2.5), apronM)); front.scale.z = 0.78; front.position.y = -0.02; apron.add(front);
+    const bib = shadow(new THREE.Mesh(new THREE.CylinderGeometry(0.155 * B, 0.165 * B, 0.18, 24, 1, true, -0.75, 1.5), apronM)); bib.scale.z = 0.8; bib.position.y = 0.53; apron.add(bib);
+    const strapM = phys('#2c2b28', { roughness: 0.8 });
+    const neckStrap = shadow(new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.007, 6, 24, Math.PI * 1.3), strapM)); neckStrap.rotation.set(Math.PI / 2 - 0.5, 0, Math.PI * 0.85 + 0.62); neckStrap.position.set(0, 0.6, -0.01); apron.add(neckStrap);
+    const waist = shadow(new THREE.Mesh(new THREE.TorusGeometry(1, 0.007, 6, 40), strapM)); waist.rotation.x = Math.PI / 2; waist.scale.set(0.148 * B, 0.104 * B, 1); waist.position.y = 0.1; apron.add(waist);
+    for (const s of [-1, 1]) { const tie = shadow(new THREE.Mesh(new THREE.CapsuleGeometry(0.008, 0.12, 4, 6), strapM)); tie.position.set(s * 0.02, 0.04, -0.105 * B); tie.rotation.z = s * 0.35; apron.add(tie); } }
   const all = []; root.traverse(o => { if (o.isMesh) all.push(o); });
+  const topMeshes = all.filter(o => o !== shirt && (o.material === M.top || (o.material.userData && o.material.userData.isTop)));
+  const topMats = new Map(topMeshes.map(o => [o, o.material])), decor = all.filter(o => o.material === M.collar || o.material === M.badge);
   let lastExpr = 'neutral';
   const api = {
     group: root, joints: J, mats: M, head: H, look: L,
@@ -289,7 +301,21 @@ export function makeCast(look = {}) {
     earWorld(side = 'R') { root.updateMatrixWorld(true); return H.localToWorld(new THREE.Vector3(side === 'R' ? -HR * 1.0 : HR * 1.0, -HR * 0.05, 0)); },
     /** silhouette mode: everything one dark material (for the caller / restrained framing) */
     silhouette(color = '#050506') { const m = new THREE.MeshBasicMaterial({ color }); for (const o of all) o.material = m; },
+    /** the caller: a faceless black figure (rim-lit) with two glowing red eyes */
+    villain(eye = '#ff2414') {
+      const m = phys('#030304', { roughness: 0.5, clearcoat: 0.25, clearcoatRoughness: 0.5, sheen: 0.3, sheenColor: new THREE.Color('#2a3140') });
+      for (const o of all) o.material = m;
+      for (const ir of eyes) ir.visible = false; for (const l of lids) { l.up.visible = false; l.lo.visible = false; } mouthG.visible = false;
+      const em = new THREE.MeshBasicMaterial({ color: eye }), glow = new THREE.MeshBasicMaterial({ color: eye, transparent: true, opacity: 0.22, depthWrite: false });
+      for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.SphereGeometry(ER * 0.62, 16, 10), em); e.scale.set(1.25, 0.6, 0.5); e.rotation.z = -s * 0.28; e.position.set(s * EX, EY, EZ + ER * 0.72); H.add(e);
+        const g = new THREE.Mesh(new THREE.SphereGeometry(ER * 1.25, 16, 10), glow); g.scale.set(1.3, 0.75, 0.3); g.position.copy(e.position); g.position.z += 0.004; H.add(g); }
+    },
     visible(v) { root.visible = v; },
+    /** top removed: torso + shoulders in skin, short sleeves and collar/badge hidden */
+    bare(on = true) { for (const o of topMeshes) { if (o.userData.sleeve) o.visible = !on; else o.material = on ? M.skin : topMats.get(o); } for (const o of decor) o.visible = !on; },
+    /** loose shirt shell lifted by k (0 = worn, 1 = above the head); hidden when k is null */
+    shirtLift(k) { shirt.visible = k != null; if (k == null) return; shirt.position.y = k * 0.62; const sq = 1 - 0.45 * Math.sin(Math.min(1, k) * Math.PI * 0.5); shirt.scale.set(sq, 1 - 0.35 * k, 0.7 * sq); },
+    apron(on = true) { apron.visible = on; },
   };
   api.rest(); api.face('neutral');
   return api;
@@ -301,6 +327,7 @@ export const LOOKS = {
   louise: { sex: 'f', height: 1.63, build: 0.94, skin: '#f0c6a6', hairColor: '#7a5536', hairStyle: 'ponytail', top: 'polo', topColor: '#8c1f24', collarColor: '#a8262c', pants: '#18191e', visor: false, eye: '#3f5a6e', age: 0.1, badge: true },
   walter: { sex: 'm', height: 1.8, build: 1.1, skin: '#dca688', hairColor: '#2e241c', hairStyle: 'crop', top: 'jacket', topColor: '#3a3a36', under: '#7d8a96', pants: '#2c3a52', eye: '#3a2a1e', age: 0.5, badge: false },
   tom: { sex: 'm', height: 1.76, build: 1.05, skin: '#d9a585', hairColor: '#b9b6b0', hairStyle: 'grey', top: 'work', topColor: '#56677a', collarColor: '#4c5c6e', pants: '#2b2d30', shoes: '#3a2a1c', eye: '#4b3a2a', age: 0.9, badge: false },
-  coworker: { sex: 'f', height: 1.67, build: 0.98, skin: '#a8714f', hairColor: '#1c1512', hairStyle: 'ponytail', top: 'polo', topColor: '#8c1f24', collarColor: '#a8262c', pants: '#18191e', visor: false, eye: '#2a1c12', age: 0.2 },
+  coworker: { sex: 'f', height: 1.71, build: 1.12, skin: '#e9c2a2', hairColor: '#d2b072', hairStyle: 'short', top: 'polo', topColor: '#4a4f57', collarColor: '#5b616b', pants: '#2a2c31', visor: false, eye: '#4f6d5a', age: 0.6 },
+  caller: { sex: 'm', height: 1.82, build: 1.08, skin: '#0b0b0d', hairColor: '#0b0b0d', hairStyle: 'crop', top: 'jacket', topColor: '#0b0b0d', under: '#0b0b0d', pants: '#0b0b0d', badge: false, age: 0 },
   generic: { sex: 'm', height: 1.75, skin: '#d6a383', hairColor: '#3a2c22', hairStyle: 'short', top: 'suit', topColor: '#2a2d36', under: '#e6e3dc', pants: '#262830', badge: false, age: 0.4 },
 };

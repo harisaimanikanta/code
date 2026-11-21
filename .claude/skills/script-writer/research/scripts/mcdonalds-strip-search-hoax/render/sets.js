@@ -515,3 +515,27 @@ export function voidSet(scene) {
   scene.add(new THREE.HemisphereLight('#3a4258', '#050505', 0.25));
   return K;
 }
+
+// ---------- the caller's space (V2): a dark void with a cool rim, a small table and phone, an optional wall for his shadow ----------
+export function villainSet(scene) {
+  const K = {};
+  scene.background = canvasTexture(512, 1024, (g, w, h) => { const r = g.createRadialGradient(w * 0.5, h * 0.42, 10, w * 0.5, h * 0.5, h * 0.62);
+    r.addColorStop(0, '#2b3446'); r.addColorStop(0.45, '#151a24'); r.addColorStop(1, '#040507'); g.fillStyle = r; g.fillRect(0, 0, w, h); });
+  scene.background.colorSpace = THREE.SRGBColorSpace;
+  scene.fog = new THREE.Fog('#0b0e14', 6, 16);
+  const floor = sh(new THREE.Mesh(new THREE.CircleGeometry(9, 64), phys('#111318', { roughness: 0.32, clearcoat: 0.6, clearcoatRoughness: 0.4 }))); floor.rotation.x = -Math.PI / 2; scene.add(floor);
+  const tableM = phys('#17171a', { roughness: 0.45, clearcoat: 0.3 });
+  const table = new THREE.Group(); table.position.set(0.55, 0, 0.15); scene.add(table); K.table = table;
+  table.add(box(0.5, 0.035, 0.42, tableM, 0, 0.78, 0, 0.008)); for (const [x, z] of [[-0.21, -0.17], [0.21, -0.17], [-0.21, 0.17], [0.21, 0.17]]) table.add(cyl(0.015, 0.015, 0.76, tableM, x, 0.38, z, 10));
+  const phone = makePhone(); phone.group.position.set(0.55, 0.8, 0.15); phone.group.rotation.y = -0.6; scene.add(phone.group); K.phone = phone;
+  const rimA = new THREE.SpotLight('#9fb8ff', 46, 9, 0.5, 0.6, 1.5); rimA.position.set(-2.2, 3.0, -2.4); rimA.target.position.set(0, 1.3, 0); rimA.castShadow = true; rimA.shadow.mapSize.set(1024, 1024); scene.add(rimA, rimA.target);
+  const rimB = new THREE.SpotLight('#c7d4ff', 32, 9, 0.5, 0.6, 1.5); rimB.position.set(2.4, 2.6, -2.0); rimB.target.position.set(0, 1.3, 0); scene.add(rimB, rimB.target);
+  const top = new THREE.SpotLight('#ffffff', 22, 7, 0.45, 0.8, 1.5); top.position.set(0, 4.2, 0.6); top.target.position.set(0, 0, 0); top.castShadow = true; top.shadow.mapSize.set(1024, 1024); scene.add(top, top.target);
+  const red = new THREE.PointLight('#ff2a1a', 0, 0.5, 2); red.position.set(0, 1.62, 0.25); scene.add(red); K.red = red;
+  K.lights = { rimA, rimB, top };
+  // wall + projected shadow (only for the reveal shot)
+  const wall = sh(new THREE.Mesh(new THREE.PlaneGeometry(8, 5), phys('#3a3f4a', { roughness: 0.92 }))); wall.position.set(0, 2.5, -1.6); wall.visible = false; scene.add(wall); K.wall = wall;
+  const dec = shadowDecal(2.4, 2.4); dec.group.position.set(-0.35, 1.9, -1.58); dec.group.visible = false; scene.add(dec.group); K.decal = dec;
+  const wash = new THREE.SpotLight('#b9c6e6', 0, 9, 0.7, 0.7, 1.5); wash.position.set(0.4, 2.6, 3.2); wash.target.position.set(0, 1.8, -1.6); scene.add(wash, wash.target); K.wash = wash;
+  return K;
+}
