@@ -26,6 +26,22 @@
 | Time | Line | Open question in the viewer's head | Swipe risk | Fix |
 |---|---|---|---|---|
 
+## V. Revision log (Draft 1 → Audit 1 → Draft 2 → Audit 2 → Draft 3)
+| Draft | Words / secs | Hook / Expl / Payoff | Lint ✗ | Main problems found | What changed |
+|---|---|---|---|---|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 (final) | | | | | |
+
+### Draft 1
+…
+### Audit 1 (line · second · problem · fix)
+…
+### Draft 2
+…
+### Audit 2 (line · second · problem · fix)
+…
+
 ## D. Storyboard
 (see `templates/storyboard-template.md` for columns)
 

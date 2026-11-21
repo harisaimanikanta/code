@@ -51,10 +51,18 @@ Follow `references/retention-engine.md` step by step:
 4. **Write** 60–90 s (≈ 210–330 words at 3.5–3.7 words/s), plain words, ≤ 3 named people, one idea per sentence.
 5. **Lint:** `python3 ${CLAUDE_SKILL_DIR}/scripts/retention_check.py <file>` and
    `python3 ${CLAUDE_SKILL_DIR}/scripts/script_stats.py <file> --wps 3.6`. Fix every ✗.
-6. **Retention simulation** (the §7 table): name the open question in every ~5 s window; rewrite any window without one.
-7. **Score** Hook /10, Explanation /10, Payoff /10 with the engine's rubrics, listing every lost point. **Revise until all three are
-   10/10**, then the overall /100 rubric in `references/scriptwriting-framework.md` (must be ≥ 90). Score honestly; scores are
-   editorial judgement, not view predictions.
+6. **Three-draft loop (mandatory, never skip, never shorten):** the script is written **three times** and audited **twice** before
+   delivery, following `references/retention-engine.md` §7a:
+   - **Draft 1** → **Audit 1**: run both lints, the retention simulation (§7 table) and the **drop-off audit** (§7a checklist).
+     List every mistake that could make a viewer swipe in the middle, with the line, the second it happens and why.
+   - **Draft 2** = a rewrite that fixes every Audit 1 finding (not just edits to the worst line) → **Audit 2**: repeat the full audit
+     on Draft 2 from scratch, as if seeing it for the first time. Look for new problems the rewrite created.
+   - **Draft 3 (final)** = a rewrite that fixes every Audit 2 finding → a final lint + score check.
+   An audit that finds nothing is not allowed: if a draft seems clean, look harder at the weakest 5-second window and the payoff.
+   All three drafts and both audits are saved in the script file (section **V. Revision log**).
+7. **Score** the final draft: Hook /10, Explanation /10, Payoff /10 with the engine's rubrics, listing every lost point. If any is
+   below 10/10 after Draft 3, run another audit + rewrite (Draft 4, 5…) until all three are 10/10, then the overall /100 rubric in
+   `references/scriptwriting-framework.md` (must be ≥ 90). Score honestly; scores are editorial judgement, not view predictions.
 Hard limits that override any score: no invented people, events, dialogue or numbers; disputed claims stay qualified.
 
 ## 4. Storyboard & edit
@@ -63,8 +71,9 @@ Hard limits that override any score: no invented people, events, dialogue or num
 
 ## 5. Deliver
 Save `research/scripts/<slug>/script.md` (from `templates/script-template.md`) in order: **A** research · **B** hooks (8+) · **C** voiceover + beat map ·
-**R** retention simulation · **D** storyboard · **E** editing · **F** publishing · **G** quality report. In chat, show the voiceover, the
-recommended hook, the question it opens, and the three scores (hook / explanation / payoff).
+**R** retention simulation · **V** revision log (Draft 1 → Audit 1 → Draft 2 → Audit 2 → Draft 3) · **D** storyboard · **E** editing · **F** publishing · **G** quality report. In chat, show the voiceover, the
+recommended hook, the question it opens, the three scores (hook / explanation / payoff), and a short list of what Audit 1 and
+Audit 2 found and fixed. Never show the user a draft that hasn't been through both audits.
 Log it in `research/research-log.md` and mark the idea `scripted` in `research/story-ideas.md`.
 
 ## Video analysis mode

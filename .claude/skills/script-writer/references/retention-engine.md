@@ -136,6 +136,52 @@ Then score Hook /10, Explanation /10, Payoff /10 with the rubrics above. **Deliv
 honestly: list every point lost and fix it. Scores are editorial judgement against these rubrics, **not view predictions**.
 Run `python3 ${CLAUDE_SKILL_DIR}/scripts/retention_check.py <script.md>` as a mechanical lint before the human-style simulation.
 
+## 7a. The three-draft loop and the drop-off audit (mandatory)
+Owner rule (2026-11-21): every script is **written 3 times and audited 2 times** before the user sees it.
+
+**Draft 1 → Audit 1 → Draft 2 → Audit 2 → Draft 3 (final) → final check.** Each audit is done from scratch, as a viewer seeing
+the Short for the first time, with the thumb over the screen ready to swipe. Each rewrite fixes **every** finding; a rewrite may
+change structure, not only words. If the final check still finds a problem, keep looping (Draft 4…).
+
+### Drop-off audit checklist (run on every draft; record each finding as line · second · problem · fix)
+**Hook (0–3 s)**
+- [ ] Does a specific question form in 2 s? Could a stranger say what the question is?
+- [ ] Any word before the gap appears (date, place, name, "So,", "You see")? Cut it.
+- [ ] Is it ≥ 16 words, abstract, or does it give away the answer?
+- [ ] Is the hook 100% supported by research.md?
+
+**The 3–12 s danger zone**
+- [ ] Does line 2 add a *new* gap or raise stakes, instead of explaining background?
+- [ ] More than one sentence of context in a row? Merge it into the action.
+
+**Middle (12 s → last 15%)** - the drop-off hunt
+- [ ] Any ~12 s window (≈ 45 words) where no new question, twist or number appears? (lint: "longest stretch")
+- [ ] Any "and then" sequence or a list of events without but/therefore?
+- [ ] Any repeated fact, side plot, or detail the payoff doesn't need?
+- [ ] More than 3 named people, or a pronoun whose owner is unclear ("he" = which man?)?
+- [ ] Any sentence over 18 words, or a word a 12-year-old wouldn't know?
+- [ ] Does the viewer ever have to *remember* something from 30 s ago without a reminder?
+- [ ] Is the answer leaked before the final 15%?
+
+**Payoff (last 10–15%)**
+- [ ] Does it answer the hook's exact question, in the hook's own words?
+- [ ] Would a viewer have guessed it at 0:10? (If yes, it's not a surprise.)
+- [ ] Is there a planted detail earlier that makes it feel inevitable?
+- [ ] Is there a second reveal, and is it true?
+- [ ] Anything after the last strong line? Last line ≤ 12 words?
+
+**Whole script**
+- [ ] 60–90 s at 3.5–3.7 words/s? Read it aloud in your head: any tongue-twisters or rhythm stalls?
+- [ ] Every claim in a research bucket; qualifiers kept; no invented people, dialogue, events or numbers?
+
+### What the revision log must show (section V of script.md)
+| Draft | Words / secs | Hook / Expl / Payoff | Lint ✗ count | Main problems found | What changed in the rewrite |
+|---|---|---|---|---|---|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 (final) | | | | | |
+Then the full text of Draft 1 and Draft 2, each followed by its audit findings (line · second · problem · fix).
+
 ## 8. Research basis (2026-11-21) and evidence levels
 - **[OFFICIAL]** YouTube Studio defines "Viewed (vs. swiped away)" for Shorts: https://support.google.com/youtube/answer/12220281
 - **[PEER-REVIEWED]** Loewenstein (1994), *The Psychology of Curiosity*; Golman & Loewenstein, information gaps:
@@ -156,5 +202,6 @@ Run `python3 ${CLAUDE_SKILL_DIR}/scripts/retention_check.py <script.md>` as a me
 ## 9. Owner feedback log (what "good" means for this channel)
 - 2026-11-19: invented characters are not allowed, even as composites. Real people or none.
 - 2026-11-20: "unclear" scripts get swiped → plain words, ≤ 3 names, say the trick out loud.
+- 2026-11-21 (b): every script must be written 3 times and audited 2 times (§7a) before delivery.
 - 2026-11-21: hooks scoring 5–7/10 aren't good enough. Every script must open with **a question or anticipation**, keep the
   explanation from leaking retention, and end with a payoff that feels like a reward. Length 60–90 s.
