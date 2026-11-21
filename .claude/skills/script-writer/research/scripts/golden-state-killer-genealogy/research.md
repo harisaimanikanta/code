@@ -29,6 +29,8 @@ A serial offender known as the Golden State Killer committed at least 13 murders
 - Car door handle swab at Hobby Lobby (18 Apr 2018); trash tissue sample; match; arrest 24 Apr 2018 - S4, S5
 - Age 72, lived near Sacramento - S1
 - Former police officer, fired 1979 for shoplifting a hammer and dog repellent - S8
+- Masked intruder - FBI case page https://www.fbi.gov/EastAreaRapist
+- Fear: families tied tambourines to doors; people slept with baseball bats within reach - Michelle McNamara via LA Magazine https://www.lamag.com/longform/in-the-footsteps-of-a-killer/2/ (REPORTED, single book source; widely repeated)
 ### REPORTED / DISPUTED
 - Date of swab (18 vs 20 April) - script gives no date.
 - "Almost forty years": the 1980 Smith sample was collected 38 years before the arrest (S5); the DNA *profile* was developed later. Script says the DNA "sat in a police lab for almost forty years" (true of the sample).

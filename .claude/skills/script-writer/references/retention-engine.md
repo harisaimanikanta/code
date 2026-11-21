@@ -217,6 +217,21 @@ change structure, not only words. If the final check still finds a problem, keep
 | 3 (final) | | | | | |
 Then the full text of Draft 1 and Draft 2, each followed by its audit findings (line · second · problem · fix).
 
+## 7b. Honest critic pass (mandatory before any 10/10)
+Added 2026-11-21 after a script self-scored 10/10/10 that an honest re-read rated 8/10. Rule checks can pass while the script is only "good".
+Before giving any part a 10, answer in writing:
+1. **Best unused true detail:** what is the most surprising, vivid or emotional *verified* fact in research.md that is NOT in the
+   script? If it would beat a line that is in the script, the script is not a 10; swap it in.
+2. **Weakest 5-second window:** name it and say why someone would swipe there. If you can name a fix that doesn't break accuracy or
+   the kid/audio test, the script is not a 10; apply it. If the weakness is a deliberate trade-off, say which rule forces it.
+3. **Famous-name check:** if the story has a famous name people search for (e.g. "the Golden State Killer"), is it in the first 5 s?
+4. **Feeling check:** does the context make the viewer *feel* the stakes (fear, awe, outrage) with one true concrete detail, not just
+   a number?
+5. **Viewer check:** does the ending connect to the viewer's own life when a true connection exists?
+6. **Stranger test:** would a stranger who's never heard of the story repeat the last line to a friend?
+A part scores 10 only when every question has no actionable fix left. Report the critic rating separately from the rubric scores;
+when they disagree, the critic rating wins.
+
 ## 8. Research basis (2026-11-21) and evidence levels
 - **[OFFICIAL]** YouTube Studio defines "Viewed (vs. swiped away)" for Shorts: https://support.google.com/youtube/answer/12220281
 - **[PEER-REVIEWED]** Loewenstein (1994), *The Psychology of Curiosity*; Golman & Loewenstein, information gaps:
@@ -237,6 +252,7 @@ Then the full text of Draft 1 and Draft 2, each followed by its audit findings (
 ## 9. Owner feedback log (what "good" means for this channel)
 - 2026-11-19: invented characters are not allowed, even as composites. Real people or none.
 - 2026-11-20: "unclear" scripts get swiped → plain words, ≤ 3 names, say the trick out loud.
+- 2026-11-21 (d): self-scores were too generous → mandatory honest critic pass (§7b); the critic rating wins.
 - 2026-11-21 (c): a 10-year-old must understand the script from the audio alone, with no visuals (§4a).
 - 2026-11-21 (b): every script must be written 3 times and audited 2 times (§7a) before delivery.
 - 2026-11-21: hooks scoring 5–7/10 aren't good enough. Every script must open with **a question or anticipation**, keep the

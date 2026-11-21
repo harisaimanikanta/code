@@ -62,7 +62,9 @@ Follow `references/retention-engine.md` step by step:
    - **Draft 3 (final)** = a rewrite that fixes every Audit 2 finding → a final lint + score check.
    An audit that finds nothing is not allowed: if a draft seems clean, look harder at the weakest 5-second window and the payoff.
    All three drafts and both audits are saved in the script file (section **V. Revision log**).
-7. **Score** the final draft: Hook /10, Explanation /10, Payoff /10 with the engine's rubrics, listing every lost point. If any is
+7. **Score** the final draft: Hook /10, Explanation /10, Payoff /10 with the engine's rubrics, listing every lost point, then the
+   **honest critic pass** (`references/retention-engine.md` §7b: best unused true detail, weakest 5 s, famous name, feeling, viewer
+   connection, stranger test). A 10 is only allowed when the critic pass finds no actionable fix; the critic rating wins. If any is
    below 10/10 after Draft 3, run another audit + rewrite (Draft 4, 5…) until all three are 10/10, then the overall /100 rubric in
    `references/scriptwriting-framework.md` (must be ≥ 90). Score honestly; scores are editorial judgement, not view predictions.
 Hard limits that override any score: no invented people, events, dialogue or numbers; disputed claims stay qualified.

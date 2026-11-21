@@ -25,7 +25,66 @@ Method: **Retention Engine** (3 drafts, 2 audits) · 2026-11-21 · From IDEA CAR
 
 **Recommended: #1.** Concrete picture (a sample sitting in a lab), huge stakes (a killer free for decades), and the "how" question lands in second 4. #6 is the best alternative for an A/B test. Scores are editorial judgement against the engine rubric, not view predictions.
 
-## C. Final voiceover script - Draft 3 (261 words · ~70 s at 3.7 w/s, ~72 s at 3.6)
+## C. Final voiceover script - VERSION 2 (277 words · ~75 s at 3.7 w/s)
+Version 1 (below in the revision log) was rated 8/10 by an honest critic pass. Version 2 adds the famous name to the hook, a sharper
+question ("someone else's DNA test"), a true fear detail (tambourines, baseball bats), a simpler family-tree picture, the strongest true
+second reveal (fired for stealing a hammer and dog spray) and a last line that turns it on the viewer.
+<!-- VOICEOVER START -->
+For forty years, nobody could catch the Golden State Killer. Then his cousins gave him away, without even knowing it.
+How do you get caught by someone else's DNA test?
+In the nineteen seventies, a masked man broke into homes all over California. Families tied tambourines to their doors so they'd hear him coming. Some slept with baseball bats.
+He killed at least thirteen people. Then, in nineteen eighty-six, the attacks just stopped.
+He left his DNA behind. That's the tiny code inside your body that's different for everyone. But DNA only gives you a name if you're already on a police list. He wasn't.
+So in two thousand eighteen, detectives tried something new. They put his DNA on a free website where people look for long-lost relatives.
+He wasn't on it. But here's the thing about DNA. Family members share pieces of it. And some of his distant cousins were on that site.
+So detectives built a giant family tree from those cousins. Back to the eighteen hundreds, then forward again. Then they searched it for one man. The right age. In the right place.
+They found him. Joseph DeAngelo. Seventy-two years old. Living a quiet life near Sacramento.
+But they needed proof. So they watched him. He went shopping at a craft store. Outside, an officer wiped a cotton swab on his car door handle.
+It was a match.
+And the man they arrested? He used to be a police officer. Until he got fired for stealing a hammer and dog spray.
+He never put his DNA on that website. His cousins put theirs. And if your cousins have, part of yours is there too.
+<!-- VOICEOVER END -->
+
+### Version 2 revision log
+| Draft | Words / secs | Lint ✗ | Problems found by the critic pass | Fix |
+|---|---|---|---|---|
+| 2.1 | 266 / 74 s | 3 | "family you've never met" unproven; "drew *his* family tree" wrong (built from cousins); 19-word swab sentence | "someone else's DNA test"; "a giant family tree from those cousins"; split |
+| 2.2 | 275 / 76 s | 1 | "followed him" not reported; "hundreds of years" overclaims (trees to the 1800s); DNA-definition window slowest | "watched him"; "back to the eighteen hundreds"; kept the definition (kid test) |
+| 2.3 final | 277 / 75–77 s | 0 real (DNA = spoken letters) | Weakest window: 0:21–0:31 DNA definition, a deliberate trade-off for the kid/audio test | — |
+
+New true details (research.md): tambourines on doors and baseball bats beside beds (McNamara, via LA Magazine); masked intruder (FBI); fired 1979 for shoplifting a hammer and dog repellent (CBS).
+
+### Draft 2.1
+For forty years, nobody could catch the Golden State Killer. Then his cousins gave him away, without even knowing it.
+How do you get caught by family you've never met?
+In the nineteen seventies, a masked man broke into homes all over California. Families tied tambourines to their doors so they'd hear him coming. Some slept with baseball bats.
+He killed at least thirteen people. Then, in nineteen eighty-six, the attacks just stopped.
+He left his DNA behind. That's the tiny code inside your body that's different for everyone. But DNA only gives you a name if you're already on a police list. He wasn't.
+So in two thousand eighteen, detectives tried something new. They put his DNA on a free website where people look for long-lost relatives.
+He wasn't on it. But here's the thing about DNA. Family members share pieces of it. And some of his distant cousins were on that site.
+So detectives drew his whole family tree. Every cousin. Every grandparent. Then they searched it for one man. The right age. In the right place.
+They found him. Joseph DeAngelo. Seventy-two years old. Living a quiet life near Sacramento.
+But they needed proof. So while he shopped at a craft store, an officer wiped a cotton swab on his car door handle.
+It was a match.
+And the man they arrested? He used to be a police officer. Until he got fired for stealing a hammer and dog spray.
+He never put his DNA on that website. His cousins put theirs. And if your cousins have, part of yours is there too.
+
+### Draft 2.2
+For forty years, nobody could catch the Golden State Killer. Then his cousins gave him away, without even knowing it.
+How do you get caught by someone else's DNA test?
+In the nineteen seventies, a masked man broke into homes all over California. Families tied tambourines to their doors so they'd hear him coming. Some slept with baseball bats.
+He killed at least thirteen people. Then, in nineteen eighty-six, the attacks just stopped.
+He left his DNA behind. That's the tiny code inside your body that's different for everyone. But DNA only gives you a name if you're already on a police list. He wasn't.
+So in two thousand eighteen, detectives tried something new. They put his DNA on a free website where people look for long-lost relatives.
+He wasn't on it. But here's the thing about DNA. Family members share pieces of it. And some of his distant cousins were on that site.
+So detectives built a giant family tree from those cousins. Hundreds of years back, then forward again. Then they searched it for one man. The right age. In the right place.
+They found him. Joseph DeAngelo. Seventy-two years old. Living a quiet life near Sacramento.
+But they needed proof. So they followed him to a craft store. While he shopped, an officer wiped a cotton swab on his car door handle.
+It was a match.
+And the man they arrested? He used to be a police officer. Until he got fired for stealing a hammer and dog spray.
+He never put his DNA on that website. His cousins put theirs. And if your cousins have, part of yours is there too.
+
+## C1. Version 1 voiceover (superseded)
 <!-- VOICEOVER START -->
 A killer's DNA sat in a police lab for almost forty years. Nobody could match it to a name.
 So how did they finally catch him? His own cousins gave him away. And they had no idea.
@@ -159,12 +218,16 @@ Character sheet: *Detectives - stylised 3D cartoon investigators, round white he
 
 ## F. Publishing package
 - **Titles:** 1. How His Cousins Caught a Killer · 2. The Killer Who Never Took a DNA Test (avoid: unverified) · 3. 40 Years, One Car Door Handle · 4. Why a Family-Tree Website Caught a Killer · 5. His Cousins Gave Him Away
-- **Recommended:** #1 "How His Cousins Caught a Killer" (matches the hook's question).
+- **Recommended:** "How Someone Else's DNA Test Caught a Killer" (matches the Version 2 question) or #1 "How His Cousins Caught a Killer".
 - **Description:** For almost forty years, police had DNA from California's Golden State Killer but no name. In 2018, detectives uploaded it to a free genealogy website, found his distant cousins, built family trees and narrowed it to one man, then confirmed it with DNA from his car door handle. Joseph DeAngelo, a former police officer, pleaded guilty to 13 murders in 2020. Stylised dramatization. Sources: NPR, TIME, CBS News (2018–2020), unsealed search warrants.
 - **Hashtags:** #truecrime #dna #coldcase #history #truestory #shorts #forensics
 - **Pinned comment:** "If your cousin has taken a DNA test, part of your family tree is already online. Would you take one?"
 
-## G. Quality report (final draft)
+## G. Quality report
+**Version 2 honest critic rating: 9.5/10** (hook 10 · explanation 9.5, the DNA-definition window is a deliberate kid-test trade-off · payoff 10).
+Version 1 below was self-scored 10/10/10 but rated 8/10 on an honest critic pass; the engine's critic pass (§7b) was added because of that gap.
+
+### Version 1 scores (superseded)
 | Criterion | Score | Points lost / note |
 |---|---|---|
 | **Hook /10 (engine)** | **10** | Gap 2 · Concrete 2 (a sample in a lab) · Stakes 2 · Promise 2 · Speed+truth 2 ("almost forty years" = 1980 sample → 2018) |
