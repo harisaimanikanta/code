@@ -156,7 +156,7 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 76 | Radium Girls (1917-1928) | medical | 9 | low | idea |
 | 77 | Unabomber identified by his brother (1995) | crime | 8 | low | idea |
 | 78 | Agloe, the paper town (1930s) | maps | 8 | low | idea |
-| 79 | Golden State Killer via genetic genealogy (2018) | crime | 8 | low | idea |
+| 79 | Golden State Killer via genetic genealogy (2018) | crime | 8 | low | scripted (VIRAL-SCRIPT-WRITER) |
 | 80 | Elmer McCurdy, the funhouse corpse (1976) | other | 7 | low | idea |
 
 ---
