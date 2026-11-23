@@ -2,7 +2,7 @@
 // One continuous take, 7 environments switched inside portal fills at the narrator's pauses; titles carry the key fact.
 import * as THREE from 'three';
 import { makeRenderer, makePost, lerp, clamp, prog, smooth, easeInOut, captionsFromLines } from 'kit';
-import { particles, drift, bell, guardCamera, env, lensProbe, shots } from '/kit/fx.js';
+import { particles, drift, bell, guardCamera, env, lensProbe, shots, shake } from '/kit/fx.js';
 import { makeToon, speech } from '/kit/toon.js';
 import { mood, faceRig } from '/kit/look.js';
 import { V, mortar, shopSet, rockSet, scriptoriumSet, tombSet, workshopSet, office1924Set, wordSet, hat, turban, beard, bandage } from './sets.js';
@@ -164,8 +164,8 @@ export async function setup({ canvas, width, height }) {
           // grinding a broken-off piece in the mortar beside the coffin (1.7 - 4.5 s)
           const g0 = env(t, 1.7, 5, 0.35), ang = t * 5.5, pest = TB.mort.userData.pestle;
           pest.position.set(Math.cos(ang) * 0.04 * g0, 0.05, Math.sin(ang) * 0.04 * g0); pest.rotation.set(Math.sin(ang) * 0.25 * g0, 0, -0.35 * g0 + Math.cos(ang) * 0.2 * g0);
-          gesture(apo, 'R', TB.mort.localToWorld(pest.position.clone().add(V(-0.06, 0.2, 0))), g0, 0.9);
-          gesture(apo, 'L', TB.mort.position.clone().add(V(0.05, 0.12, 0.13)), g0, 0.6);
+          gesture(apo, 'R', TB.mort.localToWorld(pest.position.clone().add(V(-0.04, 0.27, 0))), g0, 0.9);
+          gesture(apo, 'L', TB.mort.position.clone().add(V(0.06, 0.2, 0.2)), g0, 0.6);
           TB.torches.forEach((o, i) => { const f = 0.85 + 0.15 * Math.sin(t * 11 + i * 2) + 0.07 * Math.sin(t * 23 + i); o.l.intensity = 3.5 * f; o.f.scale.set(1, 1.7 * f, 1); });
           focus = cam.position.distanceTo(t < 2.4 ? V(-0.1, 0.85, -0.4) : TB.mort.position); aperture = 0.0025; rig.push(rigApoT); break;
         }
@@ -175,7 +175,7 @@ export async function setup({ canvas, width, height }) {
           act(patient, t, [[0, 'sick'], [10.4, 'disgust'], [11.6, 'sick']], { idle: 0.8, look: t < 8.6 ? [0, -0.3] : [0.4, 0.05] });
           sit(patient, 0.55); patient.group.position.y = 0;
           const cough = Math.max(0, Math.sin(t * 9)) * (env(t, 1.0, 2.2, 0.3) + env(t, 6.0, 7.0, 0.3)) * 0.18; patient.joints.chest.rotation.x += cough; patient.joints.head.rotation.x += cough * 0.6;
-          gesture(patient, 'R', patient.headWorld().add(V(0.0, -0.12, 0.12)), env(t, 0.9, 2.4, 0.35) + env(t, 5.9, 7.2, 0.35), 0.9);   // hand to mouth when coughing
+          const pf = patient.group.localToWorld(V(0, 0, 1)).sub(patient.group.position).normalize(); gesture(patient, 'R', patient.headWorld().addScaledVector(pf, 0.3).add(V(0, -0.1, 0)), env(t, 0.9, 2.4, 0.35) + env(t, 5.9, 7.2, 0.35), 0.9);   // hand to mouth when coughing
           // grinding: pestle circles in the mortar
           const mp = SH.mort.position, g0 = 0, ang = t * 5.5;
           const pest = SH.mort.userData.pestle; pest.position.set(Math.cos(ang) * 0.04 * g0, 0.05, Math.sin(ang) * 0.04 * g0); pest.rotation.set(Math.sin(ang) * 0.25 * g0, 0, -0.35 * g0 + Math.cos(ang) * 0.2 * g0);
@@ -183,8 +183,8 @@ export async function setup({ canvas, width, height }) {
           gesture(apo, 'R', mp.clone().add(V(0.13, 0.12, 0.02)), g0, 0.6);
           // lift the MUMMY POWDER jar (4.6 - 8.4), then spoon a dose to the patient (8.6 - 11.4)
           const lift = env(t, 4.7, 8.5, 0.45), jHome = V(0.6, SH.top, 0.05);
-          SH.hero.position.copy(L(jHome, V(0.35, SH.top + 0.3, 0.0), lift)); SH.hero.rotation.z = -0.15 * lift;
-          gesture(apo, 'L', SH.hero.position.clone().add(V(0.11, 0.16, 0.02)), lift, 0.9); gesture(apo, 'R', SH.hero.position.clone().add(V(-0.11, 0.16, 0.02)), lift, 0.9);
+          SH.hero.position.copy(L(jHome, V(-0.1, SH.top + 0.1, -0.05), lift)); SH.hero.rotation.z = -0.15 * lift;
+          gesture(apo, 'L', SH.hero.position.clone().add(V(0.2, 0.15, 0.02)), lift, 0.9); gesture(apo, 'R', SH.hero.position.clone().add(V(-0.2, 0.15, 0.02)), lift, 0.9);
           const dose = env(t, 8.6, 11.5, 0.5), sHome = V(0.35, SH.top + 0.01, 0.35), sTo = patient.mouthWorld().add(V(-0.12, -0.03, 0.0));
           const sp = L(sHome, sTo, dose); SH.spoon.position.copy(sp); SH.spoon.rotation.set(L(V(Math.PI / 2, 0, 0.4), V(0.2, 0, 1.45), dose).x, 0, lerp(0.4, 1.45, dose));
           gesture(apo, 'L', sp.clone().add(V(-0.12, -0.02, 0)), dose, 0.85);
@@ -208,12 +208,12 @@ export async function setup({ canvas, width, height }) {
           const hold = env(t, 14.6, 20.8, 0.4), bw = RK.bowl;
           const catchP = V(0.18, 0.92, -0.5), rest = V(0.6, 0.02, 0.35);
           bw.position.copy(L(rest, catchP, hold));
-          gesture(doctor, 'R', bw.position.clone().add(V(0.12, 0.04, 0.05)), hold, 0.85); gesture(doctor, 'L', bw.position.clone().add(V(-0.12, 0.04, 0.05)), hold, 0.85);
+          gesture(doctor, 'R', bw.position.clone().add(V(0.18, 0.03, 0.04)), hold, 0.85); gesture(doctor, 'L', bw.position.clone().add(V(-0.18, 0.03, 0.04)), hold, 0.85);
           const arm = hurt.group.localToWorld(V(0.05, 0.62, 0.42));
           hurt.reach('R', arm); hurt.grip('R', 0.3);
           const ew = new THREE.Vector3(); hurt.joints.elbowR.getWorldPosition(ew); const ww = hurt.handWorld('R');
           sling.position.copy(ew.clone().lerp(ww, 0.5)); sling.quaternion.setFromUnitVectors(V(0, 1, 0), ww.clone().sub(ew).normalize());
-          const dab = env(t, 21.0, 23.9, 0.4); gesture(doctor, 'L', sling.position.clone().add(V(Math.sin(t * 6) * 0.03, 0.06, 0.02)), dab, 0.6);
+          const dab = env(t, 21.0, 23.9, 0.4); gesture(doctor, 'L', sling.position.clone().add(V(Math.sin(t * 6) * 0.03, 0.15, 0.02)), dab, 0.6);
           focus = cam.position.distanceTo(t < 17.4 ? V(0.05, 1.1, -0.75) : t < 20.6 ? bw.position : doctor.headWorld()); aperture = 0.0025;
           rig.push(rigDoc, rigHurt); break;
         }
@@ -227,7 +227,7 @@ export async function setup({ canvas, width, height }) {
           const write = env(t, 26.3, 34, 0.4), qp = L(V(0.42, SC.top + 0.12, 0.12), pageC.clone().add(wob), write);
           SC.quill.position.copy(qp); SC.quill.rotation.set(-0.3, 0, -0.5);
           gesture(monk, 'L', qp.clone().add(V(0.0, 0.03, -0.02)), Math.max(write, 0.2), 0.85);
-          gesture(monk, 'R', SC.book.localToWorld(V(-0.15, 0.08, 0.05)), env(t, 24.0, 34, 0.4), 0.3);
+          gesture(monk, 'R', SC.book.localToWorld(V(-0.15, 0.16, 0.05)), env(t, 24.0, 34, 0.4), 0.3);
           SC.candles.forEach((c, i) => { c.userData.light.intensity = 1.5 + 0.25 * Math.sin(t * 12 + i * 3) + 0.1 * Math.sin(t * 31 + i); });
           focus = cam.position.distanceTo(t < 26.3 ? monk.headWorld() : SC.book.position); aperture = 0.0025;
           rig.push(rigMonk); break;
@@ -237,8 +237,7 @@ export async function setup({ canvas, width, height }) {
           TB.lid.position.set(1.85, 0.75, 0.3); TB.lid.rotation.set(0, 0.3, 0.6);
           put(trader, tomb, 1.75, 1.0, -0.35);
           act(trader, t, [[33.7, 'smug'], [38.2, 'happy']], { idle: 0.6, look: t < 38 ? [-0.4, -0.2] : [-0.2, -0.5] });
-          const tap = env(t, 38.3, 41.2, 0.4); gesture(trader, 'L', TB.packMummy.localToWorld(V(0.75, 0.3, 0.0)), tap, 0.6);
-          gesture(trader, 'R', trader.group.localToWorld(V(-0.18, 1.05, 0.2)), 1, 0.8);
+          
           TB.torches.forEach((o, i) => { const f = 0.85 + 0.15 * Math.sin(t * 11 + i * 2) + 0.07 * Math.sin(t * 23 + i); o.l.intensity = 3.5 * f; o.f.scale.set(1, 1.7 * f, 1); });
           // resin glint travels along the body
           focus = cam.position.distanceTo(t < 38 ? V(lerp(-0.6, 0.45, prog(t, 33.8, 37.9)), 0.85, -0.4) : TB.packMummy.position); aperture = 0.003;
@@ -250,9 +249,9 @@ export async function setup({ canvas, width, height }) {
           faker.joints.chest.rotation.x += 0.3; faker.joints.head.rotation.x += 0.2;
           // wrapping: the bandage roll circles the body, moving from feet to head
           const k = prog(t, 41.2, 46.4), x = lerp(0.1, -0.55, k), a = t * 6.5;
-          FK.roll.position.set(x, 1.02 + Math.sin(a) * 0.1, Math.cos(a) * 0.14 + 0.02);
-          gesture(faker, 'L', FK.roll.position.clone().add(V(0.06, 0.06, 0.06)), env(t, 41.1, 47, 0.35), 0.85);
-          gesture(faker, 'R', V(x - 0.2, 1.02, 0.12), env(t, 41.1, 47, 0.35), 0.6);
+          FK.roll.position.set(x, 1.12 + Math.sin(a) * 0.16, Math.cos(a) * 0.26 + 0.02);
+          gesture(faker, 'L', FK.roll.position.clone().add(V(0.0, 0.11, 0.0)), env(t, 41.1, 47, 0.35), 0.85);
+          gesture(faker, 'R', V(x - 0.2, 1.3, 0.04), env(t, 41.1, 47, 0.35), 0.6);
           focus = cam.position.distanceTo(faker.headWorld()); aperture = 0.0025;
           rig.push(rigFaker); exposure = 0.9; break;
         }
@@ -260,7 +259,7 @@ export async function setup({ canvas, width, height }) {
           scene = off; put(clerk, off, 0.0, -0.45, 0);
           act(clerk, t, [[46.4, 'calm'], [48.2, 'proud']], { idle: 0.5, look: t < 48.2 ? [-0.3, -0.7] : [0.05, 0.05] });
           const offer = env(t, 48.0, 52, 0.5); OF.hero.position.copy(L(V(0.45, OF.top, 0.3), V(0.15, OF.top + 0.22, 0.32), offer));
-          gesture(clerk, 'L', OF.hero.position.clone().add(V(0.11, 0.14, 0.0)), offer, 0.9); gesture(clerk, 'R', OF.hero.position.clone().add(V(-0.11, 0.14, 0.0)), offer, 0.9);
+          gesture(clerk, 'L', OF.hero.position.clone().add(V(0.17, 0.13, 0.0)), offer, 0.9); gesture(clerk, 'R', OF.hero.position.clone().add(V(-0.17, 0.13, 0.0)), offer, 0.9);
           focus = cam.position.distanceTo(t < 48.2 ? OF.paper.position : clerk.headWorld()); aperture = 0.002;
           rig.push(rigClerk); break;
         }
@@ -273,13 +272,16 @@ export async function setup({ canvas, width, height }) {
           // a drop of tar falls into the bowl on "rock tar"
           const fall = prog(t, 55.2, 56.0); WD.drop.visible = t > 54.6 && t < 56.05; WD.drop.position.set(-0.75, lerp(WD.top + 0.9, WD.top + 0.08, fall * fall), 0.25);
           WD.tarBowl.userData.tar.position.y = 0.0156 + 0.052 + (t > 56 ? 0.004 * Math.exp(-(t - 56) * 3) * Math.sin((t - 56) * 30) : 0);
-          gesture(apo, 'R', WD.sheet.position.clone().add(V(0.25, 0.12, 0.05)), env(t, 51.3, 53.8, 0.4), 0.3);
           gesture(apo, 'L', WD.tarBowl.position.clone().add(V(0.12, 0.25, 0.0)), env(t, 54.0, 57.3, 0.4), 0.4);
           focus = cam.position.distanceTo(t > 54.5 && t < 57.2 ? WD.tarBowl.position : WD.sheet.position); aperture = 0.0025;
           rig.push(rigApo2); break;
         }
       }
       const c = CAM[seg.n](t);
+      const PUNCH = [11.8, 29.35, 38.38, 44.8, 47.5, 50.85, 55.95, 58.85];
+      let punch = 0; for (const p0 of PUNCH) punch = Math.max(punch, t < p0 ? smooth(prog(t, p0 - 0.12, p0)) : Math.exp(-(t - p0) * 2.2));
+      c.fov *= 1 - 0.1 * punch;
+      for (const b0 of [0.0, 38.38, 50.85, 58.77]) c.pos.add(shake(t, b0, 0.4, 0.035));
       const pos = guardCamera(c.pos.add(drift(t, 0.006, 2)), CAST.filter(x => x.group.parent === scene && x.group.visible), 0.4);
       cam.position.copy(pos); cam.lookAt(c.at); if (cam.fov !== c.fov) { cam.fov = c.fov; cam.updateProjectionMatrix(); }
       lensProbe(scene, cam, { min: 0.08 });
