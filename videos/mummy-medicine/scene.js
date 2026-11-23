@@ -5,7 +5,7 @@ import { makeRenderer, makePost, lerp, clamp, prog, smooth, easeInOut, captionsF
 import { particles, drift, bell, guardCamera, env, lensProbe, shots } from '/kit/fx.js';
 import { makeToon, speech } from '/kit/toon.js';
 import { mood, faceRig } from '/kit/look.js';
-import { V, shopSet, rockSet, scriptoriumSet, tombSet, workshopSet, office1924Set, wordSet, hat, turban, beard, bandage } from './sets.js';
+import { V, mortar, shopSet, rockSet, scriptoriumSet, tombSet, workshopSet, office1924Set, wordSet, hat, turban, beard, bandage } from './sets.js';
 
 const LINES = await (await fetch('/scene/lines.json')).json();
 const NUM = [['nineteen twenty-four', '1924'], ['nine hundred', '900'], ['STILL', 'still'], ['ONE', 'one']];
@@ -36,8 +36,8 @@ const _titlesUnused = [
   T(58.77, 61.85, 'MUMMY = THE MEDICINE', 'not the body', { size: 0.058, color: '#7a3a1a' }),
 ];
 // portals at pauses: [centre, half-width, fill colour, zoom]
-const PORTALS = [[14.53, 0.17, '#1a0e06', 0.35], [23.98, 0.15, '#f2c890', 0.3], [33.77, 0.17, '#0e0a06', 0.3], [41.02, 0.16, '#050302', 0.3], [46.46, 0.15, '#f4ecd8', 0.3], [51.15, 0.2, '#1a0e06', 0.35]];
-const SEG = [['shop', 0, 14.53], ['rock', 14.53, 23.98], ['script', 23.98, 33.77], ['tomb', 33.77, 41.02], ['fake', 41.02, 46.46], ['office', 46.46, 51.15], ['word', 51.15, 61.9]].map(([n, s, e]) => ({ n, s, e }));
+const PORTALS = [[4.47, 0.17, '#1a0e06', 0.35], [14.53, 0.17, '#1a0e06', 0.35], [23.98, 0.15, '#f2c890', 0.3], [33.77, 0.17, '#0e0a06', 0.3], [41.02, 0.16, '#050302', 0.3], [46.46, 0.15, '#f4ecd8', 0.3], [51.15, 0.2, '#1a0e06', 0.35]];
+const SEG = [['hook', 0, 4.47], ['shop', 4.47, 14.53], ['rock', 14.53, 23.98], ['script', 23.98, 33.77], ['tomb', 33.77, 41.02], ['fake', 41.02, 46.46], ['office', 46.46, 51.15], ['word', 51.15, 61.9]].map(([n, s, e]) => ({ n, s, e }));
 const segAt = t => SEG.find(x => t >= x.s && t < x.e) || SEG[SEG.length - 1];
 const L = (a, b, k) => a.clone().lerp(b, clamp(k));
 function emoAt(track, t) { let i = 0; while (i + 1 < track.length && t >= track[i + 1][0]) i++; return { from: track[Math.max(0, i - 1)][1], to: track[i][1], k: i ? smooth((t - track[i][0]) / 0.45) : 1 }; }
@@ -84,7 +84,7 @@ export async function setup({ canvas, width, height }) {
   const rigMonk = faceRig(scr, monk, { key: '#ffd8a0' });
   const tomb = mk('tomb', 'drama'); const TB = tombSet(tomb); tomb.userData.mood.focus(V(0, 0.8, 0), 5); tomb.userData.mood.rim.color.set('#ff9a4a');
   addP(tomb, { count: 200, center: [0, 1.3, 0], box: [5, 2.4, 5], size: 0.008, color: '#ffcf90', opacity: 0.5, motion: 'float', speed: 0.1, seed: 9 });
-  const rigTrader = faceRig(tomb, trader);
+  const rigTrader = faceRig(tomb, trader); const rigApoT = faceRig(tomb, apo, { key: '#ffc890' });
   const fake = mk('fake', 'drama'); const FK = workshopSet(fake); fake.userData.mood.focus(V(0, 1, 0), 4); fake.userData.mood.rim.color.set('#ff3a2a');
   const rigFaker = faceRig(fake, faker, { key: '#ffb080', keyY: -0.35, rim: '#ff3a2a', keyI: 1.2 });
   addP(fake, { count: 120, center: [0, 1.4, 0], box: [3, 2, 3], size: 0.007, color: '#ffb080', opacity: 0.4, motion: 'float', speed: 0.08, seed: 11 });
@@ -96,11 +96,17 @@ export async function setup({ canvas, width, height }) {
 
   // ---- camera per environment (chained shots: every move starts where the last ended)
   const CAM = {
+    hook: shots([
+      { t: 0, pos: V(-2.6, 2.0, -0.35), at: V(0.2, 0.85, -0.4), fov: 42 },
+      { t: 1.9, pos: V(-1.9, 2.2, -0.4), at: V(0.3, 0.6, -0.35), fov: 42 },
+      { t: 3.0, pos: V(-0.9, 2.0, -0.4), at: V(1.0, 1.0, -0.05), fov: 40 },
+      { t: 4.5, pos: V(-0.4, 1.85, -0.35), at: V(1.1, 1.1, -0.1), fov: 38 },
+    ]),
     shop: shots([
-      { t: 0, pos: V(0.6, 1.75, 3.5), at: V(-0.1, 1.35, -0.3), fov: 38 },
-      { t: 3.9, pos: V(0.05, 1.62, 1.75), at: V(-0.2, 1.3, -0.25), fov: 36 },
+      { t: 4.45, pos: V(0.0, 1.65, 2.3), at: V(0.1, 1.32, -0.25), fov: 38 },
       { t: 5.2, pos: V(0.1, 1.62, 1.8), at: V(0.05, 1.32, -0.2), fov: 36 },
-      { t: 8.4, pos: V(1.1, 1.62, 2.75), at: V(0.95, 1.25, 0.05), fov: 40 },
+      { t: 7.6, pos: V(0.15, 1.62, 1.85), at: V(0.12, 1.32, -0.2), fov: 36 },
+      { t: 9.0, pos: V(1.1, 1.62, 2.75), at: V(0.95, 1.25, 0.05), fov: 40 },
       { t: 11.4, pos: V(1.25, 1.6, 2.7), at: V(1.15, 1.2, 0.2), fov: 40 },
       { t: 14.5, pos: V(-0.6, 1.8, 1.4), at: V(-2.1, 0.95, -1.15), fov: 38 },
     ]),
@@ -147,6 +153,22 @@ export async function setup({ canvas, width, height }) {
       const seg = segAt(t); let scene, focus = 2, aperture = 0.0015; const rig = []; let exposure = 0.95;
       for (const c of CAST) c.group.visible = false;
       switch (seg.n) {
+        case 'hook': {
+          scene = tomb; TB.coffin.visible = true; TB.base.visible = false; TB.mummy.visible = false; TB.face.visible = false; TB.stand.visible = TB.mort.visible = true; TB.bits.forEach(b => (b.visible = true));
+          // the coffin lid scrapes open (0.2 - 1.6 s)
+          const op = easeInOut(prog(t, 0.2, 1.6));
+          TB.lid.position.set(lerp(0.0, 0.1, op), lerp(0.88, 1.05, op), lerp(-0.4, -1.35, op)); TB.lid.rotation.set(lerp(0, -1.0, op), Math.PI / 2, 0);
+          put(apo, tomb, 1.42, 0.3, -2.3);
+          act(apo, t, [[0, 'surprised'], [1.6, 'calm'], [2.8, 'thinking']], { idle: 0.5, look: t < 1.7 ? [-0.6, -0.4] : [0.1, -0.7] });
+          apo.joints.chest.rotation.x += 0.25 * smooth(prog(t, 1.5, 2.2)); apo.joints.head.rotation.x += 0.2 * smooth(prog(t, 1.5, 2.2));
+          // grinding a broken-off piece in the mortar beside the coffin (1.7 - 4.5 s)
+          const g0 = env(t, 1.7, 5, 0.35), ang = t * 5.5, pest = TB.mort.userData.pestle;
+          pest.position.set(Math.cos(ang) * 0.04 * g0, 0.05, Math.sin(ang) * 0.04 * g0); pest.rotation.set(Math.sin(ang) * 0.25 * g0, 0, -0.35 * g0 + Math.cos(ang) * 0.2 * g0);
+          gesture(apo, 'R', TB.mort.localToWorld(pest.position.clone().add(V(-0.06, 0.2, 0))), g0, 0.9);
+          gesture(apo, 'L', TB.mort.position.clone().add(V(0.05, 0.12, 0.13)), g0, 0.6);
+          TB.torches.forEach((o, i) => { const f = 0.85 + 0.15 * Math.sin(t * 11 + i * 2) + 0.07 * Math.sin(t * 23 + i); o.l.intensity = 3.5 * f; o.f.scale.set(1, 1.7 * f, 1); });
+          focus = cam.position.distanceTo(t < 2.4 ? V(-0.1, 0.85, -0.4) : TB.mort.position); aperture = 0.0025; rig.push(rigApoT); break;
+        }
         case 'shop': {
           scene = shop; put(apo, shop, -0.15, -0.5, 0); put(patient, shop, 1.55, 0.35, -Math.PI / 2 + 0.2);
           act(apo, t, [[0, 'calm'], [4.6, 'proud'], [8.6, 'calm'], [11.8, 'worried'], [12.8, 'thinking']], { idle: 0.6, look: t < 4.4 ? [0.1, -0.6] : t < 8.5 ? [0.3, 0] : t < 11.7 ? [0.7, -0.1] : [-0.8, -0.2] });
@@ -155,7 +177,7 @@ export async function setup({ canvas, width, height }) {
           const cough = Math.max(0, Math.sin(t * 9)) * (env(t, 1.0, 2.2, 0.3) + env(t, 6.0, 7.0, 0.3)) * 0.18; patient.joints.chest.rotation.x += cough; patient.joints.head.rotation.x += cough * 0.6;
           gesture(patient, 'R', patient.headWorld().add(V(0.0, -0.12, 0.12)), env(t, 0.9, 2.4, 0.35) + env(t, 5.9, 7.2, 0.35), 0.9);   // hand to mouth when coughing
           // grinding: pestle circles in the mortar
-          const mp = SH.mort.position, g0 = env(t, 0.0, 4.4, 0.3), ang = t * 5.5;
+          const mp = SH.mort.position, g0 = 0, ang = t * 5.5;
           const pest = SH.mort.userData.pestle; pest.position.set(Math.cos(ang) * 0.04 * g0, 0.05, Math.sin(ang) * 0.04 * g0); pest.rotation.set(Math.sin(ang) * 0.25 * g0, 0, -0.35 * g0 + Math.cos(ang) * 0.2 * g0);
           gesture(apo, 'L', SH.mort.localToWorld(pest.position.clone().add(V(-0.06, 0.2, 0))), g0, 0.9);
           gesture(apo, 'R', mp.clone().add(V(0.13, 0.12, 0.02)), g0, 0.6);
@@ -211,7 +233,9 @@ export async function setup({ canvas, width, height }) {
           rig.push(rigMonk); break;
         }
         case 'tomb': {
-          scene = tomb; put(trader, tomb, 1.75, 1.0, -0.35);
+          scene = tomb; TB.coffin.visible = false; TB.base.visible = true; TB.mummy.visible = true; TB.face.visible = true; TB.stand.visible = TB.mort.visible = false; TB.bits.forEach(b => (b.visible = false));
+          TB.lid.position.set(1.85, 0.75, 0.3); TB.lid.rotation.set(0, 0.3, 0.6);
+          put(trader, tomb, 1.75, 1.0, -0.35);
           act(trader, t, [[33.7, 'smug'], [38.2, 'happy']], { idle: 0.6, look: t < 38 ? [-0.4, -0.2] : [-0.2, -0.5] });
           const tap = env(t, 38.3, 41.2, 0.4); gesture(trader, 'L', TB.packMummy.localToWorld(V(0.75, 0.3, 0.0)), tap, 0.6);
           gesture(trader, 'R', trader.group.localToWorld(V(-0.18, 1.05, 0.2)), 1, 0.8);

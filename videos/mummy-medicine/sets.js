@@ -255,7 +255,23 @@ export function tombSet(scene) {
     const l = new THREE.PointLight('#ff9a3a', 3.5, 7, 2); l.position.y = 0.35; t.add(l); torches.push({ g: t, f, l }); }
   // jars and pots on the floor
   for (let i = 0; i < 5; i++) { const p = lathe([[0.001, 0], [0.1, 0.0], [0.16, 0.15], [0.12, 0.35], [0.07, 0.4], [0.001, 0.42]], soft(i % 2 ? '#b8643a' : '#8a6a3a', 'ceramic')); p.position.set(2.6 - i * 0.25, 0, -2.6 + (i % 2) * 0.3); g.add(p); }
-  return { group: g, mummy: mum, crate: cr1, packMummy: mum2, torches };
+  // hook props: a plain mummy (shown in the opening instead of the resin one), a stand with a mortar, broken-off pieces
+  const coffin = new THREE.Group(); coffin.position.set(0, 0, -0.4); coffin.visible = false; g.add(coffin);
+  const cm = soft('#9a7a4a', 'clay'), cg = soft('#c89a3a', 'metal', { roughness: 0.4 });
+  coffin.add(at(roundBox(2.1, 0.32, 0.9, cm, 0.04), 0, 0.16, 0));
+  for (const z of [-0.41, 0.41]) coffin.add(at(roundBox(2.1, 0.5, 0.08, cm, 0.02), 0, 0.57, z));
+  for (const x of [-1.01, 1.01]) coffin.add(at(roundBox(0.08, 0.5, 0.9, cm, 0.02), x, 0.57, 0));
+  for (const z of [-0.45, 0.45]) coffin.add(at(roundBox(2.12, 0.05, 0.02, cg, 0.01), 0, 0.72, z));
+  const hiero = plane(1.7, 0.3, tex(512, 90, (c, w, h) => { c.fillStyle = '#b8925a'; c.fillRect(0, 0, w, h); c.fillStyle = '#3a2410'; for (let x = 12; x < w; x += 34) { c.beginPath(); c.arc(x + 10, 45, 9, 0, 7); c.fill(); c.fillRect(x + 4, 62, 14, 6); } }));
+  hiero.position.set(0, 0.55, 0.452); coffin.add(hiero);
+  const plain = mummy({ len: 1.75 }); plain.position.set(-0.85, 0.3, 0); coffin.add(plain);
+  const lidFace = plane(0.55, 0.75, tex(256, 340, (c, w, h) => { c.fillStyle = '#2a4a8a'; c.fillRect(0, 0, w, h); c.fillStyle = '#d8a83a'; for (let i = 0; i < 9; i++) c.fillRect(0, 20 + i * 34, w, 14);
+    c.fillStyle = '#f0c070'; c.beginPath(); c.ellipse(w / 2, 150, 80, 110, 0, 0, 7); c.fill(); c.fillStyle = '#1a1a1a'; for (const s2 of [-1, 1]) { c.beginPath(); c.ellipse(w / 2 + s2 * 30, 130, 16, 8, 0, 0, 7); c.fill(); } c.fillRect(w / 2 - 4, 150, 8, 30); c.fillRect(w / 2 - 22, 200, 44, 8); }));
+  lidFace.rotation.set(-Math.PI / 2, 0, -Math.PI / 2); lidFace.position.set(0, 0.062, 0.62); lid.add(lidFace);
+  const stand = crate({ w: 0.5, h: 0.9, d: 0.5 }); stand.position.set(1.0, 0, -0.2); g.add(stand);
+  const mort = mortar(); mort.position.set(1.0, 0.9, -0.2); g.add(mort);
+  const bits = []; for (let i = 0; i < 4; i++) { const b = sph(0.03 + i * 0.006, soft('#8a6a44', 'clay', { roughness: 0.95 }), 12, 8); b.scale.set(1.3, 0.7, 1); b.position.set(0.82 + i * 0.05, 0.92, -0.02 + (i % 2) * 0.05); g.add(b); bits.push(b); }
+  return { group: g, mummy: mum, plain, coffin, base, lid, face, stand, mort, bits, crate: cr1, packMummy: mum2, torches };
 }
 
 // ---------------------------------------------------------------- 5. fakers' workshop (dark, menacing)

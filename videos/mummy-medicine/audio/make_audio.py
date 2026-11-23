@@ -53,7 +53,13 @@ def grind(dur=3.5):  # stone mortar grinding
 
 PORTALS = [14.53, 23.98, 33.77, 41.02, 46.46, 51.15]
 add(sfx, 0.0, boom(), 0.9)
-add(sfx, 0.4, grind(), 0.8)
+def scrape(dur=1.4):  # heavy stone lid sliding
+    n = int(dur * SR); t = np.arange(n) / SR; w = rng.normal(0, 1, n)
+    y = np.convolve(w, np.ones(40) / 40, 'same') * (0.6 + 0.4 * np.sin(2 * np.pi * 13 * t) ** 2)
+    rumble = np.sin(2 * np.pi * 48 * t) * 0.3
+    return (y * 3 + rumble) * np.minimum(1, t / 0.1) * np.minimum(1, (dur - t) / 0.25) * 0.6
+add(sfx, 0.2, scrape(), 1.0)
+add(sfx, 1.8, grind(2.6), 0.8)
 for c in (1.2, 1.55, 6.2, 6.5): add(sfx, c, cough(), 0.7)
 add(sfx, 11.72, scratch(), 1.0)
 for p in PORTALS: add(sfx, p - 0.35, whoosh(), 0.8)
