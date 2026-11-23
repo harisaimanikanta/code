@@ -32,8 +32,28 @@
 Honest note: no hook reaches 2/2 on **Stakes** - nobody's life or fortune is at risk in the opening. A true stakes-raiser exists
 ("…and feed them to a king?" - Francis I, reported by historian Richard Sugg) but it's a single-scholar claim, so it stays out of the hook.
 
-## C. Final voiceover script (Draft 3, ~43 s)
+## C. Final voiceover script (v2 - simple words, user revision 2026-11-23, ~40 s)
+_User asked for a "Did you know why…" opening (overrides the skill's "Did you know" ban) and much simpler words: no "embalmed", "resin", "translators", "Latin", "Persian", "seizures", "corpses"._
+
 <!-- VOICEOVER START -->
+Did you know why doctors once fed mummies to sick people?
+It sounds crazy, but for hundreds of years, people in Europe ate mummy powder as medicine.
+The reason is one big mistake.
+Long ago, doctors used a black, sticky goo that comes out of rocks.
+They put it on cuts and broken bones.
+They called this medicine mumia.
+But some old mummies were also covered in black, sticky goo.
+So when the medicine books were copied into another language, someone made a mistake.
+They wrote that the medicine came from inside mummies.
+So doctors started grinding up real mummies and feeding them to sick people.
+They thought they were giving them the healing goo.
+But they were eating the wrong thing.
+The real medicine was just goo from rocks.
+And the word mummy? It first meant that medicine, not the body.
+<!-- VOICEOVER END -->
+
+## C0. Previous version (Draft 3, ~43 s)
+<!-- OLD
 Why did doctors grind up Egyptian mummies and feed them to sick people?
 For centuries, shops in Europe sold mummy powder as medicine, for bruises, coughs and even seizures.
 You see, nobody set out to eat the dead.
@@ -48,7 +68,7 @@ And a German drug company still sold mummy powder in nineteen twenty-four.
 All because of one wrong word.
 The medicine they wanted was rock tar all along.
 And the word mummy? It first meant the medicine, not the body.
-<!-- VOICEOVER END -->
+OLD -->
 
 ### Alt: tight cut for 27-35 s Zack-style pacing (~95 words)
 Why did doctors grind up Egyptian mummies and feed them to sick people?
