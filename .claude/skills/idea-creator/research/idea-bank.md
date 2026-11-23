@@ -184,7 +184,7 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 96 | Scheele's green arsenic wallpaper (1862 Limehouse) | medical | 9 | low (est.) | idea |
 | 97 | Hangman's Table of Drops (1888) | hidden reason | 9 | low (est.) | idea |
 | 98 | Archimedes' mirrors myth test (MIT 2005) | myth test | 8 | medium (est.) | idea |
-| 99 | Europeans eating mummies (mumia) | medical | 8 | medium-high (est.) | idea |
+| 99 | Europeans eating mummies (mumia) | medical | 8 | medium-high (est.) | scripted (script-writer) |
 | 100 | Window tax and bricked-up windows (1696-1851) | hidden reason | 7 | low (est.) | idea |
 
 ---
