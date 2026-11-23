@@ -159,6 +159,20 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 79 | Golden State Killer via genetic genealogy (2018) | crime | 8 | low | scripted (VIRAL-SCRIPT-WRITER) |
 | 80 | Elmer McCurdy, the funhouse corpse (1976) | other | 7 | low | idea |
 
+## Batch 2026-11-23 - mixed (status: idea) - full IDEA CARDS in `research/batches/2026-11-23-mixed.md`
+| # | Story | Category | Fit | Competition | Status |
+|---|---|---|---|---|---|
+| 81 | Vasa stability test ignored (1628) | engineering | 10 | medium (est.) | idea |
+| 82 | Wright brothers "Fliers or Liars?" (1906-1908) | doubted invention | 10 | medium (est.) | idea |
+| 83 | Hoover free flights promotion (1992) | backfired plan | 9 | low (est.) | idea |
+| 84 | Pierre Brassau, the chimp painter (1964) | hoax | 9 | low (est.) | idea |
+| 85 | Agent Garbo's fictional spy network (1941-1944) | espionage | 9 | medium (est.) | idea |
+| 86 | Ern Malley, the poet who never existed (1944) | hoax | 9 | low (est.) | idea |
+| 87 | Carrington Event: telegraphs without batteries (1859) | science | 9 | low-medium (est.) | idea |
+| 88 | Sokal hoax (1996) | hoax | 9 | low (est.) | idea |
+| 89 | Great Stock Exchange Fraud (1814) | con | 8 | low (est.) | idea |
+| 90 | Thomas Blood steals the Crown Jewels (1671) | con | 8 | low-medium (est.) | idea |
+
 ---
 
 ## Rejected (never re-pitch without new evidence)
@@ -167,3 +181,5 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 2026-11-19 | Delhi "cobra effect" bounty | Weakly sourced anecdote; use the documented Hanoi rat bounty instead |
 | 2026-11-19 | Dancing Plague "400 dead" framing | Death toll disputed by historians; only pitch with the uncertainty stated |
 | 2026-11-20 | Stanford Prison Experiment (as told) | Heavily disputed (guards coached, per later archives); only pitch as a "debunk" angle |
+| 2026-11-23 | Roosevelt shot mid-speech (1912) | Not pitched: high Shorts competition and no documented doubt beat |
+| 2026-11-23 | 1904 Olympic marathon | Not pitched: 10+ on-topic Shorts, weak doubt beat |
