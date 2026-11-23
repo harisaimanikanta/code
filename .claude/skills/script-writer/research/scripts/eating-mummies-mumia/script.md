@@ -32,10 +32,30 @@
 Honest note: no hook reaches 2/2 on **Stakes** - nobody's life or fortune is at risk in the opening. A true stakes-raiser exists
 ("…and feed them to a king?" - Francis I, reported by historian Richard Sugg) but it's a single-scholar claim, so it stays out of the hook.
 
-## C. Final voiceover script (v2 - simple words, user revision 2026-11-23, ~40 s)
-_User asked for a "Did you know why…" opening (overrides the skill's "Did you know" ban) and much simpler words: no "embalmed", "resin", "translators", "Latin", "Persian", "seizures", "corpses"._
+## C. Final voiceover script (v3 - hook/retention/payoff 10/10 pass, 2026-11-23, ~37 s)
+_Hook = outcome first + "one word" gap; the word is withheld until the payoff, where it turns out to be the origin of "mummy"._
 
 <!-- VOICEOVER START -->
+Doctors fed sick people ground-up mummies for hundreds of years.
+All because of one word.
+It started with a black, sticky goo that oozes out of rocks.
+Doctors rubbed it on cuts and broken bones.
+But some old mummies were covered in black, sticky goo too.
+So when the medicine books were copied into a new language, the people copying them made a mistake.
+They wrote that the healing goo came from inside mummies.
+Doctors believed it, and started grinding up real mummies.
+Soon, there weren't enough mummies to go around.
+So some sellers made fake ones from fresh dead bodies.
+And a German medicine company was still selling mummy powder in nineteen twenty-four.
+So what was the word that started it all?
+It was the goo's name: mumia.
+That's why we call them mummies today.
+<!-- VOICEOVER END -->
+
+## C1. Previous version (v2 - simple words, user revision 2026-11-23, ~40 s)
+_User asked for a "Did you know why…" opening (overrides the skill's "Did you know" ban) and much simpler words: no "embalmed", "resin", "translators", "Latin", "Persian", "seizures", "corpses"._
+
+<!-- OLD
 Did you know why doctors once fed mummies to sick people?
 It sounds crazy, but for hundreds of years, people in Europe ate mummy powder as medicine.
 The reason is one big mistake.
@@ -50,7 +70,7 @@ They thought they were giving them the healing goo.
 But they were eating the wrong thing.
 The real medicine was just goo from rocks.
 And the word mummy? It first meant that medicine, not the body.
-<!-- VOICEOVER END -->
+OLD -->
 
 ## C0. Previous version (Draft 3, ~43 s)
 <!-- OLD
