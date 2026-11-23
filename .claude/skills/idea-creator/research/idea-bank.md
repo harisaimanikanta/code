@@ -173,6 +173,20 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 89 | Great Stock Exchange Fraud (1814) | con | 8 | low (est.) | idea |
 | 90 | Thomas Blood steals the Crown Jewels (1671) | con | 8 | low-medium (est.) | idea |
 
+## Batch 2026-11-23 - "hidden reason" explainer style, modelled on Zack D. Films refs (status: idea) - cards in `research/batches/2026-11-23-explainer-style.md`
+| # | Story | Category | Fit | Competition | Status |
+|---|---|---|---|---|---|
+| 91 | Textured Victorian poison bottles | hidden reason | 10 | low (est.) | idea |
+| 92 | Soldiers break step on bridges, Broughton (1831) | engineering | 10 | medium (est.) | idea |
+| 93 | Coin ridges vs clipping, Newton's Mint (1696-98) | hidden reason | 9 | low (est.) | idea |
+| 94 | Plimsoll line and "coffin ships" (1876) | hidden reason | 9 | low (est.) | idea |
+| 95 | Roman fullers' urine laundry and Vespasian's tax | gross history | 9 | low (est.) | idea |
+| 96 | Scheele's green arsenic wallpaper (1862 Limehouse) | medical | 9 | low (est.) | idea |
+| 97 | Hangman's Table of Drops (1888) | hidden reason | 9 | low (est.) | idea |
+| 98 | Archimedes' mirrors myth test (MIT 2005) | myth test | 8 | medium (est.) | idea |
+| 99 | Europeans eating mummies (mumia) | medical | 8 | medium-high (est.) | idea |
+| 100 | Window tax and bricked-up windows (1696-1851) | hidden reason | 7 | low (est.) | idea |
+
 ---
 
 ## Rejected (never re-pitch without new evidence)
@@ -183,3 +197,4 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 2026-11-20 | Stanford Prison Experiment (as told) | Heavily disputed (guards coached, per later archives); only pitch as a "debunk" angle |
 | 2026-11-23 | Roosevelt shot mid-speech (1912) | Not pitched: high Shorts competition and no documented doubt beat |
 | 2026-11-23 | 1904 Olympic marathon | Not pitched: 10+ on-topic Shorts, weak doubt beat |
+| 2026-11-23 | Gunpowder "proof" test for navy rum | Origin largely legend; Royal Navy use denied by historians |
