@@ -187,6 +187,20 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 99 | Europeans eating mummies (mumia) | medical | 8 | medium-high (est.) | scripted (script-writer) |
 | 100 | Window tax and bricked-up windows (1696-1851) | hidden reason | 7 | low (est.) | idea |
 
+## Batch 2026-11-24 - "hidden reason" explainer style #2 (status: idea) - cards in `research/batches/2026-11-24-explainer-style-2.md`
+| # | Story | Category | Fit | Competition | Status |
+|---|---|---|---|---|---|
+| 101 | Mortsafes: iron cages vs body snatchers (c.1816-1832) | hidden reason | 10 | low-medium (est.) | idea |
+| 102 | Royal Navy lemons -> limes, scurvy returns | backfired plan | 9 | low (est.) | idea |
+| 103 | "Here be dragons" map myth (Hunt-Lenox Globe) | myth bust | 9 | low (est.) | idea |
+| 104 | Leaning Tower saved by soil extraction (1999-2001) | engineering | 9 | medium (est.) | idea |
+| 105 | Venice's wooden piles in oxygen-poor mud | engineering | 8 | low-medium (est.) | idea |
+| 106 | Napoleon's hand-in-waistcoat pose | myth bust | 8 | medium (est.) | idea |
+| 107 | Big Ben regulated with old pennies | hidden reason | 8 | medium-high (est.) | idea |
+| 108 | Barber pole and bloodletting | medical | 8 | medium (est.) | idea |
+| 109 | Safety coffin bells: no documented saves | myth test | 8 | high (est.) | idea |
+| 110 | Jacob Davis, rivets and jeans (1873) | invention | 7 | high (est.) | idea |
+
 ---
 
 ## Rejected (never re-pitch without new evidence)
@@ -198,3 +212,5 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 2026-11-23 | Roosevelt shot mid-speech (1912) | Not pitched: high Shorts competition and no documented doubt beat |
 | 2026-11-23 | 1904 Olympic marathon | Not pitched: 10+ on-topic Shorts, weak doubt beat |
 | 2026-11-23 | Gunpowder "proof" test for navy rum | Origin largely legend; Royal Navy use denied by historians |
+| 2026-11-24 | Pig-and-rooster sailor tattoos | Folklore only, no reliable source |
+| 2026-11-24 | Clinking glasses to spill poison | Legend, no historical evidence |
