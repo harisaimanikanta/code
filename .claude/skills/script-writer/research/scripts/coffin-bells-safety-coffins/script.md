@@ -41,6 +41,39 @@ Not one that anyone can prove.
 And the saying saved by the bell? It comes from boxing, not coffins.
 <!-- VOICEOVER END -->
 
+### Voiceover with audio tags (ElevenLabs; no whispers)
+[Curious, intriguing, conversational] Did a bell on a grave ever save someone who was buried alive?
+
+[Storytelling, steady pace] Two hundred years ago, people were terrified of waking up inside a coffin.
+
+[Matter-of-fact] So they built coffins with escape plans.
+
+[Building, a little amused] One duke's coffin had a window, an air tube, and a lock... He was buried with the keys.
+
+[Leaning in, playful] But one doctor went even further.
+
+[Amused disbelief] He had himself buried alive to test his coffin... and ate soup and sausages through a tube.
+
+[Short pause, dramatic] Then came the bells.
+
+[Explanatory, clear] A string ran from the person's hand, up a pipe, to a bell above the grave.
+
+[Quick, punchy] If you woke up, you pulled. [beat] Ding.
+
+[Lower voice, ominous] But there was a creepy problem.
+
+[Slow, serious] When a body rots, it swells and moves.
+
+[Tense] That can pull the string too.
+
+[Unsettled, slower] So the bell could ring... for someone who was already dead.
+
+[Curious, building suspense] So how many people did the bells really save?
+
+[Pause, then firm and impactful] Not one that anyone can prove.
+
+[Lighter, surprised, conclusive] And the saying "saved by the bell"? [beat] It comes from boxing... not coffins.
+
 ### Beat map
 | Time | Beat | Open question |
 |---|---|---|
