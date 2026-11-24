@@ -198,7 +198,7 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 106 | Napoleon's hand-in-waistcoat pose | myth bust | 8 | medium (est.) | idea |
 | 107 | Big Ben regulated with old pennies | hidden reason | 8 | medium-high (est.) | idea |
 | 108 | Barber pole and bloodletting | medical | 8 | medium (est.) | idea |
-| 109 | Safety coffin bells: no documented saves | myth test | 8 | high (est.) | idea |
+| 109 | Safety coffin bells: no documented saves | myth test | 8 | high (est.) | scripted (script-writer) |
 | 110 | Jacob Davis, rivets and jeans (1873) | invention | 7 | high (est.) | idea |
 
 ---

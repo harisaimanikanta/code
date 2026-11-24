@@ -110,3 +110,4 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 61 | The Phone Call That Made a Manager Strip-Search Her Employee (Kentucky, 2004) | scripted (`scripts/mcdonalds-strip-search-hoax/`) |
 | 79 | The Killer Found Through a Cousin's DNA (Golden State Killer, 2018) | scripted (`scripts/golden-state-killer-genealogy/`) |
 | 99 | Why People Used to Eat Mummies (mumia mistranslation) | scripted (`scripts/eating-mummies-mumia/`) |
+| 109 | Did Coffin Bells Ever Save Anyone? (safety coffins) | scripted (`scripts/coffin-bells-safety-coffins/`) |
