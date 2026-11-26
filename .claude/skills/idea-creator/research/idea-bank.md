@@ -162,7 +162,7 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 ## Batch 2026-11-26 - mixed (status: idea) - full IDEA CARDS in `research/batches/2026-11-26-mixed.md`
 | # | Story | Category | Fit | Competition | Status |
 |---|---|---|---|---|---|
-| 81 | Werner Forssmann catheterises his own heart (1929) | medical | 10 | unknown | idea |
+| 81 | Werner Forssmann catheterises his own heart (1929) | medical | 10 | unknown | scripted (script-writer) |
 | 82 | John Paul Stapp's 632 mph rocket-sled stop (1954) | science | 9 | unknown | idea |
 | 83 | Operation Cottage - invading an empty Kiska (1943) | absurd war | 9 | unknown | idea |
 | 84 | Erasto Mpemba's hot ice cream (1963/1969) | science | 9 | unknown | idea |

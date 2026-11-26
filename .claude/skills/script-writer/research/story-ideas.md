@@ -109,3 +109,4 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 59 | Why Banning Cars Put More Cars on the Road (Hoy No Circula, 1989) | scripted (`scripts/mexico-city-hoy-no-circula/`) |
 | 61 | The Phone Call That Made a Manager Strip-Search Her Employee (Kentucky, 2004) | scripted (`scripts/mcdonalds-strip-search-hoax/`) |
 | 79 | The Killer Found Through a Cousin's DNA (Golden State Killer, 2018) | scripted (`scripts/golden-state-killer-genealogy/`) |
+| 81 | The Doctor Who Pushed a Tube Into His Own Heart (Forssmann, 1929) | scripted (`scripts/forssmann-heart-catheter/`) |
