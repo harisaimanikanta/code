@@ -159,6 +159,20 @@ Scored with the 5-point fit test. Evidence was checked through search summaries;
 | 79 | Golden State Killer via genetic genealogy (2018) | crime | 8 | low | scripted (VIRAL-SCRIPT-WRITER) |
 | 80 | Elmer McCurdy, the funhouse corpse (1976) | other | 7 | low | idea |
 
+## Batch 2026-11-26 - mixed (status: idea) - full IDEA CARDS in `research/batches/2026-11-26-mixed.md`
+| # | Story | Category | Fit | Competition | Status |
+|---|---|---|---|---|---|
+| 81 | Werner Forssmann catheterises his own heart (1929) | medical | 10 | unknown | idea |
+| 82 | John Paul Stapp's 632 mph rocket-sled stop (1954) | science | 9 | unknown | idea |
+| 83 | Operation Cottage - invading an empty Kiska (1943) | absurd war | 9 | unknown | idea |
+| 84 | Erasto Mpemba's hot ice cream (1963/1969) | science | 9 | unknown | idea |
+| 85 | Larry Walters' lawn-chair flight (1982) | other | 9 | unknown | idea |
+| 86 | Battle of Los Angeles - 1,400 shells at nothing (1942) | absurd war | 8 | unknown | idea |
+| 87 | Jack the baboon railway signalman (1880s) | other | 8 | unknown | idea |
+| 88 | Sokal hoax (1996) | hoax | 8 | unknown | idea |
+| 89 | Frank Abagnale's story was itself the con (Logan, 2020) | con | 8 | unknown | idea |
+| 90 | Emperor Norton I (1859-1880) | impostor | 7 | unknown | idea |
+
 ---
 
 ## Rejected (never re-pitch without new evidence)
