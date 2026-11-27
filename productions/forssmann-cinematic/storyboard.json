@@ -1,0 +1,1050 @@
+{
+ "title": "The Road Home - Werner Forssmann, 1929",
+ "voice": "voice.mp3",
+ "duration": 85.89,
+ "fps": 24,
+ "look": "premium historical science documentary: art-directed 3D, low-key motivated lighting, period-accurate 1929 Germany, tasteful anatomical cutaways",
+ "palette": {
+  "1929": "warm tungsten amber + cool window daylight, desaturated greens and creams of hospital paint, deep brown wood",
+  "anatomy": "near-black void, blue-violet veins, deep red heart, warm amber catheter, cool rim",
+  "xray": "blue-grey radiographic film, cold light-box white, grain",
+  "1956": "gold and burgundy, elegant soft key",
+  "today": "clean neutral-cool modern clinic"
+ },
+ "continuity": {
+  "forssmann_young": "25, slim, dark hair slicked back with a side part, clean-shaven, white surgical coat over waistcoat and tie, dark trousers; the catheter always enters his LEFT inner elbow",
+  "forssmann_old": "52, same face, grey hair, round glasses, dark suit; tailcoat on the Nobel stage",
+  "chief": "60s, grey hair, grey moustache, round glasses, dark suit under an open white coat",
+  "nurse": "30s, white 1920s uniform dress, white cap, keys on a ring at her belt",
+  "surgeon_berlin": "famous surgeon (unnamed in VO), 50s, bald crown, moustache, dark three-piece suit",
+  "catheter": "thin amber-brown varnished rubber ureteral catheter, about 65 cm, coiled on an enamel tray before use",
+  "screen_direction": "Forssmann's journey moves screen-left to screen-right (arm -> heart, office -> OR -> X-ray room)"
+ },
+ "sequences": [
+  {
+   "id": "S1",
+   "name": "Hook - the impossible question",
+   "t0": 0.0,
+   "t1": 5.0,
+   "takeaway": "A doctor pushed a tube into his own heart - and the question is how he lived"
+  },
+  {
+   "id": "S2",
+   "name": "1929 - the belief",
+   "t0": 5.0,
+   "t1": 10.3,
+   "takeaway": "In 1929, medicine treated the inside of a living heart as untouchable"
+  },
+  {
+   "id": "S3",
+   "name": "The refusal",
+   "t0": 10.3,
+   "t1": 15.85,
+   "takeaway": "A young junior doctor asks; his powerful boss refuses"
+  },
+  {
+   "id": "S4",
+   "name": "The nurse's rule",
+   "t0": 15.85,
+   "t1": 23.3,
+   "takeaway": "He goes anyway; the nurse with the keys agrees only if he tries it on her"
+  },
+  {
+   "id": "S5",
+   "name": "The trick",
+   "t0": 23.3,
+   "t1": 32.0,
+   "takeaway": "He straps her down and numbs her arm, then secretly cuts his own"
+  },
+  {
+   "id": "S6",
+   "name": "The tube goes in",
+   "t0": 32.0,
+   "t1": 40.0,
+   "takeaway": "The tube enters a vein at the elbow and is pushed more than half a metre toward the chest"
+  },
+  {
+   "id": "S7",
+   "name": "The blind spot",
+   "t0": 40.0,
+   "t1": 47.6,
+   "takeaway": "He can't see where it went, so he walks, tube inside him, to the X-ray room"
+  },
+  {
+   "id": "S8",
+   "name": "The reveal",
+   "t0": 47.6,
+   "t1": 55.0,
+   "takeaway": "The X-ray shows the tip inside his heart - and he is alive"
+  },
+  {
+   "id": "S9",
+   "name": "The ridicule",
+   "t0": 55.0,
+   "t1": 61.3,
+   "takeaway": "He expected praise; a famous surgeon dismissed it as a circus stunt"
+  },
+  {
+   "id": "S10",
+   "name": "The quiet years",
+   "t0": 61.3,
+   "t1": 66.7,
+   "takeaway": "Years later he was a small-town bladder doctor, not a heart doctor"
+  },
+  {
+   "id": "S11",
+   "name": "The payoff",
+   "t0": 66.7,
+   "t1": 72.3,
+   "takeaway": "27 years after that walk, the Nobel Prize"
+  },
+  {
+   "id": "S12",
+   "name": "Today",
+   "t0": 72.3,
+   "t1": 76.2,
+   "takeaway": "Heart catheters are now routine, every day"
+  },
+  {
+   "id": "S13",
+   "name": "The road home",
+   "t0": 76.2,
+   "t1": 85.89,
+   "takeaway": "Veins are roads to the heart - he didn't break in, he followed the road"
+  }
+ ],
+ "shots": [
+  {
+   "id": "1A",
+   "seq": "S1",
+   "set": "or",
+   "t0": 0.0,
+   "t1": 2.1,
+   "vo": "How did a doctor push a tube",
+   "purpose": "Introduce THE object of the story: the thin tube, in a 1929 operating room, being pushed forward",
+   "visible": "Macro: coiled amber rubber catheter on a white enamel instrument tray beside a scalpel and syringe; the tube slides forward off the coil as if fed by an unseen hand",
+   "action": "Catheter end slides ~6 cm toward camera",
+   "environment": "OR side table, steel and enamel, defocused tiled wall and the big surgical lamp disc as bokeh",
+   "camera": {
+    "type": "macro_slide",
+    "lens": 100,
+    "fstop": 2.0,
+    "move": "low macro slide along the tube toward its tip, rack focus coil -> tip"
+   },
+   "lighting": {
+    "setup": "hook_tray_spot",
+    "mood": "clinical mystery",
+    "notes": "one hard top-down surgical spot, deep falloff, cool tile bounce, specular streak along the varnished tube"
+   },
+   "transition_out": "match: the tube's line continues into the glowing vein of the next shot (same screen direction left->right)",
+   "connects": "The object (tube) -> where it goes (heart)"
+  },
+  {
+   "id": "1B",
+   "seq": "S1",
+   "set": "anatomy",
+   "t0": 2.1,
+   "t1": 3.6,
+   "vo": "into his own heart...",
+   "purpose": "Show the absurd destination: the tube runs from the arm to the heart inside a living man",
+   "visible": "Translucent upper body (ghost skin) with blue veins, faint ribcage, red heart; the amber catheter traced from the left elbow up the arm into the chest",
+   "action": "Heart beats (lub-dub) as the camera arrives at it",
+   "environment": "Black studio void with gentle haze",
+   "camera": {
+    "type": "crane_down",
+    "lens": 50,
+    "fstop": 4.0,
+    "move": "crane down and in from the shoulder along the catheter to the heart"
+   },
+   "lighting": {
+    "setup": "anatomy_void_rim",
+    "mood": "awe",
+    "notes": "cool blue rim on the ghost skin, warm key on the heart, haze"
+   },
+   "transition_out": "cut on the heartbeat",
+   "connects": "Destination -> stakes (the heart itself)"
+  },
+  {
+   "id": "1C",
+   "seq": "S1",
+   "set": "anatomy",
+   "t0": 3.6,
+   "t1": 5.0,
+   "vo": "and survive?",
+   "purpose": "Stakes: a living, beating heart with a foreign tube touching it",
+   "visible": "Extreme close-up of the heart's right atrium, catheter tip resting in it, heart beating once with a light pulse",
+   "action": "One strong beat on 'survive'",
+   "environment": "Void, haze",
+   "camera": {
+    "type": "push_in",
+    "lens": 85,
+    "fstop": 2.8,
+    "move": "slow push into the heart, focus on the catheter tip"
+   },
+   "lighting": {
+    "setup": "anatomy_heart_macro",
+    "mood": "tension",
+    "notes": "warm key from above-left, red SSS glow, deep shadow side"
+   },
+   "transition_out": "hard cut to black-to-window light (pause 4.77-5.26)",
+   "connects": "Question asked -> rewind to 1929"
+  },
+  {
+   "id": "2A",
+   "seq": "S2",
+   "set": "ward",
+   "t0": 5.0,
+   "t1": 6.7,
+   "vo": "In nineteen twenty-nine,",
+   "purpose": "Establish time and place: a German hospital ward, 1929",
+   "visible": "Long ward of iron beds with white linen, tall windows, light shafts through haze, wooden floor, radiators, a nurse's table with a lamp",
+   "action": "Dust drifting in the light shafts",
+   "environment": "1920s ward, cream and green paint, high ceiling with pendant lamps",
+   "camera": {
+    "type": "track",
+    "lens": 35,
+    "fstop": 5.6,
+    "move": "lateral track past bed frames in the foreground (parallax)"
+   },
+   "lighting": {
+    "setup": "ward_window_haze",
+    "mood": "historic, solemn",
+    "notes": "low morning sun through windows, volumetric shafts, cool ambient, warm practical lamp"
+   },
+   "title": "1929 · Germany",
+   "transition_out": "camera continues its direction into the next shot (motion-matched cut)",
+   "connects": "Place -> what doctors believed here"
+  },
+  {
+   "id": "2B",
+   "seq": "S2",
+   "set": "ward",
+   "t0": 6.7,
+   "t1": 10.3,
+   "vo": "doctors believed touching the inside of a heart meant death.",
+   "purpose": "The belief: senior doctors at an anatomical heart chart; the heart is forbidden territory",
+   "visible": "Two senior doctors in coats (backs and profile) before a large anatomical heart wall chart; one taps the heart with a pointer; foreground: a stethoscope on a bed rail",
+   "action": "Pointer taps the heart on 'heart' (8.83); the other doctor shakes his head on 'death' (9.62)",
+   "environment": "End of the ward: chart on an easel, cabinet, window",
+   "camera": {
+    "type": "push_in",
+    "lens": 50,
+    "fstop": 2.8,
+    "move": "push-in between the two doctors onto the chart heart; focus pulls from shoulders to chart"
+   },
+   "lighting": {
+    "setup": "ward_window_haze",
+    "mood": "grave",
+    "notes": "window key from screen-right, the chart lit by a raking light so its drawing reads, doctors in partial silhouette"
+   },
+   "transition_out": "cut at pause 10.10-10.47",
+   "connects": "The rule -> the young man who will break it"
+  },
+  {
+   "id": "3A",
+   "seq": "S3",
+   "set": "office",
+   "t0": 10.3,
+   "t1": 12.0,
+   "vo": "So when Werner Forssmann,",
+   "purpose": "Introduce Forssmann entering his superior's office (hierarchy: he stands in the doorway, the chief sits large in the foreground)",
+   "visible": "Over the chief's shoulder from behind his desk: Forssmann framed in the bright doorway, white coat, holding a folded sketch",
+   "action": "Forssmann steps into the room",
+   "environment": "Dark wood office: desk, green-shaded lamp, bookshelves, framed diplomas, window with net curtain",
+   "camera": {
+    "type": "ots",
+    "lens": 40,
+    "fstop": 2.8,
+    "move": "slow dolly forward over the chief's shoulder"
+   },
+   "lighting": {
+    "setup": "office_lamp_lowkey",
+    "mood": "formal, uneasy",
+    "notes": "doorway backlight for Forssmann's silhouette, warm desk lamp on the chief's hands"
+   },
+   "title": "Werner Forssmann · 25",
+   "transition_out": "cut on his step (motion)",
+   "connects": "Who he is -> what he asks"
+  },
+  {
+   "id": "3B",
+   "seq": "S3",
+   "set": "office",
+   "t0": 12.0,
+   "t1": 14.3,
+   "vo": "just twenty-five, asked to try it,",
+   "purpose": "His youth and conviction: he asks permission",
+   "visible": "Medium close-up of Forssmann across the desk, slight high angle (subordinate), earnest, gesturing with the sketch of an arm and a tube",
+   "action": "He opens the sketch toward the chief; speaks",
+   "environment": "Bookshelves behind him, soft bokeh",
+   "camera": {
+    "type": "dolly_in",
+    "lens": 65,
+    "fstop": 2.0,
+    "move": "slight high angle, slow push-in on his face"
+   },
+   "lighting": {
+    "setup": "office_lamp_lowkey",
+    "mood": "hopeful",
+    "notes": "warm lamp bounce key, cool window rim, eyes catch the lamp"
+   },
+   "transition_out": "reverse-angle cut",
+   "connects": "The ask -> the answer"
+  },
+  {
+   "id": "3C",
+   "seq": "S3",
+   "set": "office",
+   "t0": 14.3,
+   "t1": 15.85,
+   "vo": "his boss said no.",
+   "purpose": "Refusal from authority",
+   "visible": "Low angle on the chief behind the desk, lamp under-light; he closes a leather folder flat with one hand and shakes his head",
+   "action": "Folder shuts on 'no' (15.20)",
+   "environment": "Office, diplomas behind",
+   "camera": {
+    "type": "low_angle",
+    "lens": 35,
+    "fstop": 4.0,
+    "move": "low angle, tiny creeping push that stops dead on 'no'"
+   },
+   "lighting": {
+    "setup": "office_lamp_lowkey",
+    "mood": "authority, dismissal",
+    "notes": "hard lamp from below, the chief's eyes in shadow behind glasses"
+   },
+   "transition_out": "cut at pause 15.64-16.03",
+   "connects": "No -> he goes anyway"
+  },
+  {
+   "id": "4A",
+   "seq": "S4",
+   "set": "corridor",
+   "t0": 15.85,
+   "t1": 17.2,
+   "vo": "He did it anyway.",
+   "purpose": "Defiance: he strides away down the hospital corridor",
+   "visible": "Tracking from behind: Forssmann walks briskly down a long tiled corridor, coat swinging, toward a door with frosted glass",
+   "action": "Walk, screen-left to screen-right diagonal",
+   "environment": "Green-tiled dado, cream walls, ceiling globe lamps, windows with light pools on the floor",
+   "camera": {
+    "type": "follow",
+    "lens": 35,
+    "fstop": 4.0,
+    "move": "steadicam-style follow from behind at shoulder height"
+   },
+   "lighting": {
+    "setup": "corridor_pools",
+    "mood": "resolve",
+    "notes": "alternating window light pools and dim gaps, warm globe practicals"
+   },
+   "transition_out": "cut at pause 17.06-17.38",
+   "connects": "Decision -> what he needs"
+  },
+  {
+   "id": "4B",
+   "seq": "S4",
+   "set": "or",
+   "t0": 17.2,
+   "t1": 19.1,
+   "vo": "But he needed tools,",
+   "purpose": "Show the tools he needs, locked away",
+   "visible": "Glass-fronted instrument cabinet: scalpels, syringes, coiled catheters, glass bottles; reflections in the glass; a brass lock",
+   "action": "Slow slide across the shelves",
+   "environment": "OR anteroom wall",
+   "camera": {
+    "type": "parallax",
+    "lens": 85,
+    "fstop": 2.8,
+    "move": "lateral macro slide across the cabinet glass, rack focus glass reflection -> instruments"
+   },
+   "lighting": {
+    "setup": "cabinet_glass",
+    "mood": "temptation",
+    "notes": "soft top light inside the cabinet, controlled highlights on steel, cool window reflection streak on the glass"
+   },
+   "transition_out": "cut",
+   "connects": "Tools -> their keeper"
+  },
+  {
+   "id": "4C",
+   "seq": "S4",
+   "set": "or",
+   "t0": 19.1,
+   "t1": 21.55,
+   "vo": "and the nurse who kept them had one rule.",
+   "purpose": "Introduce the nurse who holds the keys and sets a condition",
+   "visible": "The nurse stands at the cabinet, keys on a ring in her hand; over Forssmann's shoulder (foreground, soft); she raises one finger on 'one rule'",
+   "action": "Raises index finger at 20.52",
+   "environment": "Cabinet behind her, tiled wall",
+   "camera": {
+    "type": "ots",
+    "lens": 50,
+    "fstop": 2.2,
+    "move": "over-the-shoulder, slow arc left"
+   },
+   "lighting": {
+    "setup": "cabinet_glass",
+    "mood": "wary",
+    "notes": "key from the overhead lamp, soft fill from the tiles, rim from the window"
+   },
+   "transition_out": "cut at pause 21.37-21.71",
+   "connects": "The rule -> what it is"
+  },
+  {
+   "id": "4D",
+   "seq": "S4",
+   "set": "or",
+   "t0": 21.55,
+   "t1": 23.3,
+   "vo": "Try it on her first.",
+   "purpose": "Her condition: she offers her own arm",
+   "visible": "She rolls back her sleeve and holds her forearm out toward him",
+   "action": "Arm extends into the frame",
+   "environment": "Operating table visible behind",
+   "camera": {
+    "type": "dolly_in",
+    "lens": 50,
+    "fstop": 2.8,
+    "move": "push in from her face down to the offered forearm"
+   },
+   "lighting": {
+    "setup": "or_overhead",
+    "mood": "bold",
+    "notes": "overhead lamp key, soft"
+   },
+   "transition_out": "cut at pause 23.07-23.48",
+   "connects": "Her arm -> the table"
+  },
+  {
+   "id": "5A",
+   "seq": "S5",
+   "set": "or",
+   "t0": 23.3,
+   "t1": 25.2,
+   "vo": "According to his own memoir,",
+   "purpose": "Establish the operating room; the nurse lies on the table",
+   "visible": "Wide high angle: the 1929 OR - white tiles, large round surgical lamp, instrument cabinet, sterilizer, nurse lying on the operating table, Forssmann beside her",
+   "action": "He leans over the table",
+   "environment": "OR with tall frosted window",
+   "camera": {
+    "type": "crane_down",
+    "lens": 24,
+    "fstop": 5.6,
+    "move": "crane down past the surgical lamp disc (foreground) into a high wide"
+   },
+   "lighting": {
+    "setup": "or_overhead",
+    "mood": "conspiratorial",
+    "notes": "the surgical lamp is the motivated key (big soft pool), dark edges, cool window fill"
+   },
+   "title": "according to his memoir",
+   "transition_out": "cut",
+   "connects": "Room -> the strap"
+  },
+  {
+   "id": "5B",
+   "seq": "S5",
+   "set": "or",
+   "t0": 25.2,
+   "t1": 26.56,
+   "vo": "he strapped her to the table",
+   "purpose": "The trick, step 1: he straps her",
+   "visible": "Close-up: his hands pull a leather strap across her forearm and buckle it to the table edge",
+   "action": "Strap pulled tight",
+   "environment": "Table edge, linen, leather, brass buckle",
+   "camera": {
+    "type": "top_down",
+    "lens": 50,
+    "fstop": 2.8,
+    "move": "top-down, slight rotation following the strap"
+   },
+   "lighting": {
+    "setup": "or_overhead",
+    "mood": "tense",
+    "notes": "hard top light, leather highlights"
+   },
+   "transition_out": "cut",
+   "connects": "Strap -> needle"
+  },
+  {
+   "id": "5C",
+   "seq": "S5",
+   "set": "or",
+   "t0": 26.56,
+   "t1": 28.0,
+   "vo": "and numbed her arm.",
+   "purpose": "The trick, step 2: local anaesthetic into her arm",
+   "visible": "Macro: the glass syringe and an anaesthetic ampoule on the enamel tray",
+   "action": "Syringe tip nears skin on 'numbed'",
+   "environment": "Linen, tray edge",
+   "camera": {
+    "type": "macro_slide",
+    "lens": 100,
+    "fstop": 2.0,
+    "move": "macro slide along the syringe barrel to the tip"
+   },
+   "lighting": {
+    "setup": "or_overhead",
+    "mood": "precise",
+    "notes": "glass caustic highlights, controlled reflections"
+   },
+   "transition_out": "cut at pause 27.62-28.12",
+   "connects": "Her arm numbed -> he turns away"
+  },
+  {
+   "id": "5D",
+   "seq": "S5",
+   "set": "or",
+   "t0": 28.0,
+   "t1": 30.57,
+   "vo": "Then, while she waited, he quietly",
+   "purpose": "The deception: she waits, staring at the lamp; behind her he turns to his own arm",
+   "visible": "Foreground: the nurse's face, lying, looking up; background: Forssmann at a side table, his back half-turned, rolling up his own left sleeve",
+   "action": "Focus racks from her to him on 'he quietly'",
+   "environment": "OR, lamp above",
+   "camera": {
+    "type": "rack_focus",
+    "lens": 85,
+    "fstop": 1.8,
+    "move": "near-static, slight drift; rack focus nurse -> Forssmann"
+   },
+   "lighting": {
+    "setup": "or_lowkey",
+    "mood": "whispered secret",
+    "notes": "her face under soft lamp light, him lit by a single side source, deep shadows"
+   },
+   "transition_out": "cut",
+   "connects": "Him -> his arm"
+  },
+  {
+   "id": "5E",
+   "seq": "S5",
+   "set": "anatomy",
+   "t0": 30.57,
+   "t1": 32.0,
+   "vo": "cut open his own.",
+   "purpose": "He cuts into his own inner elbow (tasteful)",
+   "visible": "Close-up of his bare inner elbow (opaque skin, same arm and framing as 6A); a scalpel lowers toward the skin; cut away at contact",
+   "action": "Scalpel descends",
+   "environment": "Towel, tray",
+   "camera": {
+    "type": "push_in",
+    "lens": 85,
+    "fstop": 2.8,
+    "move": "slow push toward the inner elbow"
+   },
+   "lighting": {
+    "setup": "anatomy_skin_key",
+    "mood": "dread",
+    "notes": "one warm key on the skin, black void, steel glint"
+   },
+   "transition_out": "MATCH CUT (anatomical): same arm framing becomes translucent in the next shot",
+   "connects": "Outside view -> inside view"
+  },
+  {
+   "id": "6A",
+   "seq": "S6",
+   "set": "anatomy",
+   "t0": 32.0,
+   "t1": 36.0,
+   "vo": "He slid a thin, bendy tube into a vein at his elbow.",
+   "purpose": "Show anatomically: the tube enters the vein at the elbow",
+   "visible": "Close-up of the inner elbow, skin fades to translucent revealing veins; the amber catheter slides into the vein",
+   "action": "Skin dissolve (32.0-33.2), catheter enters on 'into' (34.17) and 'vein' (34.58)",
+   "environment": "Anatomy void",
+   "camera": {
+    "type": "orbit",
+    "lens": 65,
+    "fstop": 2.8,
+    "move": "slow orbit around the elbow, 25 degrees"
+   },
+   "lighting": {
+    "setup": "anatomy_void_rim",
+    "mood": "revelation",
+    "notes": "warm key on the catheter, cool rim on the skin, veins glow subtly"
+   },
+   "transition_out": "camera continues along the arm (motion-matched)",
+   "connects": "Entry -> the push"
+  },
+  {
+   "id": "6B",
+   "seq": "S6",
+   "set": "anatomy",
+   "t0": 36.0,
+   "t1": 38.2,
+   "vo": "Slowly, he pushed.",
+   "purpose": "The catheter travels up the arm vein",
+   "visible": "Tracking along the upper-arm vein: the catheter tip advances; the vein a glowing channel; bone (humerus) faint behind",
+   "action": "Tip advances ~20 cm",
+   "environment": "Translucent arm",
+   "camera": {
+    "type": "track",
+    "lens": 50,
+    "fstop": 2.8,
+    "move": "camera travels alongside the tip, slight lead"
+   },
+   "lighting": {
+    "setup": "anatomy_void_rim",
+    "mood": "slow tension",
+    "notes": "travelling warm light near the tip"
+   },
+   "transition_out": "camera pulls out (continuous)",
+   "connects": "Push -> distance"
+  },
+  {
+   "id": "6C",
+   "seq": "S6",
+   "set": "anatomy",
+   "t0": 38.2,
+   "t1": 40.0,
+   "vo": "More than half a metre.",
+   "purpose": "Scale: the tube has travelled from elbow to chest, more than half a metre",
+   "visible": "Wide: whole translucent upper body, the catheter's path from elbow to chest highlighted; a thin measuring line beside it",
+   "action": "Catheter reaches the shoulder/chest",
+   "environment": "Void",
+   "camera": {
+    "type": "dolly_out",
+    "lens": 35,
+    "fstop": 5.6,
+    "move": "pull back and rise to reveal the whole path"
+   },
+   "lighting": {
+    "setup": "anatomy_void_rim",
+    "mood": "scale",
+    "notes": "even rim on the silhouette"
+   },
+   "title": "60 cm",
+   "transition_out": "cut at pause 39.73-40.09",
+   "connects": "Distance -> uncertainty"
+  },
+  {
+   "id": "7A",
+   "seq": "S7",
+   "set": "or",
+   "t0": 40.0,
+   "t1": 43.6,
+   "vo": "There was one problem. He couldn't see where the tube had gone.",
+   "purpose": "The human beat: he looks at the tube vanishing into his arm and has no idea where its tip is",
+   "visible": "Medium to close: Forssmann at the trolley looking down at the tube vanishing into his elbow, then toward his chest",
+   "action": "Glances from the arm toward his chest on 'where' (42.29)",
+   "environment": "OR side table, lamp above",
+   "camera": {
+    "type": "dolly_in",
+    "lens": 65,
+    "fstop": 2.0,
+    "move": "slow push from arm up to his eyes"
+   },
+   "lighting": {
+    "setup": "or_lowkey",
+    "mood": "uncertainty",
+    "notes": "single warm key from the lamp, cool rim, half his face in shadow"
+   },
+   "transition_out": "cut at pause 43.39-43.76",
+   "connects": "Problem -> solution: walk to the X-ray"
+  },
+  {
+   "id": "7B",
+   "seq": "S7",
+   "set": "corridor",
+   "t0": 43.6,
+   "t1": 47.6,
+   "vo": "So, with it still inside him, he walked to the X-ray room.",
+   "purpose": "The walk: tube inside him, he walks to the room marked RÖNTGEN",
+   "visible": "Leading dolly in front of him: Forssmann walks toward camera holding his left arm, the tube taped along it; camera turns as he passes to reveal the door sign 'RÖNTGEN' at the corridor's end",
+   "action": "Walk; door sign revealed on 'X-ray room' (46.66)",
+   "environment": "Same corridor as 4A (continuity), now darker",
+   "camera": {
+    "type": "reveal",
+    "lens": 32,
+    "fstop": 4.0,
+    "move": "dolly back ahead of him, then pan 120 degrees as he passes to reveal the door"
+   },
+   "lighting": {
+    "setup": "corridor_pools",
+    "mood": "building tension",
+    "notes": "evening: fewer pools, the RÖNTGEN door glows from within"
+   },
+   "transition_out": "light-based: the door's glow fills frame -> X-ray room",
+   "connects": "Walk -> picture"
+  },
+  {
+   "id": "8A",
+   "seq": "S8",
+   "set": "xray",
+   "t0": 47.6,
+   "t1": 49.3,
+   "vo": "The picture came out.",
+   "purpose": "The film comes out; the moment of truth",
+   "visible": "1920s X-ray room: tube stand, glass X-ray tube housing, lead screens; the developed film is clipped onto a glowing light box",
+   "action": "Film slides up onto the light box; its glow lights the room",
+   "environment": "Dark X-ray room, lead-lined door, cables, transformer cabinet",
+   "camera": {
+    "type": "low_angle",
+    "lens": 35,
+    "fstop": 2.8,
+    "move": "low dolly in toward the light box"
+   },
+   "lighting": {
+    "setup": "xray_lightbox",
+    "mood": "anticipation",
+    "notes": "the light box is the only key; cold white; long shadows of the apparatus"
+   },
+   "transition_out": "cut into the film",
+   "connects": "Film -> what it shows"
+  },
+  {
+   "id": "8B",
+   "seq": "S8",
+   "set": "xray",
+   "t0": 49.3,
+   "t1": 52.95,
+   "vo": "The tip of the tube was sitting inside his heart.",
+   "purpose": "MAJOR REVEAL: the radiograph shows the catheter line ending inside the heart",
+   "visible": "The chest radiograph fills the frame: ribs, spine, heart shadow, and a thin bright line running from the arm, across the shoulder, down into the heart",
+   "action": "Push-in tightens on the tip; a subtle glow marks the tip on 'inside' (51.26)",
+   "environment": "Film on the light box (emulsion texture, clip, edge)",
+   "camera": {
+    "type": "push_in",
+    "lens": 50,
+    "fstop": 4.0,
+    "move": "slow push from the whole film to the heart and tip"
+   },
+   "lighting": {
+    "setup": "xray_lightbox",
+    "mood": "revelation",
+    "notes": "backlit film, cool"
+   },
+   "transition_out": "cut (pause 52.54-53.12, held silence)",
+   "connects": "Proof -> the man"
+  },
+  {
+   "id": "8C",
+   "seq": "S8",
+   "set": "xray",
+   "t0": 52.95,
+   "t1": 55.0,
+   "vo": "And he was still alive.",
+   "purpose": "Emotional beat: he is alive; quiet awe",
+   "visible": "Close-up of Forssmann's face lit by the light box glow, the film reflected in his eyes; he breathes out",
+   "action": "Exhale, faint smile",
+   "environment": "Dark X-ray room",
+   "camera": {
+    "type": "dolly_in",
+    "lens": 85,
+    "fstop": 1.8,
+    "move": "very slow push-in on his eyes"
+   },
+   "lighting": {
+    "setup": "xray_lightbox",
+    "mood": "quiet amazement",
+    "notes": "cold light-box key, warm practical rim from the doorway"
+   },
+   "transition_out": "cut at pause 54.61-55.10",
+   "connects": "Alive -> expectation of glory"
+  },
+  {
+   "id": "9A",
+   "seq": "S9",
+   "set": "berlin",
+   "t0": 55.0,
+   "t1": 56.85,
+   "vo": "He thought he'd be a hero.",
+   "purpose": "His published paper with the X-ray, in a medical journal",
+   "visible": "Close-up of a 1929 medical journal (Klinische Wochenschrift) lying open with his X-ray printed on the page, morning light",
+   "action": "Pages settle open",
+   "environment": "A grand desk in Berlin",
+   "camera": {
+    "type": "top_down",
+    "lens": 50,
+    "fstop": 4.0,
+    "move": "top-down slow rotate and descend"
+   },
+   "lighting": {
+    "setup": "berlin_morning",
+    "mood": "hopeful",
+    "notes": "warm sunbeam across the page"
+   },
+   "transition_out": "cut on 'Instead'",
+   "connects": "Paper -> its reader"
+  },
+  {
+   "id": "9B",
+   "seq": "S9",
+   "set": "berlin",
+   "t0": 56.85,
+   "t1": 59.27,
+   "vo": "Instead, a famous surgeon reportedly",
+   "purpose": "The famous surgeon reads it and dismisses it",
+   "visible": "Low angle: a stout, moustached senior surgeon in a dark suit silhouetted against a tall window, the journal in hand; he tosses it onto the desk",
+   "action": "Tosses the journal at 58.6",
+   "environment": "Grand Berlin office, tall windows, portraits",
+   "camera": {
+    "type": "orbit",
+    "lens": 40,
+    "fstop": 2.8,
+    "move": "low slow orbit"
+   },
+   "lighting": {
+    "setup": "berlin_window_silhouette",
+    "mood": "contempt",
+    "notes": "strong window backlight, faint fill, cigar-smoke haze"
+   },
+   "transition_out": "cut",
+   "connects": "Dismissal -> humiliation"
+  },
+  {
+   "id": "9C",
+   "seq": "S9",
+   "set": "amphi",
+   "t0": 59.27,
+   "t1": 61.3,
+   "vo": "called it a circus stunt.",
+   "purpose": "The humiliation as an image: a surgical theatre's tiers like a circus ring, Forssmann alone in the spotlight",
+   "visible": "High top-down crane: a circular surgical amphitheatre, empty tiered benches, a single hard spotlight on Forssmann standing in the pit",
+   "action": "He lowers his head",
+   "environment": "Wooden tiers, railings, dark",
+   "camera": {
+    "type": "crane_up",
+    "lens": 24,
+    "fstop": 8.0,
+    "move": "crane up and away, ring revealed"
+   },
+   "lighting": {
+    "setup": "amphi_spot",
+    "mood": "humiliation",
+    "notes": "one hard theatrical spotlight, haze cone, everything else falls off to black"
+   },
+   "transition_out": "cut at pause 60.83-61.77",
+   "connects": "Rejected -> exiled"
+  },
+  {
+   "id": "10A",
+   "seq": "S10",
+   "set": "town",
+   "t0": 61.3,
+   "t1": 64.45,
+   "vo": "Years later, he wasn't even a heart doctor.",
+   "purpose": "Time passes: he is older, in a small, modest practice",
+   "visible": "From outside a rain-streaked window, dolly back through it into a small-town consulting room: older Forssmann (grey, glasses) at a desk",
+   "action": "He writes; rain on glass",
+   "environment": "Small-town practice: examination couch, a cabinet with a cystoscope, plain walls",
+   "camera": {
+    "type": "dolly_out",
+    "lens": 40,
+    "fstop": 2.8,
+    "move": "dolly back from the window to reveal the room"
+   },
+   "lighting": {
+    "setup": "town_rain_window",
+    "mood": "melancholy",
+    "notes": "grey overcast window key, warm desk lamp, rain-streak shadows"
+   },
+   "title": "years later",
+   "transition_out": "cut",
+   "connects": "Older -> what he does now"
+  },
+  {
+   "id": "10B",
+   "seq": "S10",
+   "set": "town",
+   "t0": 64.45,
+   "t1": 66.7,
+   "vo": "He treated bladders in a small town.",
+   "purpose": "His job now: urology",
+   "visible": "Close-up: a brass-and-steel cystoscope and kidney dish on the cabinet; rack focus to him writing in a patient book",
+   "action": "Rack focus on 'bladders'",
+   "environment": "Same room",
+   "camera": {
+    "type": "rack_focus",
+    "lens": 85,
+    "fstop": 2.0,
+    "move": "slight slide; rack focus instrument -> him"
+   },
+   "lighting": {
+    "setup": "town_rain_window",
+    "mood": "resigned",
+    "notes": "soft"
+   },
+   "transition_out": "cut at pause 66.46-66.87",
+   "connects": "Obscurity -> the call back"
+  },
+  {
+   "id": "11A",
+   "seq": "S11",
+   "set": "corridor",
+   "t0": 66.7,
+   "t1": 69.95,
+   "vo": "Then, twenty-seven years after that walk to the X-ray room,",
+   "purpose": "Callback: the same corridor walk, remembered (sepia), the years count up",
+   "visible": "The same corridor walk as 7B, seen from behind, in warm sepia memory; he walks toward the glowing door",
+   "action": "Walk toward the glow",
+   "environment": "Corridor (continuity), desaturated",
+   "camera": {
+    "type": "follow",
+    "lens": 35,
+    "fstop": 4.0,
+    "move": "follow from behind toward the glowing door; the glow grows"
+   },
+   "lighting": {
+    "setup": "corridor_memory",
+    "mood": "nostalgia",
+    "notes": "warm, soft, the door blooms"
+   },
+   "title": "1929 → 1956",
+   "transition_out": "LIGHT TRANSITION: the door's glow becomes the Nobel stage light",
+   "connects": "Memory -> reward"
+  },
+  {
+   "id": "11B",
+   "seq": "S11",
+   "set": "nobel",
+   "t0": 69.95,
+   "t1": 72.3,
+   "vo": "he won the Nobel Prize.",
+   "purpose": "The payoff: the Nobel Prize ceremony",
+   "visible": "Foreground: a gold medal in an open red leather case; crane up to the older Forssmann in white tie on a stage with blue-and-gold hall, flowers, audience silhouettes",
+   "action": "He bows slightly",
+   "environment": "Concert hall stage, columns, rows of seats, banners",
+   "camera": {
+    "type": "crane_up",
+    "lens": 50,
+    "fstop": 2.8,
+    "move": "crane up from the medal to him on stage"
+   },
+   "lighting": {
+    "setup": "nobel_stage_gold",
+    "mood": "vindication",
+    "notes": "elegant warm key, cool blue backlight haze, gold highlights"
+   },
+   "title": "Nobel Prize · 1956",
+   "transition_out": "cut at pause 72.11-72.48",
+   "connects": "Reward -> legacy"
+  },
+  {
+   "id": "12A",
+   "seq": "S12",
+   "set": "cathlab",
+   "t0": 72.3,
+   "t1": 76.2,
+   "vo": "Today, doctors slide tubes into hearts every single day.",
+   "purpose": "Legacy: a modern cardiac catheterization lab in use",
+   "visible": "Modern cath lab: C-arm over the patient table, monitors showing a live fluoroscopy of a catheter in a heart, doctors in blue gowns and caps",
+   "action": "C-arm rotates slightly; monitor image pulses",
+   "environment": "Clean modern lab, lead glass window to the control room",
+   "camera": {
+    "type": "orbit",
+    "lens": 32,
+    "fstop": 4.0,
+    "move": "smooth orbit around the C-arm"
+   },
+   "lighting": {
+    "setup": "cathlab_cool",
+    "mood": "confident, modern",
+    "notes": "soft overhead panels, monitor glow, no sci-fi effects"
+   },
+   "transition_out": "match: the monitor's catheter line -> the glowing vein of the next shot",
+   "connects": "Routine -> why it works"
+  },
+  {
+   "id": "13A",
+   "seq": "S13",
+   "set": "anatomy",
+   "t0": 76.2,
+   "t1": 78.2,
+   "vo": "Because the secret was simple.",
+   "purpose": "Set up the explanation: a calm view of a hand and arm",
+   "visible": "Translucent hand and forearm, palm up, in soft light; veins faint",
+   "action": "Veins begin to glow at the wrist",
+   "environment": "Void",
+   "camera": {
+    "type": "dolly_in",
+    "lens": 65,
+    "fstop": 2.8,
+    "move": "gentle push-in on the hand"
+   },
+   "lighting": {
+    "setup": "anatomy_soft",
+    "mood": "calm clarity",
+    "notes": "soft key, gentle rim"
+   },
+   "transition_out": "continuous move into the next",
+   "connects": "Hand -> the road"
+  },
+  {
+   "id": "13B",
+   "seq": "S13",
+   "set": "anatomy",
+   "t0": 78.2,
+   "t1": 81.95,
+   "vo": "Every vein in your arm is a road that leads back to your heart.",
+   "purpose": "THE MECHANISM: veins as roads converging on the heart",
+   "visible": "Light travels along the vein network from the hand, up the arm, through the shoulder into the chest and the heart, branches merging like roads into a highway",
+   "action": "Light front follows the words ('road' 79.78 at the elbow, 'heart' 81.34 at the heart)",
+   "environment": "Translucent arm and chest",
+   "camera": {
+    "type": "crane_up",
+    "lens": 40,
+    "fstop": 4.0,
+    "move": "travel with the light front from hand to heart"
+   },
+   "lighting": {
+    "setup": "anatomy_void_rim",
+    "mood": "understanding",
+    "notes": "the glowing veins are the key light"
+   },
+   "transition_out": "continuous",
+   "connects": "Road -> the catheter on it"
+  },
+  {
+   "id": "13C",
+   "seq": "S13",
+   "set": "anatomy",
+   "t0": 81.95,
+   "t1": 84.1,
+   "vo": "He didn't break into his heart.",
+   "purpose": "The catheter glides in through the vena cava - the heart wall stays intact",
+   "visible": "Close-up of the heart: the catheter comes down the superior vena cava and slides into the right atrium; the heart wall is untouched",
+   "action": "Tip enters on 'into' (83.06)",
+   "environment": "Heart",
+   "camera": {
+    "type": "orbit",
+    "lens": 85,
+    "fstop": 2.8,
+    "move": "slow orbit, tip in focus"
+   },
+   "lighting": {
+    "setup": "anatomy_heart_macro",
+    "mood": "gentle",
+    "notes": "warm"
+   },
+   "transition_out": "pull back (continuous)",
+   "connects": "Entry -> home"
+  },
+  {
+   "id": "13D",
+   "seq": "S13",
+   "set": "anatomy",
+   "t0": 84.1,
+   "t1": 85.89,
+   "vo": "He followed the road home.",
+   "purpose": "Final image: the whole road lit, the heart glowing at its end",
+   "visible": "Pull back to the full translucent figure, the lit vein road from hand to heart, the heart beating once; cut to black on 'home'",
+   "action": "Heart beat on 'home' (85.33), cut to black at 85.89",
+   "environment": "Void",
+   "camera": {
+    "type": "dolly_out",
+    "lens": 35,
+    "fstop": 5.6,
+    "move": "smooth pull back and slight rise"
+   },
+   "lighting": {
+    "setup": "anatomy_void_rim",
+    "mood": "resolution",
+    "notes": "veins and heart glow, rim fades"
+   },
+   "transition_out": "cut to black",
+   "connects": "end"
+  }
+ ]
+}

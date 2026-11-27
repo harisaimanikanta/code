@@ -1,0 +1,302 @@
+From b3bc458137ffb0395d5e14522805c7eccdf5b225 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Fri, 27 Nov 2026 18:52:55 +0000
+Subject: [PATCH 2/2] Cinematic v5: QC fixes from the Forssmann render
+
+- ck.window_light: sky panel invisible to camera and transmission rays (no white-slab windows)
+- example post.py: frame-exact segments (tpad), merged number captions, smaller encode
+- example film.py: per-shot exposure/IK/camera fixes from QC (4B, 5B, 5D, 7B, 8C, 10A)
+- cinematic-standards: QC failure checklist, shot re-render and HIDE isolation
+- learning: lessons L063-L068, run scorecard
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_013PoAvY7LLNZx86eLksXvHQ
+---
+ .../voiceover-to-video/blender/cinema/ck.py   |  1 +
+ .../example/forssmann-cinematic/film.py       | 30 ++++--
+ .../example/forssmann-cinematic/post.py       | 15 ++-
+ .../voiceover-to-video/learning/lessons.json  | 98 +++++++++++++++++++
+ skills/voiceover-to-video/learning/runs.jsonl |  1 +
+ .../references/cinematic-standards.md         |  9 +-
+ 6 files changed, 139 insertions(+), 15 deletions(-)
+
+diff --git a/skills/voiceover-to-video/blender/cinema/ck.py b/skills/voiceover-to-video/blender/cinema/ck.py
+index 9582ee5..80480b5 100644
+--- a/skills/voiceover-to-video/blender/cinema/ck.py
++++ b/skills/voiceover-to-video/blender/cinema/ck.py
+@@ -454,6 +454,7 @@ def window_light(coll, center, normal, w, h, color='#cfe0ff', power=600, name='w
+     """Daylight through a window: a large area light just outside the opening (soft sky) + an optional sun for hard shafts."""
+     nrm = Vector(normal).normalized(); C = Vector(center) + nrm * 0.25
+     a = area(coll, tuple(C), tuple(Vector(center) - nrm), w, color, power, name + '_sky', shape='RECTANGLE', size_y=h, shadow=True)
++    a.visible_camera = False; a.visible_transmission = False   # the sky panel lights the room; the view through the glass shows the backdrop, not a white slab (L063)
+     s = sun(coll, sun_dir, sun_color, sun_energy, 0.8, name + '_sun') if sun_dir and sun_energy else None
+     return a, s
+ def haze(coll, loc, size, density=0.02, color='#ffffff', anisotropy=0.5, name='haze'):
+diff --git a/skills/voiceover-to-video/example/forssmann-cinematic/film.py b/skills/voiceover-to-video/example/forssmann-cinematic/film.py
+index a1516de..d29110f 100644
+--- a/skills/voiceover-to-video/example/forssmann-cinematic/film.py
++++ b/skills/voiceover-to-video/example/forssmann-cinematic/film.py
+@@ -259,9 +259,9 @@ def set_or():
+     tray_spot = spot(C, tuple(TR + Vector((0.1, 0.25, 1.15))), tuple(TR + Vector((-0.05, -0.1, 0.89))), '#fff0d8', 0, 28, 0.35, 0.06, 'tray_spot')
+     cab = area(C, (2.3, 0.6, 2.3), (3.1, 0.6, 1.2), 0.8, '#fff6e6', 0, 'cab_top')
+     shot_lights([(tray_spot, {'1A': 55}), (rim, {'4B': 120, '4C': 180, '4D': 140, '5A': 90, '5D': 80, '7A': 150}),
+-                 (cab, {'4B': 130, '4C': 90, '4D': 60}), (side, {'5D': 140, '5E': 260, '7A': 160})])
+-    exposure({'5B': -2.0, '4B': -0.6, '1A': 0.3})
+-    for l, d in ((lamp, {'1A': 0, '5B': 70, '5C': 60, '5D': 160, '5E': 60, '7A': 90}),):
++                 (cab, {'4B': 70, '4C': 90, '4D': 60}), (side, {'5D': 140, '5E': 260, '7A': 160})])
++    exposure({'5B': -2.9, '4B': -2.0, '1A': 0.3})
++    for l, d in ((lamp, {'1A': 0, '5B': 45, '5C': 60, '5D': 160, '5E': 60, '7A': 90}),):
+         l.data.energy = 380
+         for sid, e in d.items(): a, b = T(sid); light_cut(l, a, b, e, 380)
+     sky.data.energy = 350; light_cut(sky, *T('1A'), 60, 350); light_cut(sky, *T('5E'), 80, 350); light_cut(sky, *T('7A'), 120, 350)
+@@ -279,8 +279,11 @@ def set_or():
+     syp = TR + Vector((-0.27, 0.15, 0.9))
+     Shot(sc, C, '5C', 26.56, [(26.56, tuple(syp + Vector((0.3, -0.22, 0.1))), tuple(syp + Vector((0.02, 0.0, 0.0)))), (28.0, tuple(syp + Vector((0.22, -0.18, 0.08))), tuple(syp + Vector((0.09, 0.0, 0.0))))], lens=85, fstop=2.8)
+     Shot(sc, C, '5Cx', 99.0, [(26.56, tuple(arm_r + Vector((0.32, -0.25, 0.15))), tuple(arm_r + Vector((0.15, -0.09, 0.08)))), (28.0, tuple(arm_r + Vector((0.24, -0.24, 0.12))), tuple(arm_r + Vector((0.06, -0.03, 0.05))))], lens=100, fstop=2.0)
+-    nf = nu.head_world() if False else Vector((0.2, 0.78, 1.12))
+-    Shot(sc, C, '5D', 28.0, [(28.0, (0.62, 1.38, 1.38), (-0.6, -0.3, 1.25), None, 0.75), (29.6, (0.6, 1.36, 1.38), (-0.65, -0.35, 1.28), None, 0.75), (30.5, (0.58, 1.34, 1.38), (-0.7, -0.4, 1.3), None, 2.15)], lens=85, fstop=1.8)
++    sc.frame_set(F(28.5)); bpy.context.view_layer.update(); nf = nu.head_world()
++    fwd = Vector((-0.65, -0.35, 1.28)); dd = (nf - fwd); dd.z = 0; dd.normalize(); sd = dd.cross(Vector((0, 0, 1))) * float(os.environ.get('SD5', '1')); c0 = nf + dd * 0.32 + sd * 0.42 + Vector((0, 0, 0.14))
++    d_n = (nf - c0).length; d_f = (fwd - c0).length
++    aim0 = nf.lerp(fwd, 0.35); aim1 = nf.lerp(fwd, 0.55)
++    Shot(sc, C, '5D', 28.0, [(28.0, tuple(c0), tuple(aim0), None, d_n), (29.6, tuple(c0 + Vector((0, 0, 0.02))), tuple(aim0.lerp(aim1, 0.5)), None, d_n), (30.5, tuple(c0 + Vector((0, 0, 0.04))), tuple(aim1), None, d_f)], lens=65, fstop=2.0)
+     Shot(sc, C, '5Ex', 99.5, [(30.57, tuple(el + Vector((0.32, -0.3, 0.22))), tuple(el)), (32.0, tuple(el + Vector((0.22, -0.22, 0.16))), tuple(el))], lens=85, fstop=2.8)
+     hw = Vector((-0.98, -0.08, 1.58))
+     Shot(sc, C, '7A', 40.0, [(40.0, tuple(hw + Vector((0.75, -1.05, -0.3))), tuple(hw + Vector((0.05, -0.2, -0.38)))), (43.6, tuple(hw + Vector((0.55, -0.6, -0.08))), tuple(hw + Vector((0, -0.04, -0.06))))], lens=65, fstop=2.0)
+@@ -403,7 +406,7 @@ def set_corridor():
+     snap(fo.arm, 'location', 43.6, Vector((2.6, -0.25, 0)))
+     fo.walk(43.6, 47.6, tuple(a7), tuple(b7), stride=0.72, arm=0.0, settle=False)
+     fo.hand('L', F(43.6), (0, 0, 0), 0.0)
+-    for t in (43.6, 47.6):
++    for t in [43.6 + 0.4 * i for i in range(10)] + [47.6]:   # dense keys: the hands must track the chest while he walks (2 keys let them drift out)
+         sc.frame_set(F(t)); bpy.context.view_layer.update(); ch = fo.bone_world('chest')
+         fo.hand('L', F(t), tuple(ch + Vector((0.08, -0.17, -0.12))), 1.0); fo.hand('R', F(t), tuple(ch + Vector((0.12, -0.2, -0.2))), 1.0)
+     fo.emote(F(43.8), 'worried')
+@@ -416,7 +419,11 @@ def set_corridor():
+     # lights per shot: evening for 7B (fewer pools), soft memory for 11A
+     s_ = bpy.data.objects['sun']; s_.data.energy = 5.0; light_cut(s_, *T('7B'), 2.5, 5.0); light_cut(s_, *T('11A'), 3.0, 5.0)
+     light_cut(sky, *T('7B'), 300, 600)
+-    exposure({'7B': 0.8, '11A': 1.8})
++    exposure({'7B': 1.5, '11A': 1.8})
++    # 7B: the RÖNTGEN door must read as the destination: brighter glow while he walks to it
++    gm.inputs['Strength'].default_value = 30; gm.inputs['Strength'].keyframe_insert('default_value', frame=F(43.6)); gm.inputs['Strength'].keyframe_insert('default_value', frame=F(47.55))
++    gm.inputs['Strength'].default_value = 6; gm.inputs['Strength'].keyframe_insert('default_value', frame=F(47.6))
++    sign_key = spot(C, (L / 2 - 2.5, -0.9, 2.6), (L / 2, 0.5, 1.6), '#ffe2b0', 0, 30, 0.4, 0.1, 'sign_key'); shot_lights([(sign_key, {'7B': 260})])
+     Shot(sc, C, '4A', 15.85, [(15.85, (-9.7, -0.1, 1.6), (-7.0, -0.3, 1.35)), (17.2, (-7.5, -0.1, 1.6), (-4.6, -0.3, 1.35))], lens=35, fstop=4.0, ease='linear', shake=0.004)
+     Shot(sc, C, '7B', 43.6, [(43.6, (4.8, 0.35, 1.5), (2.7, -0.25, 1.4)), (45.6, (6.6, 0.4, 1.45), (5.4, -0.25, 1.4)), (46.6, (7.2, 0.45, 1.45), (7.0, -0.2, 1.4)), (47.6, (7.0, 0.45, 1.5), (12.0, 0.0, 1.55))], lens=32, fstop=4.0)
+     light_cut(door_light, *T('7B'), 700, 120)
+@@ -456,7 +463,8 @@ def set_xray():
+     tipw = fl + Vector((tip_local.y, -tip_local.x, tip_local.z))
+     Shot(sc, C, '8B', 49.3, [(49.3, tuple(fl + Vector((-0.9, -0.42, 0.03))), tuple(fl)), (52.95, tuple(tipw + Vector((-0.36, 0.0, 0.0))), tuple(tipw))], lens=50, fstop=4.0, ease='out')
+     hf = Vector((1.6, 0.45, 1.66))
+-    Shot(sc, C, '8C', 52.95, [(52.95, (1.6, -0.35, 1.6), tuple(hf)), (55.0, (1.62, -0.2, 1.64), tuple(hf))], lens=85, fstop=1.8, ease='out')
++    exposure({'8C': -0.9})
++    Shot(sc, C, '8C', 52.95, [(52.95, (1.3, -0.75, 1.58), tuple(hf + Vector((0.25, 0.0, -0.08)))), (55.0, (1.38, -0.5, 1.62), tuple(hf + Vector((0.18, 0.0, -0.04))))], lens=65, fstop=2.0, ease='out')
+ 
+ # ====================================================================== SET: Berlin office (the famous surgeon)
+ def set_berlin():
+@@ -509,9 +517,9 @@ def set_town():
+            dado=ck.m_plaster('#7a8a80', '#3a4440', 0.2), dado_h=1.0, openings=[('back', -0.9, 0.5, 0.9, 2.5)], front=True)
+     win = P.window(C, (-0.2, 2.0, 1.7), 0, 1.4, 1.6, glass='clear', mullions=(2, 2))
+     rain = plane(C, (-0.2, 1.97, 1.7), (1.3, 1.5), _rain_mat(), rot=(math.pi / 2, 0, 0), name='rainglass')
+-    window_light(C, (-0.2, 2.0, 1.7), (0, 1, 0), 1.4, 1.6, '#9aa8bc', 160)
++    window_light(C, (-0.2, 2.0, 1.7), (0, 1, 0), 1.4, 1.6, '#9aa8bc', 110)
+     exposure({'10A': -0.4})
+-    plane(C, (-0.2, 6.0, 2.0), (12, 6), m_image(tex('town.png'), 0.9, emit=0.25, name='townview'), rot=(math.pi / 2, 0, 0), name='townbg')
++    plane(C, (-0.2, 6.0, 2.0), (12, 6), m_image(tex('town.png'), 0.9, emit=0.35, name='townview'), rot=(math.pi / 2, 0, 0), name='townbg')
+     P.desk(C, (0.6, 0.6, 0), math.pi, 1.3, 0.7, 0.76, '#4a3020'); lp, ll = P.bankers_lamp(C, (1.05, 0.75, 0.76), 0.0, 28)
+     book = box(C, (0.45, 0.5, 0.79), (0.3, 0.22, 0.02), ck.m_paper('#ece2c8'), 0.003, name='patientbook')
+     P.chair(C, (0.6, 1.15, 0), 0.0)
+@@ -609,6 +617,8 @@ sc.frame_start = 0; sc.frame_end = F(SB['duration'])
+ def render_frame(f, path):
+     sc.frame_set(f); cam = shot_at(sc, f); sc.camera = cam
+     sc.render.filepath = path; bpy.ops.render.render(write_still=True)
++for _o in list(bpy.data.objects):   # debug: HIDE=name1,name2 hides objects whose names start with these (QC isolation)
++    if any(_o.name.startswith(h) for h in filter(None, os.environ.get('HIDE', '').split(','))): _o.hide_render = True
+ if '--stills' in argv:
+     out = arg('--out', os.path.join(HERE, 'stills')); os.makedirs(out, exist_ok=True)
+     ids = arg('--stills').split(',')
+diff --git a/skills/voiceover-to-video/example/forssmann-cinematic/post.py b/skills/voiceover-to-video/example/forssmann-cinematic/post.py
+index 386cfd1..55e4415 100644
+--- a/skills/voiceover-to-video/example/forssmann-cinematic/post.py
++++ b/skills/voiceover-to-video/example/forssmann-cinematic/post.py
+@@ -28,7 +28,7 @@ def segment(s):
+             fh.write(f"file '{os.path.join(FR, f'{f:05d}.png')}'\nduration {(nxt - f) / FPS:.6f}\n")
+         fh.write(f"file '{os.path.join(FR, f'{have[-1]:05d}.png')}'\n")
+     vf = [f"minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1:scd=none" if len(have) < n else f"fps={FPS}",
+-          f"trim=end_frame={n}", "setpts=PTS-STARTPTS"]
++          "tpad=stop_mode=clone:stop=12", f"trim=end_frame={n}", "setpts=PTS-STARTPTS"]   # pad: the concat demuxer drops the tail frame, which would drift the cuts off the voice
+     if sid in GRADE: vf.append(GRADE[sid])
+     dur = n / FPS
+     if sid in FADE_IN: c, d = FADE_IN[sid]; vf.append(f"fade=t=in:st=0:d={d}:color={c}")
+@@ -45,13 +45,20 @@ NUM = [('nineteen twenty nine', '1929'), ('twenty five', '25'), ('twenty seven',
+ def captions():
+     ev = []
+     ws = [[w[0].split('(')[0], w[1], w[2]] for w in WORDS]
++    MERGE = [(('nineteen', 'twenty', 'nine'), '1929'), (('nineteen', 'fifty', 'six'), '1956'), (('x', 'ray'), 'X-ray')]   # never split a number across captions
++    i = 0; out = []
++    while i < len(ws):
++        for seq, rep in MERGE:
++            if tuple(w[0] for w in ws[i:i + len(seq)]) == seq: out.append([rep, ws[i][1], ws[i + len(seq) - 1][2]]); i += len(seq); break
++        else: out.append(ws[i]); i += 1
++    ws = out
+     i = 0
+     while i < len(ws):   # 1-3 word chunks, break at pauses > 0.25 s and at sentence ends
+         grp = [ws[i]]; i += 1
+         while i < len(ws) and len(grp) < 3 and ws[i][1] - grp[-1][2] < 0.25: grp.append(ws[i]); i += 1
+         txt = ' '.join(g[0] for g in grp)
+         for a_, b_ in NUM: txt = txt.replace(a_, b_)
+-        txt = txt.replace('forssmann', 'Forssmann').replace('werner', 'Werner').replace('nobel', 'Nobel').replace("didn't", "didn't")
++        txt = txt.replace('x-ray', 'X-ray').replace('forssmann', 'Forssmann').replace('werner', 'Werner').replace('nobel', 'Nobel').replace("didn't", "didn't")
+         t0, t1 = grp[0][1], max(grp[-1][2], grp[0][1] + 0.35)
+         if i < len(ws): t1 = min(t1 + 0.12, ws[i][1])
+         ev.append(f'Dialogue: 0,{ts(t0)},{ts(t1)},Cap,,0,0,0,,{{\\fad(40,60)}}{txt.upper()}')
+@@ -99,9 +106,9 @@ if __name__ == '__main__':
+     joined = os.path.join(HERE, 'joined.mp4'); run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', joined])
+     captions(); bed = os.path.join(HERE, 'bed.wav'); soundbed(bed)
+     out = os.path.join(HERE, 'final.mp4')
+-    vf = "scale=1080:1920:flags=lanczos,unsharp=5:5:0.45:5:5:0.0,noise=c0s=5:c0f=t,ass=" + os.path.join(HERE, "subs.ass") + ",format=yuv420p"
++    vf = "scale=1080:1920:flags=lanczos,unsharp=5:5:0.45:5:5:0.0,noise=c0s=3:c0f=t,ass=" + os.path.join(HERE, "subs.ass") + ",format=yuv420p"
+     af = "[1:a]aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[vo][sc];[2:a]aformat=sample_rates=48000:channel_layouts=stereo,volume=-17dB[bd];" \
+          "[bd][sc]sidechaincompress=threshold=0.04:ratio=3:attack=30:release=500[bdd];[vo][bdd]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]"
+     run(['ffmpeg', '-v', 'error', '-y', '-i', joined, '-i', os.path.join(HERE, 'voice.mp3'), '-i', bed, '-filter_complex', af + ';[0:v]' + vf + '[v]', '-map', '[v]', '-map', '[a]',
+-         '-c:v', 'libx264', '-crf', '17', '-preset', 'medium', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', out])
++         '-c:v', 'libx264', '-crf', '21', '-preset', 'medium', '-maxrate', '14M', '-bufsize', '28M', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', out])
+     print('final:', out)
+diff --git a/skills/voiceover-to-video/learning/lessons.json b/skills/voiceover-to-video/learning/lessons.json
+index 2327c09..70627e6 100644
+--- a/skills/voiceover-to-video/learning/lessons.json
++++ b/skills/voiceover-to-video/learning/lessons.json
+@@ -1029,5 +1029,103 @@
+     "hits": 1,
+     "history": [],
+     "where": "blender/cinema/anatomy.py heart(): single sculpted mesh + BVH-snapped coronaries"
++  },
++  {
++    "id": "L063",
++    "date": "2026-11-27",
++    "last_seen": "2026-11-27",
++    "area": "lighting",
++    "title": "Window sky light seen through glass as a white slab",
++    "symptom": "10A: rainy window rendered as a flat white rectangle; the town backdrop never showed",
++    "cause": "The window area light sits just outside the glass; Cycles sees it through transmission rays, so visible_camera=False alone is not enough",
++    "fix": "ck.window_light sets visible_camera=False and visible_transmission=False",
++    "rule": "Any light placed behind glass or an opening must be invisible to camera AND transmission rays; what's seen through the window is a backdrop",
++    "source": "qa",
++    "check": null,
++    "status": "enforced",
++    "hits": 1,
++    "history": [],
++    "where": "blender/cinema/ck.py window_light"
++  },
++  {
++    "id": "L064",
++    "date": "2026-11-27",
++    "last_seen": "2026-11-27",
++    "area": "lighting",
++    "title": "White garments under the overhead key blow out close-ups",
++    "symptom": "4B cabinet and 5B strap close-up were white-on-white, with no readable detail",
++    "cause": "White coats, linen and enamel at a short distance from a 380 W surgical lamp with no per-shot compensation",
++    "fix": "Per-shot exposure -2 to -3 EV plus lowering the motivated key for the insert (light_cut)",
++    "rule": "For every insert shot of white subjects, check the histogram of the mid-frame still; compensate per shot with exposure() and light_cut, never by global lighting",
++    "source": "qa",
++    "check": null,
++    "status": "open",
++    "hits": 1,
++    "history": []
++  },
++  {
++    "id": "L065",
++    "date": "2026-11-27",
++    "last_seen": "2026-11-27",
++    "area": "camera",
++    "title": "Rack-focus foreground subject framed out of shot",
++    "symptom": "5D: foreground nurse's face below frame, so the shot read as a black frame with blurry white shapes",
++    "cause": "Camera positions hard-coded before the character was posed; the aim ignored where the head actually was",
++    "fix": "Compute the camera from head_world() at the shot time, offset to the side, and focus distances from the real subject positions",
++    "rule": "Shots framing a character derive the camera and focus from bone_world()/head_world() at that frame, not hand-typed coordinates",
++    "source": "qa",
++    "check": null,
++    "status": "open",
++    "hits": 1,
++    "history": []
++  },
++  {
++    "id": "L066",
++    "date": "2026-11-27",
++    "last_seen": "2026-11-27",
++    "area": "camera",
++    "title": "Reaction close-up flat and frontally lit on a stylized face",
++    "symptom": "8C: a tight 85 mm profile filled the frame with a bright stylized face and no context",
++    "cause": "The close-up crop exposed the limits of the procedural face; nothing in frame tied the reaction to the evidence",
++    "fix": "65 mm medium close-up, -0.9 EV, framing the face against the glowing radiograph",
++    "rule": "Reaction shots include the thing being reacted to (foreground or background); keep stylized faces at a medium close-up or wider",
++    "source": "qa",
++    "check": null,
++    "status": "open",
++    "hits": 1,
++    "history": []
++  },
++  {
++    "id": "L067",
++    "date": "2026-11-27",
++    "last_seen": "2026-11-27",
++    "area": "pipeline",
++    "title": "Per-shot segments lose their tail frame, drifting cuts off the voice",
++    "symptom": "final.mp4 84.5 s against 85.89 s of voice; 25 of 37 segments were 1-2 frames short, so the later cuts landed up to 1.4 s early",
++    "cause": "The ffmpeg concat demuxer gives the last listed frame no duration; minterpolate + trim then ends short",
++    "fix": "post.py pads every segment (tpad=stop_mode=clone) before trim=end_frame=n, so each shot is exactly its storyboard length",
++    "rule": "After post, assert every segment's frame count equals round(t1*fps)-round(t0*fps), and the final duration matches the voice within 1 frame",
++    "source": "qa",
++    "check": null,
++    "status": "enforced",
++    "hits": 1,
++    "history": [],
++    "where": "example/forssmann-cinematic/post.py segment() tpad"
++  },
++  {
++    "id": "L068",
++    "date": "2026-11-27",
++    "last_seen": "2026-11-27",
++    "area": "pipeline",
++    "title": "review.py thresholds are calibrated for the bright cartoon mode",
++    "symptom": "Cinematic Forssmann run: 69 flagged / 57 'flat' seconds, mostly 'grey' (period desaturated palette), 'dark' (low-key by design) and 'cut' (cuts are intended in cinematic mode)",
++    "cause": "review.py and bar.json assume saturated cartoon colour, high key and one-take portals",
++    "fix": "OPEN: add a --mode cinematic profile to review.py (no grey/cut flags, dark = subject luminance not frame mean) and a separate bar",
++    "rule": "Judge cinematic runs by eye on the contact sheet plus the dark/blown/soft flags only, until review.py has a cinematic profile",
++    "source": "qa",
++    "check": null,
++    "status": "open",
++    "hits": 1,
++    "history": []
+   }
+ ]
+diff --git a/skills/voiceover-to-video/learning/runs.jsonl b/skills/voiceover-to-video/learning/runs.jsonl
+index b3d557d..e242d64 100644
+--- a/skills/voiceover-to-video/learning/runs.jsonl
++++ b/skills/voiceover-to-video/learning/runs.jsonl
+@@ -1,3 +1,4 @@
+ {"date": "2026-11-21", "project": "baseline-before-learning-loop", "scores": {"story": 6, "storyboard": 3, "camera": 7, "transitions": 6, "composition": 5, "lighting": 4, "materials": 4, "sets": 4, "character": 5, "motion": 5, "captions": 6, "polish": 4}, "feedback": "mediocre result; wants polished videos and a polished storyboard", "next": ["PBR surface sets on hero props", "dense dressed sets with foreground layers", "key+rim+practical lighting on every set", "storyboard sheet approval before full render"], "approved": false, "below_bar": [], "auto": {}, "flags": {}, "overall": 4.92}
+ {"date": "2026-11-21", "project": "cartoon-look-demo", "scores": {"story": 6.0, "storyboard": 8.0, "camera": 7.0, "transitions": 6.0, "composition": 7.0, "lighting": 7.0, "materials": 7.0, "sets": 8.0, "character": 7.0, "motion": 6.0, "captions": 7.0, "polish": 7.0}, "overall": 6.92, "auto": {"duration": 9.75, "lum_mean": 0.4578, "contrast_mean": 0.1769, "sat_mean": 0.633, "sharp_median": 8.7802, "detail_mean": 0.0804, "flagged_seconds": 0, "flat_seconds": 0, "cuts": 0}, "flags": {}, "feedback": "", "next": ["body still a little tube-like: add a shirt hem, folds and more silhouette shape", "head is very round: try shape presets per character for variety", "render a full voiceover production with portals on the new look"], "approved": false, "below_bar": []}
+ {"date": "2026-11-22", "project": "dna-case-golden-state-killer", "scores": {"story": 7.0, "storyboard": 8.0, "camera": 7.0, "transitions": 7.0, "composition": 7.0, "lighting": 7.0, "materials": 7.0, "sets": 8.0, "character": 7.0, "motion": 6.0, "captions": 7.0, "polish": 7.0}, "overall": 7.08, "auto": {"duration": 103.5, "lum_mean": 0.4591, "contrast_mean": 0.2011, "sat_mean": 0.4616, "sharp_median": 10.4721, "detail_mean": 0.0727, "flagged_seconds": 0, "flat_seconds": 0, "cuts": 0}, "flags": {}, "feedback": "", "next": ["motion: characters mostly stand; add more walking, sitting and gestures, and give the set-only beats (map, records room) a character", "tree section (57-73 s) is long: add a closer beat on the portraits", "bodies still simple: clothing folds and hems"], "approved": false, "below_bar": []}
++{"date": "2026-11-27", "project": "forssmann-cinematic", "scores": {"story": 8.0, "storyboard": 9.0, "camera": 7.0, "transitions": 7.0, "composition": 7.0, "lighting": 8.0, "materials": 7.0, "sets": 8.0, "character": 5.0, "motion": 6.0, "captions": 8.0, "polish": 6.0}, "overall": 7.17, "auto": {"duration": 85.75, "lum_mean": 0.3296, "contrast_mean": 0.199, "sat_mean": 0.2219, "sharp_median": 6.7784, "detail_mean": 0.064, "flagged_seconds": 69, "flat_seconds": 57, "cuts": 29}, "flags": {"dark": 53, "flat": 8, "grey": 151, "empty": 39, "soft": 2, "blown": 1, "cut": 29}, "feedback": "Self-QC: fixed 4B/5B blow-out, 5D framing, 8C reaction, 10A white window, 7B dark reveal + arm IK, segment frame drift, caption number split", "next": ["Faces remain the weakest asset (stylized); GPU render at full res/spp would remove interpolation and haze grain"], "approved": false, "below_bar": ["auto flagged_seconds_max 69 vs bar 10", "auto flat_seconds_max 57 vs bar 5"]}
+diff --git a/skills/voiceover-to-video/references/cinematic-standards.md b/skills/voiceover-to-video/references/cinematic-standards.md
+index 9654412..6f24675 100644
+--- a/skills/voiceover-to-video/references/cinematic-standards.md
++++ b/skills/voiceover-to-video/references/cinematic-standards.md
+@@ -104,4 +104,11 @@ render every frame at 1080×1920 / 64 spp with the same scripts.
+ 1. Stills of every shot (`film.py --stills id@frac,...`) → contact sheet → fix: generic assets, flat light, missing shadows, blown or black
+    frames, camera inside geometry, tangled poses, empty frames, unreadable action.
+ 2. After the render: `scripts/review.py final.mp4 <workdir>` sheet + flags; check timing of reveals against `words.json`.
+-3. Record every problem as a lesson (`learn.py add`) and fix the kit, not only the film.
++3. Typical failures found in the Forssmann QC pass (L063–L066), so check them first:
++   - **White slab windows**: a light behind glass is visible through transmission rays (fixed in `ck.window_light`).
++   - **White-on-white inserts** (coats, linen, enamel under the surgical key): per-shot `exposure()` −2…−3 EV and lower the key with `light_cut`.
++   - **Rack focus with the foreground subject out of frame**: derive cameras and focus distances from `head_world()`/`bone_world()` at that frame.
++   - **Tight reaction close-ups of stylized faces**: frame a medium close-up that includes what the character is reacting to.
++4. Re-render only the failing shots: delete their frames, then `film.py --set X --render --shots A,B --step 2`; `HIDE=name1,name2` hides objects
++   in a still to isolate what causes an artefact.
++5. Record every problem as a lesson (`learn.py add`) and fix the kit, not only the film.
+-- 
+2.43.0
+
