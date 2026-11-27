@@ -46,6 +46,29 @@ Because the secret was simple. Every vein in your arm is a road that leads back 
 He didn't break into his heart. He followed the road home.
 <!-- VOICEOVER END -->
 
+### C2. Voiceover with audio tags (ElevenLabs v3; paste into the TTS as-is)
+Tags are performance cues only; the spoken words are identical to section C. Use a v3 model (tags are read aloud on older models).
+```
+[curious] How did a doctor push a tube into his own heart... [short pause] and survive?
+[serious] In nineteen twenty-nine, doctors believed touching the inside of a heart meant death.
+So when Werner Forssmann, just twenty-five, asked to try it, [flatly] his boss said no.
+[mischievously] He did it anyway. But he needed tools, and the nurse who kept them had one rule. [short pause] Try it on her first.
+[conspiratorial] According to his own memoir, he strapped her to the table and numbed her arm.
+[whispers] Then, while she waited, he quietly cut open his own.
+[tense] He slid a thin, bendy tube into a vein at his elbow. [slowly] Slowly, he pushed. [short pause] More than half a metre.
+[serious] There was one problem. He couldn't see where the tube had gone.
+So, with it still inside him, [building tension] he walked to the X-ray room.
+[slowly] The picture came out. [short pause] The tip of the tube was sitting inside his heart.
+[long pause] [quietly amazed] And he was still alive.
+[hopeful] He thought he'd be a hero. [dismissive] Instead, a famous surgeon reportedly called it a circus stunt.
+[sighs] Years later, he wasn't even a heart doctor. He treated bladders in a small town.
+[short pause] [warmly] Then, twenty-seven years after that walk to the X-ray room, he won the Nobel Prize.
+[confident] Today, doctors slide tubes into hearts every single day.
+[short pause] [softly] Because the secret was simple. Every vein in your arm is a road that leads back to your heart.
+[slowly] He didn't break into his heart. [short pause] He followed the road home.
+```
+Timing note: the pauses add about 3–4 s, so expect ~68–70 s. Re-check the storyboard timings against the rendered audio.
+
 **Beat map:** hook (how did he survive?) 0:00 → doubt and refusal 0:03 → nurse's rule, a new gap (what will he do?) 0:11 → the memoir trick 0:17 → the tube goes in 0:23 → "one problem" 0:30 → X-ray walk 0:33 → tip in heart, still alive 0:36 (partly answered: he did survive, but how?) → circus mockery 0:40 → bladders in a small town 0:44 → Nobel 0:48 → today 0:54 → the mechanism, the main answer 0:57 → last line 1:03.
 
 ## R. Retention simulation (Draft 4)
